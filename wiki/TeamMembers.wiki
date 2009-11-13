@@ -7,13 +7,22 @@ Details about the members of Preposterous Games.
 
 = Team =
 
-Khaled Al-Hurby*
-Kyle Rannie
-Dionne Wilson
-Ross Mcwilliam
-Scott Oliver
-Roger Stefen
-Calum Mckenzie
-Jessica Milne
-Kevin Bruce
-Kieran Naples
+Khaled Al-Hurby - Lead Designer, and all-round boss type
+
+Kyle Rainnie - Producer
+
+Dionne Wilson - Artist
+
+Ross Mcwilliam - Audio Designer
+
+Scott Oliver - Lead Programmer
+
+Roger Stefen - Programmer
+
+Calum Mckenzie - Programmer
+
+Jessica Milne - Programmer
+
+Kevin Bruce - Programmer
+
+Kieran Naples - Programmer
