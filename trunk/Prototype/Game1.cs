@@ -106,7 +106,7 @@ namespace Graphics_Code_SO
             ObjectManipulator.CreateBuffers(GraphicsDevice);
 
             //Jess: load effect file
-            myEffect = Content.Load<Effect>("Testshader");//Jess: load simple fx file
+            myEffect = Content.Load<Effect>("Phong_Shader");//Jess: load simple fx file
 
 
         }
@@ -228,26 +228,25 @@ namespace Graphics_Code_SO
         private void AddLevelFront()
         {
             ObjectManipulator.NewLevelObject(8, 15, PrimitiveType.TriangleList, 5);
-            
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
+
+            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f);
             ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
             ObjectManipulator.Current().AddVertexPNT(-10.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(30.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(-5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(-10.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(30.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
 
-            ObjectManipulator.Current().AddIndex(0,3,2);
-            ObjectManipulator.Current().AddIndex(0,1,3);
-            ObjectManipulator.Current().AddIndex(1,4,3);
-            ObjectManipulator.Current().AddIndex(2,5,7);
-            ObjectManipulator.Current().AddIndex(2,7,6);
+            ObjectManipulator.Current().AddIndex(0, 3, 2);
+            ObjectManipulator.Current().AddIndex(0, 1, 3);
+            ObjectManipulator.Current().AddIndex(1, 4, 3);
+            ObjectManipulator.Current().AddIndex(2, 5, 7);
+            ObjectManipulator.Current().AddIndex(2, 7, 6);
 
-            //ObjectManipulator.Current().tex = Content.Load<Texture2D>("helpdesk");
-            
+            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");//load texture
+
             ObjectManipulator.Current().CalculateWorld();
-            ObjectManipulator.Current().SetMaterials();
 
             ObjectManipulator.Current().basicEffect = false;
         }
@@ -259,20 +258,20 @@ namespace Graphics_Code_SO
             Vector3 norm = Vector3.Transform(new Vector3(0, 1, 0), Quaternion.CreateFromYawPitchRoll(0, 0, MathHelper.ToRadians(30)));
 
             ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//top
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//top
+            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);//top
 
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//top
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//top
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, norm.X, norm.Y, norm.Z,0.0f, 0.0f);//middle
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, norm.X, norm.Y, norm.Z, 0.0f, 0.0f);//middle
+            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);//top
+            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);//top
+            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 0.0f);//middle
+            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, norm.X, norm.Y, norm.Z, 1.0f, 0.0f);//middle
 
             ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//bottom
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//bottom
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 0.0f);//middle
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, norm.X, norm.Y, norm.Z, 0.0f, 0.0f);//middle
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);//bottom
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 1.0f);//middle
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, norm.X, norm.Y, norm.Z, 1.0f, 1.0f);//middle
 
-            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//bottom
-            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//bottom
+            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);//bottom
+            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);//bottom
 
 
 
@@ -285,9 +284,10 @@ namespace Graphics_Code_SO
 
             ObjectManipulator.Current().CalculateWorld();
 
-            ObjectManipulator.Current().SetMaterials();
+            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexleaves");
 
             ObjectManipulator.Current().basicEffect = false;
+            
             
         }
 
@@ -296,37 +296,37 @@ namespace Graphics_Code_SO
             ObjectManipulator.NewLevelObject(16, 24, PrimitiveType.TriangleList, 8);
 
             //Top Face
-            ObjectManipulator.Current().AddVertexPNT(0, 2, 0, 0, 1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 2, -10, 0, 1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 2, -10, 0, 1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 2, 0, 0, 1, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(10.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(10.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);
 
             ObjectManipulator.Current().AddIndex(0, 1, 2);
             ObjectManipulator.Current().AddIndex(0, 2, 3);
 
             //Bottom Face
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, -1, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, -1, 0, 0, 1);
             ObjectManipulator.Current().AddVertexPNT(0, 0, -10, 0, -1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 0, -10, 0, -1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 0, 0, 0, -1, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(10, 0, -10, 0, -1, 0, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(10, 0, 0, 0, -1, 0, 1, 1);
 
             ObjectManipulator.Current().AddIndex(5, 4, 6);
             ObjectManipulator.Current().AddIndex(4, 7, 6);
 
             //Front Face
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, 0, -1, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 2, 0, 0, 0, -1, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 2, 0, 0, 0, -1, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 0, 0, 0, 0, -1, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, 0, 0, -1, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, 0, 0, -1, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(10, 1, 0, 0, 0, -1, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(10, -1, 0, 0, 0, -1, 1, 1);
 
             ObjectManipulator.Current().AddIndex(8, 9, 10);
             ObjectManipulator.Current().AddIndex(8, 10, 11);
 
             //Left Face
-            ObjectManipulator.Current().AddVertexPNT(0, 0, -10, -1, 0, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 2, -10, -1, 0, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 2, 0, -1, 0, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, -1, 0, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, -1, -10, -1, 0, 0, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 1, -10, -1, 0, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, -1, 0, 0, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, -1, 0, 0, 1, 1);
 
             ObjectManipulator.Current().AddIndex(12, 13, 14);
             ObjectManipulator.Current().AddIndex(12, 14, 15);
@@ -336,9 +336,10 @@ namespace Graphics_Code_SO
 
             ObjectManipulator.Current().CalculateWorld();
 
-            ObjectManipulator.Current().SetMaterials();
 
-           ObjectManipulator.Current().basicEffect = false;
+            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");
+
+            ObjectManipulator.Current().basicEffect = false;
         }
 
 
@@ -347,7 +348,7 @@ namespace Graphics_Code_SO
         private void SetLightParams()
         {
 
-            Vector4 Direction= new Vector4(1,-1,0,0);
+            Vector4 Direction= new Vector4(-1,-10,0,0);
             Vector4 lcolour = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
             //Jess: light parameters such as light color, direction, position, intensity which will be the same for all objects.//
             myEffect.Parameters["gLightCol"].SetValue( lcolour);

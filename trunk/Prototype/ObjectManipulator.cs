@@ -158,7 +158,7 @@ namespace Graphics_Code_SO
                     effect.Parameters["gDiffuseMtrl"].SetValue(obj.diffMtrl);
                     effect.Parameters["gSpecMtrl"].SetValue(obj.specMtrl);
 
-                    //effect.Parameters["gTex"].SetValue(obj.tex);
+                    effect.Parameters["gTex"].SetValue(obj.tex);
 
                    
                     effect.Begin();
