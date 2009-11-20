@@ -41,9 +41,9 @@ namespace Graphics_Code_SO
 
         public Texture2D                        tex { get; set; }   //Texture to be drawn on primitive
 
-        public Vector4                            ambMtrl;//Jess: default material vals
-        public Vector4                            diffMtrl;
-        public Vector4                              specMtrl;
+        public Vector4 ambMtrl = new Vector4(0.4f, 0.4f, 0.4f, 1.0f);//Jess: default material vals
+        public Vector4 diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
+        public Vector4 specMtrl = new Vector4(0.3f, 0.3f, 0.3f, 1.0f);
 
         public LevelObject()
         {
@@ -136,12 +136,6 @@ namespace Graphics_Code_SO
             ambMtrl = amb;
             diffMtrl = diff;
             specMtrl = spec;
-        }
-        public void SetMaterials()
-        {
-          ambMtrl = new Vector4(0.0f, 0.4f, 0.0f, 1.0f);//Jess: default material vals
-          diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
-          specMtrl = new Vector4(0.3f, 0.3f, 0.3f, 1.0f);
         }
         
 
