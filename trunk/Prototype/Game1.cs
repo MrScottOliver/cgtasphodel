@@ -22,6 +22,7 @@ namespace Graphics_Code_SO
         BasicEffect stdEffect;
         Effect myEffect;//Jess: custom effect
         KeyboardState keyState;
+        Player player = new Player(); //Kieran: create player instance
 
         Vector3 POS;
         Vector3 TARGET;
@@ -108,6 +109,12 @@ namespace Graphics_Code_SO
             //Jess: load effect file
             myEffect = Content.Load<Effect>("Phong_Shader");//Jess: load simple fx file
 
+            //Kieran: set player model
+            player.model = Content.Load<Model>("Ship");
+            player.scale = 2.0f;
+            player.position.Y = 5f;
+            player.position.Z = -5f;
+
 
         }
 
@@ -152,6 +159,24 @@ namespace Graphics_Code_SO
                 POS.X += 1.0f;
                 TARGET.X += 1.0f;
             }
+
+            //Kieran: arrow keys move player model (a ship)
+            if (keyState.IsKeyDown(Keys.Up))
+            {
+                player.position.Y += 1.0f;
+            }
+            if (keyState.IsKeyDown(Keys.Down))
+            {
+                player.position.Y -= 1.0f;
+            }
+            if (keyState.IsKeyDown(Keys.Left))
+            {
+                player.position.X -= 1.0f;
+            }
+            if (keyState.IsKeyDown(Keys.Right))
+            {
+                player.position.X += 1.0f;
+            }
             if (keyState.IsKeyDown(Keys.PageUp))
                 
             if (keyState.IsKeyDown(Keys.PageDown))
@@ -181,7 +206,39 @@ namespace Graphics_Code_SO
 
             ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj);
 
+            //Kieran: call draw player function
+            DrawPlayer(player);
+
             base.Draw(gameTime);
+
+
+        }
+
+        //Kieran: draw player function
+        void DrawPlayer(Player player)
+        {
+            foreach (ModelMesh mesh in player.model.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.EnableDefaultLighting();
+                    effect.PreferPerPixelLighting = true;
+
+                    effect.World =
+                        Matrix.CreateFromYawPitchRoll(
+                        player.rotation.Y,
+                        player.rotation.X,
+                        player.rotation.Z) *
+
+                        Matrix.CreateScale(player.scale) *
+
+                        Matrix.CreateTranslation(player.position);
+
+                    effect.Projection = Proj;
+                    effect.View = View;
+                }
+                mesh.Draw();
+            }
         }
         /***********************
          * Not my code!
@@ -330,6 +387,8 @@ namespace Graphics_Code_SO
 
             ObjectManipulator.Current().AddIndex(12, 13, 14);
             ObjectManipulator.Current().AddIndex(12, 14, 15);
+
+            
 
             ObjectManipulator.Current().AddTranslation(20, 10, 0);
 
