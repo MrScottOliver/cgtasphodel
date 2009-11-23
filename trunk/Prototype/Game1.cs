@@ -23,7 +23,7 @@ namespace Graphics_Code_SO
         Effect myEffect;//Jess: custom effect
         KeyboardState keyState;
         Player player = new Player(); //Kieran: create player instance
-
+        Audio audio = new Audio();    //Stefen: create audio instance
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
@@ -40,10 +40,12 @@ namespace Graphics_Code_SO
         private float nearClip;
         private float farClip;
 
+
+
         public Game1()
         {
-            gDeviceManager          = new GraphicsDeviceManager(this);
-            Content.RootDirectory   = "Content";
+            gDeviceManager = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
         }
 
         /// <summary>
@@ -74,7 +76,7 @@ namespace Graphics_Code_SO
             }
 
             stdEffect = new BasicEffect(gDeviceManager.GraphicsDevice, null);
-            
+
             POS = new Vector3(10.0f, 15.0f, 32.0f);
             TARGET = new Vector3(10.0f, 5.0f, 1.0f);
             UP = Vector3.Up;
@@ -110,7 +112,7 @@ namespace Graphics_Code_SO
             myEffect = Content.Load<Effect>("Phong_Shader");//Jess: load simple fx file
 
             //Kieran: set player model
-            player.model = Content.Load<Model>("Ship");
+            player.model = Content.Load<Model>("Ship2");
             player.scale = 2.0f;
             player.position.Y = 5f;
             player.position.Z = -5f;
@@ -137,7 +139,7 @@ namespace Graphics_Code_SO
             keyState = Keyboard.GetState();
             // Allows the game to exit
 #if !XBOX
-            if ( keyState.IsKeyDown(Keys.Escape) )
+            if (keyState.IsKeyDown(Keys.Escape))
                 this.Exit();
             if (keyState.IsKeyDown(Keys.W))
             {
@@ -164,27 +166,33 @@ namespace Graphics_Code_SO
             if (keyState.IsKeyDown(Keys.Up))
             {
                 player.position.Y += 1.0f;
+                audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
                 player.position.Y -= 1.0f;
+                audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
                 player.position.X -= 1.0f;
+                audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Right))
             {
                 player.position.X += 1.0f;
+                audio.Step();
             }
             if (keyState.IsKeyDown(Keys.PageUp))
-                
-            if (keyState.IsKeyDown(Keys.PageDown))
-                
-#endif
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
 
+                if (keyState.IsKeyDown(Keys.PageDown))
+
+#endif
+                    if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                        this.Exit();
+
+            //Stefen: Takes in object and cameras positions to provide 3d sound
+            audio.Update(player.position, POS);
             base.Update(gameTime);
         }
 
@@ -344,8 +352,8 @@ namespace Graphics_Code_SO
             ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexleaves");
 
             ObjectManipulator.Current().basicEffect = false;
-            
-            
+
+
         }
 
         private void AddPlatform()
@@ -388,7 +396,7 @@ namespace Graphics_Code_SO
             ObjectManipulator.Current().AddIndex(12, 13, 14);
             ObjectManipulator.Current().AddIndex(12, 14, 15);
 
-            
+
 
             ObjectManipulator.Current().AddTranslation(20, 10, 0);
 
@@ -407,13 +415,13 @@ namespace Graphics_Code_SO
         private void SetLightParams()
         {
 
-            Vector4 Direction= new Vector4(-1,-10,0,0);
+            Vector4 Direction = new Vector4(-1, -10, 0, 0);
             Vector4 lcolour = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
             //Jess: light parameters such as light color, direction, position, intensity which will be the same for all objects.//
-            myEffect.Parameters["gLightCol"].SetValue( lcolour);
-            myEffect.Parameters["gLightDir"].SetValue(Direction); 
+            myEffect.Parameters["gLightCol"].SetValue(lcolour);
+            myEffect.Parameters["gLightDir"].SetValue(Direction);
 
-           
+
         }
 
     }
