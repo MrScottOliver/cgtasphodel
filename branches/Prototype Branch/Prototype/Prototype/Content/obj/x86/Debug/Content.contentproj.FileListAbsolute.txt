@@ -1,0 +1,4 @@
+C:\temp\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\temp\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\temp\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\temp\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
