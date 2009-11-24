@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sections>
+  <WaveBank Name="Player_Effects">Wave Bank
+{
+    Name = Player_Effects;
+    Xbox File = Player_Effects.xwb;
+    Windows File = Player_Effects.xwb;
+    Xbox Bank Path Edited = 1;
+    Windows Bank Path Edited = 1;
+    Seek Tables = 1;
+    Compression Preset Name = &lt;none&gt;;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 668085394;
+    PC Bank Last Modified High = 30043201;
+    Bank Last Revised Low = 1568092690;
+    Bank Last Revised High = 30043200;
+
+    Wave
+    {
+        Name = footstep 3 aw;
+        File = footstep 3 aw.wav;
+        Build Settings Last Modified Low = 3277166466;
+        Build Settings Last Modified High = 30043194;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 54076;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1484338376;
+            Last Modified High = 30042180;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 4 aw;
+        File = footstep 4 aw.wav;
+        Build Settings Last Modified Low = 3277166466;
+        Build Settings Last Modified High = 30043194;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 50052;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1610308376;
+            Last Modified High = 30042180;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 5 aw;
+        File = footstep 5 aw.wav;
+        Build Settings Last Modified Low = 3277176466;
+        Build Settings Last Modified High = 30043194;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 48896;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1792698376;
+            Last Modified High = 30042180;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 1 aw;
+        File = footstep 1 aw.wav;
+        Build Settings Last Modified Low = 3277176466;
+        Build Settings Last Modified High = 30043194;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 56376;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 154308376;
+            Last Modified High = 30042180;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 2 aw;
+        File = footstep 2 aw.wav;
+        Build Settings Last Modified Low = 3277186466;
+        Build Settings Last Modified High = 30043194;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 54652;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1309838376;
+            Last Modified High = 30042180;
+        }
+    }
+}
+
+</WaveBank>
+</Sections>

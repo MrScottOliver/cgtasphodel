@@ -9,20 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
 
-//Kieran: player class: basic so far, just to get a model moving around screen
-
-namespace Graphics_Code_SO
+namespace Prototype
 {
-    class Player
+    class CollisionDetection
     {
-        public Model model = null;
-        public Vector3 velocity = Vector3.Zero;
-        public Vector3 position = Vector3.Zero;
-        public Vector3 rotation = Vector3.Zero;
-        public float scale = 1.0f;
-        
     }
-
-
 }

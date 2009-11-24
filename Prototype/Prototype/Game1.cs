@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 
-namespace Graphics_Code_SO
+namespace Prototype
 {
     /// <summary>
     /// This is the main type for your game
@@ -113,7 +113,7 @@ namespace Graphics_Code_SO
 
             //Kieran: set player model
             player.model = Content.Load<Model>("Ship2");
-            player.scale = 2.0f;
+            player.ChangeScale(0.2f);
             player.position.Y = 5f;
             player.position.Z = -5f;
 
@@ -165,22 +165,22 @@ namespace Graphics_Code_SO
             //Kieran: arrow keys move player model (a ship)
             if (keyState.IsKeyDown(Keys.Up))
             {
-                player.position.Y += 1.0f;
+                player.AddTranslation(0,0.3f,0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
-                player.position.Y -= 1.0f;
+                player.AddTranslation(0,-0.3f,0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
-                player.position.X -= 1.0f;
+                player.AddTranslation(-0.3f,0,0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Right))
             {
-                player.position.X += 1.0f;
+                player.AddTranslation(0.3f, 0, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.PageUp))
@@ -215,38 +215,11 @@ namespace Graphics_Code_SO
             ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj);
 
             //Kieran: call draw player function
-            DrawPlayer(player);
+            player.DrawPlayer(player, Proj, View);
 
             base.Draw(gameTime);
 
 
-        }
-
-        //Kieran: draw player function
-        void DrawPlayer(Player player)
-        {
-            foreach (ModelMesh mesh in player.model.Meshes)
-            {
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    effect.PreferPerPixelLighting = true;
-
-                    effect.World =
-                        Matrix.CreateFromYawPitchRoll(
-                        player.rotation.Y,
-                        player.rotation.X,
-                        player.rotation.Z) *
-
-                        Matrix.CreateScale(player.scale) *
-
-                        Matrix.CreateTranslation(player.position);
-
-                    effect.Projection = Proj;
-                    effect.View = View;
-                }
-                mesh.Draw();
-            }
         }
         /***********************
          * Not my code!

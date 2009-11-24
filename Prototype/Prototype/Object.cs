@@ -18,7 +18,7 @@ using Microsoft.Xna.Framework.Net;
  * as functions to define the information contained in the class.
 ******************************************************************************/
 
-namespace Graphics_Code_SO
+namespace Prototype
 {
     class LevelObject
     {

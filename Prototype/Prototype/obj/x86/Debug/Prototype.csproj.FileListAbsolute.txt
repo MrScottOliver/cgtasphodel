@@ -1,0 +1,15 @@
+C:\temp\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\temp\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+C:\temp\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+C:\temp\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+C:\temp\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
