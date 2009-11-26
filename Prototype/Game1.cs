@@ -104,6 +104,8 @@ namespace Prototype
             AddLevelTop();
             AddPlatform();
 
+            SetupPlane();
+
             ObjectManipulator.CalculateBufferLengths();
             ObjectManipulator.ConcatanateArrays();
             ObjectManipulator.CreateBuffers(GraphicsDevice);
@@ -113,9 +115,13 @@ namespace Prototype
 
             //Kieran: set player model
             player.model = Content.Load<Model>("Ship2");
-            player.scale = 2.0f;
-            player.position.Y = 5f;
+            player.ChangeScale(0.2f);
+            player.AddTranslation(-7f, 30f, -5f);
+            /*
+            player.position.X = -7f;
+            player.position.Y = 20f;
             player.position.Z = -5f;
+            //*/
 
 
         }
@@ -136,6 +142,11 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
+            player.Move();
+            CollisionDetectionBox.Compare(ref player);
+            player.Update();
+
             keyState = Keyboard.GetState();
             // Allows the game to exit
 #if !XBOX
@@ -165,22 +176,22 @@ namespace Prototype
             //Kieran: arrow keys move player model (a ship)
             if (keyState.IsKeyDown(Keys.Up))
             {
-                player.position.Y += 1.0f;
+                player.AddTranslation(0, 0.3f, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
-                player.position.Y -= 1.0f;
+                player.AddTranslation(0, -0.3f, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
-                player.position.X -= 1.0f;
+                player.AddTranslation(-0.3f, 0, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Right))
             {
-                player.position.X += 1.0f;
+                player.AddTranslation(0.3f, 0, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.PageUp))
@@ -420,8 +431,12 @@ namespace Prototype
             //Jess: light parameters such as light color, direction, position, intensity which will be the same for all objects.//
             myEffect.Parameters["gLightCol"].SetValue(lcolour);
             myEffect.Parameters["gLightDir"].SetValue(Direction);
+        }
 
-
+        private void SetupPlane()
+        {
+            //CollisionDetectionPlane.AddPlane(new Vector3(-10, 5, 0), new Vector3(-10, 5, -10), new Vector3(-5, 5, -10), -10, -5);
+            CollisionDetectionBox.AddBox(new Vector3(-10, 3, -10), new Vector3(-5, 5, 0));
         }
 
     }
