@@ -19,7 +19,7 @@ using Microsoft.Xna.Framework.Storage;
  * 
 ******************************************************************************/
 
-namespace Graphics_Code_SO
+namespace Prototype
 {
     static class ObjectManipulator
     {

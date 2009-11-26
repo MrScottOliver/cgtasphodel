@@ -19,7 +19,7 @@ using Microsoft.Xna.Framework.Storage;
  * as well as methods to alter the aim and positon of the camera.
 ******************************************************************************/
 
-namespace Graphics_Code_SO
+namespace Prototype
 {
     class Camera
     {

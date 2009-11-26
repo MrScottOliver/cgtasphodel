@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Storage;
  * Not my code!
 ******************************************************************************/
 
-namespace Graphics_Code_SO
+namespace Prototype
 {
     class QuaternionCamera
     {

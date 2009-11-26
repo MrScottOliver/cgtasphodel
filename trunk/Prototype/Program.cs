@@ -1,6 +1,6 @@
 using System;
 
-namespace Graphics_Code_SO
+namespace Prototype
 {
     static class Program
     {
