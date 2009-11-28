@@ -105,11 +105,8 @@ namespace Prototype
             AddPlatform();
 
             SetupPlane();
-
-            ObjectManipulator.CalculateBufferLengths();
-            ObjectManipulator.ConcatanateArrays();
-            ObjectManipulator.CreateBuffers(GraphicsDevice);
-
+            //Stefen:Creates + sets vertex and index buffers
+            ObjectManipulator.UpdateObjects(GraphicsDevice);
             //Jess: load effect file
             myEffect = Content.Load<Effect>("Phong_Shader");//Jess: load simple fx file
 
