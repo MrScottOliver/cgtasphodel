@@ -1,0 +1,3 @@
+Content\Audio\Prototype.xgs
+Content\Audio\Player_Effects.xwb
+Content\Audio\Sound_Bank.xsb
