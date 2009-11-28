@@ -24,6 +24,7 @@ namespace Prototype
         KeyboardState keyState;
         Player player = new Player(); //Kieran: create player instance
         Audio audio = new Audio();    //Stefen: create audio instance
+        GrowEvent Platforms = new GrowEvent(); //Stefen: create plant growth handler
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
@@ -88,6 +89,9 @@ namespace Prototype
             nearClip = 1.0f;
             farClip = 1000.0f;
 
+            //Stefen: sets boundingbox and availability
+            Platforms.SetEvent(30, 0, 0, 50, true);
+
             Proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), aspectRatio, nearClip, farClip);
             ObjectManipulator.Initialise(GraphicsDevice);
 
@@ -102,7 +106,7 @@ namespace Prototype
         {
             AddLevelFront();
             AddLevelTop();
-            AddPlatform();
+            AddPlatform(new Vector3(20, 10, 0));
 
             SetupPlane();
             //Stefen:Creates + sets vertex and index buffers
@@ -191,6 +195,13 @@ namespace Prototype
                 player.AddTranslation(0.3f, 0, 0);
                 audio.Step();
             }
+            //Stefen: if x is pressed and the event is available the event is activated
+            if (keyState.IsKeyDown(Keys.X)&&(Platforms.getStatus()==true))
+            {
+                Platforms.Activate();
+                AddPlatform(Platforms.getPos());
+                ObjectManipulator.UpdateObjects(GraphicsDevice);
+            }
             if (keyState.IsKeyDown(Keys.PageUp))
 
                 if (keyState.IsKeyDown(Keys.PageDown))
@@ -201,6 +212,13 @@ namespace Prototype
 
             //Stefen: Takes in object and cameras positions to provide 3d sound
             audio.Update(player.position, POS);
+            //Stefen: Animate Growth
+            if ((Platforms.getActive()==true))
+            {
+            Platforms.Animate(10);
+            AddPlatform(Platforms.getPos());
+            ObjectManipulator.UpdateObjects(GraphicsDevice);
+            }
             base.Update(gameTime);
         }
 
@@ -337,7 +355,7 @@ namespace Prototype
 
         }
 
-        private void AddPlatform()
+        private void AddPlatform(Vector3 Pos)
         {
             ObjectManipulator.NewLevelObject(16, 24, PrimitiveType.TriangleList, 8);
 
@@ -379,7 +397,7 @@ namespace Prototype
 
 
 
-            ObjectManipulator.Current().AddTranslation(20, 10, 0);
+            ObjectManipulator.Current().AddTranslation(Pos.X, Pos.Y, Pos.Z);
 
 
             ObjectManipulator.Current().CalculateWorld();

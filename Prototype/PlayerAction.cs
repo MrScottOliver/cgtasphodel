@@ -30,26 +30,33 @@ namespace Prototype
     class GrowEvent : EventsInterface
     {
         BoundingSphere sphere;
-        bool active;
+        bool Available;
+        bool Active = false;
         int thisEvent;
+        Vector3 Position;
 
         //jess: Sets position and radius for event bounding sphere. Also set active to true/false :) 
-        public void SetEvent(int x,int y,int z,int r, bool act)
+        public void SetEvent(int x,int y,int z,int r, bool available)
         {
-          sphere.Center =new Vector3(x,y,z);//set position
-          sphere.Radius = r;//set radius
-          active = act;//set active bool
-          thisEvent = 1;//set event indicator
-
+            Position = new Vector3(x, y, z);
+            sphere.Center = Position;//set position
+            sphere.Radius = r;//set radius
+            Available = available;//set available bool
+            thisEvent = 1;//set event indicator
         }
 
         public void Activate()
         {
-
             //create box & platforms
             //translate box so it grows up...while loop perhaps
-            //set active to false
-            
+            //set available to false
+            Active = true;
+            Available = false;
+        }
+
+        public void Dectivate()
+        {
+            Active = false;
         }
 
        public BoundingSphere GetBoundingSphere()//return bounding sphere
@@ -57,30 +64,54 @@ namespace Prototype
             return sphere;
         }
 
-       public bool getStatus()//return whether active
+       public bool getStatus()//return whether available for interaction
        {
-           return active;
+           return Available;
+       }
+
+       public bool getActive()//return whether or not is active
+       {
+           return Active;
        }
 
        public int whichEvent()//return event indicator
        {
            return thisEvent;
        }
+
+       public Vector3 getPos()
+       {
+           return Position;
+       }
+
+       public float getY()
+       {
+           return Position.Y;
+       }
+
+       public void Animate(Int32 newy)
+       {
+           if (Position.Y <= newy)
+               Position.Y += 0.1F;
+           else
+               Active = false;
+       }
+
     }
 
     //Jess: running past & watering flowers event
     class FlowerEvent : EventsInterface
     {
         BoundingSphere sphere;
-        bool active;
+        bool Available;
         int thisEvent;
 
         //jess: Sets position and radius for event bounding sphere. Also set active to true/false :) 
-        public void SetEvent(int x, int y, int z, int r, bool act)
+        public void SetEvent(int x, int y, int z, int r, bool available)
         {
             sphere.Center = new Vector3(x, y, z);//set position
             sphere.Radius = r;//set radius
-            active = act;//set active bool
+            Available = available;//set active bool
             thisEvent = 2;//set event indicator
 
         }
@@ -91,7 +122,7 @@ namespace Prototype
             //animate model
             //animate flower
             //activate grey to colour change
-            //setactive to false
+            //set available to false
 
         }
 
@@ -100,9 +131,9 @@ namespace Prototype
             return sphere;
         }
 
-        public bool getStatus()//return whether active
+        public bool getStatus()//return whether available for interaction
         {
-            return active;
+            return Available;
         }
 
         public int whichEvent()//return event indicator
