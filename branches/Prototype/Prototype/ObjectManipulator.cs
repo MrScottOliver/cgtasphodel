@@ -62,6 +62,7 @@ namespace Prototype
         public static void NewLevelObject(int vSize, int iSize, PrimitiveType prim, short primAmount)
         {
             LevelData.Add(new LevelObject(vSize, iSize, prim, primAmount));
+
             currentObject++;
         }
 
@@ -92,6 +93,8 @@ namespace Prototype
                 iLength += obj.indexData.Length;
 
             }
+                        vLength = 0;
+            iLength = 0;
         }
 
         public static void CreateBuffers(GraphicsDevice device)
@@ -185,5 +188,13 @@ namespace Prototype
             return LevelData.ElementAt(currentObject);
         }
 
+        public static void UpdateObjects(GraphicsDevice device)
+        {
+            vLength = 0;
+            iLength = 0;
+            CalculateBufferLengths();
+            ConcatanateArrays();
+            CreateBuffers(device);
+        }
     }
 }
