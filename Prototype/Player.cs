@@ -21,7 +21,7 @@ namespace Prototype
         public Vector3 velocity;
         public Vector3 position;
         public Vector3 gravity;
-
+        
         public BoundingSphere boundingsphere;
         public Matrix translation;
         public Matrix rotation;
@@ -31,16 +31,16 @@ namespace Prototype
 
         public Player()
         {
-            model = null;
-            velocity = Vector3.Zero;
-            position = Vector3.Zero;
-
-            boundingsphere = new BoundingSphere(position, 1.0f);
-            scale = Matrix.Identity;
-            translation = Matrix.Identity;
-            rotation = Matrix.Identity;
-            world = Matrix.Identity;
-            gravity = new Vector3(0f, -0.001f, 0f);
+        model = null;
+        velocity = Vector3.Zero;
+        position = Vector3.Zero;
+        
+        boundingsphere = new BoundingSphere(position, 1.0f);
+        scale = Matrix.Identity;
+        translation = Matrix.Identity;
+        rotation = Matrix.Identity;
+        world = Matrix.Identity;
+        gravity = new Vector3(0f, -0.001f, 0f);
         }
 
         //Kieran: draw player function
@@ -99,9 +99,9 @@ namespace Prototype
 
         public void Update()
         {
-            AddTranslation(velocity.X, velocity.Y, velocity.Z);
+            AddTranslation(velocity.X, velocity.Y, velocity.Z) ;
         }
-
+        
     }
 
 

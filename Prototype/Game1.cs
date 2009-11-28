@@ -58,8 +58,8 @@ namespace Prototype
         {
             Window.Title = "Prototype App";
 
-            if (!InitGraphicsMode(1440, 900, false))
-            {
+            //if (!InitGraphicsMode(1440, 900, false))
+            //{
                 if (!InitGraphicsMode(1280, 720, false))
                 {
                     if (!InitGraphicsMode(1024, 768, false))
@@ -73,7 +73,7 @@ namespace Prototype
                         }
                     }
                 }
-            }
+            //}
 
             stdEffect = new BasicEffect(gDeviceManager.GraphicsDevice, null);
 
@@ -176,17 +176,17 @@ namespace Prototype
             //Kieran: arrow keys move player model (a ship)
             if (keyState.IsKeyDown(Keys.Up))
             {
-                player.AddTranslation(0, 0.3f, 0);
+                player.AddTranslation(0,0.3f,0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
-                player.AddTranslation(0, -0.3f, 0);
+                player.AddTranslation(0,-0.3f,0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
-                player.AddTranslation(-0.3f, 0, 0);
+                player.AddTranslation(-0.3f,0,0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Right))
@@ -232,8 +232,6 @@ namespace Prototype
 
 
         }
-
-       
         /***********************
          * Not my code!
         ***********************/
@@ -406,6 +404,8 @@ namespace Prototype
             //Jess: light parameters such as light color, direction, position, intensity which will be the same for all objects.//
             myEffect.Parameters["gLightCol"].SetValue(lcolour);
             myEffect.Parameters["gLightDir"].SetValue(Direction);
+
+
         }
 
         private void SetupPlane()

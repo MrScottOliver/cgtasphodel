@@ -1,0 +1,45 @@
+C:\temp\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\temp\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+C:\temp\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+C:\temp\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+C:\temp\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+C:\temp\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
