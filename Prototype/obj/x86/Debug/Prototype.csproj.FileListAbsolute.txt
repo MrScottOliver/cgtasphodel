@@ -43,21 +43,6 @@ H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x
 H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\metal.xnb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\ship2.xnb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\metal_0.xnb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Prototype.exe
-C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Prototype.pdb
-C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Prototype.exe
-C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Prototype.pdb
 C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\bin\x86\Debug\Content\metal.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
@@ -76,3 +61,21 @@ C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\obj\x8
 C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\bin\x86\Debug\Content\SkySphere.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\metal.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\ship2.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\metal_0.xnb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Prototype.exe
+C:\Users\Stezzy\Desktop\Branch\Prototype\bin\x86\Debug\Prototype.pdb
+C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Prototype.exe
+C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Prototype.pdb
