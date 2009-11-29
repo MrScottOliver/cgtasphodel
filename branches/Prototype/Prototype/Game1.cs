@@ -24,7 +24,7 @@ namespace Prototype
         KeyboardState keyState;
         Player player = new Player(); //Kieran: create player instance
         Audio audio = new Audio();    //Stefen: create audio instance
-        GrowEvent Platforms = new GrowEvent(); //Stefen: create plant growth handler
+        GrowEvent Plant = new GrowEvent(); //Stefen: create plant growth handler
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
@@ -91,7 +91,7 @@ namespace Prototype
             farClip = 1000.0f;
 
             //Stefen: sets boundingbox and availability
-            Platforms.SetEvent(30, 0, 0, 50, true);
+            Plant.SetEvent(10, 0, -10, 50, true);
 
             Proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), aspectRatio, nearClip, farClip);
             ObjectManipulator.Initialise(GraphicsDevice);
@@ -107,7 +107,7 @@ namespace Prototype
         {
             AddLevelFront();
             AddLevelTop();
-            AddPlatform(new Vector3(20, 10, 0));
+            AddPlatform(new Vector3(20, 13, 0));
 
             SetupPlane();
             //Stefen:Creates + sets vertex and index buffers
@@ -200,10 +200,10 @@ namespace Prototype
                 audio.Step();
             }
             //Stefen: if x is pressed and the event is available the event is activated
-            if (keyState.IsKeyDown(Keys.X) && (Platforms.getStatus() == true))
+            if (keyState.IsKeyDown(Keys.X)&&(Plant.getStatus()==true))
             {
-                Platforms.Activate();
-                AddPlatform(Platforms.getPos());
+                Plant.Activate();
+                AddPlant(Plant.getPos());
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
             if (keyState.IsKeyDown(Keys.PageUp))
@@ -217,11 +217,14 @@ namespace Prototype
             //Stefen: Takes in object and cameras positions to provide 3d sound
             audio.Update(player.position, POS);
             //Stefen: Animate Growth
-            if ((Platforms.getActive() == true))
+            if ((Plant.getActive()==true))
             {
-                Platforms.Animate(10);
-                AddPlatform(Platforms.getPos());
-                ObjectManipulator.UpdateObjects(GraphicsDevice);
+            Plant.Animate(15);      //parameter is the desired y position by end of animation
+            AddPlant(Plant.getPos());
+            if (Plant.getPos().Y>10)
+                AddPlatform(new Vector3(5, 7, 0));
+
+            ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
             base.Update(gameTime);
         }
@@ -414,6 +417,58 @@ namespace Prototype
             ObjectManipulator.Current().basicEffect = false;
         }
 
+        private void AddPlant(Vector3 Pos)
+        {
+            ObjectManipulator.NewLevelObject(16, 24, PrimitiveType.TriangleList, 8);
+
+            //Top Face
+            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);
+
+            ObjectManipulator.Current().AddIndex(0, 1, 2);
+            ObjectManipulator.Current().AddIndex(0, 2, 3);
+
+            //Bottom Face
+            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, -1, 0, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 0, -10, 0, -1, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, 0, -10, 0, -1, 0, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, 0, 0, 0, -1, 0, 1, 1);
+
+            ObjectManipulator.Current().AddIndex(5, 4, 6);
+            ObjectManipulator.Current().AddIndex(4, 7, 6);
+
+            //Front Face
+            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, 0, 0, -1, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, 0, 0, -1, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, 1, 0, 0, 0, -1, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, -1, 0, 0, 0, -1, 1, 1);
+
+            ObjectManipulator.Current().AddIndex(8, 9, 10);
+            ObjectManipulator.Current().AddIndex(8, 10, 11);
+
+            //Left Face
+            ObjectManipulator.Current().AddVertexPNT(0, -1, -10, -1, 0, 0, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 1, -10, -1, 0, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, -1, 0, 0, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, -1, 0, 0, 1, 1);
+
+            ObjectManipulator.Current().AddIndex(12, 13, 14);
+            ObjectManipulator.Current().AddIndex(12, 14, 15);
+
+
+
+            ObjectManipulator.Current().AddTranslation(Pos.X, Pos.Y, Pos.Z);
+
+
+            ObjectManipulator.Current().CalculateWorld();
+
+
+            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");
+
+            ObjectManipulator.Current().basicEffect = false;
+        }
 
 
 
