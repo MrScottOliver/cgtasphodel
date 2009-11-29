@@ -28,6 +28,7 @@ namespace Prototype
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
+        SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
 
         float YAW, PITCH, ROLL;
 
@@ -61,19 +62,19 @@ namespace Prototype
 
             //if (!InitGraphicsMode(1440, 900, false))
             //{
-                if (!InitGraphicsMode(1280, 720, false))
+            if (!InitGraphicsMode(1280, 720, false))
+            {
+                if (!InitGraphicsMode(1024, 768, false))
                 {
-                    if (!InitGraphicsMode(1024, 768, false))
+                    if (!InitGraphicsMode(800, 600, false))
                     {
-                        if (!InitGraphicsMode(800, 600, false))
+                        if (!InitGraphicsMode(640, 480, false))
                         {
-                            if (!InitGraphicsMode(640, 480, false))
-                            {
-                                this.Exit();
-                            }
+                            this.Exit();
                         }
                     }
                 }
+            }
             //}
 
             stdEffect = new BasicEffect(gDeviceManager.GraphicsDevice, null);
@@ -123,6 +124,9 @@ namespace Prototype
             player.position.Y = 20f;
             player.position.Z = -5f;
             //*/
+
+            SetUpSkySphere();//Jess:set up sky sphere
+
 
 
         }
@@ -177,17 +181,17 @@ namespace Prototype
             //Kieran: arrow keys move player model (a ship)
             if (keyState.IsKeyDown(Keys.Up))
             {
-                player.AddTranslation(0,0.3f,0);
+                player.AddTranslation(0, 0.3f, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
-                player.AddTranslation(0,-0.3f,0);
+                player.AddTranslation(0, -0.3f, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
-                player.AddTranslation(-0.3f,0,0);
+                player.AddTranslation(-0.3f, 0, 0);
                 audio.Step();
             }
             if (keyState.IsKeyDown(Keys.Right))
@@ -196,7 +200,7 @@ namespace Prototype
                 audio.Step();
             }
             //Stefen: if x is pressed and the event is available the event is activated
-            if (keyState.IsKeyDown(Keys.X)&&(Platforms.getStatus()==true))
+            if (keyState.IsKeyDown(Keys.X) && (Platforms.getStatus() == true))
             {
                 Platforms.Activate();
                 AddPlatform(Platforms.getPos());
@@ -213,11 +217,11 @@ namespace Prototype
             //Stefen: Takes in object and cameras positions to provide 3d sound
             audio.Update(player.position, POS);
             //Stefen: Animate Growth
-            if ((Platforms.getActive()==true))
+            if ((Platforms.getActive() == true))
             {
-            Platforms.Animate(10);
-            AddPlatform(Platforms.getPos());
-            ObjectManipulator.UpdateObjects(GraphicsDevice);
+                Platforms.Animate(10);
+                AddPlatform(Platforms.getPos());
+                ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
             base.Update(gameTime);
         }
@@ -242,6 +246,8 @@ namespace Prototype
 
             //Kieran: call draw player function
             player.DrawPlayer(player, Proj, View);
+
+            LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
 
             base.Draw(gameTime);
 
@@ -421,6 +427,16 @@ namespace Prototype
             myEffect.Parameters["gLightDir"].SetValue(Direction);
 
 
+        }
+
+        //Jess: Set up effects, texture, model for sky sphere
+        private void SetUpSkySphere()
+        {
+            LevelSky.SkyModel = Content.Load<Model>("SphereHighPoly");
+            LevelSky.SkyEffect = Content.Load<Effect>("SkySphere");
+            LevelSky.SkyTexture = Content.Load<TextureCube>("skyboxmystic");
+
+            LevelSky.SetUpSkyEffect();
         }
 
         private void SetupPlane()
