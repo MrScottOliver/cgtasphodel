@@ -8,3 +8,5 @@ H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\Conte
 H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\Users\Stezzy\Desktop\Branch\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Stezzy\Desktop\Branch\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
