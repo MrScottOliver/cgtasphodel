@@ -84,9 +84,17 @@ namespace Prototype
            return Position;
        }
 
+       public float getX()
+       {
+           return Position.X;
+       }
        public float getY()
        {
            return Position.Y;
+       }
+       public float getZ()
+       {
+           return Position.Z;
        }
 
        public void Animate(Int32 newy)

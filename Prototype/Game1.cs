@@ -221,15 +221,16 @@ namespace Prototype
 
             //Stefen: Takes in object and cameras positions to provide 3d sound
             audio.Update(player.position, POS);
+
             //Stefen: Animate Growth
             if ((Plant.getActive()==true))
             {
-            Plant.Animate(15);      //parameter is the desired y position by end of animation
-            AddPlant(Plant.getPos());
-            if (Plant.getPos().Y>10)
-                AddPlatform(new Vector3(5, 7, 0));
+                Plant.Animate(15);      //parameter is the desired y position by end of animation
+                ObjectManipulator.LevelData.ElementAt(3).AddTranslation(0, 0.1F, 0); 
+                if (Plant.getPos().Y>10)
+                    AddPlatform(new Vector3(5, 7, 0));
 
-            ObjectManipulator.UpdateObjects(GraphicsDevice);
+                ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
             base.Update(gameTime);
         }
@@ -427,37 +428,37 @@ namespace Prototype
             ObjectManipulator.NewLevelObject(16, 24, PrimitiveType.TriangleList, 8);
 
             //Top Face
-            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);
-            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);
+            ObjectManipulator.Current().AddVertexPNT(0.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);
+            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);
 
             ObjectManipulator.Current().AddIndex(0, 1, 2);
             ObjectManipulator.Current().AddIndex(0, 2, 3);
 
             //Bottom Face
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, -1, 0, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 0, -10, 0, -1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, 0, -10, 0, -1, 0, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, 0, 0, 0, -1, 0, 1, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, 0, -1, 0, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, -1, -10, 0, -1, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, -1, -10, 0, -1, 0, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, -1, 0, 0, -1, 0, 1, 1);
 
             ObjectManipulator.Current().AddIndex(5, 4, 6);
             ObjectManipulator.Current().AddIndex(4, 7, 6);
 
             //Front Face
-            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, 0, 0, -1, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, 0, 0, -1, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, 1, 0, 0, 0, -1, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, -1, 0, 0, 0, -1, 1, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, -15, 0, 0, 0, -1, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, 0, -1, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, 0, 0, 0, 0, -1, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(5, -15, 0, 0, 0, -1, 1, 1);
 
             ObjectManipulator.Current().AddIndex(8, 9, 10);
             ObjectManipulator.Current().AddIndex(8, 10, 11);
 
             //Left Face
-            ObjectManipulator.Current().AddVertexPNT(0, -1, -10, -1, 0, 0, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 1, -10, -1, 0, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, -1, 0, 0, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, -1, 0, 0, 1, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, -15, -10, -1, 0, 0, 0, 1);
+            ObjectManipulator.Current().AddVertexPNT(0, 0, -10, -1, 0, 0, 0, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, -1, 0, 0, 1, 0);
+            ObjectManipulator.Current().AddVertexPNT(0, -15, 0, -1, 0, 0, 1, 1);
 
             ObjectManipulator.Current().AddIndex(12, 13, 14);
             ObjectManipulator.Current().AddIndex(12, 14, 15);
