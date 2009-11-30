@@ -79,3 +79,21 @@ C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\ResolveAssemblyReference.
 C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Stezzy\Desktop\Branch\Prototype\obj\x86\Debug\Prototype.pdb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\metal.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\ship2.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\metal_0.xnb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Prototype.exe
+E:\Uni\3rd Year\Prototype\bin\x86\Debug\Prototype.pdb
+E:\Uni\3rd Year\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Uni\3rd Year\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Uni\3rd Year\Prototype\obj\x86\Debug\Prototype.exe
+E:\Uni\3rd Year\Prototype\obj\x86\Debug\Prototype.pdb

@@ -94,7 +94,7 @@ namespace Prototype
 
         public void Move()
         {
-            velocity += gravity;
+                velocity += gravity;
         }
 
         public void Update()

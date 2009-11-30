@@ -91,7 +91,7 @@ namespace Prototype
             farClip = 1000.0f;
 
             //Stefen: sets boundingbox and availability
-            Plant.SetEvent(10, 0, -10, 50, true);
+            Plant.SetEvent(10, 0, -10, 1, true);
 
             Proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), aspectRatio, nearClip, farClip);
             ObjectManipulator.Initialise(GraphicsDevice);
@@ -109,6 +109,7 @@ namespace Prototype
             AddLevelTop();
             AddPlatform(new Vector3(20, 13, 0));
 
+            //adds the collision boxes
             SetupPlane();
             //Stefen:Creates + sets vertex and index buffers
             ObjectManipulator.UpdateObjects(GraphicsDevice);
@@ -150,6 +151,7 @@ namespace Prototype
 
             player.Move();
             CollisionDetectionBox.Compare(ref player);
+            CollisionDetectionPlane.Compare(ref player);
             player.Update();
 
             keyState = Keyboard.GetState();
@@ -199,8 +201,11 @@ namespace Prototype
                 player.AddTranslation(0.3f, 0, 0);
                 audio.Step();
             }
+
+            //Kieran: intersection sphere for plant just to get things working! is located underneath the platform
+            BoundingSphere plantSphere = new BoundingSphere(new Vector3(25, 0, -5), 5);
             //Stefen: if x is pressed and the event is available the event is activated
-            if (keyState.IsKeyDown(Keys.X)&&(Plant.getStatus()==true))
+            if (keyState.IsKeyDown(Keys.X)&&(Plant.getStatus()==true)&&(player.boundingsphere.Intersects(plantSphere)))
             {
                 Plant.Activate();
                 AddPlant(Plant.getPos());
@@ -497,7 +502,10 @@ namespace Prototype
         private void SetupPlane()
         {
             //CollisionDetectionPlane.AddPlane(new Vector3(-10, 5, 0), new Vector3(-10, 5, -10), new Vector3(-5, 5, -10), -10, -5);
-            CollisionDetectionBox.AddBox(new Vector3(-10, 3, -10), new Vector3(-5, 5, 0));
+            CollisionDetectionBox.AddBox(new Vector3(-10, 3, -10), new Vector3(-5, 5, 0)); //Top slope
+            CollisionDetectionBox.AddBox(new Vector3(20, 12, -10), new Vector3(30, 14, 0)); //Platform
+            CollisionDetectionBox.AddBox(new Vector3(5, 0, -10), new Vector3(30, 0, 0)); //Bottom slope
+            //CollisionDetectionPlane.AddPlane(new Vector3(-5, 5, 0), new Vector3(-5, 5, -10), new Vector3(5, 0, -10), -5, 5); //Middle slope, works but doesn't
         }
 
     }
