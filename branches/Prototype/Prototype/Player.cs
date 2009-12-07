@@ -40,7 +40,7 @@ namespace Prototype
         translation = Matrix.Identity;
         rotation = Matrix.Identity;
         world = Matrix.Identity;
-        gravity = new Vector3(0f, -0.001f, 0f);
+        gravity = new Vector3(0f, -0.005f, 0f);
         }
 
         //Kieran: draw player function

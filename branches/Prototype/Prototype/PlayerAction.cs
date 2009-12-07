@@ -32,8 +32,12 @@ namespace Prototype
         BoundingSphere sphere;
         bool Available;
         bool Active = false;
+        public bool Activated = false;
         int thisEvent;
         Vector3 Position;
+        public float radius { get; set; }
+        public float minY { get; set; }
+        public float maxY { get; set; }
 
         //jess: Sets position and radius for event bounding sphere. Also set active to true/false :) 
         public void SetEvent(int x,int y,int z,int r, bool available)
@@ -43,6 +47,7 @@ namespace Prototype
             sphere.Radius = r;//set radius
             Available = available;//set available bool
             thisEvent = 1;//set event indicator
+            radius = 0;
         }
 
         public void Activate()
@@ -52,6 +57,7 @@ namespace Prototype
             //set available to false
             Active = true;
             Available = false;
+            Activated = true;
         }
 
         public void Dectivate()
@@ -103,6 +109,35 @@ namespace Prototype
                Position.Y += 0.1F;
            else
                Active = false;
+
+           if (radius < 100)
+           {
+               radius += 0.1f;
+           }
+           if (maxY < 20)
+           {
+               maxY += 0.1f;
+           }
+           if (minY > -5)
+           {
+               minY -= 0.1f;
+           }
+       }
+
+       public void Transform()
+       {
+           if (radius < 150)
+           {
+               radius += 0.5f;
+           }
+           if (maxY < 20)
+           {
+               maxY += 0.5f;
+           }
+           if (minY > -5)
+           {
+               minY -= 0.5f;
+           }
        }
 
     }

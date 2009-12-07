@@ -9,6 +9,7 @@
 uniform extern float4x4 gWVP			: WORLDVIEWPROJ;
 uniform extern float4x4 gWorldViewIT	: WVPIT;
 uniform extern float4x4 gWorldView		: WV;
+uniform extern float4x4 gWorld			: WORLD;
 
 uniform extern float4 gDiffuseMtrl	: DIFFMTRL;
 uniform extern float4 gAmbMtrl		: AMBMTRL;
@@ -20,7 +21,10 @@ uniform extern texture gTex : TEX;
 
 uniform extern float	gCenterX;
 uniform extern float	gCenterY;
+uniform extern float	gCenterZ;
 uniform extern float	gRadius;
+uniform extern float gMinY;
+uniform extern float gMaxY;
 
 
 sampler TexS = sampler_state
@@ -64,6 +68,7 @@ struct OutputVS
 	float3 N: TEXCOORD4;
 	float3 E: TEXCOORD5;
 	float2 tex0: TEXCOORD6;
+	float4 posW : TEXCOORD7;
 
 };
 //---------------------------------------------------------------------------------------------------------------------------
@@ -77,6 +82,7 @@ OutputVS PhongShaderVS(InputVS input)
 	
 	//Transform to homogeneous clipspace
 	outVS.posH = mul(float4(input.posH, 1.0f), gWVP);
+	outVS.posW = mul(float4(input.posH, 1.0f), gWorld);
 	//eye position 
 	outVS.EV = mul(input.posH,gWorldView).xyz;
 	//normals
@@ -100,7 +106,7 @@ OutputVS PhongShaderVS(InputVS input)
 //---------------------------------------------------------------------------------------------------------------------------
 struct InputPS
 {
-	float2 pos: VPOS;
+	//float2 pos: VPOS;
 	float4 col: COLOR0;
 	float4 col_amb: TEXCOORD0;
 	float4 col_diff: TEXCOORD1;
@@ -109,6 +115,7 @@ struct InputPS
 	float3 N: TEXCOORD4;
 	float3 E: TEXCOORD5;
 	float2 tex0: TEXCOORD6;
+	float4 posW: TEXCOORD7;
 };
 //---------------------------------------------------------------------------------------------------------------------------
 // Pixel shader (input channel):output channel
@@ -118,10 +125,11 @@ float4 PhongShaderPS(InputPS input): COLOR
 	
 	float			xCom;
 	float			yCom;
+	float			zCom;
 	float grey;
 
-	xCom = (input.pos.x - gCenterX)*(input.pos.x - gCenterX);
-	yCom = (input.pos.y - gCenterY)*(input.pos.y - gCenterY);
+	xCom = (input.posW.x - gCenterX)*(input.posW.x - gCenterX);
+	yCom = (input.posW.y - gCenterY)*(input.posW.y - gCenterY);
 
 	//transform light vector into viewspace and normalize
 	float4 finalColour=0;
@@ -163,6 +171,15 @@ float4 PhongShaderPS(InputPS input): COLOR
 
 float4 SimpleLightPS(InputPS input): COLOR
 {
+	float			xCom;
+	float			yCom;
+	float			zCom;
+	float grey;
+	
+	xCom = (input.posW.x - gCenterX)*(input.posW.x - gCenterX);
+	yCom = (input.posW.y - gCenterY)*(input.posW.y - gCenterY);
+	zCom = (input.posW.z - gCenterZ)*(input.posW.z - gCenterZ);
+	
 //transform light vector into viewspace and normalize light vector and normals
 	float3 L=-normalize(mul(gLightDir,gWorldView));
 	input.N =normalize(input.N).xyz;
@@ -183,7 +200,18 @@ float4 SimpleLightPS(InputPS input): COLOR
 	float4 finalCol =input.col_diff*diff*texColor + input.col_amb*ambient*texColor+ input.col_spec*spec;  
 	finalCol.a=0.9;
 	
-	return finalCol;
+	//return finalCol;
+	
+	if (((xCom + zCom) <= (gRadius)) && (input.posW.y < gMaxY) && (input.posW.y > gMinY))
+	{
+		return finalCol;
+	}
+	else
+	{
+		grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
+		return float4(grey, grey, grey, 1.0f);
+		//return finalCol;
+	}
 
 }
 
