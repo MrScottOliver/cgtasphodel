@@ -25,8 +25,13 @@ sampler SkyboxS = sampler_state
 };
 float4 SkyboxPixelShader( float3 SkyCoord : TEXCOORD0 ) : COLOR
 {
+	float grey;
+	
     // grab the pixel color value from the skybox cube map
-    return texCUBE(SkyboxS, SkyCoord);
+    float4 finalCol = texCUBE(SkyboxS, SkyCoord);
+    
+    grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
+	return float4(grey, grey, grey, 1.0f);
 };
 technique SkyboxTechnique
 {

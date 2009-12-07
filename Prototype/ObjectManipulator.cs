@@ -105,7 +105,7 @@ namespace Prototype
             iBuffer.SetData(Indices);
         }
 
-        public static void Draw(GraphicsDevice device, BasicEffect std,Effect effect, Matrix view, Matrix proj)
+        public static void Draw(GraphicsDevice device, BasicEffect std,Effect effect, Matrix view, Matrix proj, GrowEvent P)
         {
             int vOffset = 0;
             int iOffset = 0;
@@ -155,6 +155,13 @@ namespace Prototype
                     effect.Parameters["gWVP"].SetValue(wvp);
                     effect.Parameters["gWorldView"].SetValue(wv);
                     effect.Parameters["gWorldViewIT"].SetValue(wvIT);
+                    effect.Parameters.GetParameterBySemantic("WORLD").SetValue(obj.world);
+                    effect.Parameters["gCenterX"].SetValue(P.getX()+2);
+                    effect.Parameters["gCenterY"].SetValue(P.getY());
+                    effect.Parameters["gCenterZ"].SetValue(P.getZ());
+                    effect.Parameters["gMinY"].SetValue(P.minY);
+                    effect.Parameters["gMaxY"].SetValue(P.maxY);
+                    effect.Parameters["gRadius"].SetValue(P.radius);
 
                     //set material params for each object
                     effect.Parameters["gAmbMtrl"].SetValue(obj.ambMtrl);

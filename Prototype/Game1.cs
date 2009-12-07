@@ -203,7 +203,7 @@ namespace Prototype
             }
 
             //Kieran: intersection sphere for plant just to get things working! is located underneath the platform
-            BoundingSphere plantSphere = new BoundingSphere(new Vector3(25, 0, -5), 5);
+            BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, -5), 5);
             //Stefen: if x is pressed and the event is available the event is activated
             if (keyState.IsKeyDown(Keys.X)&&(Plant.getStatus()==true)&&(player.boundingsphere.Intersects(plantSphere)))
             {
@@ -232,6 +232,10 @@ namespace Prototype
 
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
+            if (Plant.Activated == true)
+            {
+                Plant.Transform();
+            }
             base.Update(gameTime);
         }
 
@@ -251,7 +255,7 @@ namespace Prototype
 
             SetLightParams();//Jess: set light parameters
 
-            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj);
+            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant);
 
             //Kieran: call draw player function
             player.DrawPlayer(player, Proj, View);
