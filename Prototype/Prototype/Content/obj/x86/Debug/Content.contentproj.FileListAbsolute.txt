@@ -1,0 +1,20 @@
+C:\temp\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\temp\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\temp\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\temp\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+M:\3rd Year\Prototype Game Development\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Documents\PrototypeBranch\branches\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Munchkin Central\Desktop\preposterous\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Stezzy\Desktop\Branch\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Stezzy\Desktop\Branch\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+E:\Uni\3rd Year\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Uni\3rd Year\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Robert Oliver\Programming\Repository\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Robert Oliver\Programming\Repository\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+H:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+G:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
