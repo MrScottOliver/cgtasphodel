@@ -29,7 +29,7 @@ namespace Prototype
         Vector3 TARGET;
         Vector3 UP;
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
-
+        ObjectControl Control = new ObjectControl();//Stefen: object interface handeler, might change to singlton or something
         float YAW, PITCH, ROLL;
 
         Matrix View;
@@ -211,10 +211,12 @@ namespace Prototype
                 AddPlant(Plant.getPos());
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
-            if (keyState.IsKeyDown(Keys.PageUp))
 
-                if (keyState.IsKeyDown(Keys.PageDown))
-
+            //Stefen: Debug stuff for interface
+            //if (keyState.IsKeyDown(Keys.PageUp))
+            //    Control.Go();
+            //    if (keyState.IsKeyDown(Keys.PageDown))
+            //        Control.Load();
 #endif
                     if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                         this.Exit();
