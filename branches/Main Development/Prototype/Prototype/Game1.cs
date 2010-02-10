@@ -29,9 +29,9 @@ namespace Prototype
         Vector3 TARGET;
         Vector3 UP;
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
-
+        ObjectControl Control = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
         float YAW, PITCH, ROLL;
-
+  
         Matrix View;
         Matrix Proj;
 
