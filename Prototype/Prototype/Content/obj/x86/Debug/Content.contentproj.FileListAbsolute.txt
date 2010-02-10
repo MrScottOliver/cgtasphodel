@@ -18,3 +18,5 @@ H:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssembl
 H:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 G:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 G:\Documents\Repository\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

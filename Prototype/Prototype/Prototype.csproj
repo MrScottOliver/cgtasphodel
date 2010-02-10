@@ -89,6 +89,7 @@
     <Compile Include="CollisionDetection.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Object.cs" />
+    <Compile Include="ObjectHandler.cs" />
     <Compile Include="ObjectManipulator.cs" />
     <Compile Include="PlaneObject.cs">
       <SubType>Code</SubType>
