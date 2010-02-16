@@ -29,6 +29,7 @@ namespace Prototype
         Vector3 TARGET;
         Vector3 UP;
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
+        PointLight[] lights;
         ObjectControl Control = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
         float YAW, PITCH, ROLL;
   
@@ -114,7 +115,7 @@ namespace Prototype
             //Stefen:Creates + sets vertex and index buffers
             ObjectManipulator.UpdateObjects(GraphicsDevice);
             //Jess: load effect file
-            myEffect = Content.Load<Effect>("Phong_Shader");//Jess: load simple fx file
+            myEffect = Content.Load<Effect>("simplepointlight");
 
             //Kieran: set player model
             player.model = Content.Load<Model>("Ship2");
@@ -261,11 +262,11 @@ namespace Prototype
 
             View = QuaternionCamera.GetViewMatrix(ref POS, ref TARGET, ref UP, YAW, PITCH, ROLL);
 
-            myEffect.CurrentTechnique = myEffect.Techniques["TestLightTech"];//Jess: set current tech
+            myEffect.CurrentTechnique = myEffect.Techniques["MyTech"];//Jess: set current tech
 
-            SetLightParams();//Jess: set light parameters
+            SetPointLights();//Jess: set light parameters
 
-            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant);
+            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant, POS, lights);
 
             //Kieran: call draw player function
             player.DrawPlayer(player, Proj, View);
@@ -490,19 +491,40 @@ namespace Prototype
             ObjectManipulator.Current().basicEffect = false;
         }
 
-
-
-        private void SetLightParams()
+        //set directional light
+        private void SetDirectionalLight()
         {
-
             Vector4 Direction = new Vector4(-1, -10, 0, 0);
             Vector4 lcolour = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
-            //Jess: light parameters such as light color, direction, position, intensity which will be the same for all objects.//
             myEffect.Parameters["gLightCol"].SetValue(lcolour);
             myEffect.Parameters["gLightDir"].SetValue(Direction);
+        }
 
+        //set point lights
+        private void SetPointLights()
+        {
+            int num = 2;
+
+            myEffect.Parameters["numlights"].SetValue(num);//set number of lights
+
+            lights = new PointLight[2];
+
+            Vector4 Pos = new Vector4(20.0f, 20.0f, 0.0f, 1.0f);//light positions
+            Vector4 Pos2 = new Vector4(0.0f, 10.0f, 0.0f, 1.0f);
+            lights[0] = new PointLight(Pos);//init new point lights
+            lights[1] = new PointLight(Pos2);
+
+            for (int i = 0; i < num; i++)//set light colour values
+            {
+                lights[i].Ambient = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
+                lights[i].Diffuse = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+                lights[i].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
+                lights[i].Attenuation = new Vector3(0.0f, 0.002f, 0.005f);
+            }
 
         }
+
+       
 
         //Jess: Set up effects, texture, model for sky sphere
         private void SetUpSkySphere()
