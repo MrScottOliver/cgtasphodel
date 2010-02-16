@@ -105,11 +105,12 @@ namespace Prototype
             iBuffer.SetData(Indices);
         }
 
-        public static void Draw(GraphicsDevice device, BasicEffect std,Effect effect, Matrix view, Matrix proj, GrowEvent P)
+        public static void Draw(GraphicsDevice device, BasicEffect std, Effect effect, Matrix view, Matrix proj, GrowEvent P, Vector3 CamPos, PointLight[] light)
         {
             int vOffset = 0;
             int iOffset = 0;
 
+            Vector4 CamPosition = new Vector4(CamPos.X, CamPos.Y, CamPos.Z, 0);
 
             foreach (LevelObject obj in LevelData)
             {
@@ -152,11 +153,18 @@ namespace Prototype
                     Matrix wvIT = Matrix.Invert(wv);
                     wvIT = Matrix.Transpose(wvIT);
 
+                    Matrix worldIT = Matrix.Invert(obj.world);
+                    worldIT = Matrix.Transpose(worldIT);
+
                     effect.Parameters["gWVP"].SetValue(wvp);
                     effect.Parameters["gWorldView"].SetValue(wv);
                     effect.Parameters["gWorldViewIT"].SetValue(wvIT);
-                    effect.Parameters.GetParameterBySemantic("WORLD").SetValue(obj.world);
-                    effect.Parameters["gCenterX"].SetValue(P.getX()+2);
+                    effect.Parameters["gWorld"].SetValue(obj.world);
+
+                    effect.Parameters["gWorldIT"].SetValue(worldIT);
+                    effect.Parameters["gCamPosW"].SetValue(CamPosition);
+
+                    effect.Parameters["gCenterX"].SetValue(P.getX() + 2);
                     effect.Parameters["gCenterY"].SetValue(P.getY());
                     effect.Parameters["gCenterZ"].SetValue(P.getZ());
                     effect.Parameters["gMinY"].SetValue(P.minY);
@@ -170,17 +178,22 @@ namespace Prototype
 
                     effect.Parameters["gTex"].SetValue(obj.tex);
 
-                   
+
+                    for (int i = 0; i < 2; i++)
+                    {
+                        light[i].UpdateLight(effect.Parameters["light"].Elements[i]);
+                    }
+
+
                     effect.Begin();
 
-                    foreach (EffectPass pass in effect.CurrentTechnique.Passes)
-                    {
-                        pass.Begin();
 
-                        device.DrawUserIndexedPrimitives(obj.primType, Vertices, vOffset, obj.vertexData.Length, Indices, iOffset, obj.primAmount);
+                    effect.CurrentTechnique.Passes["PointLights"].Begin();
 
-                        pass.End();
-                    }
+                    device.DrawUserIndexedPrimitives(obj.primType, Vertices, vOffset, obj.vertexData.Length, Indices, iOffset, obj.primAmount);
+
+                    effect.CurrentTechnique.Passes["PointLights"].End();
+
 
                     effect.End();
 

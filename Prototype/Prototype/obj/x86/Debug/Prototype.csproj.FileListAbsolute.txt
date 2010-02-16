@@ -169,3 +169,22 @@ C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyRef
 C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\simplepointlight.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
