@@ -2,3 +2,5 @@ C:\temp\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\ResolveAssemblyReference
 C:\temp\WindowsGame1\WindowsGame1\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\temp\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\temp\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

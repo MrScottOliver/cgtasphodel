@@ -16,3 +16,5 @@ C:\Users\Robert Oliver\Programming\Repository\Prototype\Prototype\Content\obj\x8
 C:\Users\Robert Oliver\Programming\Repository\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

@@ -22,3 +22,5 @@ C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\Content\obj\x86\Debug\ResolveAss
 C:\Users\Stezzy\Desktop\uni\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

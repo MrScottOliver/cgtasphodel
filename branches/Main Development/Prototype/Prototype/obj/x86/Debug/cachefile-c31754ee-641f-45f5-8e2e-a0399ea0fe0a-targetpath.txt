@@ -8,6 +8,8 @@ Content\simplepointlight.xnb
 Content\ship2.xnb
 Content\SphereHighPoly.xnb
 Content\metal_0.xnb
+Content\tiny.xnb
+Content\Tiny_skin_0.xnb
 Content\Audio\Prototype.xgs
 Content\Audio\Player_Effects.xwb
 Content\Audio\Sound_Bank.xsb

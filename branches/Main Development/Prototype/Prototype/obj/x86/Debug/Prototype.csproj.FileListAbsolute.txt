@@ -188,3 +188,24 @@ C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\o
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\simplepointlight.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\tiny.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Tiny_skin_0.xnb

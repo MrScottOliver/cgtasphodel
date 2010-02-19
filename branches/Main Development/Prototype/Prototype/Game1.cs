@@ -118,8 +118,9 @@ namespace Prototype
             myEffect = Content.Load<Effect>("simplepointlight");
 
             //Kieran: set player model
-            player.model = Content.Load<Model>("Ship2");
-            player.ChangeScale(0.2f);
+            player.model = Content.Load<Model>("tiny");
+            player.AddRotation(4.70f,0.0f,0.0f);
+            player.ChangeScale(0.012f);
             player.AddTranslation(-7f, 30f, -5f);
             /*
             player.position.X = -7f;

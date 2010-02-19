@@ -133,3 +133,7 @@ C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\obj\x86\Debug\ResolveAssembly
 C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\obj\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
