@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
-      <Time>2010-02-02T18:53:43.4439042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
+      <Time>2010-02-19T13:33:37.8604093+00:00</Time>
     </Item>
     <Item>
       <Source>testtexgrass.jpg</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
-      <Time>2010-02-02T18:53:43.4159042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
+      <Time>2010-02-19T13:33:37.7043763+00:00</Time>
     </Item>
     <Item>
       <Source>testtexleaves.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
-      <Time>2010-02-02T18:53:43.4419042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
+      <Time>2010-02-19T13:33:37.7823928+00:00</Time>
     </Item>
     <Item>
       <Source>skyboxmystic.dds</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb</Output>
-      <Time>2010-02-02T18:53:43.4739042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb</Output>
+      <Time>2010-02-19T13:33:38.781004+00:00</Time>
     </Item>
     <Item>
       <Source>Phong_Shader.fx</Source>
@@ -43,8 +43,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
-      <Time>2010-02-02T18:53:43.4809042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
+      <Time>2010-02-19T13:33:39.0306568+00:00</Time>
     </Item>
     <Item>
       <Source>SkySphere.fx</Source>
@@ -52,8 +52,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb</Output>
-      <Time>2010-02-02T18:53:43.4789042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb</Output>
+      <Time>2010-02-19T13:33:38.937037+00:00</Time>
     </Item>
     <Item>
       <Source>ship2.x</Source>
@@ -61,13 +61,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
-      <Time>2010-02-02T18:53:43.4799042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
+      <Time>2010-02-19T13:33:38.9838469+00:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ship2_0.xml</Key>
-        <Value>2010-02-02T18:58:16.2369042+00:00</Value>
+        <Value>2010-02-19T13:46:39.1064492+00:00</Value>
       </Dependency>
-      <Request>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
+      <Request>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
     </Item>
     <Item>
       <Source>SphereHighPoly.fbx</Source>
@@ -75,11 +75,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb</Output>
-      <Time>2010-02-02T18:53:43.4779042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb</Output>
+      <Time>2010-02-19T13:33:38.8902271+00:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\SphereHighPoly_0.xml</Key>
-        <Value>2010-02-02T18:58:18.1129042+00:00</Value>
+        <Value>2010-02-19T13:46:41.0097102+00:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -87,7 +87,7 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ship2_0.xml</Output>
-      <Time>2010-02-02T18:53:43.4799042+00:00</Time>
+      <Time>2010-02-19T13:33:38.9838469+00:00</Time>
     </Item>
     <Item>
       <Source>metal.jpg</Source>
@@ -101,54 +101,54 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
-      <Time>2010-02-02T18:53:43.4439042+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
+      <Time>2010-02-19T13:33:37.8604093+00:00</Time>
     </Item>
     <Item>
       <Source>SphereHighPoly.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\SphereHighPoly_0.xml</Output>
-      <Time>2010-02-02T18:53:43.4779042+00:00</Time>
+      <Time>2010-02-19T13:33:38.8902271+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Stezzy\Desktop\CurrentPrototype\Prototype\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\Content\</RootDirectory>
+      <LoggerRootDirectory>\\uadfil07\students$\0603320\desktop\asphodel2\Prototype\Prototype\</LoggerRootDirectory>
+      <IntermediateDirectory>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype\Prototype\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2009-05-28T01:16:14+01:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2009-05-28T00:16:14+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2009-05-28T01:16:06+01:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2009-05-28T00:16:06+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2009-05-28T01:16:16+01:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2009-05-28T00:16:16+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2009-05-28T01:16:26+01:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2009-05-28T00:16:26+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2009-05-28T01:16:12+01:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2009-05-28T00:16:12+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2009-05-28T01:16:06+01:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2009-05-28T00:16:06+01:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-11-05T14:40:39.572288+00:00</Value>
+        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-09-28T15:34:28.8216025+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
