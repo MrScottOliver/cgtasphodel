@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
-      <Time>2009-11-24T13:20:19.5611342+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
+      <Time>2010-02-19T13:32:53.6576737+00:00</Time>
     </Item>
     <Item>
       <Source>testtexgrass.jpg</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
-      <Time>2009-11-24T13:20:19.5611342+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
+      <Time>2010-02-19T13:32:53.5171945+00:00</Time>
     </Item>
     <Item>
       <Source>testtexleaves.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
-      <Time>2009-11-24T13:20:19.5611342+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
+      <Time>2010-02-19T13:32:53.6108473+00:00</Time>
     </Item>
     <Item>
       <Source>Phong_Shader.fx</Source>
@@ -34,8 +34,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
-      <Time>2009-11-24T13:20:19.5611342+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
+      <Time>2010-02-19T13:32:53.7669353+00:00</Time>
     </Item>
     <Item>
       <Source>ship2.x</Source>
@@ -43,20 +43,20 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
-      <Time>2009-11-24T13:20:19.5767538+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
+      <Time>2010-02-19T13:32:53.7201089+00:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ship2_0.xml</Key>
-        <Value>2009-11-24T13:20:55.2363006+00:00</Value>
+        <Value>2010-02-19T13:47:17.0156642+00:00</Value>
       </Dependency>
-      <Request>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
+      <Request>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
     </Item>
     <Item>
       <Source>ship2.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ship2_0.xml</Output>
-      <Time>2009-11-24T13:20:19.5767538+00:00</Time>
+      <Time>2010-02-19T13:32:53.7201089+00:00</Time>
     </Item>
     <Item>
       <Source>metal.jpg</Source>
@@ -70,18 +70,18 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
-      <Time>2009-11-24T13:20:19.5611342+00:00</Time>
+      <Output>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
+      <Time>2010-02-19T13:32:53.6576737+00:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\temp\Prototype\Prototype\Content\</RootDirectory>
-      <LoggerRootDirectory>C:\temp\Prototype\Prototype\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\temp\Prototype\Prototype\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\temp\Prototype\Prototype\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\Content\</RootDirectory>
+      <LoggerRootDirectory>\\uadfil07\students$\0603320\desktop\asphodel2\Prototype Branch\Prototype\Prototype\</LoggerRootDirectory>
+      <IntermediateDirectory>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -110,7 +110,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-09-28T15:39:30.2365907+01:00</Value>
+        <Value>2009-09-28T15:34:28.8216025+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

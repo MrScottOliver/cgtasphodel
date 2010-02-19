@@ -13,3 +13,18 @@ C:\temp\Prototype\Prototype\bin\x86\Debug\Prototype.exe
 C:\temp\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
 C:\temp\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\temp\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+\\uadfil07\students$\0603320\Desktop\asphodel2\Prototype Branch\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
