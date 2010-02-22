@@ -76,9 +76,23 @@ namespace Prototype
             {
                 if (playerObject.boundingsphere.Intersects(box))
                 {
-                    playerObject.velocity = Vector3.Zero;
+                    if((playerObject.top.Intersects(box) != 0))
+                    {
+                    playerObject.velocity.Y = 0;
+                    }                   
+                    if ((playerObject.bottom.Intersects(box) != 0))
+                    {
+                    playerObject.velocity.Y = 0;
+                    }
+                    if ((playerObject.front.Intersects(box) != 0))
+                    {
+                    playerObject.velocity.X = 0;
+                    }
+                    if ((playerObject.back.Intersects(box) != 0))
+                    {
+                    playerObject.velocity.X = 0;
+                    }
                 }
-            }
         }
     }
 }
