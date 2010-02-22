@@ -23,6 +23,7 @@ namespace Prototype
         public Vector3 gravity;
         
         public BoundingSphere boundingsphere;
+        public Ray top, bottom, front, back;
         public Matrix translation;
         public Matrix rotation;
         public Matrix world;
@@ -36,6 +37,11 @@ namespace Prototype
         position = Vector3.Zero;
         
         boundingsphere = new BoundingSphere(position, 1.0f);
+        top = new Ray(position, new Vector3(position.X, position.Y + 1.0f, position.Z));
+        bottom = new Ray(position, new Vector3(position.X, position.Y - 1.0f, position.Z));
+        front = new Ray(position, new Vector3(position.X + 1.0f, position.Y, position.Z));
+        back = new Ray(position, new Vector3(position.X - 1.0f, position.Y + 1.0f, position.Z));
+
         scale = Matrix.Identity;
         translation = Matrix.Identity;
         rotation = Matrix.Identity;
