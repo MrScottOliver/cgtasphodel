@@ -91,18 +91,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="simplepointlight.fx">
-      <Name>simplepointlight</Name>
+    <Compile Include="Lighting.fx">
+      <Name>Lighting</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="tiny.x">
-      <Name>tiny</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
+    <None Include="Includes.inc">
+      <Name>Includes</Name>
+      <Importer>EffectImporter</Importer>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

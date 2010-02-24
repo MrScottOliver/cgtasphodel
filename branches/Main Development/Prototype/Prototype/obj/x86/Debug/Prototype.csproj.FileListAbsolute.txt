@@ -175,7 +175,6 @@ C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\b
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb
-C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\simplepointlight.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
 C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
@@ -209,3 +208,4 @@ C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\o
 \\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
 \\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\tiny.xnb
 \\uadfil07\students$\0603320\Desktop\asphodel2\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Tiny_skin_0.xnb
+C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb

@@ -24,7 +24,7 @@ namespace Prototype
 
         static public void AddPlane(Vector3 x, Vector3 y, Vector3 z, float min, float max)
         {
-            BObjects.Add(new PlaneObject(x,y,z,min,max));
+            BObjects.Add(new PlaneObject(x, y, z, min, max));
         }
 
         static public void Compare(ref Player playerObject)
@@ -76,23 +76,24 @@ namespace Prototype
             {
                 if (playerObject.boundingsphere.Intersects(box))
                 {
-                    if((playerObject.top.Intersects(box) != 0))
+                    if ((playerObject.top.Intersects(box) != 0))
                     {
-                    playerObject.velocity.Y = 0;
-                    }                   
+                        playerObject.velocity.Y = 0;
+                    }
                     if ((playerObject.bottom.Intersects(box) != 0))
                     {
-                    playerObject.velocity.Y = 0;
+                        playerObject.velocity.Y = 0;
                     }
                     if ((playerObject.front.Intersects(box) != 0))
                     {
-                    playerObject.velocity.X = 0;
+                        playerObject.velocity.X = 0;
                     }
                     if ((playerObject.back.Intersects(box) != 0))
                     {
-                    playerObject.velocity.X = 0;
+                        playerObject.velocity.X = 0;
                     }
                 }
+            }
         }
     }
 }

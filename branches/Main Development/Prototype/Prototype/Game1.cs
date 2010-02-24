@@ -29,7 +29,7 @@ namespace Prototype
         Vector3 TARGET;
         Vector3 UP;
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
-        PointLight[] lights;
+        Lights[] lights;
         ObjectControl Control = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
         float YAW, PITCH, ROLL;
   
@@ -115,10 +115,10 @@ namespace Prototype
             //Stefen:Creates + sets vertex and index buffers
             ObjectManipulator.UpdateObjects(GraphicsDevice);
             //Jess: load effect file
-            myEffect = Content.Load<Effect>("simplepointlight");
+            myEffect = Content.Load<Effect>("Lighting");
 
             //Kieran: set player model
-            player.model = Content.Load<Model>("tiny");
+            player.model = Content.Load<Model>("ship2");
             player.AddRotation(4.70f,0.0f,0.0f);
             player.ChangeScale(0.012f);
             player.AddTranslation(-7f, 30f, -5f);
@@ -265,7 +265,7 @@ namespace Prototype
 
             myEffect.CurrentTechnique = myEffect.Techniques["MyTech"];//Jess: set current tech
 
-            SetPointLights();//Jess: set light parameters
+            SetUpLighting();//Jess: set light parameters
 
             ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant, POS, lights);
 
@@ -492,30 +492,24 @@ namespace Prototype
             ObjectManipulator.Current().basicEffect = false;
         }
 
-        //set directional light
-        private void SetDirectionalLight()
-        {
-            Vector4 Direction = new Vector4(-1, -10, 0, 0);
-            Vector4 lcolour = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
-            myEffect.Parameters["gLightCol"].SetValue(lcolour);
-            myEffect.Parameters["gLightDir"].SetValue(Direction);
-        }
 
-        //set point lights
-        private void SetPointLights()
+        private void SetUpLighting()//set point lights and directional light
         {
             int num = 2;
 
             myEffect.Parameters["numlights"].SetValue(num);//set number of lights
 
-            lights = new PointLight[2];
+            lights = new Lights[2];
 
             Vector4 Pos = new Vector4(20.0f, 20.0f, 0.0f, 1.0f);//light positions
-            Vector4 Pos2 = new Vector4(0.0f, 10.0f, 0.0f, 1.0f);
-            lights[0] = new PointLight(Pos);//init new point lights
-            lights[1] = new PointLight(Pos2);
 
-            for (int i = 0; i < num; i++)//set light colour values
+            lights[0] = new Lights(0);//directional light
+            lights[1] = new Lights(1);//point light
+
+            //set light positions
+            lights[1].Position = Pos;
+
+            for (int i = 1; i < num; i++)//set point light colour values
             {
                 lights[i].Ambient = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
                 lights[i].Diffuse = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
