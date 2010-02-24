@@ -105,7 +105,7 @@ namespace Prototype
             iBuffer.SetData(Indices);
         }
 
-        public static void Draw(GraphicsDevice device, BasicEffect std, Effect effect, Matrix view, Matrix proj, GrowEvent P, Vector3 CamPos, PointLight[] light)
+        public static void Draw(GraphicsDevice device, BasicEffect std, Effect effect, Matrix view, Matrix proj, GrowEvent P, Vector3 CamPos, Lights[] light)
         {
             int vOffset = 0;
             int iOffset = 0;
@@ -179,8 +179,11 @@ namespace Prototype
                     effect.Parameters["gTex"].SetValue(obj.tex);
 
 
-                    for (int i = 0; i < 2; i++)
+                    int num = 2;
+
+                    for (int i = 0; i < num; i++)
                     {
+                        light[i].SetType(effect.Parameters["light"].Elements[i]);
                         light[i].UpdateLight(effect.Parameters["light"].Elements[i]);
                     }
 
