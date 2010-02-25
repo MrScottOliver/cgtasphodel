@@ -54,15 +54,26 @@ float4 LightsPS(InputPS input): COLOR
 	
 	float4 finalCol = float4( Color, gDiffuseMtrl.a*texColor.a); 
 	
+
+	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
 	
+	//float factor = (xCom + zCom) / (1000 / (xCom + zCom));
+	float dist = (xCom + zCom) / gRadius;
+	
+	float4 result;    
+    result.r = (finalCol.r - (finalCol.r * dist)) + grey * dist;
+    result.g = (finalCol.g - (finalCol.g * dist)) + grey * dist;
+    result.b = (finalCol.b - (finalCol.b * dist)) + grey * dist;
+    result.a = finalCol.a;
 	
 	if (((xCom + zCom) <= (gRadius)) && (input.posW.y < gMaxY) && (input.posW.y > gMinY))
 	{
-		return finalCol;
+		//return finalCol;
+		//return float4(final.r, final.g, final.b, 1.0f);
+		return result;
 	}
 	else
 	{
-		grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
 		return float4(grey, grey, grey, 1.0f);
 	}
 	
