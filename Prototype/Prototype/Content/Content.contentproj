@@ -98,6 +98,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.fbx">
+      <Name>Character</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="ball.x">
+      <Name>ball</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Includes.inc">
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>
