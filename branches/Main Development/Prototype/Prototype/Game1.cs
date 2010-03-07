@@ -30,7 +30,7 @@ namespace Prototype
         Vector3 UP;
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
         Lights[] lights;
-        ObjectControl Control = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
+        ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
         float YAW, PITCH, ROLL;
   
         Matrix View;
@@ -129,9 +129,19 @@ namespace Prototype
             //*/
 
             SetUpSkySphere();//Jess:set up sky sphere
-
-
-
+            Model OrbModel = Content.Load<Model>("ball");
+            
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(10, 10, -5))
+            );
+            ObjectControl.ObjectList.Add(
+           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(10, 20, -5))
+           );
+            ObjectControl.ObjectList.Add(
+           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(20, 10, -5))
+           );
+           // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
+           // ObjControl.Load();
         }
 
         /// <summary>
@@ -207,7 +217,7 @@ namespace Prototype
                 //POS.X += 0.2f;
                 //TARGET.X += 0.2f;
             }
-
+            ObjControl.Collision(player.boundingsphere);
             //Kieran: intersection sphere for plant just to get things working! is located underneath the platform
             BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, -5), 5);
             //Stefen: if x is pressed and the event is available the event is activated
@@ -273,6 +283,8 @@ namespace Prototype
             player.DrawPlayer(player, Proj, View);
 
             LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
+
+            ObjControl.Render(View, Proj, GraphicsDevice);
 
             base.Draw(gameTime);
 
