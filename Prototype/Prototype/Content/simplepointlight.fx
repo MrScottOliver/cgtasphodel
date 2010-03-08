@@ -1,3 +1,4 @@
+
 //-------------------------------------------------------------------------------
 //Vertex and pixel shader demonstrating ambient, diffuse and specular lighting
 // Ambient intensity values are pre baked

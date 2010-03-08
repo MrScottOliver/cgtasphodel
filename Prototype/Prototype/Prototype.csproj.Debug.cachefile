@@ -6,10 +6,11 @@ Content\Phong_Shader.xnb
 Content\SkySphere.xnb
 Content\Lighting.xnb
 Content\ship2.xnb
-Content\SphereHighPoly.xnb
-Content\metal_0.xnb
-Content\Character.xnb
 Content\ball.xnb
+Content\SphereHighPoly.xnb
+Content\Character.xnb
+Content\REcharacter.xnb
+Content\metal_0.xnb
 Content\Audio\Prototype.xgs
 Content\Audio\Player_Effects.xwb
 Content\Audio\Sound_Bank.xsb
