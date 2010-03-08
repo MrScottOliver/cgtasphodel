@@ -118,9 +118,9 @@ namespace Prototype
             myEffect = Content.Load<Effect>("Lighting");
 
             //Kieran: set player model
-            player.model = Content.Load<Model>("ship2");
+            player.model = Content.Load<Model>("REcharacter");
             player.AddRotation(4.70f,0.0f,0.0f);
-            player.ChangeScale(0.012f);
+            player.ChangeScale(0.02f);
             player.AddTranslation(-7f, 30f, -5f);
             /*
             player.position.X = -7f;
@@ -218,6 +218,19 @@ namespace Prototype
                 //TARGET.X += 0.2f;
             }
             ObjControl.Collision(player.boundingsphere);
+            if (keyState.IsKeyDown(Keys.E))
+            {
+                player.AddRotation(0.1f,0,0);
+            }
+
+            if (keyState.IsKeyDown(Keys.R))
+            {
+                player.AddRotation(0, 0.1f, 0);
+            }
+            if (keyState.IsKeyDown(Keys.T))
+            {
+                player.AddRotation(0, 0, 0.1f);
+            }
             //Kieran: intersection sphere for plant just to get things working! is located underneath the platform
             BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, -5), 5);
             //Stefen: if x is pressed and the event is available the event is activated
@@ -269,7 +282,7 @@ namespace Prototype
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.VertexDeclaration = ObjectManipulator.vertexFormat;
-            GraphicsDevice.RenderState.CullMode = CullMode.CullCounterClockwiseFace;
+            GraphicsDevice.RenderState.CullMode = CullMode.None;
 
             View = QuaternionCamera.GetViewMatrix(ref POS, ref TARGET, ref UP, YAW, PITCH, ROLL);
 
