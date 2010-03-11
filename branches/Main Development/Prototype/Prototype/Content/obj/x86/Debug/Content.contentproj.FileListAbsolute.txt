@@ -28,3 +28,5 @@ C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\C
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 \\uadfil07\students$\0700958\Desktop\Copy of Copy of Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 \\uadfil07\students$\0700958\Desktop\Copy of Copy of Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Stezzy\Desktop\uni\!!Year3 part2\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Stezzy\Desktop\uni\!!Year3 part2\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

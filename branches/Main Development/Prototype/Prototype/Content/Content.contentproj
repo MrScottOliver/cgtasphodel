@@ -112,6 +112,11 @@
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>
     </None>
+    <Compile Include="PlantCylinder.x">
+      <Name>PlantCylinder</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.fbx">
