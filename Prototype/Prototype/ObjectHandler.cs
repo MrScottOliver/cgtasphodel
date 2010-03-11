@@ -39,6 +39,7 @@ abstract class Level : IObject, IInteraction
     public abstract bool Collision(BoundingSphere PlayerSphere);
     public abstract void Activate();
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //Placeholder class
 class Surface : Level
 {
@@ -70,6 +71,7 @@ class Surface : Level
         //Effect of activation
     }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //Placeholder class
 class Platform : Level
 {
@@ -101,12 +103,30 @@ class Platform : Level
         //Effect of activation
     }
 }
-//Placeholder class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Growable plants
 class Plant : Level
 {
-    public Plant(Model model)
+    public enum LifeCycle
     {
-        Model ObjModel = model;
+        Active,
+        Animate,
+        Collision
+    }
+    
+    BoundingSphere sphere;
+    Model ObjModel;
+    private Vector3 Position;
+    LifeCycle Current;
+
+    public Plant(Model model, Vector3 Pos)
+    {
+        ObjModel = model;
+        Position = Pos;
+        sphere.Center = Pos;//set position
+        sphere.Center.Z += 5;//model is behind collision point
+        sphere.Radius = 1;//set radius
+        Current = LifeCycle.Collision;
     }
 
     override
@@ -117,21 +137,66 @@ class Plant : Level
     override
     public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
     {
-        //Render
+        Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
+        ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+        foreach (ModelMesh mesh in ObjModel.Meshes)
+        {
+            foreach (BasicEffect effect in mesh.Effects)
+            {
+                effect.EnableDefaultLighting();
+                //// effect.Parameters[""]
+                effect.View = view;
+                effect.Projection = projection;
+                effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position);
+            }
+            mesh.Draw();
+        }
     }
     override
     public bool Collision(BoundingSphere PlayerSphere)
     {
-        //Effect of collision
+       // Effect of collision//designed to call attention, this version should not be used
+        //
+        //if the boxes collide                // run plant and grow event on different levels, delete event once activated
+        //if the object hasnt been activated  // create activation list, animate list and destruction list
+        //                                    // other: in here, case active, case animate, collision
+        //      
+        switch (Current)
+        {
+            case LifeCycle.Active:
+                //call generic function
+                break;
+            case LifeCycle.Animate:
+                if (Position.Y < 20)                    //call animate function
+                    Position.Y += 0.1f;
+                else
+                    Current = LifeCycle.Active;         //function sets current to Active after use is spent
+                    break;
+            case LifeCycle.Collision:
+                if (PlayerSphere.Intersects(sphere))
+                {
+                     KeyboardState keyState = Keyboard.GetState();
+                    if (keyState.IsKeyDown(Keys.X))
+                        Current = LifeCycle.Animate;
+                }
+                break;
+            default:
+            throw new ArgumentException("Error - " + Current + " is not recognized.");
+        }
+
+        
+                        
         return false;
     }
+
     override
     public void Activate()
     {
-        // check collision
-        //Effect of activation
+       
     }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //Pick-ups
 class Orb : Level
 {
@@ -195,7 +260,9 @@ class Orb : Level
         Position =new Vector3(x, y, z);
     }
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //Stefen: Object factory class returns a new instance of a class
 class ObjectFactory
 {
@@ -219,7 +286,7 @@ class ObjectFactory
                 return new Platform(model);
                 
             case ObjectType.Plant:
-                return new Plant(model);
+                return new Plant(model, Position);
                 
             case ObjectType.Orb:
                 return new Orb(model, Position);
@@ -229,6 +296,8 @@ class ObjectFactory
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 //Stefen: Object control class contains the list of objects and the ability to loop through each interfaced function
 class ObjectControl : Level
 {

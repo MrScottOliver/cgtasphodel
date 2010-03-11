@@ -74,7 +74,7 @@ namespace Prototype
        {
            return Available;
        }
-
+       //stefen:[notes to self] used to determin if animation should run
        public bool getActive()//return whether or not is active
        {
            return Active;
@@ -89,7 +89,10 @@ namespace Prototype
        {
            return Position;
        }
-
+        //stefen:[notes to self] object manipulator 
+        //center point of grow event, think its for expanding radius effect
+        //:start
+        
        public float getX()
        {
            return Position.X;
@@ -102,7 +105,7 @@ namespace Prototype
        {
            return Position.Z;
        }
-
+       //:end
        public void Animate(Int32 newy)
        {
            if (Position.Y <= newy)
