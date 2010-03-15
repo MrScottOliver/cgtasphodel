@@ -276,3 +276,26 @@ C:\Users\Stezzy\Desktop\uni\!!Year3 part2\Prototype\Prototype\obj\x86\Debug\Micr
 C:\Users\Stezzy\Desktop\uni\!!Year3 part2\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Stezzy\Desktop\uni\!!Year3 part2\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
 C:\Users\Stezzy\Desktop\uni\!!Year3 part2\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\metal.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\Lighting.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\ship2.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\ball.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\Character.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\REcharacter.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\metal_0.xnb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Prototype.exe
+C:\Users\Piepork\Desktop\group\Prototype\bin\x86\Debug\Prototype.pdb
+C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\Prototype.exe
+C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\Prototype.pdb

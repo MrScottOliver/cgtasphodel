@@ -35,9 +35,9 @@ namespace Prototype
             {
                 if (playerObject.position.X > planeX.MinX && playerObject.position.X < planeX.MaxX)
                 {
-                    playerObject.boundingsphere.Intersects(ref planeX.p, out planeX.next);
-                    result = planeX.Position();
-                    if (result == 1)
+                    playerObject.boundingsphere.Intersects(ref planeX.p, out planeX.result);
+                    //result = planeX.Position();
+                    /* if (result == 1)
                     {
                         playerObject.velocity = Vector3.Zero;
                         playerObject.position += new Vector3(0, 0.001f, 0);
@@ -48,6 +48,10 @@ namespace Prototype
                         playerObject.velocity *= -1;
                     }
                     if (result == 0)
+                    {
+                        playerObject.velocity = Vector3.Zero;
+                    }*/
+                    if (planeX.result == PlaneIntersectionType.Intersecting)
                     {
                         playerObject.velocity = Vector3.Zero;
                     }

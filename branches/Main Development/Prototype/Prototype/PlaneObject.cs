@@ -21,6 +21,7 @@ namespace Prototype
         public PlaneIntersectionType prev { get; set; }
         public PlaneIntersectionType next;
         //public int result { get; set; }
+        public PlaneIntersectionType result;
 
         public PlaneObject()
         {
