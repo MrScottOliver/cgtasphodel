@@ -566,7 +566,7 @@ namespace Prototype
             CollisionDetectionBox.AddBox(new Vector3(-10, 3, -10), new Vector3(-5, 5, 0)); //Top slope
             CollisionDetectionBox.AddBox(new Vector3(20, 12, -10), new Vector3(30, 14, 0)); //Platform
             CollisionDetectionBox.AddBox(new Vector3(5, 0, -10), new Vector3(30, 0, 0)); //Bottom slope
-            //CollisionDetectionPlane.AddPlane(new Vector3(-5, 5, 0), new Vector3(-5, 5, -10), new Vector3(5, 0, -10), -5, 5); //Middle slope, works but doesn't
+            CollisionDetectionPlane.AddPlane(new Vector3(-5, 5, 0), new Vector3(5, 0, 0), new Vector3(5, 0, -10), -5, 5); //Middle slope, works but doesn't
         }
 
     }
