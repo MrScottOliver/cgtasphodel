@@ -184,12 +184,12 @@ namespace Prototype
             if (keyState.IsKeyDown(Keys.Up))
             {
                 player.AddTranslation(0, 0.3f, 0);
-                audio.Step();
+                audio.Jump();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
                 player.AddTranslation(0, -0.3f, 0);
-                audio.Step();
+                audio.Slide();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
@@ -210,6 +210,7 @@ namespace Prototype
                 Plant.Activate();
                 AddPlant(Plant.getPos());
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
+                audio.Growth();
             }
 
             //Stefen: Debug stuff for interface

@@ -9,19 +9,15 @@
     Windows Bank Path Edited = 1;
     Seek Tables = 1;
     Compression Preset Name = &lt;none&gt;;
-    Xbox Bank Last Modified Low = 0;
-    Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 668085394;
-    PC Bank Last Modified High = 30043201;
-    Bank Last Revised Low = 1568092690;
-    Bank Last Revised High = 30043200;
+    Bank Last Revised Low = 1720641336;
+    Bank Last Revised High = 30067040;
 
     Wave
     {
-        Name = footstep 3 aw;
-        File = footstep 3 aw.wav;
-        Build Settings Last Modified Low = 3277166466;
-        Build Settings Last Modified High = 30043194;
+        Name = jump 1;
+        File = Sound effects\jumping\jump 1.wav;
+        Build Settings Last Modified Low = 1526513224;
+        Build Settings Last Modified High = 30067037;
 
         Cache
         {
@@ -29,22 +25,22 @@
             Channels = 2;
             Sampling Rate = 44100;
             Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 54076;
+            Play Region Offset = 1024;
+            Play Region Length = 75776;
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1484338376;
-            Last Modified High = 30042180;
+            Last Modified Low = 2312842496;
+            Last Modified High = 30044424;
         }
     }
 
     Wave
     {
-        Name = footstep 4 aw;
-        File = footstep 4 aw.wav;
-        Build Settings Last Modified Low = 3277166466;
-        Build Settings Last Modified High = 30043194;
+        Name = jump 2;
+        File = Sound effects\jumping\jump 2.wav;
+        Build Settings Last Modified Low = 1526523224;
+        Build Settings Last Modified High = 30067037;
 
         Cache
         {
@@ -52,22 +48,22 @@
             Channels = 2;
             Sampling Rate = 44100;
             Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 50052;
+            Play Region Offset = 1024;
+            Play Region Length = 74752;
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1610308376;
-            Last Modified High = 30042180;
+            Last Modified Low = 3132842496;
+            Last Modified High = 30044424;
         }
     }
 
     Wave
     {
-        Name = footstep 5 aw;
-        File = footstep 5 aw.wav;
-        Build Settings Last Modified Low = 3277176466;
-        Build Settings Last Modified High = 30043194;
+        Name = Mftsp5;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp5.wav;
+        Build Settings Last Modified Low = 1914853224;
+        Build Settings Last Modified High = 30067037;
 
         Cache
         {
@@ -75,22 +71,183 @@
             Channels = 2;
             Sampling Rate = 44100;
             Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 48896;
+            Play Region Offset = 1024;
+            Play Region Length = 84992;
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1792698376;
-            Last Modified High = 30042180;
+            Last Modified Low = 937875200;
+            Last Modified High = 30044425;
         }
     }
 
     Wave
     {
-        Name = footstep 1 aw;
-        File = footstep 1 aw.wav;
-        Build Settings Last Modified Low = 3277176466;
-        Build Settings Last Modified High = 30043194;
+        Name = Mftsp6;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp6.wav;
+        Build Settings Last Modified Low = 1914863224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 87040;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1077875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = Mftsp7;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp7.wav;
+        Build Settings Last Modified Low = 1914863224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 93184;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1197875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = Mftsp8;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp8.wav;
+        Build Settings Last Modified Low = 1914873224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 95232;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1477875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = Mftsp1;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp1.wav;
+        Build Settings Last Modified Low = 1914873224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 77824;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 57875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = Mftsp2;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp2.wav;
+        Build Settings Last Modified Low = 1914883224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 78848;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 237875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = Mftsp3;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp3.wav;
+        Build Settings Last Modified Low = 1914893224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 89088;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 637875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = Mftsp4;
+        File = Sound effects\footsteps\grass and leaves\muffled grass footsteps\Mftsp4.wav;
+        Build Settings Last Modified Low = 1914893224;
+        Build Settings Last Modified High = 30067037;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 84992;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 777875200;
+            Last Modified High = 30044425;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 1 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\footstep 1 edit.wav;
+        Build Settings Last Modified Low = 3878323224;
+        Build Settings Last Modified High = 30067037;
 
         Cache
         {
@@ -103,17 +260,86 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 154308376;
-            Last Modified High = 30042180;
+            Last Modified Low = 3671353224;
+            Last Modified High = 30067037;
         }
     }
 
     Wave
     {
-        Name = footstep 2 aw;
-        File = footstep 2 aw.wav;
-        Build Settings Last Modified Low = 3277186466;
-        Build Settings Last Modified High = 30043194;
+        Name = footstep 5 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\footstep 5 edit.wav;
+        Build Settings Last Modified Low = 2277565928;
+        Build Settings Last Modified High = 30067038;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 48896;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 667145928;
+            Last Modified High = 30067038;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 4 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\footstep 4 edit.wav;
+        Build Settings Last Modified Low = 2277565928;
+        Build Settings Last Modified High = 30067038;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 50052;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 486665928;
+            Last Modified High = 30067038;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 3 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\footstep 3 edit.wav;
+        Build Settings Last Modified Low = 2277575928;
+        Build Settings Last Modified High = 30067038;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 54076;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 277955928;
+            Last Modified High = 30067038;
+        }
+    }
+
+    Wave
+    {
+        Name = footstep 2 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\footstep 2 edit.wav;
+        Build Settings Last Modified Low = 2277585928;
+        Build Settings Last Modified High = 30067038;
 
         Cache
         {
@@ -126,8 +352,151 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1309838376;
-            Last Modified High = 30042180;
+            Last Modified Low = 31575928;
+            Last Modified High = 30067038;
+        }
+    }
+
+    Wave
+    {
+        Name = slide 3 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\slide 3 edit.wav;
+        Build Settings Last Modified Low = 2291355928;
+        Build Settings Last Modified High = 30067038;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 127712;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1333705928;
+            Last Modified High = 30067038;
+        }
+    }
+
+    Wave
+    {
+        Name = slide 2 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\slide 2 edit.wav;
+        Build Settings Last Modified Low = 2291355928;
+        Build Settings Last Modified High = 30067038;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 94924;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1145875928;
+            Last Modified High = 30067038;
+        }
+    }
+
+    Wave
+    {
+        Name = slide 1 edit;
+        File = Sound effects\footsteps\grass and leaves\grass first attempt\slide 1 edit.wav;
+        Build Settings Last Modified Low = 2291365928;
+        Build Settings Last Modified High = 30067038;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 115632;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 821795928;
+            Last Modified High = 30067038;
+        }
+    }
+}
+
+</WaveBank>
+  <WaveBank Name="Music">Wave Bank
+{
+    Name = Music;
+    Xbox File = Xbox\Music.xwb;
+    Windows File = Win\Music.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Seek Tables = 1;
+    Compression Preset Name = &lt;none&gt;;
+    Bank Last Revised Low = 2941390520;
+    Bank Last Revised High = 30067036;
+}
+
+</WaveBank>
+  <WaveBank Name="SFX">Wave Bank
+{
+    Name = SFX;
+    Xbox File = Xbox\SFX.xwb;
+    Windows File = Win\SFX.xwb;
+    Xbox Bank Path Edited = 0;
+    Windows Bank Path Edited = 0;
+    Seek Tables = 1;
+    Compression Preset Name = &lt;none&gt;;
+    Bank Last Revised Low = 4106580520;
+    Bank Last Revised High = 30067036;
+
+    Wave
+    {
+        Name = orb collecting sound;
+        File = Sound effects\orb collecting sound.wav;
+        Build Settings Last Modified Low = 3681220520;
+        Build Settings Last Modified High = 30067036;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 200648;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1820749568;
+            Last Modified High = 30065917;
+        }
+    }
+
+    Wave
+    {
+        Name = Tree growing SFX;
+        File = Sound effects\Tree growing SFX.wav;
+        Build Settings Last Modified Low = 3681220520;
+        Build Settings Last Modified High = 30067036;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 1024;
+            Play Region Length = 494740;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1628030720;
+            Last Modified High = 30064305;
         }
     }
 }
