@@ -23,7 +23,6 @@ namespace Prototype
         Effect myEffect;//Jess: custom effect
         KeyboardState keyState;
         Player player = new Player(); //Kieran: create player instance
-        Audio audio = new Audio();    //Stefen: create audio instance
         GrowEvent Plant = new GrowEvent(); //Stefen: create plant growth handler
         Vector3 POS;
         Vector3 TARGET;
@@ -96,7 +95,7 @@ namespace Prototype
 
             Proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), aspectRatio, nearClip, farClip);
             ObjectManipulator.Initialise(GraphicsDevice);
-
+            Audio.Init();
             base.Initialize();
         }
 
@@ -200,24 +199,24 @@ namespace Prototype
             if (keyState.IsKeyDown(Keys.Up))
             {
                 player.AddTranslation(0, 0.3f, 0);
-                audio.Step();
+                Audio.Jump();
             }
             if (keyState.IsKeyDown(Keys.Down))
             {
                 player.AddTranslation(0, -0.3f, 0);
-                audio.Step();
+                Audio.Slide();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
                 player.AddTranslation(-0.3f, 0, 0);
-                audio.Step();
+                Audio.Step();
                 //POS.X -= 0.2f;
                 //TARGET.X -= 0.2f;
             }
             if (keyState.IsKeyDown(Keys.Right))
             {
                 player.AddTranslation(0.3f, 0, 0);
-                audio.Step();
+                Audio.Step();
                 //POS.X += 0.2f;
                 //TARGET.X += 0.2f;
             }
@@ -244,6 +243,7 @@ namespace Prototype
                 AddPlant(Plant.getPos());
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
                 CollisionDetectionBox.AddBox(new Vector3(5, 5, -10), new Vector3(15, 8, 0));
+                Audio.Growth();
             }
             if (keyState.IsKeyDown(Keys.PageUp))
 
@@ -254,7 +254,7 @@ namespace Prototype
                         this.Exit();
 
             //Stefen: Takes in object and cameras positions to provide 3d sound
-            audio.Update(player.position, POS);
+            Audio.Update(player.position, POS);
 
             POS.X = player.position.X + 1.0f;
             POS.Y = player.position.Y + 5.0f;

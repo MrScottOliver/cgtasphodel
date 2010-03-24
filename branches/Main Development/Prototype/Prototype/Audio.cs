@@ -14,41 +14,98 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace Prototype
 {
-    class Audio
+    public sealed class Audio
     {
         //Stefen: Audio objects
-        AudioEngine Engine;
-        SoundBank Sound_Bank;
-        WaveBank Player_Effects;
-        Cue Footstep;
-
+        static AudioEngine Engine;
+        static SoundBank Sound_Bank;
+        static WaveBank Player_Effects, Sound_Effects, Music;
+        static Cue FootstepCue, SlideCue, JumpCue, PickupCue, GrowthCue;
+        static Cue TitleCue, ForestCue, PianoCue;
         //Stefen:  3D audio controls
-        AudioEmitter Emitter = new AudioEmitter();
-        AudioListener Listener = new AudioListener();
+        static AudioEmitter Emitter = new AudioEmitter();
+        static AudioListener Listener = new AudioListener();
 
         //Stefen: Loads Xact Files
-        public Audio()
+        private Audio()
         {       
             Engine = new AudioEngine("Content\\Audio\\Prototype.xgs");
             Sound_Bank = new SoundBank(Engine, "Content\\Audio\\Sound_Bank.xsb");
             Player_Effects = new WaveBank(Engine, "Content\\Audio\\Player_Effects.xwb");
-            Footstep = Sound_Bank.GetCue("Player_Footstep");
+            Sound_Effects = new WaveBank(Engine, "Content\\Audio\\SFX.xwb");
+            Music = new WaveBank(Engine, "Content\\Audio\\Music.xwb");
+            FootstepCue = Sound_Bank.GetCue("Player_Footstep");
+            SlideCue = Sound_Bank.GetCue("Slide");
+            JumpCue = Sound_Bank.GetCue("Jump");
+            PickupCue = Sound_Bank.GetCue("Orb_Pickup");
+            GrowthCue = Sound_Bank.GetCue("Plant_Growth");
+        }
+
+       public static void Init()
+        {
+            Engine = new AudioEngine("Content\\Audio\\Prototype.xgs");
+            Sound_Bank = new SoundBank(Engine, "Content\\Audio\\Sound_Bank.xsb");
+            Player_Effects = new WaveBank(Engine, "Content\\Audio\\Player_Effects.xwb");
+            Sound_Effects = new WaveBank(Engine, "Content\\Audio\\SFX.xwb");
+            // Music = new WaveBank(Engine, "Content\\Audio\\Music.xwb");
+            FootstepCue = Sound_Bank.GetCue("Player_Footstep");
+            SlideCue = Sound_Bank.GetCue("Slide");
+            JumpCue = Sound_Bank.GetCue("Jump");
+            PickupCue = Sound_Bank.GetCue("Orb_Pickup");
+            GrowthCue = Sound_Bank.GetCue("Plant_Growth");
         }
 
         //Stefen: Plays a footstep sound
-        public void Step() 
+        public static void Step() 
         {
-            if(!Footstep.IsPlaying)
-                Footstep.Play();
-            Footstep = Sound_Bank.GetCue("Player_Footstep"); 
+            if (!FootstepCue.IsPlaying)
+                FootstepCue.Play();
+            FootstepCue = Sound_Bank.GetCue("Player_Footstep"); 
         }
 
-        public void Update(Vector3 EmitterPosition, Vector3 ListenerPosition)
+        public static void Slide()
+        {
+            if (!SlideCue.IsPlaying)
+                SlideCue.Play();
+            SlideCue = Sound_Bank.GetCue("Slide");
+        }
+
+        public static void Jump()
+        {
+            if (!JumpCue.IsPlaying)
+                JumpCue.Play();
+            JumpCue = Sound_Bank.GetCue("Jump");
+        }
+
+        public static void Pickup()
+        {
+            if (!PickupCue.IsPlaying)
+                PickupCue.Play();
+            PickupCue = Sound_Bank.GetCue("Orb_Pickup");
+        }
+
+        public static void Growth()
+        {
+            if (!GrowthCue.IsPlaying)
+                GrowthCue.Play();
+            GrowthCue = Sound_Bank.GetCue("Plant_Growth");
+        }
+
+        public static void TitleSong()
+        {
+            if (!GrowthCue.IsPlaying)
+                GrowthCue.Play();
+            GrowthCue = Sound_Bank.GetCue("Plant_Growth");
+        }
+
+        public static void Update(Vector3 EmitterPosition, Vector3 ListenerPosition)
         {
             //Stefen: Updates Audio
             Emitter.Position = EmitterPosition;
             Listener.Position = ListenerPosition;
-            Footstep.Apply3D(Listener, Emitter);
+            FootstepCue.Apply3D(Listener, Emitter);
+            SlideCue.Apply3D(Listener, Emitter);
+            JumpCue.Apply3D(Listener, Emitter);
             Engine.Update();
         }
     }
