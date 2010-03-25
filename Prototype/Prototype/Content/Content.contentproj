@@ -108,10 +108,40 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Flower1.fbx">
+      <Name>Flower1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Hill1.fbx">
+      <Name>Hill1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Hill2.fbx">
+      <Name>Hill2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Includes.inc">
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>
     </None>
+    <Compile Include="Platform2.fbx">
+      <Name>Platform2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="platform1.fbx">
+      <Name>platform1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="leave1.fbx">
+      <Name>leave1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="PlantCylinder.x">
       <Name>PlantCylinder</Name>
       <Importer>XImporter</Importer>

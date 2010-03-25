@@ -129,7 +129,10 @@ namespace Prototype
 
             SetUpSkySphere();//Jess:set up sky sphere
             Model OrbModel = Content.Load<Model>("ball");
-            Model PlantCyl = Content.Load<Model>("PlantCylinder");
+            Model PlantCyl = Content.Load<Model>("Flower1");
+            Model Hill1 = Content.Load<Model>("Hill1");
+            Model Hill2 = Content.Load<Model>("Hill2");
+            Model Leaf1 = Content.Load<Model>("leave1");
 
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(10, 10, -5))
@@ -141,7 +144,7 @@ namespace Prototype
            ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(20, 10, -5))
            );
             ObjectControl.ObjectList.Add(
-   ObjectFactory.createObject(ObjectFactory.ObjectType.Plant, PlantCyl, new Vector3(10, 0, -10))
+   ObjectFactory.createObject(ObjectFactory.ObjectType.Plant, PlantCyl, new Vector3(50, 0, -50))
    );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
