@@ -219,9 +219,7 @@ C:\Documents and Settings\Munchkin Central\Desktop\Asphdel\Prototype\Prototype\o
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb
-\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\simplepointlight.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
-\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\tiny.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
@@ -299,3 +297,14 @@ C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\ResolveAssemblyReference.
 C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Piepork\Desktop\group\Prototype\obj\x86\Debug\Prototype.pdb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\ball.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Audio\Music.xwb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Audio\SFX.xwb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Flower1.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Hill1.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Hill2.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\Platform2.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\platform1.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\leave1.xnb

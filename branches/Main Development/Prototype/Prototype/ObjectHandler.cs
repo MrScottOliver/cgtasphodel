@@ -150,7 +150,10 @@ namespace Prototype
                     //// effect.Parameters[""]
                     effect.View = view;
                     effect.Projection = projection;
-                    effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position);
+                    Matrix scale;
+                    scale = Matrix.Identity; ;
+                    scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
+                    effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position) * scale ; /*scale*/
                 }
                 mesh.Draw();
             }
