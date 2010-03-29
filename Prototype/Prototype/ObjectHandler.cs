@@ -45,9 +45,16 @@ namespace Prototype
     //Placeholder class
     class Surface : Level
     {
-        public Surface(Model model)
+        Model ObjModel;
+        private Vector3 Position;
+        Matrix scale, rotation;
+
+        public Surface(Model model, Vector3 Pos)
         {
-            Model ObjModel = model;
+            ObjModel = model;
+            Position = Pos;       
+            scale = Matrix.Identity; ;
+            rotation = Matrix.Identity; 
         }
 
         override
@@ -56,9 +63,27 @@ namespace Prototype
             Debug.WriteLine("Load Surface");
         }
         override
-        public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
+          public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
-            //Render
+            Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
+            ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+            foreach (ModelMesh mesh in ObjModel.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.EnableDefaultLighting();
+                    //// effect.Parameters[""]
+                    effect.View = view;
+                    effect.Projection = projection;
+
+                    scale = Matrix.CreateScale(0.3f, 0.3f, 0.3f);                    
+                    rotation = Matrix.CreateFromYawPitchRoll((float)Math.PI*3 / 2, 0, 0);
+
+                    effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale   *  rotation*Matrix.CreateTranslation(Position) ;  /*scale*/
+                }
+                mesh.Draw();
+            }
         }
         override
         public bool Collision(BoundingSphere PlayerSphere)
@@ -77,9 +102,14 @@ namespace Prototype
     //Placeholder class
     class Platform : Level
     {
-        public Platform(Model model)
+        Model ObjModel;
+        private Vector3 Position;
+
+
+        public Platform(Model model, Vector3 Pos)
         {
-            Model ObjModel = model;
+            ObjModel = model;
+            Position = Pos;
         }
 
         override
@@ -90,7 +120,26 @@ namespace Prototype
         override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
-            //Render
+            Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
+            ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+            foreach (ModelMesh mesh in ObjModel.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.EnableDefaultLighting();
+                    //// effect.Parameters[""]
+                    effect.View = view;
+                    effect.Projection = projection;
+                    Matrix scale, rotation;
+                    scale = Matrix.Identity; ;
+                    scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
+                    rotation = Matrix.Identity; 
+                    rotation *= Matrix.CreateFromYawPitchRoll(0, 90, 0);
+                    effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position)* rotation * scale; /*scale*/
+                }
+                mesh.Draw();
+            }
         }
         override
         public bool Collision(BoundingSphere PlayerSphere)
@@ -126,8 +175,9 @@ namespace Prototype
             ObjModel = model;
             Position = Pos;
             sphere.Center = Pos;//set position
-            sphere.Center.Z += 5;//model is behind collision point
-            sphere.Radius = 1;//set radius
+            sphere.Center.Y += 20;//model is under collision point
+            sphere.Center.X -= 2;//model is behind collision point
+            sphere.Radius =5;//set radius
             Current = LifeCycle.Collision;
         }
 
@@ -153,7 +203,7 @@ namespace Prototype
                     Matrix scale;
                     scale = Matrix.Identity; ;
                     scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
-                    effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position) * scale ; /*scale*/
+                    effect.World = /*gameWorldRotation * */ scale*transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position)   ; /*scale*/
                 }
                 mesh.Draw();
             }
@@ -173,7 +223,7 @@ namespace Prototype
                     //call generic function
                     break;
                 case LifeCycle.Animate:
-                    if (Position.Y < 20)                    //call animate function
+                    if (Position.Y < -5)                    //call animate function
                         Position.Y += 0.1f;
                     else
                         Current = LifeCycle.Active;         //function sets current to Active after use is spent
@@ -285,10 +335,10 @@ namespace Prototype
             switch (item)
             {
                 case ObjectType.Surface:
-                    return new Surface(model);
+                    return new Surface(model, Position);
 
                 case ObjectType.Platform:
-                    return new Platform(model);
+                    return new Platform(model, Position);
 
                 case ObjectType.Plant:
                     return new Plant(model, Position);

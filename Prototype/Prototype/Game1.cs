@@ -118,9 +118,9 @@ namespace Prototype
 
             //Kieran: set player model
             player.model = Content.Load<Model>("REcharacter");
-            player.AddRotation(4.70f,0.0f,0.0f);
-            player.ChangeScale(0.02f);
-            player.AddTranslation(-7f, 30f, -5f);
+            player.AddRotation((float)Math.PI  / 2, 0.0f, 0.0f);
+            player.ChangeScale(0.07f);
+            player.AddTranslation(-7f, 30f, -2f);
             /*
             player.position.X = -7f;
             player.position.Y = 20f;
@@ -135,16 +135,26 @@ namespace Prototype
             Model Leaf1 = Content.Load<Model>("leave1");
 
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(10, 10, -5))
+            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill1, new Vector3(15, 0, 0))
             );
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(10, 20, -5))
+            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill2, new Vector3(0, 0, 0))
+            );
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Leaf1, new Vector3(0, 0, 0))
+            );
+
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(30, 10, -2))
+            );
+            ObjectControl.ObjectList.Add(
+           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(12, 20, -2))
            );
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(20, 10, -5))
+           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(6, 16, -2))
            );
             ObjectControl.ObjectList.Add(
-   ObjectFactory.createObject(ObjectFactory.ObjectType.Plant, PlantCyl, new Vector3(50, 0, -50))
+   ObjectFactory.createObject(ObjectFactory.ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
    );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
