@@ -127,6 +127,11 @@
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>
     </None>
+    <Compile Include="New Character.fbx">
+      <Name>New Character</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="Platform2.fbx">
       <Name>Platform2</Name>
       <Importer>FbxImporter</Importer>
