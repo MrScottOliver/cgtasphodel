@@ -233,7 +233,10 @@ namespace Prototype
                     {
                         KeyboardState keyState = Keyboard.GetState();
                         if (keyState.IsKeyDown(Keys.X))
+                        {
                             Current = LifeCycle.Animate;
+                            Audio.Growth();
+                        }
                     }
                     break;
                 default:

@@ -21,7 +21,7 @@ namespace Prototype
         static SoundBank Sound_Bank;
         static WaveBank Player_Effects, Sound_Effects, Music;
         static Cue FootstepCue, SlideCue, JumpCue, PickupCue, GrowthCue;
-        static Cue TitleCue, ForestCue, PianoCue;
+        static Cue TitleCue, ForestCue, PianoCue, AcousticCue;
         //Stefen:  3D audio controls
         static AudioEmitter Emitter = new AudioEmitter();
         static AudioListener Listener = new AudioListener();
@@ -39,6 +39,10 @@ namespace Prototype
             JumpCue = Sound_Bank.GetCue("Jump");
             PickupCue = Sound_Bank.GetCue("Orb_Pickup");
             GrowthCue = Sound_Bank.GetCue("Plant_Growth");
+            TitleCue = Sound_Bank.GetCue("Title_Song");
+            ForestCue = Sound_Bank.GetCue("Dark_Forest");
+            PianoCue = Sound_Bank.GetCue("Piano_Theme");
+            AcousticCue = Sound_Bank.GetCue("Acoustic");
         }
 
        public static void Init()
@@ -47,12 +51,16 @@ namespace Prototype
             Sound_Bank = new SoundBank(Engine, "Content\\Audio\\Sound_Bank.xsb");
             Player_Effects = new WaveBank(Engine, "Content\\Audio\\Player_Effects.xwb");
             Sound_Effects = new WaveBank(Engine, "Content\\Audio\\SFX.xwb");
-            // Music = new WaveBank(Engine, "Content\\Audio\\Music.xwb");
+            Music = new WaveBank(Engine, "Content\\Audio\\Music.xwb");
             FootstepCue = Sound_Bank.GetCue("Player_Footstep");
             SlideCue = Sound_Bank.GetCue("Slide");
             JumpCue = Sound_Bank.GetCue("Jump");
             PickupCue = Sound_Bank.GetCue("Orb_Pickup");
             GrowthCue = Sound_Bank.GetCue("Plant_Growth");
+            TitleCue = Sound_Bank.GetCue("Title_Song");
+            ForestCue = Sound_Bank.GetCue("Dark_Forest");
+            PianoCue = Sound_Bank.GetCue("Piano_Theme");
+            AcousticCue = Sound_Bank.GetCue("Acoustic");
         }
 
         //Stefen: Plays a footstep sound
@@ -93,9 +101,67 @@ namespace Prototype
 
         public static void TitleSong()
         {
-            if (!GrowthCue.IsPlaying)
-                GrowthCue.Play();
-            GrowthCue = Sound_Bank.GetCue("Plant_Growth");
+            if (!TitleCue.IsPlaying)
+            {
+                if (ForestCue.IsPlaying)
+                    ForestCue.Stop(AudioStopOptions.Immediate);
+                if (AcousticCue.IsPlaying)
+                    AcousticCue.Stop(AudioStopOptions.Immediate);
+                if (PianoCue.IsPlaying)
+                    PianoCue.Stop(AudioStopOptions.Immediate);
+
+                TitleCue = Sound_Bank.GetCue("Title_Song");
+                TitleCue.Play();
+            }
+        }
+
+        public static void Dark()
+        {
+            if (!ForestCue.IsPlaying)
+            {
+                if (TitleCue.IsPlaying)
+                    TitleCue.Stop(AudioStopOptions.Immediate);
+                if (AcousticCue.IsPlaying)
+                    AcousticCue.Stop(AudioStopOptions.Immediate);
+                if (PianoCue.IsPlaying)
+                    PianoCue.Stop(AudioStopOptions.Immediate);
+
+               ForestCue = Sound_Bank.GetCue("Dark_Forest");
+                ForestCue.Play(); 
+            }
+        }
+
+        public static void Acoustic()
+        {
+            if (!AcousticCue.IsPlaying)
+            {
+                if (ForestCue.IsPlaying)
+                    ForestCue.Stop(AudioStopOptions.Immediate);
+                if (TitleCue.IsPlaying)
+                    TitleCue.Stop(AudioStopOptions.Immediate);
+                if (PianoCue.IsPlaying)
+                    PianoCue.Stop(AudioStopOptions.Immediate);
+
+                AcousticCue = Sound_Bank.GetCue("Acoustic");
+                AcousticCue.Play();
+            }
+
+        }
+
+        public static void Piano()
+        {
+            if (!PianoCue.IsPlaying)
+            {
+                if (ForestCue.IsPlaying)
+                    ForestCue.Stop(AudioStopOptions.Immediate);
+                if (AcousticCue.IsPlaying)
+                    AcousticCue.Stop(AudioStopOptions.Immediate);
+                if (TitleCue.IsPlaying)
+                    TitleCue.Stop(AudioStopOptions.Immediate);
+
+                PianoCue = Sound_Bank.GetCue("Piano_Theme");
+                PianoCue.Play();
+            }
         }
 
         public static void Update(Vector3 EmitterPosition, Vector3 ListenerPosition)

@@ -340,3 +340,4 @@ C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Micro
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb
+\\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb

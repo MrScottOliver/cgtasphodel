@@ -35,7 +35,8 @@ namespace Prototype
         Matrix View;
         Matrix Proj;
 
-
+        //stefen: this bool is rubbish, prevents multiple jump noises
+        bool jumppressed;
 
         private float aspectRatio;
         private float FOV;
@@ -137,6 +138,7 @@ namespace Prototype
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill1, new Vector3(15, 0, 0))
             );
+
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill2, new Vector3(0, 0, 0))
             );
@@ -176,6 +178,22 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            if (keyState.IsKeyDown(Keys.H))
+            {
+                Audio.Acoustic();
+            }
+            if (keyState.IsKeyDown(Keys.J))
+            {
+                Audio.Dark();
+            }
+            if (keyState.IsKeyDown(Keys.K))
+            {
+               Audio.Piano();
+            }
+            if (keyState.IsKeyDown(Keys.L))
+            {
+               Audio.TitleSong();
+            }
 
             player.Move();
             CollisionDetectionBox.Compare(ref player);
@@ -212,8 +230,14 @@ namespace Prototype
             if (keyState.IsKeyDown(Keys.Up))
             {
                 player.AddTranslation(0, 0.3f, 0);
-                Audio.Jump();
+                //rough audio handler
+                if (jumppressed == false)
+                    Audio.Jump();
+                jumppressed = true;
             }
+            else
+                jumppressed = false;
+
             if (keyState.IsKeyDown(Keys.Down))
             {
                 player.AddTranslation(0, -0.3f, 0);
@@ -256,7 +280,7 @@ namespace Prototype
                 AddPlant(Plant.getPos());
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
                 CollisionDetectionBox.AddBox(new Vector3(5, 5, -10), new Vector3(15, 8, 0));
-                Audio.Growth();
+                
             }
             if (keyState.IsKeyDown(Keys.PageUp))
 
