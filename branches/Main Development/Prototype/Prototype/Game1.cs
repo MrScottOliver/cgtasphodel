@@ -136,16 +136,21 @@ namespace Prototype
             Model Leaf1 = Content.Load<Model>("leave1");
 
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill1, new Vector3(15, 0, 0))
+            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill1, new Vector3(45, 0, -8))
             );
-
+           //Stefen: Apply transformations for last object entered
+            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Scale, 0.3f, 0.3f, 0.3f);
+            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Rotate, 1.0f, 0.0f, 0.0f);
+            //
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill2, new Vector3(0, 0, 0))
             );
+            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Scale, 0.3f, 0.3f, 0.3f);
+            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Rotate, 3.0f, 0.0f, 0.0f);
+            
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Leaf1, new Vector3(0, 0, 0))
             );
-
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(30, 10, -2))
             );

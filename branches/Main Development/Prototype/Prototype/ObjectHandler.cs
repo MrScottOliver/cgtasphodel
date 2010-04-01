@@ -20,9 +20,16 @@ using System.Diagnostics;
 //Stefen: General interface for game object
 namespace Prototype
 {
+
+    public enum Actions
+    {
+        Scale,
+        Rotate,
+        Position
+    }
     interface IObject
     {
-        void Load();
+        void Load(Actions State, float Val1, float Val2, float Val3);
         void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
         bool Collision(BoundingSphere PlayerSphere);
     }
@@ -36,7 +43,7 @@ namespace Prototype
     //Stefen: Class derived from relevent intefraces
     abstract class Level : IObject, IInteraction
     {
-        public abstract void Load();
+        public abstract void Load(Actions State, float Val1, float Val2, float Val3);
         public abstract void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
         public abstract bool Collision(BoundingSphere PlayerSphere);
         public abstract void Activate();
@@ -56,11 +63,21 @@ namespace Prototype
             scale = Matrix.Identity; ;
             rotation = Matrix.Identity; 
         }
-
+    
         override
-        public void Load()
+        public void Load(Actions State, float Val1, float Val2, float Val3)
         {
-            Debug.WriteLine("Load Surface");
+            switch (State)
+            {
+                case Actions.Scale:
+                    Scale(Val1, Val2, Val3);
+                    break;
+                case Actions.Rotate:
+                    Rotate(Val1, Val2, Val3);
+                    break;
+                case Actions.Position:
+                    break;
+            }
         }
         override
           public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
@@ -77,10 +94,7 @@ namespace Prototype
                     effect.View = view;
                     effect.Projection = projection;
 
-                    scale = Matrix.CreateScale(0.3f, 0.3f, 0.3f);                    
-                    rotation = Matrix.CreateFromYawPitchRoll((float)Math.PI*3 / 2, 0, 0);
-
-                    effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale   *  rotation*Matrix.CreateTranslation(Position) ;  /*scale*/
+                    effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale   *  rotation * Matrix.CreateTranslation(Position) ;  /*scale*/
                 }
                 mesh.Draw();
             }
@@ -96,6 +110,15 @@ namespace Prototype
         {
             // check collision
             //Effect of activation
+        }
+
+        void Scale(float x, float y, float z)
+        {
+            scale = Matrix.CreateScale(x, y, z); 
+        }
+        void Rotate(float x, float y, float z)  //uses radians
+        {
+            rotation = Matrix.CreateFromYawPitchRoll((float)Math.PI * x / 2, (float)Math.PI * y / 2, (float)Math.PI * z / 2);
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -113,7 +136,7 @@ namespace Prototype
         }
 
         override
-        public void Load()
+        public void Load(Actions State, float Val1, float Val2, float Val3)
         {
             Debug.WriteLine("Load Platform");
         }
@@ -182,7 +205,7 @@ namespace Prototype
         }
 
         override
-        public void Load()
+        public void Load(Actions State, float Val1, float Val2, float Val3)
         {
             Debug.WriteLine("Load Level");
         }
@@ -211,8 +234,6 @@ namespace Prototype
         override
         public bool Collision(BoundingSphere PlayerSphere)
         {
-            // Effect of collision//designed to call attention, this version should not be used
-            //
             //if the boxes collide                // run plant and grow event on different levels, delete event once activated
             //if the object hasnt been activated  // create activation list, animate list and destruction list
             //                                    // other: in here, case active, case animate, collision
@@ -271,7 +292,7 @@ namespace Prototype
         }
 
         override
-        public void Load()
+        public void Load(Actions State, float Val1, float Val2, float Val3)
         {
             //  model
         }
@@ -362,12 +383,12 @@ namespace Prototype
         public static List<IObject> ObjectList = new List<IObject>();
 
         override
-        public void Load()
+        public void Load(Actions State, float Val1, float Val2, float Val3)
         {
             foreach (IObject item in ObjectList)
             {
                 //ObjectFactory.createObject(item).Load();
-                item.Load();
+                //item.Load();
             }
         }
         override
