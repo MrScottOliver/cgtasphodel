@@ -179,7 +179,7 @@ namespace Prototype
                     effect.Parameters["gTex"].SetValue(obj.tex);
 
 
-                    int num = 2;
+                    int num = 5;
 
                     for (int i = 0; i < num; i++)
                     {
