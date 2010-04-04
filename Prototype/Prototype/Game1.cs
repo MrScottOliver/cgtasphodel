@@ -136,32 +136,32 @@ namespace Prototype
             Model Leaf1 = Content.Load<Model>("leave1");
 
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill1, new Vector3(45, 0, -8))
+            ObjectFactory.createObject(ObjectType.Surface, Hill1, new Vector3(45, 0, -8))
             );
            //Stefen: Apply transformations for last object entered
             ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Scale, 0.3f, 0.3f, 0.3f);
             ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Rotate, 1.0f, 0.0f, 0.0f);
             //
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Hill2, new Vector3(0, 0, 0))
+            ObjectFactory.createObject(ObjectType.Surface, Hill2, new Vector3(0, 0, 0))
             );
             ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Scale, 0.3f, 0.3f, 0.3f);
             ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Rotate, 3.0f, 0.0f, 0.0f);
             
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectFactory.ObjectType.Surface, Leaf1, new Vector3(0, 0, 0))
+            ObjectFactory.createObject(ObjectType.Surface, Leaf1, new Vector3(0, 0, 0))
             );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(30, 10, -2))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(30, 10, -2))
             );
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(12, 20, -2))
+           ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(12, 20, -2))
            );
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectFactory.ObjectType.Orb, OrbModel, new Vector3(6, 16, -2))
+           ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(6, 16, -2))
            );
             ObjectControl.ObjectList.Add(
-   ObjectFactory.createObject(ObjectFactory.ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
+   ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
    );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
@@ -564,28 +564,59 @@ namespace Prototype
         }
 
 
+        List<Vector3> GetOrbPosition()
+        {
+            List<IObject> ObjectList = ObjectControl.ObjectList;
+            List<Vector3> OrbPositions = new List<Vector3>();
+            foreach (IObject item in ObjectList)
+            {
+                Type x = item.GetType();
+                if (x.Name == "Orb")
+                {
+                    Orb y = (Orb)item;
+                    OrbPositions.Add(y.GetPosition());
+                }; 
+            }
+            return OrbPositions;
+        }
+
         private void SetUpLighting()//set point lights and directional light
         {
             int num = 2;
 
             myEffect.Parameters["numlights"].SetValue(num);//set number of lights
 
-            lights = new Lights[2];
+            lights = new Lights[7];
 
             Vector4 Pos = new Vector4(20.0f, 20.0f, 0.0f, 1.0f);//light positions
 
             lights[0] = new Lights(0);//directional light
             lights[1] = new Lights(1);//point light
+            lights[2] = new Lights(1);//point light
+            lights[3] = new Lights(1);//point light
+            lights[4] = new Lights(1);//point light
+            lights[5] = new Lights(1);//point light
+            lights[6] = new Lights(1);//point light
 
             //set light positions
             lights[1].Position = Pos;
-
             for (int i = 1; i < num; i++)//set point light colour values
             {
                 lights[i].Ambient = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
                 lights[i].Diffuse = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
                 lights[i].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
                 lights[i].Attenuation = new Vector3(0.0f, 0.002f, 0.005f);
+            }
+            //Stefen: to test orbs seperate from other lights
+            int lightnum = num;
+            foreach (Vector3 coordinate in GetOrbPosition())
+            {
+                lightnum++;
+                lights[lightnum].Position = new Vector4(coordinate, 1.0f);
+                lights[lightnum].Ambient = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
+                lights[lightnum].Diffuse = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+                lights[lightnum].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
+                lights[lightnum].Attenuation = new Vector3(0.0f, 0.002f, 0.005f);
             }
 
         }

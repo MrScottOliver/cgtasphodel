@@ -20,106 +20,35 @@ using System.Diagnostics;
 //Stefen: General interface for game object
 namespace Prototype
 {
-
     public enum Actions
     {
         Scale,
         Rotate,
         Position
     }
+
+        public enum ObjectType
+        {
+            Surface,
+            Platform,
+            Plant,
+            Orb
+        }
     interface IObject
     {
         void Load(Actions State, float Val1, float Val2, float Val3);
         void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
         bool Collision(BoundingSphere PlayerSphere);
-    }
-
-    interface IInteraction
-    {
-
         void Activate();
     }
 
     //Stefen: Class derived from relevent intefraces
-    abstract class Level : IObject, IInteraction
+    abstract class Level : IObject
     {
         public abstract void Load(Actions State, float Val1, float Val2, float Val3);
         public abstract void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
         public abstract bool Collision(BoundingSphere PlayerSphere);
         public abstract void Activate();
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Placeholder class
-    class Surface : Level
-    {
-        Model ObjModel;
-        private Vector3 Position;
-        Matrix scale, rotation;
-
-        public Surface(Model model, Vector3 Pos)
-        {
-            ObjModel = model;
-            Position = Pos;       
-            scale = Matrix.Identity; ;
-            rotation = Matrix.Identity; 
-        }
-    
-        override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
-        {
-            switch (State)
-            {
-                case Actions.Scale:
-                    Scale(Val1, Val2, Val3);
-                    break;
-                case Actions.Rotate:
-                    Rotate(Val1, Val2, Val3);
-                    break;
-                case Actions.Position:
-                    break;
-            }
-        }
-        override
-          public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
-        {
-            Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
-            ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
-
-            foreach (ModelMesh mesh in ObjModel.Meshes)
-            {
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    //// effect.Parameters[""]
-                    effect.View = view;
-                    effect.Projection = projection;
-
-                    effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale   *  rotation * Matrix.CreateTranslation(Position) ;  /*scale*/
-                }
-                mesh.Draw();
-            }
-        }
-        override
-        public bool Collision(BoundingSphere PlayerSphere)
-        {
-            return false;
-            //Effect of collision
-        }
-        override
-        public void Activate()
-        {
-            // check collision
-            //Effect of activation
-        }
-
-        void Scale(float x, float y, float z)
-        {
-            scale = Matrix.CreateScale(x, y, z); 
-        }
-        void Rotate(float x, float y, float z)  //uses radians
-        {
-            rotation = Matrix.CreateFromYawPitchRoll((float)Math.PI * x / 2, (float)Math.PI * y / 2, (float)Math.PI * z / 2);
-        }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Placeholder class
@@ -138,7 +67,17 @@ namespace Prototype
         override
         public void Load(Actions State, float Val1, float Val2, float Val3)
         {
-            Debug.WriteLine("Load Platform");
+            switch (State)
+            {
+                case Actions.Scale:
+                    //Scale(Val1, Val2, Val3);
+                    break;
+                case Actions.Rotate:
+                    //Rotate(Val1, Val2, Val3);
+                    break;
+                case Actions.Position:
+                    break;
+            }
         }
         override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
@@ -177,181 +116,14 @@ namespace Prototype
             //Effect of activation
         }
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Growable plants
-    class Plant : Level
-    {
-        public enum LifeCycle
-        {
-            Active,
-            Animate,
-            Collision
-        }
 
-        BoundingSphere sphere;
-        Model ObjModel;
-        private Vector3 Position;
-        LifeCycle Current;
-
-        public Plant(Model model, Vector3 Pos)
-        {
-            ObjModel = model;
-            Position = Pos;
-            sphere.Center = Pos;//set position
-            sphere.Center.Y += 20;//model is under collision point
-            sphere.Center.X -= 2;//model is behind collision point
-            sphere.Radius =5;//set radius
-            Current = LifeCycle.Collision;
-        }
-
-        override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
-        {
-            Debug.WriteLine("Load Level");
-        }
-        override
-        public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
-        {
-            Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
-            ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
-
-            foreach (ModelMesh mesh in ObjModel.Meshes)
-            {
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    //// effect.Parameters[""]
-                    effect.View = view;
-                    effect.Projection = projection;
-                    Matrix scale;
-                    scale = Matrix.Identity; ;
-                    scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
-                    effect.World = /*gameWorldRotation * */ scale*transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position)   ; /*scale*/
-                }
-                mesh.Draw();
-            }
-        }
-        override
-        public bool Collision(BoundingSphere PlayerSphere)
-        {
-            //if the boxes collide                // run plant and grow event on different levels, delete event once activated
-            //if the object hasnt been activated  // create activation list, animate list and destruction list
-            //                                    // other: in here, case active, case animate, collision
-            //      
-            switch (Current)
-            {
-                case LifeCycle.Active:
-                    //call generic function
-                    break;
-                case LifeCycle.Animate:
-                    if (Position.Y < -5)                    //call animate function
-                        Position.Y += 0.1f;
-                    else
-                        Current = LifeCycle.Active;         //function sets current to Active after use is spent
-                    break;
-                case LifeCycle.Collision:
-                    if (PlayerSphere.Intersects(sphere))
-                    {
-                        KeyboardState keyState = Keyboard.GetState();
-                        if (keyState.IsKeyDown(Keys.X))
-                        {
-                            Current = LifeCycle.Animate;
-                            Audio.Growth();
-                        }
-                    }
-                    break;
-                default:
-                    throw new ArgumentException("Error - " + Current + " is not recognized.");
-            }
-
-
-
-            return false;
-        }
-
-        override
-        public void Activate()
-        {
-
-        }
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Pick-ups
-    class Orb : Level
-    {
-        BoundingSphere sphere;
-        Model ObjModel;
-        private Vector3 Position;
-
-        public Orb(Model model, Vector3 Pos)
-        {
-            ObjModel = model;
-            Position = Pos;
-            sphere.Center = Pos;//set position
-            sphere.Radius = 1;//set radius
-        }
-
-        override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
-        {
-            //  model
-        }
-        override
-        public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
-        {
-            Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
-            ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
-
-            foreach (ModelMesh mesh in ObjModel.Meshes)
-            {
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    //// effect.Parameters[""]
-                    effect.View = view;
-                    effect.Projection = projection;
-                    effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position);
-                }
-                mesh.Draw();
-            }
-
-        }
-        override
-        public bool Collision(BoundingSphere PlayerSphere)
-        {
-            if (PlayerSphere.Intersects(sphere))
-            {
-                //increment points
-                //remove orb from list
-                return true;
-            }
-            else
-                return false;
-        }
-        override
-        public void Activate()
-        {
-            // check collision
-            //Effect of activation
-        }
-        public void SetPosition(float x, float y, float z)
-        {
-            Position = new Vector3(x, y, z);
-        }
-    }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     //Stefen: Object factory class returns a new instance of a class
     class ObjectFactory
     {
-        public enum ObjectType
-        {
-            Surface,
-            Platform,
-            Plant,
-            Orb
-        }
+
 
         public static IObject createObject(ObjectType item, Model model, Vector3 Position)
         {
@@ -424,7 +196,7 @@ namespace Prototype
         override
         public void Activate()
         {
-            foreach (IInteraction item in ObjectList)
+            foreach (IObject item in ObjectList)
             {
                 //ObjectFactory.createObject(item).Collision();
                 item.Activate();
