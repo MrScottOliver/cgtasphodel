@@ -18,6 +18,7 @@ namespace Prototype
     class Player
     {
         public Model model;
+        public Texture2D texture;
         public Vector3 velocity;
         public Vector3 position;
         public Vector3 gravity;
@@ -28,6 +29,10 @@ namespace Prototype
         public Matrix rotation;
         public Matrix world;
         public Matrix scale;
+
+        public Vector4 ambMtrl = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);//Jess: default material vals
+        public Vector4 diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
+        public Vector4 specMtrl = new Vector4(0.1f, 0.1f, 0.1f, 1.0f);
 
 
         public Player()
@@ -65,6 +70,61 @@ namespace Prototype
                     effect.View = View;
                 }
                 mesh.Draw();
+            }
+        }
+
+        //draws player with our custom lighting effect
+        public void DrawPlayer2(Player player, Matrix Proj, Matrix View)
+        {
+            //calculate matrices
+            Matrix world = player.world;
+            Matrix wvp = world * View * Proj;
+            Matrix wv = world * View;
+
+            Matrix wvIT = Matrix.Invert(wv);
+            wvIT = Matrix.Transpose(wvIT);
+
+            Matrix worldIT = Matrix.Invert(world);
+            worldIT = Matrix.Transpose(worldIT);
+
+            foreach (ModelMesh mesh in player.model.Meshes)
+            {
+                foreach (Effect effect in mesh.Effects)
+                {
+                    //set technique
+                    effect.CurrentTechnique = effect.Techniques["MyTech"];
+
+                    //set matrix params
+                    effect.Parameters["gWVP"].SetValue(wvp);
+                    effect.Parameters["gWorldView"].SetValue(wv);
+                    effect.Parameters["gWorldViewIT"].SetValue(wvIT);
+                    effect.Parameters["gWorld"].SetValue(world);
+                    effect.Parameters["gWorldIT"].SetValue(worldIT);
+
+                    //set material params
+                    effect.Parameters["gAmbMtrl"].SetValue(player.ambMtrl);
+                    effect.Parameters["gDiffuseMtrl"].SetValue(player.diffMtrl);
+                    effect.Parameters["gSpecMtrl"].SetValue(player.specMtrl);
+
+                    //set texture
+                    effect.Parameters["gTex"].SetValue(player.texture);
+
+
+
+                }
+                mesh.Draw();
+            }
+        }
+
+        //remaps the model to use our effect instead of basic effect
+        public void RemapModel(Player player, Effect effect)
+        {
+            foreach (ModelMesh mesh in player.model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    part.Effect = effect;
+                }
             }
         }
 

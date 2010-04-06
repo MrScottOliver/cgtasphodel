@@ -21,15 +21,16 @@ namespace Prototype
         public Lights(int type)
         {
             lighttype = type;
+            AmbientCol = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+            DiffuseCol = new Vector4(0.4f, 0.4f, 0.4f, 1.0f);
+            SpecularCol = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+            AttenVal = new Vector3(0.0f, 0.002f, 0.005f);
         }
 
-        public void SetType(EffectParameter LightParameter)
-        {
-            LightParameter.StructureMembers["gtype"].SetValue(lighttype);
-        }
 
         public void UpdateLight(EffectParameter LightParameter)
         {
+            LightParameter.StructureMembers["gtype"].SetValue(lighttype);
             LightParameter.StructureMembers["gAmbLight"].SetValue(AmbientCol);
             LightParameter.StructureMembers["gDiffuseLight"].SetValue(DiffuseCol);
             LightParameter.StructureMembers["gSpecLight"].SetValue(SpecularCol);

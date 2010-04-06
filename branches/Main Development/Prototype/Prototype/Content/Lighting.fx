@@ -45,10 +45,10 @@ float4 LightsPS(InputPS input): COLOR
 		{
 			Color += CalculatePointLight(light[i], input, texColor, globalamb);
 		}
-		else if(light[i].gtype == 0)
-		{
-			Color += CalculateDirLight(input, texColor, globalamb);
-		}
+		//else if(light[i].gtype == 0)
+		//{
+		//	Color += CalculateDirLight(input, texColor, globalamb);
+		//}
 	
 	}
 	

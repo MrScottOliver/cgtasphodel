@@ -38,6 +38,8 @@ namespace Prototype
         //stefen: this bool is rubbish, prevents multiple jump noises
         bool jumppressed;
 
+        int numlights = 0; //number of point lights
+
         private float aspectRatio;
         private float FOV;
         private float nearClip;
@@ -119,6 +121,10 @@ namespace Prototype
 
             //Kieran: set player model
             player.model = Content.Load<Model>("REcharacter");
+            player.texture = Content.Load<Texture2D>("metal");
+
+            player.RemapModel(player, myEffect);//remap model to use our effect
+            
             player.AddRotation((float)Math.PI  / 2, 0.0f, 0.0f);
             player.ChangeScale(0.07f);
             player.AddTranslation(-7f, 30f, -2f);
@@ -336,10 +342,12 @@ namespace Prototype
 
             SetUpLighting();//Jess: set light parameters
 
+            UpdateEffectParams();
+
             ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant, POS, lights);
 
             //Kieran: call draw player function
-            player.DrawPlayer(player, Proj, View);
+            player.DrawPlayer2(player, Proj, View);
 
             LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
 
@@ -582,44 +590,55 @@ namespace Prototype
 
         private void SetUpLighting()//set point lights and directional light
         {
-            int num = 2;
 
-            myEffect.Parameters["numlights"].SetValue(num);//set number of lights
+            lights = new Lights[8];
 
-            lights = new Lights[7];
+            
+            Vector4 Pos = new Vector4(3000.0f, 2000.0f, 0.0f, 1.0f);//light positions
 
-            Vector4 Pos = new Vector4(20.0f, 20.0f, 0.0f, 1.0f);//light positions
+            lights[0] = new Lights(1);
+            lights[0].Position = Pos;//fake sun :p
+            lights[0].Ambient = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+            lights[0].Diffuse = new Vector4(0.9f, 0.9f, 0.9f, 1.0f);
+            lights[0].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
+            lights[0].Attenuation = new Vector3(0.0f, 0.00000001f, 0.00000003f);
 
-            lights[0] = new Lights(0);//directional light
-            lights[1] = new Lights(1);//point light
-            lights[2] = new Lights(1);//point light
-            lights[3] = new Lights(1);//point light
-            lights[4] = new Lights(1);//point light
-            lights[5] = new Lights(1);//point light
-            lights[6] = new Lights(1);//point light
 
-            //set light positions
-            lights[1].Position = Pos;
-            for (int i = 1; i < num; i++)//set point light colour values
-            {
-                lights[i].Ambient = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
-                lights[i].Diffuse = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
-                lights[i].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
-                lights[i].Attenuation = new Vector3(0.0f, 0.002f, 0.005f);
-            }
             //Stefen: to test orbs seperate from other lights
-            int lightnum = num;
+            numlights= 1;
             foreach (Vector3 coordinate in GetOrbPosition())
             {
-                lightnum++;
-                lights[lightnum].Position = new Vector4(coordinate, 1.0f);
-                lights[lightnum].Ambient = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
-                lights[lightnum].Diffuse = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
-                lights[lightnum].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
-                lights[lightnum].Attenuation = new Vector3(0.0f, 0.002f, 0.005f);
+                numlights++;
+                lights[numlights-1] = new Lights(1);//point light
+                lights[numlights-1].Position = new Vector4(coordinate, 1.0f);
+                
+            }
+
+            myEffect.Parameters["numlights"].SetValue(numlights);//set number of lights
+
+        }
+
+
+        private void UpdateEffectParams()
+        {
+            Vector4 CamPosition = new Vector4(POS.X, POS.Y, POS.Z, 0);
+            myEffect.Parameters["gCamPosW"].SetValue(CamPosition);
+
+            myEffect.Parameters["gCenterX"].SetValue(Plant.getX() + 2);
+            myEffect.Parameters["gCenterY"].SetValue(Plant.getY());
+            myEffect.Parameters["gCenterZ"].SetValue(Plant.getZ());
+            myEffect.Parameters["gMinY"].SetValue(Plant.minY);
+            myEffect.Parameters["gMaxY"].SetValue(Plant.maxY);
+            myEffect.Parameters["gRadius"].SetValue(Plant.radius);
+
+
+            for (int i = 0; i < numlights; i++)
+            {
+                lights[i].UpdateLight(myEffect.Parameters["light"].Elements[i]);
             }
 
         }
+
 
        
 

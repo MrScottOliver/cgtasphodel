@@ -164,29 +164,17 @@ namespace Prototype
                     effect.Parameters["gWorldIT"].SetValue(worldIT);
                     effect.Parameters["gCamPosW"].SetValue(CamPosition);
 
-                    effect.Parameters["gCenterX"].SetValue(P.getX() + 2);
-                    effect.Parameters["gCenterY"].SetValue(P.getY());
-                    effect.Parameters["gCenterZ"].SetValue(P.getZ());
-                    effect.Parameters["gMinY"].SetValue(P.minY);
-                    effect.Parameters["gMaxY"].SetValue(P.maxY);
-                    effect.Parameters["gRadius"].SetValue(P.radius);
 
                     //set material params for each object
                     effect.Parameters["gAmbMtrl"].SetValue(obj.ambMtrl);
                     effect.Parameters["gDiffuseMtrl"].SetValue(obj.diffMtrl);
                     effect.Parameters["gSpecMtrl"].SetValue(obj.specMtrl);
 
+                    //set texture
                     effect.Parameters["gTex"].SetValue(obj.tex);
 
 
-                    int num = 5;
-
-                    for (int i = 0; i < num; i++)
-                    {
-                        light[i].SetType(effect.Parameters["light"].Elements[i]);
-                        light[i].UpdateLight(effect.Parameters["light"].Elements[i]);
-                    }
-
+                  
 
                     effect.Begin();
 
