@@ -29,7 +29,6 @@ namespace Prototype
 
         public enum ObjectType
         {
-            Surface,
             Platform,
             Plant,
             Orb
@@ -130,9 +129,6 @@ namespace Prototype
 
             switch (item)
             {
-                case ObjectType.Surface:
-                    return new Surface(model, Position);
-
                 case ObjectType.Platform:
                     return new Platform(model, Position);
 
