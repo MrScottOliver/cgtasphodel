@@ -30,6 +30,7 @@ namespace Prototype
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
         Lights[] lights;
         ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
+        Surface PlatLeaf1, PlatHill1, PlatHill2;
         float YAW, PITCH, ROLL;
   
         Matrix View;
@@ -141,22 +142,18 @@ namespace Prototype
             Model Hill2 = Content.Load<Model>("Hill2");
             Model Leaf1 = Content.Load<Model>("leave1");
 
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Surface, Hill1, new Vector3(45, 0, -8))
-            );
+           
+            PlatHill1 = new Surface(Hill1, new Vector3(45, 0, -8));
+            PlatHill1.Scale(0.3f, 0.3f, 0.3f);
+            PlatHill1.Rotate(1.0f, 0.0f, 0.0f);
+            PlatHill2 = new Surface(Hill2, new Vector3(0, 0, 0));
+            PlatHill2.Scale(0.3f, 0.3f, 0.3f);
+            PlatHill2.Rotate(3.0f, 0.0f, 0.0f);
+            PlatLeaf1 = new Surface(Leaf1, new Vector3(0, 0, 0));
+            PlatLeaf1.Scale(0.3f, 0.3f, 0.3f);
+            PlatLeaf1.Rotate(1.0f, 0.0f, 0.0f);
+
            //Stefen: Apply transformations for last object entered
-            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Scale, 0.3f, 0.3f, 0.3f);
-            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Rotate, 1.0f, 0.0f, 0.0f);
-            //
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Surface, Hill2, new Vector3(0, 0, 0))
-            );
-            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Scale, 0.3f, 0.3f, 0.3f);
-            ObjectControl.ObjectList[ObjectControl.ObjectList.Count - 1].Load(Actions.Rotate, 3.0f, 0.0f, 0.0f);
-            
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Surface, Leaf1, new Vector3(0, 0, 0))
-            );
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(30, 10, -2))
             );
@@ -167,8 +164,8 @@ namespace Prototype
            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(6, 16, -2))
            );
             ObjectControl.ObjectList.Add(
-   ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
-   );
+           ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
+           );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
         }
@@ -352,7 +349,9 @@ namespace Prototype
             LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
 
             ObjControl.Render(View, Proj, GraphicsDevice);
-
+            PlatHill1.Render(View, Proj, GraphicsDevice);
+            PlatHill2.Render(View, Proj, GraphicsDevice);
+            PlatLeaf1.Render(View, Proj, GraphicsDevice);
             base.Draw(gameTime);
 
 

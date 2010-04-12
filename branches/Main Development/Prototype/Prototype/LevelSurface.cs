@@ -15,7 +15,7 @@ using System.Diagnostics;
 
 namespace Prototype
 {
-    class Surface : Level
+    class Surface
     {
         Model ObjModel;
         private Vector3 Position;
@@ -29,23 +29,7 @@ namespace Prototype
             rotation = Matrix.Identity;
         }
 
-        override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
-        {
-            switch (State)
-            {
-                case Actions.Scale:
-                    Scale(Val1, Val2, Val3);
-                    break;
-                case Actions.Rotate:
-                    Rotate(Val1, Val2, Val3);
-                    break;
-                case Actions.Position:
-                    break;
-            }
-        }
-        override
-          public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
+        public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
             Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
             ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
@@ -64,24 +48,29 @@ namespace Prototype
                 mesh.Draw();
             }
         }
-        override
+        public void RePosition(Vector3 Pos) 
+        {
+            Position = Pos;
+        }
+
+        public void Move(float x, float y, float z)
+        {
+            Position.X += x;
+            Position.Y += y;
+            Position.Z += z;
+        }
+
         public bool Collision(BoundingSphere PlayerSphere)
         {
             return false;
-            //Effect of collision
-        }
-        override
-        public void Activate()
-        {
-            // check collision
-            //Effect of activation
         }
 
-        void Scale(float x, float y, float z)
+        public void Scale(float x, float y, float z)
         {
             scale = Matrix.CreateScale(x, y, z);
         }
-        void Rotate(float x, float y, float z)  //uses radians
+
+        public void Rotate(float x, float y, float z)  //uses radians
         {
             rotation = Matrix.CreateFromYawPitchRoll((float)Math.PI * x / 2, (float)Math.PI * y / 2, (float)Math.PI * z / 2);
         }

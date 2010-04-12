@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
-      <Time>2010-03-27T20:26:37.7485862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8348002+01:00</Time>
     </Item>
     <Item>
       <Source>testtexgrass.jpg</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
-      <Time>2010-03-27T20:26:37.7315862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8198002+01:00</Time>
     </Item>
     <Item>
       <Source>testtexleaves.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
-      <Time>2010-03-27T20:26:37.7135862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8018002+01:00</Time>
     </Item>
     <Item>
       <Source>skyboxmystic.dds</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb</Output>
-      <Time>2010-03-27T20:26:37.7675862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8598002+01:00</Time>
     </Item>
     <Item>
       <Source>Phong_Shader.fx</Source>
@@ -44,7 +44,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
-      <Time>2010-03-27T20:26:37.9475862+00:00</Time>
+      <Time>2010-04-11T23:48:05.1298002+01:00</Time>
     </Item>
     <Item>
       <Source>SkySphere.fx</Source>
@@ -53,7 +53,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb</Output>
-      <Time>2010-03-27T20:26:37.8195862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9368002+01:00</Time>
     </Item>
     <Item>
       <Source>Lighting.fx</Source>
@@ -62,10 +62,10 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb</Output>
-      <Time>2010-03-27T20:26:37.7695862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8618002+01:00</Time>
       <Dependency>
         <Key>Includes.inc</Key>
-        <Value>2010-03-27T20:26:37.9505862+00:00</Value>
+        <Value>2010-04-11T23:48:05.1338002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -75,10 +75,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
-      <Time>2010-03-27T20:26:37.8245862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9748002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ship2_0.xml</Key>
-        <Value>2010-03-27T20:40:12.6335862+00:00</Value>
+        <Value>2010-04-12T00:44:34.9588002+01:00</Value>
       </Dependency>
       <Request>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
     </Item>
@@ -89,10 +89,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\ball.xnb</Output>
-      <Time>2010-03-27T20:26:37.7455862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8328002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ball_0.xml</Key>
-        <Value>2010-03-27T20:40:13.0935862+00:00</Value>
+        <Value>2010-04-12T00:44:35.3608002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -102,10 +102,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb</Output>
-      <Time>2010-03-27T20:26:37.9495862+00:00</Time>
+      <Time>2010-04-11T23:48:05.1328002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\PlantCylinder_0.xml</Key>
-        <Value>2010-03-27T20:40:13.1475862+00:00</Value>
+        <Value>2010-04-12T00:44:35.4098002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -115,10 +115,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb</Output>
-      <Time>2010-03-27T20:26:37.8845862+00:00</Time>
+      <Time>2010-04-11T23:48:05.0698002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\SphereHighPoly_0.xml</Key>
-        <Value>2010-03-27T20:40:14.6675862+00:00</Value>
+        <Value>2010-04-12T00:44:36.8868002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -128,10 +128,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Character.xnb</Output>
-      <Time>2010-03-27T20:26:37.9455862+00:00</Time>
+      <Time>2010-04-11T23:48:05.1278002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Character_0.xml</Key>
-        <Value>2010-03-27T20:40:18.7905862+00:00</Value>
+        <Value>2010-04-12T00:44:41.0198002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -141,10 +141,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Flower1.xnb</Output>
-      <Time>2010-03-27T20:26:37.8265862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9768002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Flower1_0.xml</Key>
-        <Value>2010-03-27T20:40:20.2035862+00:00</Value>
+        <Value>2010-04-12T00:44:42.3558002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -154,10 +154,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Hill1.xnb</Output>
-      <Time>2010-03-27T20:26:37.8155862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9318002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Hill1_0.xml</Key>
-        <Value>2010-03-27T20:40:21.2655862+00:00</Value>
+        <Value>2010-04-12T00:44:43.4148002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -167,10 +167,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Hill2.xnb</Output>
-      <Time>2010-03-27T20:26:37.8185862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9348002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Hill2_0.xml</Key>
-        <Value>2010-03-27T20:40:22.3335862+00:00</Value>
+        <Value>2010-04-12T00:44:44.4758002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -180,10 +180,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Platform2.xnb</Output>
-      <Time>2010-03-27T20:26:37.7735862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8668002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Platform2_0.xml</Key>
-        <Value>2010-03-27T20:40:23.4405862+00:00</Value>
+        <Value>2010-04-12T00:44:50.7408002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -193,10 +193,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\platform1.xnb</Output>
-      <Time>2010-03-27T20:26:37.7715862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8638002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\platform1_0.xml</Key>
-        <Value>2010-03-27T20:40:24.4955862+00:00</Value>
+        <Value>2010-04-12T00:44:51.8028002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -206,10 +206,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\leave1.xnb</Output>
-      <Time>2010-03-27T20:26:37.8235862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9728002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\leave1_0.xml</Key>
-        <Value>2010-03-27T20:40:25.5525862+00:00</Value>
+        <Value>2010-04-12T00:44:52.8578002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -219,10 +219,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\REcharacter.xnb</Output>
-      <Time>2010-03-27T20:26:37.8805862+00:00</Time>
+      <Time>2010-04-11T23:48:05.0658002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\REcharacter_0.xml</Key>
-        <Value>2010-03-27T20:40:27.5875862+00:00</Value>
+        <Value>2010-04-12T00:44:54.8938002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -230,7 +230,7 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ship2_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8245862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9748002+01:00</Time>
     </Item>
     <Item>
       <Source>metal.jpg</Source>
@@ -245,84 +245,84 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
-      <Time>2010-03-27T20:26:37.7485862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8348002+01:00</Time>
     </Item>
     <Item>
       <Source>ball.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ball_0.xml</Output>
-      <Time>2010-03-27T20:26:37.7455862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8328002+01:00</Time>
     </Item>
     <Item>
       <Source>PlantCylinder.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\PlantCylinder_0.xml</Output>
-      <Time>2010-03-27T20:26:37.9495862+00:00</Time>
+      <Time>2010-04-11T23:48:05.1328002+01:00</Time>
     </Item>
     <Item>
       <Source>SphereHighPoly.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\SphereHighPoly_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8845862+00:00</Time>
+      <Time>2010-04-11T23:48:05.0698002+01:00</Time>
     </Item>
     <Item>
       <Source>Character.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Character_0.xml</Output>
-      <Time>2010-03-27T20:26:37.9455862+00:00</Time>
+      <Time>2010-04-11T23:48:05.1278002+01:00</Time>
     </Item>
     <Item>
       <Source>Flower1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Flower1_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8265862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9768002+01:00</Time>
     </Item>
     <Item>
       <Source>Hill1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Hill1_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8155862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9318002+01:00</Time>
     </Item>
     <Item>
       <Source>Hill2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Hill2_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8185862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9348002+01:00</Time>
     </Item>
     <Item>
       <Source>Platform2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Platform2_0.xml</Output>
-      <Time>2010-03-27T20:26:37.7735862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8668002+01:00</Time>
     </Item>
     <Item>
       <Source>platform1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\platform1_0.xml</Output>
-      <Time>2010-03-27T20:26:37.7715862+00:00</Time>
+      <Time>2010-04-11T23:48:04.8638002+01:00</Time>
     </Item>
     <Item>
       <Source>leave1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\leave1_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8235862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9728002+01:00</Time>
     </Item>
     <Item>
       <Source>REcharacter.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\REcharacter_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8805862+00:00</Time>
+      <Time>2010-04-11T23:48:05.0658002+01:00</Time>
     </Item>
     <Item>
       <Source>New Character.fbx</Source>
@@ -331,10 +331,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb</Output>
-      <Time>2010-03-27T20:26:37.8135862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9288002+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\New Character_0.xml</Key>
-        <Value>2010-03-29T02:46:07.4118104+01:00</Value>
+        <Value>2010-04-12T00:44:49.3448002+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -342,7 +342,7 @@
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\New Character_0.xml</Output>
-      <Time>2010-03-27T20:26:37.8135862+00:00</Time>
+      <Time>2010-04-11T23:48:04.9288002+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
