@@ -25,6 +25,7 @@ namespace Prototype
         //Stefen:  3D audio controls
         static AudioEmitter Emitter = new AudioEmitter();
         static AudioListener Listener = new AudioListener();
+        static Tracks CurrentTrack;
 
         //Stefen: Loads Xact Files
         private Audio()
@@ -98,18 +99,59 @@ namespace Prototype
                 GrowthCue.Play();
             GrowthCue = Sound_Bank.GetCue("Plant_Growth");
         }
-
-        public static void TitleSong()
+       public enum Tracks
         {
-            if (!TitleCue.IsPlaying)
-            {
+            mute,
+            title,
+            dark,
+            acoustic,
+            piano
+        }
+
+        public static void SetMusic(Tracks Track)
+    {
                 if (ForestCue.IsPlaying)
                     ForestCue.Stop(AudioStopOptions.Immediate);
                 if (AcousticCue.IsPlaying)
                     AcousticCue.Stop(AudioStopOptions.Immediate);
                 if (PianoCue.IsPlaying)
                     PianoCue.Stop(AudioStopOptions.Immediate);
+                if (TitleCue.IsPlaying)
+                    TitleCue.Stop(AudioStopOptions.Immediate);
 
+                CurrentTrack = Track;
+            }
+
+      public static void PlayMusic()
+      {
+
+        switch (CurrentTrack)
+            {
+            case Tracks.mute:
+                    break;
+
+            case Tracks.title:
+                    TitleSong();
+                     break;
+
+            case Tracks.dark:
+                    Dark();
+                     break;
+
+            case Tracks.acoustic:
+                    Acoustic();
+                     break;
+
+            case Tracks.piano:
+                    Piano();
+                     break;
+            }
+        }
+
+        public static void TitleSong()
+        {
+            if (!TitleCue.IsPlaying)
+            {
                 TitleCue = Sound_Bank.GetCue("Title_Song");
                 TitleCue.Play();
             }
@@ -119,13 +161,6 @@ namespace Prototype
         {
             if (!ForestCue.IsPlaying)
             {
-                if (TitleCue.IsPlaying)
-                    TitleCue.Stop(AudioStopOptions.Immediate);
-                if (AcousticCue.IsPlaying)
-                    AcousticCue.Stop(AudioStopOptions.Immediate);
-                if (PianoCue.IsPlaying)
-                    PianoCue.Stop(AudioStopOptions.Immediate);
-
                ForestCue = Sound_Bank.GetCue("Dark_Forest");
                 ForestCue.Play(); 
             }
@@ -135,13 +170,6 @@ namespace Prototype
         {
             if (!AcousticCue.IsPlaying)
             {
-                if (ForestCue.IsPlaying)
-                    ForestCue.Stop(AudioStopOptions.Immediate);
-                if (TitleCue.IsPlaying)
-                    TitleCue.Stop(AudioStopOptions.Immediate);
-                if (PianoCue.IsPlaying)
-                    PianoCue.Stop(AudioStopOptions.Immediate);
-
                 AcousticCue = Sound_Bank.GetCue("Acoustic");
                 AcousticCue.Play();
             }
@@ -152,13 +180,6 @@ namespace Prototype
         {
             if (!PianoCue.IsPlaying)
             {
-                if (ForestCue.IsPlaying)
-                    ForestCue.Stop(AudioStopOptions.Immediate);
-                if (AcousticCue.IsPlaying)
-                    AcousticCue.Stop(AudioStopOptions.Immediate);
-                if (TitleCue.IsPlaying)
-                    TitleCue.Stop(AudioStopOptions.Immediate);
-
                 PianoCue = Sound_Bank.GetCue("Piano_Theme");
                 PianoCue.Play();
             }

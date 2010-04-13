@@ -34,6 +34,7 @@ namespace Prototype
         public Vector4 diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
         public Vector4 specMtrl = new Vector4(0.1f, 0.1f, 0.1f, 1.0f);
 
+        public int OrbCount;
 
         public Player()
         {
@@ -52,6 +53,8 @@ namespace Prototype
         rotation = Matrix.Identity;
         world = Matrix.Identity;
         gravity = new Vector3(0f, -0.005f, 0f);
+
+        OrbCount = 0;
         }
 
         //Kieran: draw player function
