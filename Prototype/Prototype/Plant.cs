@@ -35,7 +35,7 @@ namespace Prototype
             Position = Pos;
             sphere.Center = Pos;//set position
             sphere.Center.Y += 20;//model is under collision point
-            sphere.Center.X -= 2;//model is behind collision point
+            //sphere.Center.X -= 2;//model is behind collision point
             sphere.Radius = 5;//set radius
             Current = LifeCycle.Collision;
         }

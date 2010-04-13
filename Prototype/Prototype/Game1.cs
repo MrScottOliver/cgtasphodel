@@ -30,9 +30,8 @@ namespace Prototype
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
         Lights[] lights;
         ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
-        Surface PlatLeaf1, PlatHill1, PlatHill2;
+        Surface PlatLeaf1, PlatLeaf2, PlatHill1, PlatHill2;
         float YAW, PITCH, ROLL;
-  
         Matrix View;
         Matrix Proj;
 
@@ -111,7 +110,6 @@ namespace Prototype
         {
             AddLevelFront();
             AddLevelTop();
-            AddPlatform(new Vector3(20, 13, 0));
 
             //adds the collision boxes
             SetupPlane();
@@ -149,9 +147,12 @@ namespace Prototype
             PlatHill2 = new Surface(Hill2, new Vector3(0, 0, 0));
             PlatHill2.Scale(0.3f, 0.3f, 0.3f);
             PlatHill2.Rotate(3.0f, 0.0f, 0.0f);
-            PlatLeaf1 = new Surface(Leaf1, new Vector3(0, 0, 0));
-            PlatLeaf1.Scale(0.3f, 0.3f, 0.3f);
+            PlatLeaf1 = new Surface(Leaf1, new Vector3(25, 14, -3));
+            PlatLeaf1.Scale(0.75f, 0.75f, 0.75f);
             PlatLeaf1.Rotate(1.0f, 0.0f, 0.0f);
+            PlatLeaf2 = new Surface(Leaf1, new Vector3(10, 8, -3));
+            PlatLeaf2.Scale(0.75f, 0.75f, 0.75f);
+            PlatLeaf2.Rotate(1.0f, 0.0f, 0.0f);
 
            //Stefen: Apply transformations for last object entered
             ObjectControl.ObjectList.Add(
@@ -166,6 +167,9 @@ namespace Prototype
             ObjectControl.ObjectList.Add(
            ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
            );
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(10, -20, 0))
+        );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
         }
@@ -186,23 +190,7 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (keyState.IsKeyDown(Keys.H))
-            {
-                Audio.Acoustic();
-            }
-            if (keyState.IsKeyDown(Keys.J))
-            {
-                Audio.Dark();
-            }
-            if (keyState.IsKeyDown(Keys.K))
-            {
-               Audio.Piano();
-            }
-            if (keyState.IsKeyDown(Keys.L))
-            {
-               Audio.TitleSong();
-            }
-
+            Audio.PlayMusic();
             player.Move();
             CollisionDetectionBox.Compare(ref player);
             CollisionDetectionPlane.Compare(ref player);
@@ -266,6 +254,7 @@ namespace Prototype
                 //TARGET.X += 0.2f;
             }
             ObjControl.Collision(player.boundingsphere);
+            //Stefen: Rotate player model for viewing
             if (keyState.IsKeyDown(Keys.E))
             {
                 player.AddRotation(0.1f,0,0);
@@ -279,13 +268,34 @@ namespace Prototype
             {
                 player.AddRotation(0, 0, 0.1f);
             }
+            //Stefen:Controls for switching background music
+            if (keyState.IsKeyDown(Keys.G))
+            {
+                Audio.SetMusic(Audio.Tracks.mute);
+            }
+            if (keyState.IsKeyDown(Keys.H))
+            {
+                Audio.SetMusic(Audio.Tracks.acoustic);
+            }
+            if (keyState.IsKeyDown(Keys.J))
+            {
+                Audio.SetMusic(Audio.Tracks.dark);
+            }
+            if (keyState.IsKeyDown(Keys.K))
+            {
+                Audio.SetMusic(Audio.Tracks.piano);
+            }
+            if (keyState.IsKeyDown(Keys.L))
+            {
+                Audio.SetMusic(Audio.Tracks.title);
+            }
             //Kieran: intersection sphere for plant just to get things working! is located underneath the platform
-            BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, -5), 5);
+            BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, 0), 5);
             //Stefen: if x is pressed and the event is available the event is activated
             if (keyState.IsKeyDown(Keys.X)&&(Plant.getStatus()==true)&&(player.boundingsphere.Intersects(plantSphere)))
             {
                 Plant.Activate();
-                AddPlant(Plant.getPos());
+
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
                 CollisionDetectionBox.AddBox(new Vector3(5, 5, -10), new Vector3(15, 8, 0));
                 
@@ -310,10 +320,10 @@ namespace Prototype
             if ((Plant.getActive()==true))
             {
                 Plant.Animate(15);      //parameter is the desired y position by end of animation
-                ObjectManipulator.LevelData.ElementAt(3).AddTranslation(0, 0.1F, 0); 
-                if (Plant.getPos().Y>10)
-                    AddPlatform(new Vector3(5, 7, 0));
-
+                if (Plant.getPos().Y > 10)
+                {
+                    PlatLeaf2.Render(View, Proj, GraphicsDevice);
+                }
                 ObjectManipulator.UpdateObjects(GraphicsDevice);
             }
             if (Plant.Activated == true)
@@ -352,6 +362,10 @@ namespace Prototype
             PlatHill1.Render(View, Proj, GraphicsDevice);
             PlatHill2.Render(View, Proj, GraphicsDevice);
             PlatLeaf1.Render(View, Proj, GraphicsDevice);
+            if (Plant.getPos().Y > 10)
+            {
+                PlatLeaf2.Render(View, Proj, GraphicsDevice);
+            }
             base.Draw(gameTime);
 
 
@@ -464,117 +478,11 @@ namespace Prototype
 
         }
 
-        private void AddPlatform(Vector3 Pos)
-        {
-            ObjectManipulator.NewLevelObject(16, 24, PrimitiveType.TriangleList, 8);
-
-            //Top Face
-            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);
-            ObjectManipulator.Current().AddVertexPNT(0.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(10.0f, 1.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(10.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);
-
-            ObjectManipulator.Current().AddIndex(0, 1, 2);
-            ObjectManipulator.Current().AddIndex(0, 2, 3);
-
-            //Bottom Face
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, -1, 0, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 0, -10, 0, -1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 0, -10, 0, -1, 0, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 0, 0, 0, -1, 0, 1, 1);
-
-            ObjectManipulator.Current().AddIndex(5, 4, 6);
-            ObjectManipulator.Current().AddIndex(4, 7, 6);
-
-            //Front Face
-            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, 0, 0, -1, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, 0, 0, -1, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, 1, 0, 0, 0, -1, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(10, -1, 0, 0, 0, -1, 1, 1);
-
-            ObjectManipulator.Current().AddIndex(8, 9, 10);
-            ObjectManipulator.Current().AddIndex(8, 10, 11);
-
-            //Left Face
-            ObjectManipulator.Current().AddVertexPNT(0, -1, -10, -1, 0, 0, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 1, -10, -1, 0, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 1, 0, -1, 0, 0, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, -1, 0, 0, 1, 1);
-
-            ObjectManipulator.Current().AddIndex(12, 13, 14);
-            ObjectManipulator.Current().AddIndex(12, 14, 15);
-
-
-
-            ObjectManipulator.Current().AddTranslation(Pos.X, Pos.Y, Pos.Z);
-
-
-            ObjectManipulator.Current().CalculateWorld();
-
-
-            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");
-
-            ObjectManipulator.Current().basicEffect = false;
-        }
-
-        private void AddPlant(Vector3 Pos)
-        {
-            ObjectManipulator.NewLevelObject(16, 24, PrimitiveType.TriangleList, 8);
-
-            //Top Face
-            ObjectManipulator.Current().AddVertexPNT(0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);
-            ObjectManipulator.Current().AddVertexPNT(0.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);
-
-            ObjectManipulator.Current().AddIndex(0, 1, 2);
-            ObjectManipulator.Current().AddIndex(0, 2, 3);
-
-            //Bottom Face
-            ObjectManipulator.Current().AddVertexPNT(0, -1, 0, 0, -1, 0, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, -1, -10, 0, -1, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, -1, -10, 0, -1, 0, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, -1, 0, 0, -1, 0, 1, 1);
-
-            ObjectManipulator.Current().AddIndex(5, 4, 6);
-            ObjectManipulator.Current().AddIndex(4, 7, 6);
-
-            //Front Face
-            ObjectManipulator.Current().AddVertexPNT(0, -15, 0, 0, 0, -1, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, 0, 0, -1, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, 0, 0, 0, 0, -1, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(5, -15, 0, 0, 0, -1, 1, 1);
-
-            ObjectManipulator.Current().AddIndex(8, 9, 10);
-            ObjectManipulator.Current().AddIndex(8, 10, 11);
-
-            //Left Face
-            ObjectManipulator.Current().AddVertexPNT(0, -15, -10, -1, 0, 0, 0, 1);
-            ObjectManipulator.Current().AddVertexPNT(0, 0, -10, -1, 0, 0, 0, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, 0, 0, -1, 0, 0, 1, 0);
-            ObjectManipulator.Current().AddVertexPNT(0, -15, 0, -1, 0, 0, 1, 1);
-
-            ObjectManipulator.Current().AddIndex(12, 13, 14);
-            ObjectManipulator.Current().AddIndex(12, 14, 15);
-
-
-
-            ObjectManipulator.Current().AddTranslation(Pos.X, Pos.Y, Pos.Z);
-
-
-            ObjectManipulator.Current().CalculateWorld();
-
-
-            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");
-
-            ObjectManipulator.Current().basicEffect = false;
-        }
-
-
         List<Vector3> GetOrbPosition()
         {
             List<IObject> ObjectList = ObjectControl.ObjectList;
             List<Vector3> OrbPositions = new List<Vector3>();
+            int OrbNum = 0;
             foreach (IObject item in ObjectList)
             {
                 Type x = item.GetType();
@@ -582,8 +490,10 @@ namespace Prototype
                 {
                     Orb y = (Orb)item;
                     OrbPositions.Add(y.GetPosition());
-                }; 
+                    OrbNum++;
+                };
             }
+                player.OrbCount = 3 - OrbNum;
             return OrbPositions;
         }
 
@@ -637,9 +547,6 @@ namespace Prototype
             }
 
         }
-
-
-       
 
         //Jess: Set up effects, texture, model for sky sphere
         private void SetUpSkySphere()

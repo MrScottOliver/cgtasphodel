@@ -126,7 +126,6 @@ namespace Prototype
 
         public static IObject createObject(ObjectType item, Model model, Vector3 Position)
         {
-
             switch (item)
             {
                 case ObjectType.Platform:
@@ -137,7 +136,6 @@ namespace Prototype
 
                 case ObjectType.Orb:
                     return new Orb(model, Position);
-
             }
             throw new ArgumentException("Error - " + item + " is not recognized.");
         }
