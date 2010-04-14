@@ -364,6 +364,15 @@
       <Output>obj\x86\Debug\REcharacter_0.xml</Output>
       <Time>2010-04-11T23:48:05.0658002+01:00</Time>
     </Item>
+    <Item>
+      <Source>Star9.png</Source>
+      <Name>Star9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb</Output>
+      <Time>2010-04-14T17:30:35.2941844+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
