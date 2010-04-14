@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using DPSF;
+using DPSF.ParticleSystems;
 
 namespace Prototype
 {
@@ -18,6 +20,7 @@ namespace Prototype
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        OrbParticleSystem mcOrbParticleSystem = null;
         GraphicsDeviceManager gDeviceManager;   //Graphics device manager
         BasicEffect stdEffect;
         Effect myEffect;//Jess: custom effect
@@ -34,6 +37,7 @@ namespace Prototype
         float YAW, PITCH, ROLL;
         Matrix View;
         Matrix Proj;
+        Matrix World = Matrix.CreateTranslation(0, 0, 0);
         Shadows myShadows = new Shadows();
 
         //stefen: this bool is rubbish, prevents multiple jump noises
@@ -109,6 +113,9 @@ namespace Prototype
         /// </summary>
         protected override void LoadContent()
         {
+
+            mcOrbParticleSystem = new OrbParticleSystem(null);
+            mcOrbParticleSystem.AutoInitialize(this.GraphicsDevice, this.Content);
             AddLevelFront();
             AddLevelTop();
 
@@ -185,7 +192,7 @@ namespace Prototype
         /// </summary>
         protected override void UnloadContent()
         {
-
+            mcOrbParticleSystem.Destroy();
         }
 
         /// <summary>
@@ -195,6 +202,7 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            mcOrbParticleSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             Audio.PlayMusic();
             player.Move();
             CollisionDetectionBox.Compare(ref player);
@@ -344,6 +352,8 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+
+
             GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.VertexDeclaration = ObjectManipulator.vertexFormat;
             GraphicsDevice.RenderState.CullMode = CullMode.None;
@@ -375,6 +385,8 @@ namespace Prototype
             }
             base.Draw(gameTime);
 
+            mcOrbParticleSystem.SetWorldViewProjectionMatrices(World, View, Proj);
+            mcOrbParticleSystem.Draw();
 
         }
         /***********************

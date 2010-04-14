@@ -375,3 +375,5 @@ I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\obj\x86\Debug\Prototy
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\obj\x86\Debug\Prototype.pdb
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\characterX.xnb
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\characterX.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\DPSF.dll

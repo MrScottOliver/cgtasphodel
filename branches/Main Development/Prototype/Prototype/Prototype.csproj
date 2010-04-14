@@ -56,6 +56,10 @@
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DPSF, Version=1.4.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\DPSF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86">
       <Private>False</Private>
       <SpecificVersion>True</SpecificVersion>
@@ -86,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Audio.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="OrbParticleSystem.cs" />
     <Compile Include="Shadows.cs" />
     <Compile Include="LevelSurface.cs" />
     <Compile Include="CollisionDetection.cs" />
