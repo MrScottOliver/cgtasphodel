@@ -34,6 +34,7 @@ namespace Prototype
         float YAW, PITCH, ROLL;
         Matrix View;
         Matrix Proj;
+        Shadows myShadows = new Shadows();
 
         //stefen: this bool is rubbish, prevents multiple jump noises
         bool jumppressed;
@@ -119,13 +120,13 @@ namespace Prototype
             myEffect = Content.Load<Effect>("Lighting");
 
             //Kieran: set player model
-            player.model = Content.Load<Model>("REcharacter");
+            player.model = Content.Load<Model>("characterX");
             player.texture = Content.Load<Texture2D>("metal");
 
             player.RemapModel(player, myEffect);//remap model to use our effect
             
             player.AddRotation((float)Math.PI  / 2, 0.0f, 0.0f);
-            player.ChangeScale(0.07f);
+            player.ChangeScale(1.0f);
             player.AddTranslation(-7f, 30f, -2f);
             /*
             player.position.X = -7f;
@@ -172,6 +173,10 @@ namespace Prototype
         );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
+
+            myShadows.SetUpShadowBuffer(gDeviceManager);
+
+
         }
 
         /// <summary>
@@ -345,6 +350,8 @@ namespace Prototype
 
             View = QuaternionCamera.GetViewMatrix(ref POS, ref TARGET, ref UP, YAW, PITCH, ROLL);
 
+            CreateShadowMap();
+
             myEffect.CurrentTechnique = myEffect.Techniques["MyTech"];//Jess: set current tech
 
             SetUpLighting();//Jess: set light parameters
@@ -503,14 +510,14 @@ namespace Prototype
             lights = new Lights[8];
 
             
-            Vector4 Pos = new Vector4(3000.0f, 2000.0f, 0.0f, 1.0f);//light positions
+            Vector4 Pos = new Vector4(0.0f, 5000.0f, 0.0f, 1.0f);//light positions
 
-            lights[0] = new Lights(1);
+            lights[0] = new Lights();
             lights[0].Position = Pos;//fake sun :p
             lights[0].Ambient = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
             lights[0].Diffuse = new Vector4(0.9f, 0.9f, 0.9f, 1.0f);
-            lights[0].Specular = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
-            lights[0].Attenuation = new Vector3(0.0f, 0.00000001f, 0.00000003f);
+            lights[0].Specular = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+            lights[0].Attenuation = new Vector3(0.0f, 0.00000001f, 0.00000002f);
 
 
             //Stefen: to test orbs seperate from other lights
@@ -518,12 +525,24 @@ namespace Prototype
             foreach (Vector3 coordinate in GetOrbPosition())
             {
                 numlights++;
-                lights[numlights-1] = new Lights(1);//point light
+                lights[numlights-1] = new Lights();//point light
                 lights[numlights-1].Position = new Vector4(coordinate, 1.0f);
                 
             }
 
             myEffect.Parameters["numlights"].SetValue(numlights);//set number of lights
+
+        }
+
+        private void CreateShadowMap()
+        {
+
+            myShadows.SetUpShadowMap1(myEffect, gDeviceManager, View, Proj);
+
+            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant, POS, lights);
+            player.DrawPlayerShadow(player, Proj, View);
+
+            myShadows.SetUpShadowMap2(myEffect, gDeviceManager);
 
         }
 

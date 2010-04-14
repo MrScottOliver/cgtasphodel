@@ -30,9 +30,9 @@ namespace Prototype
         public Matrix world;
         public Matrix scale;
 
-        public Vector4 ambMtrl = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);//Jess: default material vals
+        public Vector4 ambMtrl = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);//Jess: default material vals
         public Vector4 diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
-        public Vector4 specMtrl = new Vector4(0.1f, 0.1f, 0.1f, 1.0f);
+        public Vector4 specMtrl = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
 
         public int OrbCount;
 
@@ -130,6 +130,23 @@ namespace Prototype
                 }
             }
         }
+
+        public void DrawPlayerShadow(Player player, Matrix Proj, Matrix View)
+        {
+            foreach (ModelMesh mesh in player.model.Meshes)
+            {
+                foreach (Effect effect in mesh.Effects)
+                {
+                    effect.CurrentTechnique = effect.Techniques["CreateShadowMapTech"];
+
+                    effect.Parameters["gWorld"].SetValue(player.world);
+                    effect.CommitChanges();
+
+                }
+                mesh.Draw();
+            }
+        }
+
 
         public void CreateWorld()
         {

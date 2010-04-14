@@ -15,22 +15,19 @@ namespace Prototype
         private Vector4 AmbientCol;
         private Vector4 SpecularCol;
         private Vector3 AttenVal;
-        private int lighttype;
 
         //type = 0 for directional, 1 for point lights
-        public Lights(int type)
+        public Lights()
         {
-            lighttype = type;
             AmbientCol = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
-            DiffuseCol = new Vector4(0.4f, 0.4f, 0.4f, 1.0f);
+            DiffuseCol = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
             SpecularCol = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
-            AttenVal = new Vector3(0.0f, 0.002f, 0.005f);
+            AttenVal = new Vector3(0.0f, 0.01f, 0.02f);
         }
 
 
         public void UpdateLight(EffectParameter LightParameter)
         {
-            LightParameter.StructureMembers["gtype"].SetValue(lighttype);
             LightParameter.StructureMembers["gAmbLight"].SetValue(AmbientCol);
             LightParameter.StructureMembers["gDiffuseLight"].SetValue(DiffuseCol);
             LightParameter.StructureMembers["gSpecLight"].SetValue(SpecularCol);

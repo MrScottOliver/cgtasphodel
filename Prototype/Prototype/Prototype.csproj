@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Audio.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="Shadows.cs" />
     <Compile Include="LevelSurface.cs" />
     <Compile Include="CollisionDetection.cs" />
     <Compile Include="Game1.cs" />

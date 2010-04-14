@@ -179,11 +179,14 @@ namespace Prototype
                     effect.Begin();
 
 
-                    effect.CurrentTechnique.Passes["PointLights"].Begin();
+                    foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+                    {
+                        pass.Begin();
 
-                    device.DrawUserIndexedPrimitives(obj.primType, Vertices, vOffset, obj.vertexData.Length, Indices, iOffset, obj.primAmount);
+                        device.DrawUserIndexedPrimitives(obj.primType, Vertices, vOffset, obj.vertexData.Length, Indices, iOffset, obj.primAmount);
 
-                    effect.CurrentTechnique.Passes["PointLights"].End();
+                        pass.End();
+                    }
 
 
                     effect.End();

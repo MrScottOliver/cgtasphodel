@@ -123,6 +123,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="characterX.x">
+      <Name>characterX</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Includes.inc">
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>

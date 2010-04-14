@@ -34,3 +34,5 @@ C:\Users\Piepork\Desktop\group\Prototype\Content\obj\x86\Debug\ResolveAssemblyRe
 C:\Users\Piepork\Desktop\group\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

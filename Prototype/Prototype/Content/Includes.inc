@@ -7,7 +7,6 @@ float4 gSpecLight;
 float4 gDiffuseLight; 
 float4 gLightPosW;
 float3 gAtten123;
-int gtype;
 
 };
 
@@ -22,12 +21,6 @@ shared float4 gDiffuseMtrl;
 shared float4 gAmbMtrl;
 shared float4 gSpecMtrl;	
 
-float4 gLightCol = {1.0, 1.0, 1.0, 1.0};//dir light colour
-float4 gLightDir= { -1.0f, -10.0f, 0.0f, 0.0f };//dir light direction
-
-float4 I_a = { 1.0f, 1.0f, 1.0f, 1.0f };    // ambient 
-float4 I_d = { 1.0f, 1.0f, 1.0f, 1.0f };    // diffuse
-float4 I_s = { 1.0f, 1.0f, 1.0f, 1.0f };    // specular
 
 shared texture gTex;//texture
 
@@ -40,6 +33,19 @@ sampler TexS = sampler_state
 	MaxAnisotropy = 8;
 	AddressU=WRAP;
 	AddressV=WRAP;
+};
+
+float DepthBias = 0.001;
+float texelsize = 1.0/17408.0;
+shared texture gShadowMap;
+sampler ShadowMapSampler = sampler_state
+{
+    Texture = <gShadowMap>;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    MipFilter = NONE;
+    AddressU = Clamp;
+    AddressV = Clamp;
 };
 
 
@@ -68,11 +74,6 @@ struct OutputVS
 	float3 normal: TEXCOORD2;
 	float2 tex0 : TEXCOORD3;
 	float4 LightVec: TEXCOORD4;
-	float3 col_amb: TEXCOORD5;
-	float3 col_diff: TEXCOORD6;
-	float3 col_spec: TEXCOORD7;
-	float3 E: TEXCOORD8;
-	float3 EV: TEXCOORD9; 
 	
 
 };
@@ -98,20 +99,6 @@ OutputVS LightsVS(InputVS input)
 	// Pass on texture coordinates to be interpolated in rasterization.
 	outVS.tex0 = input.tex0;
 	
-	//-----------------------------------------------
-	
-	//eye position //for dir light
-	outVS.E = mul(input.posH,gWorldView).xyz;
-
-	//eye vector//for dir light
-	outVS.EV=normalize(outVS.E);
-	
-	//for dir light
-	outVS.col_amb =  I_a*gAmbMtrl*gLightCol;
-	outVS.col_diff = I_d*gDiffuseMtrl*gLightCol;
-	outVS.col_spec = I_s*gSpecMtrl*gLightCol;
-	
-	//-----------------------------------------------
 	
 	//return output
 	return outVS;
@@ -135,7 +122,6 @@ struct InputPS
 	float3 EV: TEXCOORD9; 
 
 };
-
 
 
 float3 CalculatePointLight(Lighting light, InputPS input, float4 texCol, float4 globalAmb)
@@ -168,25 +154,31 @@ float3 CalculatePointLight(Lighting light, InputPS input, float4 texCol, float4 
 
 }
 
-
-float3 CalculateDirLight(InputPS input, float4 texCol, float4 globalAmb)
+float3 CalculatePointLightWShadow(Lighting light, InputPS input, float4 texCol, float4 globalAmb, float shadowdiff)
 {
+	//calculate light vector	
+	input.LightVec = normalize(light.gLightPosW - input.posW);
 	
-	//transform light vector into viewspace and normalize light vector and normals
-	float3 L= -normalize(mul(gLightDir,gWorldView));
+	//calculate attenuation
+	float dist = distance(light.gLightPosW, input.posW);
+	float atten = light.gAtten123.x + dist*light.gAtten123.y + light.gAtten123.z*dist*dist;
 	
+	//normalise normal vector
 	input.normal =normalize(input.normal).xyz;
 
-	//Calculate diff, specular and ambient components of lighht
-	float diff = max(0, dot(input.normal,L));
-    
-	//half angle vector used in approximation to specular component
-	float3 H=normalize(input.EV+L);
-    
-	//specular component using Blinns half angle
-	float spec = pow(max(0, dot(input.normal, H)), n);	
+	//Calculate diff, specular and ambient components of light
+	float diff = max(0, dot(input.normal,input.LightVec));
 	
-	float3 Color =input.col_diff*diff*texCol + input.col_amb*globalAmb*texCol+ input.col_spec*spec;
+	//specular component 
+	input.viewDir=normalize(gCamPosW - input.posW);
+	float3 reflectW=reflect(-input.LightVec,input.normal);
+	float spec = pow(max(0, dot(reflectW, input.viewDir)), 32)/atten;
+	
+	float4 specular = gSpecMtrl*spec*light.gSpecLight;
+	float4 diffuse = (gDiffuseMtrl*diff*light.gDiffuseLight)*shadowdiff;
+	float4 ambient =gAmbMtrl*globalAmb*light.gAmbLight;
+	
+	float3 Color = ambient*texCol+(diffuse*texCol + specular)/atten;
 
 	return Color;
 
@@ -194,3 +186,46 @@ float3 CalculateDirLight(InputPS input, float4 texCol, float4 globalAmb)
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///CREATE SHADOW MAP- VERTEX AND PIXEL SHADER
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+uniform extern float4x4 gLightviewproj;
+
+struct CreateShadowMap_VSOut
+{
+ float4  position: POSITION;
+ float Depth: TEXCOORD0;
+ 
+};  
+
+
+CreateShadowMap_VSOut CreateShadowMapVS(float4 position: POSITION)
+{
+CreateShadowMap_VSOut Out;
+Out.position = mul(position, mul(gWorld,gLightviewproj));
+Out.Depth = Out.position.z/Out.position.w;
+return Out;
+} 
+
+float4 CreateShadowMapPS(CreateShadowMap_VSOut input):COLOR
+{
+
+return float4(input.Depth, 0, 0, 0);
+
+}
+
+////////////////////////////////////////////////////////////////////
+//Shadow map lookups											////
+////////////////////////////////////////////////////////////////////
+
+float ShadowMapLookup(sampler shadowMap, float2 texCoord, float depth)
+{
+	return (tex2D(shadowMap, texCoord).r + DepthBias < depth) ? 0.0f : 1.0f;
+}
+
+float ShadowMapLookup(sampler shadowMap, float2 texCoord, float2 offset, float depth)
+{
+	return (tex2D(shadowMap, texCoord + offset * texelsize).r + DepthBias < depth) ? 0.0f : 1.0f;
+}
