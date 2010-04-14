@@ -341,3 +341,36 @@ C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Proto
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb
 \\uadfil07\students$\0700958\Desktop\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\metal.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Lighting.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\ship2.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\ball.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Character.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Flower1.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Hill1.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Hill2.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\New Character.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Platform2.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\platform1.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\leave1.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\REcharacter.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\metal_0.xnb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Audio\Music.xwb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Audio\SFX.xwb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Prototype.exe
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Prototype.pdb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\obj\x86\Debug\Prototype.exe
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\obj\x86\Debug\Prototype.pdb
+I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\characterX.xnb
