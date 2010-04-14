@@ -181,6 +181,7 @@ namespace Prototype
                 // alternative: have seperate function for effect
                 // if (item.Collision(PlayerSphere))
                 //      item.Activate();
+                //
             }
             foreach (IObject itemToRemove in itemsToRemove)
                 ObjectList.Remove(itemToRemove);
