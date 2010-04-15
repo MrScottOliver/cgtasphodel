@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using DPSF;
+using DPSF.ParticleSystems;
 using System.Diagnostics;
 
 namespace Prototype
@@ -72,6 +74,7 @@ namespace Prototype
                 ObjectControl.itemsToRemove.Add(this);
                 Audio.Pickup();
                 Player.OrbCount++;
+                ParticleGroup.NewParticle(Position);
                // mcOrbParticleSystem.SetWorldViewProjectionMatrices(World * Matrix.CreateTranslation(this.GetPosition), View, Proj);
             }
         }

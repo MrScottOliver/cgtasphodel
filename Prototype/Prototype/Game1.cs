@@ -20,7 +20,6 @@ namespace Prototype
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        OrbParticleSystem mcOrbParticleSystem = null;
         GraphicsDeviceManager gDeviceManager;   //Graphics device manager
         BasicEffect stdEffect;
         Effect myEffect;//Jess: custom effect
@@ -113,12 +112,9 @@ namespace Prototype
         /// </summary>
         protected override void LoadContent()
         {
-
-            mcOrbParticleSystem = new OrbParticleSystem(null);
-            mcOrbParticleSystem.AutoInitialize(this.GraphicsDevice, this.Content);
             AddLevelFront();
             AddLevelTop();
-
+            ParticleGroup.Init(this.GraphicsDevice, this.Content);
             //adds the collision boxes
             SetupPlane();
             //Stefen:Creates + sets vertex and index buffers
@@ -192,7 +188,7 @@ namespace Prototype
         /// </summary>
         protected override void UnloadContent()
         {
-            mcOrbParticleSystem.Destroy();
+            //mcOrbParticleSystem.Destroy();
         }
 
         /// <summary>
@@ -202,7 +198,7 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-          mcOrbParticleSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            ParticleGroup.Update(gameTime);
             Audio.PlayMusic();
             player.Move();
             CollisionDetectionBox.Compare(ref player);
@@ -385,8 +381,7 @@ namespace Prototype
             }
             base.Draw(gameTime);
 
-            mcOrbParticleSystem.SetWorldViewProjectionMatrices(World, View, Proj);
-            mcOrbParticleSystem.Draw();
+            ParticleGroup.Draw(World, View, Proj);
 
         }
         /***********************

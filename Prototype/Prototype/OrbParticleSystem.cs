@@ -31,6 +31,7 @@ namespace DPSF.ParticleSystems
     class OrbParticleSystem : DefaultPointSpriteParticleSystem
     {
         public Vector3 Pos;//Stefen: thrown this in to ease positioning
+        public float timer;// ditto for managing the effects lenght
         /// <summary>
         /// Constructor
         /// </summary>
@@ -138,8 +139,8 @@ namespace DPSF.ParticleSystems
             ParticleEvents.AddEveryTimeEvent(UpdateParticleTransparencyToFadeOutUsingLerp, 100);
 
             // Set the Particle System's Emitter to toggle on and off every 0.5 seconds
-            ParticleSystemEvents.LifetimeData.EndOfLifeOption = CParticleSystemEvents.EParticleSystemEndOfLifeOptions.Repeat;
-            ParticleSystemEvents.LifetimeData.Lifetime = 2.0f;
+            ParticleSystemEvents.LifetimeData.EndOfLifeOption = CParticleSystemEvents.EParticleSystemEndOfLifeOptions.Destroy;
+            ParticleSystemEvents.LifetimeData.Lifetime = 5.0f;
             ParticleSystemEvents.AddTimedEvent(0.0f, UpdateParticleSystemEmitParticlesAutomaticallyOn);
             ParticleSystemEvents.AddTimedEvent(0.5f, UpdateParticleSystemEmitParticlesAutomaticallyOff);
 
@@ -235,27 +236,48 @@ namespace DPSF.ParticleSystems
        
     }
     //Stefen:attempting a list based way to create multiple effects
-    /* class ParticleGroup
+    class ParticleGroup
      {
-        public static List<OrbParticleSystem> ParticleList;
-         OrbParticleSystem mcOrbParticleSystem;
+        public static List<OrbParticleSystem> ParticleList = new List<OrbParticleSystem>();
+        public static GraphicsDevice G;
+        public static ContentManager C;
 
-        public void NewParticle(Vector3 Position)
+
+        static public void Init(GraphicsDevice Graph, ContentManager Cont)
         {
-            mcOrbParticleSystem = new OrbParticleSystem(null);
-            mcOrbParticleSystem.AutoInitialize(this.GraphicsDevice, this.Content);
-            mcOrbParticleSystem.Pos = Position;
+            G = Graph;
+            C = Cont;
         }
 
-         public void Update()
+       static public void NewParticle(Vector3 Position)
+        {
+            OrbParticleSystem mcOrbParticleSystem= new OrbParticleSystem(null);
+            mcOrbParticleSystem.Pos = Position;
+            mcOrbParticleSystem.timer = 5.0f;
+            mcOrbParticleSystem.AutoInitialize(G, C);
+            ParticleList.Add(mcOrbParticleSystem);
+        }
+
+        static public void Update(GameTime gameTime)
          {
-        mcOrbParticleSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+             foreach (OrbParticleSystem item in ParticleList)
+             {
+                 item.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+           //      if (item.timer > 0)
+             //        item.timer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+          //       else
+          //          item.Destroy();
+             }
          }
 
-         public void Draw(Matrix World, Matrix View, Matrix Proj)
+         static public void Draw(Matrix World, Matrix View, Matrix Proj)
          {
-           mcOrbParticleSystem.SetWorldViewProjectionMatrices(World * Matrix.CreateTranslation(mcOrbParticleSystem.Pos), View, Proj);
-           mcOrbParticleSystem.Draw();}
+             foreach (OrbParticleSystem item in ParticleList)
+             {
+                 item.SetWorldViewProjectionMatrices(World * Matrix.CreateTranslation(item.Pos), View, Proj);
+                 item.Draw();
+             }
          }
-    */
+    }
+    
 }
