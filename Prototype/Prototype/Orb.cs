@@ -65,16 +65,15 @@ namespace Prototype
 
         }
         override
-        public bool Collision(BoundingSphere PlayerSphere)
+        public void Collision(BoundingSphere PlayerSphere)
         {
             if (PlayerSphere.Intersects(sphere))
             {
-                //increment points
-                //remove orb from list
-                return true;
+                ObjectControl.itemsToRemove.Add(this);
+                Audio.Pickup();
+                Player.OrbCount++;
+               // mcOrbParticleSystem.SetWorldViewProjectionMatrices(World * Matrix.CreateTranslation(this.GetPosition), View, Proj);
             }
-            else
-                return false;
         }
         override
         public void Activate()

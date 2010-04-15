@@ -37,7 +37,7 @@ namespace Prototype
     {
         void Load(Actions State, float Val1, float Val2, float Val3);
         void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
-        bool Collision(BoundingSphere PlayerSphere);
+        void Collision(BoundingSphere PlayerSphere);
         void Activate();
     }
 
@@ -46,7 +46,7 @@ namespace Prototype
     {
         public abstract void Load(Actions State, float Val1, float Val2, float Val3);
         public abstract void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
-        public abstract bool Collision(BoundingSphere PlayerSphere);
+        public abstract void Collision(BoundingSphere PlayerSphere);
         public abstract void Activate();
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,10 +103,9 @@ namespace Prototype
             }
         }
         override
-        public bool Collision(BoundingSphere PlayerSphere)
+        public void Collision(BoundingSphere PlayerSphere)
         {
             //Effect of collision
-            return false;
         }
         override
         public void Activate()
@@ -122,8 +121,6 @@ namespace Prototype
     //Stefen: Object factory class returns a new instance of a class
     class ObjectFactory
     {
-
-
         public static IObject createObject(ObjectType item, Model model, Vector3 Position)
         {
             switch (item)
@@ -147,7 +144,7 @@ namespace Prototype
     class ObjectControl : Level
     {
         public static List<IObject> ObjectList = new List<IObject>();
-
+        public static List<IObject> itemsToRemove;
         override
         public void Load(Actions State, float Val1, float Val2, float Val3)
         {
@@ -162,31 +159,20 @@ namespace Prototype
         {
             foreach (IObject item in ObjectList)
             {
-                //ObjectFactory.createObject(item).Render();
                 item.Render(view, projection, graphics);
             }
         }
         //If a collision takes place the associated effect is activated
         override
-        public bool Collision(BoundingSphere PlayerSphere) //Collision returns true if object is to be destroyed
+        public void Collision(BoundingSphere PlayerSphere) //Collision returns true if object is to be destroyed
         {
-            List<IObject> itemsToRemove = new List<IObject>();
+            itemsToRemove = new List<IObject>();
             foreach (IObject item in ObjectList)
             {
-                if (item.Collision(PlayerSphere))
-                {
-                    itemsToRemove.Add(item);
-                    Audio.Pickup();
-                }
-                // alternative: have seperate function for effect
-                // if (item.Collision(PlayerSphere))
-                //      item.Activate();
-                //
+                item.Collision(PlayerSphere);
             }
             foreach (IObject itemToRemove in itemsToRemove)
                 ObjectList.Remove(itemToRemove);
-
-            return false;
         }
         override
         public void Activate()

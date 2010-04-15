@@ -202,7 +202,7 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            mcOrbParticleSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+          mcOrbParticleSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             Audio.PlayMusic();
             player.Move();
             CollisionDetectionBox.Compare(ref player);
@@ -512,7 +512,6 @@ namespace Prototype
                     OrbNum++;
                 };
             }
-                player.OrbCount = 3 - OrbNum;
             return OrbPositions;
         }
 
