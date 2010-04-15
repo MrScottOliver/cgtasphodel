@@ -34,7 +34,7 @@ namespace Prototype
         public Vector4 diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
         public Vector4 specMtrl = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
 
-        public int OrbCount;
+        public static int OrbCount;
 
         public Player()
         {

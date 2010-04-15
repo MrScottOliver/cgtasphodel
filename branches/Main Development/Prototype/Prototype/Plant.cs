@@ -78,7 +78,7 @@ namespace Prototype
             }
         }
         override
-        public bool Collision(BoundingSphere PlayerSphere)
+        public void Collision(BoundingSphere PlayerSphere)
         {
             //if the boxes collide                // run plant and grow event on different levels, delete event once activated
             //if the object hasnt been activated  // create activation list, animate list and destruction list
@@ -109,10 +109,6 @@ namespace Prototype
                 default:
                     throw new ArgumentException("Error - " + Current + " is not recognized.");
             }
-
-
-
-            return false;
         }
 
         override

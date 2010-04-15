@@ -30,6 +30,7 @@ namespace DPSF.ParticleSystems
     /// </summary>
     class OrbParticleSystem : DefaultPointSpriteParticleSystem
     {
+        public Vector3 Pos;//Stefen: thrown this in to ease positioning
         /// <summary>
         /// Constructor
         /// </summary>
@@ -230,5 +231,31 @@ namespace DPSF.ParticleSystems
         //-----------------------------------------------------------
         // TODO: Place any other functions here
         //-----------------------------------------------------------
+        
+       
     }
+    //Stefen:attempting a list based way to create multiple effects
+    /* class ParticleGroup
+     {
+        public static List<OrbParticleSystem> ParticleList;
+         OrbParticleSystem mcOrbParticleSystem;
+
+        public void NewParticle(Vector3 Position)
+        {
+            mcOrbParticleSystem = new OrbParticleSystem(null);
+            mcOrbParticleSystem.AutoInitialize(this.GraphicsDevice, this.Content);
+            mcOrbParticleSystem.Pos = Position;
+        }
+
+         public void Update()
+         {
+        mcOrbParticleSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+         }
+
+         public void Draw(Matrix World, Matrix View, Matrix Proj)
+         {
+           mcOrbParticleSystem.SetWorldViewProjectionMatrices(World * Matrix.CreateTranslation(mcOrbParticleSystem.Pos), View, Proj);
+           mcOrbParticleSystem.Draw();}
+         }
+    */
 }

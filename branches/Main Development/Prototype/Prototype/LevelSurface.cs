@@ -60,9 +60,8 @@ namespace Prototype
             Position.Z += z;
         }
 
-        public bool Collision(BoundingSphere PlayerSphere)
+        public void Collision(BoundingSphere PlayerSphere)
         {
-            return false;
         }
 
         public void Scale(float x, float y, float z)
