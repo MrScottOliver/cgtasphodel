@@ -60,6 +60,8 @@ namespace Prototype
         //Kieran: draw player function
         public void DrawPlayer(Player player, Matrix Proj, Matrix View)
         {
+            Matrix[] transforms = new Matrix[model.Bones.Count];
+            model.CopyAbsoluteBoneTransformsTo(transforms);
             foreach (ModelMesh mesh in player.model.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
@@ -67,8 +69,8 @@ namespace Prototype
                     effect.EnableDefaultLighting();
                     effect.PreferPerPixelLighting = true;
 
-                    effect.World = player.world;
-
+                   // effect.World = player.world;
+                    effect.World = transforms[mesh.ParentBone.Index] * rotation * scale * translation;
                     effect.Projection = Proj;
                     effect.View = View;
                 }

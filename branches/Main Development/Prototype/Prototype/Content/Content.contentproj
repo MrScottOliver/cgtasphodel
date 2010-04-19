@@ -128,10 +128,50 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
+    <Compile Include="Flower2.fbx">
+      <Name>Flower2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Includes.inc">
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>
     </None>
+    <Compile Include="MurshroomPlatformtest2.fbx">
+      <Name>MurshroomPlatformtest2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="MurshroomPlatformtest.fbx">
+      <Name>MurshroomPlatformtest</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="MainLevel1.fbx">
+      <Name>MainLevel1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelBuild2.fbx">
+      <Name>LevelBuild2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Mainhill2.fbx">
+      <Name>Mainhill2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Murshroom1.fbx">
+      <Name>Murshroom1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="LevelBuild3.fbx">
+      <Name>LevelBuild3</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="New Character.fbx">
       <Name>New Character</Name>
       <Importer>FbxImporter</Importer>

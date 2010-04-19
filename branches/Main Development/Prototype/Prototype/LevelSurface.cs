@@ -43,7 +43,9 @@ namespace Prototype
                     effect.View = view;
                     effect.Projection = projection;
 
-                    effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale * rotation * Matrix.CreateTranslation(Position);  /*scale*/
+                    //effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale *rotation  * Matrix.CreateTranslation(Position);  /*scale*/
+                    effect.World = transforms[mesh.ParentBone.Index] * rotation * Matrix.CreateTranslation(Position);
+
                 }
                 mesh.Draw();
             }
