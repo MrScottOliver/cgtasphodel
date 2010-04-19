@@ -32,7 +32,8 @@ namespace Prototype
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
         Lights[] lights;
         ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
-        Surface PlatLeaf1, PlatLeaf2, PlatHill1, PlatHill2;
+       // Surface  PlatLeaf3, PlatHill1, PlatHill2, Mushroom, MainHill;
+        Surface PlatLeaf1,PlatLeaf2, FullLevel, Mushroom1, Mushroom2;
         float YAW, PITCH, ROLL;
         Matrix View;
         Matrix Proj;
@@ -142,32 +143,61 @@ namespace Prototype
             Model PlantCyl = Content.Load<Model>("Flower1");
             Model Hill1 = Content.Load<Model>("Hill1");
             Model Hill2 = Content.Load<Model>("Hill2");
+            Model Full = Content.Load<Model>("MainLevel1");
+            Model Mush1 = Content.Load<Model>("MurshroomPlatformtest");
+            Model Mush2 = Content.Load<Model>("MurshroomPlatformtest2");
             Model Leaf1 = Content.Load<Model>("leave1");
-
+            Model Mush= Content.Load<Model>("Murshroom1");
+            Model LevelBuild2 = Content.Load<Model>("LevelBuild2");
+            Model Flower = Content.Load<Model>("Flower2");
+            Model MnHill = Content.Load<Model>("Mainhill2");
            
-            PlatHill1 = new Surface(Hill1, new Vector3(45, 0, -8));
+           /* PlatHill1 = new Surface(Hill1, new Vector3(45, 0, -8));
             PlatHill1.Scale(0.3f, 0.3f, 0.3f);
             PlatHill1.Rotate(1.0f, 0.0f, 0.0f);
             PlatHill2 = new Surface(Hill2, new Vector3(0, 0, 0));
             PlatHill2.Scale(0.3f, 0.3f, 0.3f);
-            PlatHill2.Rotate(3.0f, 0.0f, 0.0f);
+            PlatHill2.Rotate(3.0f, 0.0f, 0.0f);*/
+            FullLevel = new Surface(Full, new Vector3(0, 0, 0));
+            /*
+           // FullLevel.Rotate(3.0f, 0.0f, 0.0f);
+            Mushroom = new Surface(Mush, new Vector3(0, 0, 0));
+            MainHill = new Surface(MnHill, new Vector3(0, 0, 0));
+
+            PlatLeaf3 = new Surface(Flower, new Vector3(0, 0, 0));
+            PlatHill2 = new Surface(LevelBuild2, new Vector3(0, 0, 0));
+            */
             PlatLeaf1 = new Surface(Leaf1, new Vector3(25, 14, -3));
             PlatLeaf1.Scale(0.75f, 0.75f, 0.75f);
             PlatLeaf1.Rotate(1.0f, 0.0f, 0.0f);
             PlatLeaf2 = new Surface(Leaf1, new Vector3(10, 8, -3));
             PlatLeaf2.Scale(0.75f, 0.75f, 0.75f);
             PlatLeaf2.Rotate(1.0f, 0.0f, 0.0f);
-
+            Mushroom1 = new Surface(Mush1, new Vector3(20, 20, -3));
+            Mushroom2 = new Surface(Mush2, new Vector3(50, 20, -3));
            //Stefen: Apply transformations for last object entered
+
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(30, 10, -2))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(0, 0, 0))
             );
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(12, 20, -2))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(5, 5, 0))
+            );
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(10, 10, 0))
+            );
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(15, 15, 0))
+            );
+            ObjectControl.ObjectList.Add(
+           ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(30, -20, 0))
            );
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(6, 16, -2))
-           );
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(10, -20, 0))
+            );
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(25, 14, -3))
+            );
             ObjectControl.ObjectList.Add(
            ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
            );
@@ -352,7 +382,7 @@ namespace Prototype
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.VertexDeclaration = ObjectManipulator.vertexFormat;
-            GraphicsDevice.RenderState.CullMode = CullMode.None;
+            GraphicsDevice.RenderState.CullMode = CullMode.CullCounterClockwiseFace;
 
             View = QuaternionCamera.GetViewMatrix(ref POS, ref TARGET, ref UP, YAW, PITCH, ROLL);
 
@@ -372,9 +402,16 @@ namespace Prototype
             LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
 
             ObjControl.Render(View, Proj, GraphicsDevice);
-            PlatHill1.Render(View, Proj, GraphicsDevice);
-            PlatHill2.Render(View, Proj, GraphicsDevice);
+           // PlatHill1.Render(View, Proj, GraphicsDevice);
+           // PlatHill2.Render(View, Proj, GraphicsDevice);
+            FullLevel.Render(View, Proj, GraphicsDevice);
+           // MainHill.Render(View, Proj, GraphicsDevice);
+           // Mushroom.Render(View, Proj, GraphicsDevice);
+           // PlatLeaf3.Render(View, Proj, GraphicsDevice);
+           // PlatHill2.Render(View, Proj, GraphicsDevice);
             PlatLeaf1.Render(View, Proj, GraphicsDevice);
+            Mushroom1.Render(View, Proj, GraphicsDevice);
+            Mushroom2.Render(View, Proj, GraphicsDevice);
             if (Plant.getPos().Y > 10)
             {
                 PlatLeaf2.Render(View, Proj, GraphicsDevice);

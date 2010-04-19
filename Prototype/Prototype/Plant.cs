@@ -72,7 +72,7 @@ namespace Prototype
                     Matrix scale;
                     scale = Matrix.Identity; ;
                     scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
-                    effect.World = /*gameWorldRotation * */ scale * transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position); /*scale*/
+                    effect.World = /*gameWorldRotation * */   transforms[mesh.ParentBone.Index]* scale* Matrix.CreateTranslation(Position); /*scale*/
                 }
                 mesh.Draw();
             }
