@@ -15,36 +15,37 @@ using System.Diagnostics;
 
 namespace Prototype
 {
-    class Plant : Level
+    class Mushroom : Level
     {
         public enum LifeCycle
         {
             Active,
-            Animate,
-            Collision
+            AnimateDown,
+            AnimateUp
         }
 
         BoundingSphere sphere;
         Model ObjModel;
-        private Vector3 Position;
+        private Vector3 Position, Scale;
         LifeCycle Current;
+   
 
-        public Plant(Model model, Vector3 Pos)
+        public Mushroom(Model model, Vector3 Pos)
         {
             ObjModel = model;
             Position = Pos;
             sphere.Center = Pos;//set position
-            sphere.Center.Y += 20;//model is under collision point
-            //sphere.Center.X -= 2;//model is behind collision point
             sphere.Radius = 5;//set radius
-            Current = LifeCycle.Collision;
+            Current = LifeCycle.Active;
+            Scale.X = Scale.Y = Scale.Z = 0.25f;
         }
 
         override
         public void Load()
         {
-        
+          
         }
+
         override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
@@ -61,8 +62,8 @@ namespace Prototype
                     effect.Projection = projection;
                     Matrix scale;
                     scale = Matrix.Identity; ;
-                    scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
-                    effect.World = /*gameWorldRotation * */   transforms[mesh.ParentBone.Index]* scale* Matrix.CreateTranslation(Position); /*scale*/
+                    scale = Matrix.CreateScale(Scale);
+                    effect.World = /*gameWorldRotation * */   transforms[mesh.ParentBone.Index] * scale * Matrix.CreateTranslation(Position); /*scale*/
                 }
                 mesh.Draw();
             }
@@ -70,31 +71,36 @@ namespace Prototype
         override
         public void Collision(BoundingSphere PlayerSphere)
         {
-            //if the boxes collide                // run plant and grow event on different levels, delete event once activated
-            //if the object hasnt been activated  // create activation list, animate list and destruction list
-            //                                    // other: in here, case active, case animate, collision
-            //      
             switch (Current)
             {
                 case LifeCycle.Active:
-                    //call generic function
-                    break;
-                case LifeCycle.Animate:
-                    if (Position.Y < -5)                    //call animate function
-                        Position.Y += 0.1f;
-                    else
-                        Current = LifeCycle.Active;         //function sets current to Active after use is spent
-                    break;
-                case LifeCycle.Collision:
                     if (PlayerSphere.Intersects(sphere))
+                        Current = LifeCycle.AnimateDown;
+                    //Check collision
+                    //if true, boost player
+                    //set state animate
+                    break;
+                case LifeCycle.AnimateDown:
+                    if (Scale.Y > 0.01)
                     {
-                        KeyboardState keyState = Keyboard.GetState();
-                        if (keyState.IsKeyDown(Keys.X))
-                        {
-                            Current = LifeCycle.Animate;
-                            Audio.Growth();
-                        }
+                        Scale.X += 0.01f;
+                        Scale.Y -= 0.01f;
                     }
+                    else
+                        Current = LifeCycle.AnimateUp;
+                   //check time, stretch the shroom to suit
+                    //once complete return to active
+                    break;
+                case LifeCycle.AnimateUp:
+                    if (Scale.X > 0.25)
+                    {
+                        Scale.X -= 0.01f;
+                        Scale.Y += 0.01f;
+                    }
+                    else
+                        Current = LifeCycle.Active;
+                    //check time, stretch the shroom to suit
+                    //once complete return to active
                     break;
                 default:
                     throw new ArgumentException("Error - " + Current + " is not recognized.");

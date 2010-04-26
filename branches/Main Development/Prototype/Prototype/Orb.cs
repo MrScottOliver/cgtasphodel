@@ -32,19 +32,9 @@ namespace Prototype
         }
 
         override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
+        public void Load()
         {
-            switch (State)
-            {
-                case Actions.Scale:
-                    //Scale(Val1, Val2, Val3);
-                    break;
-                case Actions.Rotate:
-                    //Rotate(Val1, Val2, Val3);
-                    break;
-                case Actions.Position:
-                    break;
-            }
+      
         }
         override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
