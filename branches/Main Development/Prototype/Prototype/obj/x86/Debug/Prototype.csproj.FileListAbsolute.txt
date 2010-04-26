@@ -420,3 +420,5 @@ C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\DPSF.
 \\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MainLevel1.xnb
 \\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest2.xnb
 \\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest.xnb
+\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
