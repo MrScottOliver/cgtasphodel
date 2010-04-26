@@ -20,22 +20,16 @@ using System.Diagnostics;
 //Stefen: General interface for game object
 namespace Prototype
 {
-    public enum Actions
-    {
-        Scale,
-        Rotate,
-        Position
-    }
-
         public enum ObjectType
         {
             Platform,
             Plant,
-            Orb
+            Orb,
+            Mushroom
         }
     interface IObject
     {
-        void Load(Actions State, float Val1, float Val2, float Val3);
+        void Load();
         void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
         void Collision(BoundingSphere PlayerSphere);
         void Activate();
@@ -44,7 +38,7 @@ namespace Prototype
     //Stefen: Class derived from relevent intefraces
     abstract class Level : IObject
     {
-        public abstract void Load(Actions State, float Val1, float Val2, float Val3);
+        public abstract void Load();
         public abstract void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
         public abstract void Collision(BoundingSphere PlayerSphere);
         public abstract void Activate();
@@ -64,19 +58,9 @@ namespace Prototype
         }
 
         override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
+        public void Load()
         {
-            switch (State)
-            {
-                case Actions.Scale:
-                    //Scale(Val1, Val2, Val3);
-                    break;
-                case Actions.Rotate:
-                    //Rotate(Val1, Val2, Val3);
-                    break;
-                case Actions.Position:
-                    break;
-            }
+            
         }
         override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
@@ -133,6 +117,9 @@ namespace Prototype
 
                 case ObjectType.Orb:
                     return new Orb(model, Position);
+
+                case ObjectType.Mushroom:
+                    return new Mushroom(model, Position);
             }
             throw new ArgumentException("Error - " + item + " is not recognized.");
         }
@@ -146,7 +133,7 @@ namespace Prototype
         public static List<IObject> ObjectList = new List<IObject>();
         public static List<IObject> itemsToRemove;
         override
-        public void Load(Actions State, float Val1, float Val2, float Val3)
+        public void Load()
         {
             foreach (IObject item in ObjectList)
             {
@@ -168,9 +155,8 @@ namespace Prototype
         {
             itemsToRemove = new List<IObject>();
             foreach (IObject item in ObjectList)
-            {
                 item.Collision(PlayerSphere);
-            }
+
             foreach (IObject itemToRemove in itemsToRemove)
                 ObjectList.Remove(itemToRemove);
         }

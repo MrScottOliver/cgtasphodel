@@ -137,7 +137,7 @@ namespace Prototype
             
             player.AddRotation((float)Math.PI  / 2, 0.0f, 0.0f);
             player.ChangeScale(1.0f);
-            player.AddTranslation(-7f, 30f, -2f);
+            player.AddTranslation(-7f, 30f, 0f);
             /*
             player.position.X = -7f;
             player.position.Y = 20f;
@@ -225,13 +225,28 @@ namespace Prototype
             ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(10, -20, 0))
             );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(25, 14, -3))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(25, 14, 0))
             );
             ObjectControl.ObjectList.Add(
            ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
            );
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(10, -20, 0))
+        );
+            ObjectControl.ObjectList.Add(
+           ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(20, 0, -4))
+           );
+            ObjectControl.ObjectList.Add(
+ ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(22, 0, -4))
+ );
+            ObjectControl.ObjectList.Add(
+ ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(24, 0, -4))
+ );
+            ObjectControl.ObjectList.Add(
+ ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(26, 0, -4))
+ );
+            ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Mushroom, Mush2, new Vector3(10, 0, -4))
         );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
