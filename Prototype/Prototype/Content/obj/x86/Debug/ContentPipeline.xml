@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
       <Source>metal.jpg</Source>
@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
+      <Time>2010-04-15T16:29:23.7871287+01:00</Time>
     </Item>
     <Item>
       <Source>testtexgrass.jpg</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
+      <Time>2010-04-15T16:29:26.1583591+01:00</Time>
     </Item>
     <Item>
       <Source>testtexleaves.jpg</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
+      <Time>2010-04-15T16:29:23.5999263+01:00</Time>
     </Item>
     <Item>
       <Source>skyboxmystic.dds</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb</Output>
+      <Time>2010-04-15T16:29:27.2659733+01:00</Time>
     </Item>
     <Item>
       <Source>Star9.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb</Output>
+      <Time>2010-04-15T16:29:23.9743311+01:00</Time>
     </Item>
     <Item>
       <Source>Phong_Shader.fx</Source>
@@ -52,8 +52,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
+      <Time>2010-04-15T16:29:25.9243561+01:00</Time>
     </Item>
     <Item>
       <Source>SkySphere.fx</Source>
@@ -61,8 +61,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb</Output>
+      <Time>2010-04-15T16:29:29.5436025+01:00</Time>
     </Item>
     <Item>
       <Source>Lighting.fx</Source>
@@ -70,8 +70,12 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb</Output>
+      <Time>2010-04-15T16:29:26.3143611+01:00</Time>
+      <Dependency>
+        <Key>Includes.inc</Key>
+        <Value>2010-04-15T16:29:25.9711567+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>ship2.x</Source>
@@ -79,8 +83,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
+      <Time>2010-04-15T16:29:24.9415435+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\ship2_0.xml</Key>
+        <Value>2010-04-26T13:08:23.0314395+01:00</Value>
+      </Dependency>
+      <Request>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
     </Item>
     <Item>
       <Source>ball.x</Source>
@@ -88,8 +97,12 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\ball.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\ball.xnb</Output>
+      <Time>2010-04-15T16:29:23.7247279+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\ball_0.xml</Key>
+        <Value>2010-04-26T13:08:24.2794395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>characterX.x</Source>
@@ -97,8 +110,12 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\characterX.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\characterX.xnb</Output>
+      <Time>2010-04-15T16:29:24.8791427+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\characterX_0.xml</Key>
+        <Value>2010-04-26T13:08:26.0578395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>PlantCylinder.x</Source>
@@ -106,8 +123,12 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb</Output>
+      <Time>2010-04-15T16:29:26.0335575+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\PlantCylinder_0.xml</Key>
+        <Value>2010-04-26T13:08:26.2762395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>SphereHighPoly.fbx</Source>
@@ -115,8 +136,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb</Output>
+      <Time>2010-04-15T16:29:30.0116085+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\SphereHighPoly_0.xml</Key>
+        <Value>2010-04-26T13:08:28.0858395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Character.fbx</Source>
@@ -124,8 +149,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Character.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Character.xnb</Output>
+      <Time>2010-04-15T16:29:32.0396345+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Character_0.xml</Key>
+        <Value>2010-04-26T13:08:35.2306395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Flower1.fbx</Source>
@@ -133,8 +162,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Flower1.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Flower1.xnb</Output>
+      <Time>2010-04-15T16:29:29.7776055+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Flower1_0.xml</Key>
+        <Value>2010-04-26T13:08:36.9466395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Hill1.fbx</Source>
@@ -142,8 +175,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Hill1.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Hill1.xnb</Output>
+      <Time>2010-04-15T16:29:24.0523321+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Hill1_0.xml</Key>
+        <Value>2010-04-26T13:08:38.2882395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Hill2.fbx</Source>
@@ -151,8 +188,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Hill2.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Hill2.xnb</Output>
+      <Time>2010-04-15T16:29:24.1303331+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Hill2_0.xml</Key>
+        <Value>2010-04-26T13:08:39.4738395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Flower2.fbx</Source>
@@ -160,8 +201,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Flower2.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Flower2.xnb</Output>
+      <Time>2010-04-15T17:00:00+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Flower2_0.xml</Key>
+        <Value>2010-04-26T13:08:40.7218395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>MurshroomPlatformtest2.fbx</Source>
@@ -169,8 +214,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest2.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest2.xnb</Output>
+      <Time>2010-04-19T14:30:50+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\MurshroomPlatformtest2_0.xml</Key>
+        <Value>2010-04-26T13:08:42.2038395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>MurshroomPlatformtest.fbx</Source>
@@ -178,8 +227,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest.xnb</Output>
+      <Time>2010-04-19T14:29:48+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\MurshroomPlatformtest_0.xml</Key>
+        <Value>2010-04-26T13:08:43.6234395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>MainLevel1.fbx</Source>
@@ -187,8 +240,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\MainLevel1.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MainLevel1.xnb</Output>
+      <Time>2010-04-19T14:31:40+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\MainLevel1_0.xml</Key>
+        <Value>2010-04-26T13:08:45.1678395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>LevelBuild2.fbx</Source>
@@ -196,8 +253,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild2.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild2.xnb</Output>
+      <Time>2010-04-15T17:00:56+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\LevelBuild2_0.xml</Key>
+        <Value>2010-04-26T13:08:46.4782395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Mainhill2.fbx</Source>
@@ -205,8 +266,12 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Mainhill2.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Mainhill2.xnb</Output>
+      <Time>2010-04-15T16:47:36+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Mainhill2_0.xml</Key>
+        <Value>2010-04-26T13:08:47.7262395+01:00</Value>
+      </Dependency>
     </Item>
     <Item>
       <Source>Murshroom1.fbx</Source>
@@ -214,18 +279,269 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\Murshroom1.xnb</Output>
-      <Time>0001-01-01T00:00:00</Time>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Murshroom1.xnb</Output>
+      <Time>2010-04-15T16:48:54+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Murshroom1_0.xml</Key>
+        <Value>2010-04-26T13:08:48.9898395+01:00</Value>
+      </Dependency>
     </Item>
-    <BuildSuccessful>false</BuildSuccessful>
+    <Item>
+      <Source>LevelBuild3.fbx</Source>
+      <Name>LevelBuild3</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild3.xnb</Output>
+      <Time>2010-04-15T16:27:58+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\LevelBuild3_0.xml</Key>
+        <Value>2010-04-26T13:08:50.8462395+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>New Character.fbx</Source>
+      <Name>New Character</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb</Output>
+      <Time>2010-04-15T16:29:29.4032007+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\New Character_0.xml</Key>
+        <Value>2010-04-26T13:08:59.6446395+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Platform2.fbx</Source>
+      <Name>Platform2</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Platform2.xnb</Output>
+      <Time>2010-04-15T16:29:29.4968019+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Platform2_0.xml</Key>
+        <Value>2010-04-26T13:09:01.4230395+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>platform1.fbx</Source>
+      <Name>platform1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\platform1.xnb</Output>
+      <Time>2010-04-15T16:29:23.9119303+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\platform1_0.xml</Key>
+        <Value>2010-04-26T13:09:02.5930395+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>leave1.fbx</Source>
+      <Name>leave1</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\leave1.xnb</Output>
+      <Time>2010-04-15T16:29:29.6840043+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\leave1_0.xml</Key>
+        <Value>2010-04-26T13:09:03.7318395+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>REcharacter.fbx</Source>
+      <Name>REcharacter</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\REcharacter.xnb</Output>
+      <Time>2010-04-15T16:29:25.8307549+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\REcharacter_0.xml</Key>
+        <Value>2010-04-26T13:09:06.6802395+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>ship2.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\ship2_0.xml</Output>
+      <Time>2010-04-15T16:29:24.9415435+01:00</Time>
+    </Item>
+    <Item>
+      <Source>metal.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
+      <Time>2010-04-15T16:29:23.7871287+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ball.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\ball_0.xml</Output>
+      <Time>2010-04-15T16:29:23.7247279+01:00</Time>
+    </Item>
+    <Item>
+      <Source>characterX.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\characterX_0.xml</Output>
+      <Time>2010-04-15T16:29:24.8791427+01:00</Time>
+    </Item>
+    <Item>
+      <Source>PlantCylinder.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\PlantCylinder_0.xml</Output>
+      <Time>2010-04-15T16:29:26.0335575+01:00</Time>
+    </Item>
+    <Item>
+      <Source>SphereHighPoly.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\SphereHighPoly_0.xml</Output>
+      <Time>2010-04-15T16:29:30.0116085+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Character.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Character_0.xml</Output>
+      <Time>2010-04-15T16:29:32.0396345+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Flower1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Flower1_0.xml</Output>
+      <Time>2010-04-15T16:29:29.7776055+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Hill1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Hill1_0.xml</Output>
+      <Time>2010-04-15T16:29:24.0523321+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Hill2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Hill2_0.xml</Output>
+      <Time>2010-04-15T16:29:24.1303331+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Flower2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Flower2_0.xml</Output>
+      <Time>2010-04-15T17:00:00+01:00</Time>
+    </Item>
+    <Item>
+      <Source>MurshroomPlatformtest2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\MurshroomPlatformtest2_0.xml</Output>
+      <Time>2010-04-19T14:30:50+01:00</Time>
+    </Item>
+    <Item>
+      <Source>MurshroomPlatformtest.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\MurshroomPlatformtest_0.xml</Output>
+      <Time>2010-04-19T14:29:48+01:00</Time>
+    </Item>
+    <Item>
+      <Source>MainLevel1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\MainLevel1_0.xml</Output>
+      <Time>2010-04-19T14:31:40+01:00</Time>
+    </Item>
+    <Item>
+      <Source>LevelBuild2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\LevelBuild2_0.xml</Output>
+      <Time>2010-04-15T17:00:56+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Mainhill2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Mainhill2_0.xml</Output>
+      <Time>2010-04-15T16:47:36+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Murshroom1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Murshroom1_0.xml</Output>
+      <Time>2010-04-15T16:48:54+01:00</Time>
+    </Item>
+    <Item>
+      <Source>LevelBuild3.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\LevelBuild3_0.xml</Output>
+      <Time>2010-04-15T16:27:58+01:00</Time>
+    </Item>
+    <Item>
+      <Source>New Character.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\New Character_0.xml</Output>
+      <Time>2010-04-15T16:29:29.4032007+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Platform2.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Platform2_0.xml</Output>
+      <Time>2010-04-15T16:29:29.4968019+01:00</Time>
+    </Item>
+    <Item>
+      <Source>platform1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\platform1_0.xml</Output>
+      <Time>2010-04-15T16:29:23.9119303+01:00</Time>
+    </Item>
+    <Item>
+      <Source>leave1.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\leave1_0.xml</Output>
+      <Time>2010-04-15T16:29:29.6840043+01:00</Time>
+    </Item>
+    <Item>
+      <Source>REcharacter.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\REcharacter_0.xml</Output>
+      <Time>2010-04-15T16:29:25.8307549+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\Content\</RootDirectory>
-      <LoggerRootDirectory>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\</LoggerRootDirectory>
-      <IntermediateDirectory>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\Content\</RootDirectory>
+      <LoggerRootDirectory>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\</LoggerRootDirectory>
+      <IntermediateDirectory>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -254,7 +570,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-09-28T15:35:18.3793759+01:00</Value>
+        <Value>2009-09-28T15:31:51.7963011+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
