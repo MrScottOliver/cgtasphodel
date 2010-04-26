@@ -5,16 +5,21 @@ namespace Prototype
 {
     // Manages a PhysicsObject and allows the engine to work
     // with it
-    public class PhysicsActor
+    public class PhysicsActor : Actor
     {
         // The object we are managing
         public IPhysicsObject PhysicsObject;
-
         // Override the position of the base class to that
         // of the physics object
-        public Vector3 Position
+        public override Vector3 Position
         {
-            get { return PhysicsObject.Position; }
+            get
+            {
+                if (PhysicsObject != null)
+                    return PhysicsObject.Position;
+                else
+                    return Vector3.Zero;
+            }
             set
             {
                 if (PhysicsObject != null)
@@ -24,9 +29,15 @@ namespace Prototype
 
         // Override the rotation of the base class to that
         // of the physics object
-        public Vector3 Rotation
+        public override Matrix Rotation
         {
-            get { return PhysicsObject.Rotation; }
+            get
+            {
+                if (PhysicsObject != null)
+                    return PhysicsObject.Rotation;
+                else
+                    return Matrix.Identity;
+            }
             set
             {
                 if (PhysicsObject != null)
@@ -36,20 +47,27 @@ namespace Prototype
 
         // Override the BoundingBox of the base class to that
         // of the physics object
-        public BoundingBox BoundingBox
+        public override BoundingBox BoundingBox
         {
-            get { return PhysicsObject.BoundingBox; }
+            get
+            {
+                if (PhysicsObject != null)
+                    return PhysicsObject.BoundingBox;
+                else
+                    return new BoundingBox(-Vector3.One, Vector3.One);
+            }
         }
 
         // Constructors
 
         public PhysicsActor(Model Model, IPhysicsObject PhysicsObject)
+            : base(Model, PhysicsObject.Position)
         {
             this.PhysicsObject = PhysicsObject;
         }
 
 
-        // Override DisableComponent so we can remove the physics
+        // DisableComponent so we can remove the physics
         // object as well
         public void DisableComponent()
         {

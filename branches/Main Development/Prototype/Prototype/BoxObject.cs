@@ -68,7 +68,10 @@ namespace Prototype
             // Set properties
             this.SideLengths = SideLengths;
             this.Position = Position;
-            this.Rotation = Rotation;
+
+            Matrix mRotation = Matrix.CreateFromYawPitchRoll(Rotation.X, Rotation.Y, Rotation.Z);
+
+            this.Rotation = mRotation;
         }
     }
 }
