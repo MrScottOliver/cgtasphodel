@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
     <Compile Include="Audio.cs" />
     <Compile Include="BoxObject.cs" />
     <Compile Include="Camera.cs" />

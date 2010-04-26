@@ -43,8 +43,10 @@ namespace Prototype
 
             Body.CollisionSkin = CollisionSkin;
 
+            Matrix mRotation = Matrix.CreateFromYawPitchRoll(Rotation.X, Rotation.Y, Rotation.Z);
+
             this.Position = Position;
-            this.Rotation = Rotation;
+            this.Rotation = mRotation;
         }
 
         // Sets the model being simulated, extracts vertices, etc.

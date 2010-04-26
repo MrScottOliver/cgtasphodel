@@ -40,6 +40,12 @@ namespace Prototype
         Matrix World = Matrix.CreateTranslation(0, 0, 0);
         Shadows myShadows = new Shadows();
 
+        PhysicsActor paHill1;
+        PhysicsActor paBall;
+
+        //New physics stuff
+        Physics physicSystem;
+
         //stefen: this bool is rubbish, prevents multiple jump noises
         bool jumppressed;
 
@@ -138,6 +144,10 @@ namespace Prototype
             player.position.Z = -5f;
             //*/
 
+
+
+
+
             SetUpSkySphere();//Jess:set up sky sphere
             Model OrbModel = Content.Load<Model>("ball");
             Model PlantCyl = Content.Load<Model>("Flower1");
@@ -151,7 +161,26 @@ namespace Prototype
             Model LevelBuild2 = Content.Load<Model>("LevelBuild2");
             Model Flower = Content.Load<Model>("Flower2");
             Model MnHill = Content.Load<Model>("Mainhill2");
-           
+
+
+
+            //New physics
+            physicSystem = new Physics();
+
+            TriangleMeshObject tmoHill1 = new TriangleMeshObject(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            tmoHill1.SetModel("Content/Hill1", Hill1);
+
+            paHill1 = new PhysicsActor(Hill1, tmoHill1);
+            paHill1.PhysicsObject.Immovable = true;
+
+            BoxObject ball = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 20.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+
+            paBall = new PhysicsActor(OrbModel, ball);
+            paBall.PhysicsObject.Mass = 1000;
+
+
+
+
            /* PlatHill1 = new Surface(Hill1, new Vector3(45, 0, -8));
             PlatHill1.Scale(0.3f, 0.3f, 0.3f);
             PlatHill1.Rotate(1.0f, 0.0f, 0.0f);
@@ -229,6 +258,7 @@ namespace Prototype
         protected override void Update(GameTime gameTime)
         {
             ParticleGroup.Update(gameTime);
+            physicSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             Audio.PlayMusic();
             player.Move();
             CollisionDetectionBox.Compare(ref player);
@@ -398,6 +428,8 @@ namespace Prototype
 
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
+            paHill1.Draw(Proj, View);
+            paBall.Draw(Proj, View);
 
             LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
 

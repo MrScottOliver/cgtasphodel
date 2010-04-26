@@ -39,3 +39,5 @@ I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug
 \\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 \\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 \\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0701230\Desktop\group\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0701230\Desktop\group\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

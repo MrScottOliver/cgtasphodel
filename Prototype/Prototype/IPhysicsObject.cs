@@ -45,7 +45,7 @@ namespace Prototype
         }
 
         // The IPhysicsObject's orientation
-        public Matrix Orientation
+        public Matrix Rotation
         {
             get { return Body.Orientation; }
             set { Body.MoveTo(Body.Position, value); }
@@ -60,7 +60,7 @@ namespace Prototype
 
 
         // The IPhysicsObject's rotation
-        public Vector3 Rotation
+        /*public Vector3 Rotation
         {
             get
             {
@@ -74,7 +74,7 @@ namespace Prototype
                     MathHelper.ToRadians(value.X),
                     MathHelper.ToRadians(value.Z)));
             }
-        }
+        }*/
 
         // Returns the IPhysicsObject's BoundingBox
         public BoundingBox BoundingBox
