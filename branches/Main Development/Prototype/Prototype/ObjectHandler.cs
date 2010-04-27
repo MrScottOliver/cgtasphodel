@@ -31,7 +31,7 @@ namespace Prototype
     {
         void Load();
         void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
-        void Collision(BoundingSphere PlayerSphere);
+        void Collision(Player Player);
         void Activate();
     }
 
@@ -40,7 +40,7 @@ namespace Prototype
     {
         public abstract void Load();
         public abstract void Render(Matrix view, Matrix projection, GraphicsDevice graphics);
-        public abstract void Collision(BoundingSphere PlayerSphere);
+        public abstract void Collision(Player Player);
         public abstract void Activate();
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ namespace Prototype
             }
         }
         override
-        public void Collision(BoundingSphere PlayerSphere)
+        public void Collision(Player Player)
         {
             //Effect of collision
         }
@@ -151,11 +151,11 @@ namespace Prototype
         }
         //If a collision takes place the associated effect is activated
         override
-        public void Collision(BoundingSphere PlayerSphere) //Collision returns true if object is to be destroyed
+        public void Collision(Player Player) 
         {
             itemsToRemove = new List<IObject>();
             foreach (IObject item in ObjectList)
-                item.Collision(PlayerSphere);
+                item.Collision(Player);
 
             foreach (IObject itemToRemove in itemsToRemove)
                 ObjectList.Remove(itemToRemove);

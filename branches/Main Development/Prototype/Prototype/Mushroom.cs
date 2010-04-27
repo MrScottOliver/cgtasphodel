@@ -69,16 +69,20 @@ namespace Prototype
             }
         }
         override
-        public void Collision(BoundingSphere PlayerSphere)
+        public void Collision(Player Player)
         {
             switch (Current)
             {
                 case LifeCycle.Active:
-                    if (PlayerSphere.Intersects(sphere))
-                        Current = LifeCycle.AnimateDown;
-                    //Check collision
-                    //if true, boost player
-                    //set state animate
+                    if (Player.boundingsphere.Intersects(sphere))
+                    {
+                        if (Player.velocity.Y < 0)
+                        {
+                            Player.velocity.Y = 0;
+                            Player.velocity.Y += 0.5f;
+                            Current = LifeCycle.AnimateDown;
+                        } 
+                    }
                     break;
                 case LifeCycle.AnimateDown:
                     if (Scale.Y > 0.01)
