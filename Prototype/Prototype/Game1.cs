@@ -246,7 +246,7 @@ namespace Prototype
  ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(26, 0, -4))
  );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Mushroom, Mush2, new Vector3(10, 0, -4))
+            ObjectFactory.createObject(ObjectType.Mushroom, Mush2, new Vector3(10, 10, -4))
         );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
@@ -337,7 +337,7 @@ namespace Prototype
                 //POS.X += 0.2f;
                 //TARGET.X += 0.2f;
             }
-            ObjControl.Collision(player.boundingsphere);
+            ObjControl.Collision(player);
             //Stefen: Rotate player model for viewing
             if (keyState.IsKeyDown(Keys.E))
             {
@@ -671,7 +671,7 @@ namespace Prototype
         {
             //CollisionDetectionPlane.AddPlane(new Vector3(-10, 5, 0), new Vector3(-10, 5, -10), new Vector3(-5, 5, -10), -10, -5);
             CollisionDetectionBox.AddBox(new Vector3(-10, 3, -10), new Vector3(-5, 5, 0)); //Top slope
-            CollisionDetectionBox.AddBox(new Vector3(20, 12, -10), new Vector3(30, 14, 0)); //Platform
+            //CollisionDetectionBox.AddBox(new Vector3(20, 12, -10), new Vector3(30, 14, 0)); //Platform
             CollisionDetectionBox.AddBox(new Vector3(5, 0, -10), new Vector3(30, 0, 0)); //Bottom slope
             CollisionDetectionPlane.AddPlane(new Vector3(-5, 5, 0), new Vector3(5, 0, 0), new Vector3(5, 0, -10), -5, 5); //Middle slope, works but doesn't
         }

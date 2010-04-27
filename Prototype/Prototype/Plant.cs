@@ -68,7 +68,7 @@ namespace Prototype
             }
         }
         override
-        public void Collision(BoundingSphere PlayerSphere)
+        public void Collision(Player Player)
         {
             //if the boxes collide                // run plant and grow event on different levels, delete event once activated
             //if the object hasnt been activated  // create activation list, animate list and destruction list
@@ -86,7 +86,7 @@ namespace Prototype
                         Current = LifeCycle.Active;         //function sets current to Active after use is spent
                     break;
                 case LifeCycle.Collision:
-                    if (PlayerSphere.Intersects(sphere))
+                    if (Player.boundingsphere.Intersects(sphere))
                     {
                         KeyboardState keyState = Keyboard.GetState();
                         if (keyState.IsKeyDown(Keys.X))

@@ -57,9 +57,9 @@ namespace Prototype
 
         }
         override
-        public void Collision(BoundingSphere PlayerSphere)
+        public void Collision(Player Player)
         {
-            if (PlayerSphere.Intersects(sphere))
+            if (Player.boundingsphere.Intersects(sphere))
             {
                 ObjectControl.itemsToRemove.Add(this);
                 Audio.Pickup();
