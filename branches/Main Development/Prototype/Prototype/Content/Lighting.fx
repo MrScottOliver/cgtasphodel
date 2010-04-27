@@ -9,12 +9,12 @@ uniform extern int numlights;//number of lights
 uniform extern Lighting light[8];
 
 
-uniform extern float	gCenterX;
-uniform extern float	gCenterY;
-uniform extern float	gCenterZ;
-uniform extern float	gRadius;
-uniform extern float gMinY;
-uniform extern float gMaxY;
+uniform extern float	gCenterX[10];
+uniform extern float	gCenterY[10];
+uniform extern float	gCenterZ[10];
+uniform extern float	gRadius[10];
+uniform extern float gMinY[10];
+uniform extern float gMaxY[10];
 
 
 //---------------------------------------------------------------------------------------------------------------------------
@@ -27,9 +27,14 @@ float4 LightsPS(InputPS input): COLOR
 	float			zCom;
 	float grey;
 	
-	xCom = (input.posW.x - gCenterX)*(input.posW.x - gCenterX);
-	yCom = (input.posW.y - gCenterY)*(input.posW.y - gCenterY);
-	zCom = (input.posW.z - gCenterZ)*(input.posW.z - gCenterZ);
+	float4 results[10];
+	
+	for(int k = 0; k < 10; k++)
+	{
+	
+	xCom = (input.posW.x - gCenterX[k])*(input.posW.x - gCenterX[k]);
+	yCom = (input.posW.y - gCenterY[k])*(input.posW.y - gCenterY[k]);
+	zCom = (input.posW.z - gCenterZ[k])*(input.posW.z - gCenterZ[k]);
 	
 	
 	float3 Color = {0.0f, 0.0f, 0.0f};
@@ -39,12 +44,7 @@ float4 LightsPS(InputPS input): COLOR
 	
 	for (int i = 0; i < (numlights); ++i)
 	{
-	
-		
-		
-			Color += CalculatePointLight(light[i], input, texColor, globalamb);
-		
-	
+	Color += CalculatePointLight(light[i], input, texColor, globalamb);
 	}
 	
 	float4 finalCol = float4( Color, gDiffuseMtrl.a*texColor.a); 
@@ -53,26 +53,41 @@ float4 LightsPS(InputPS input): COLOR
 	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
 	
 	//float factor = (xCom + zCom) / (1000 / (xCom + zCom));
-	float dist = (xCom + zCom) / gRadius;
+	float dist = (xCom + zCom) / gRadius[k];    
 	
-	float4 result;    
-    result.r = (finalCol.r - (finalCol.r * dist)) + grey * dist;
-    result.g = (finalCol.g - (finalCol.g * dist)) + grey * dist;
-    result.b = (finalCol.b - (finalCol.b * dist)) + grey * dist;
-    result.a = finalCol.a;
-	
-	if (((xCom + zCom) <= (gRadius)) && (input.posW.y < gMaxY) && (input.posW.y > gMinY))
+	if (((xCom + zCom) <= (gRadius[k])) && (input.posW.y < gMaxY[k]) && (input.posW.y > gMinY[k]))
 	{
+		results[k].r = (finalCol.r - (finalCol.r * dist)) + grey * dist;
+		results[k].g = (finalCol.g - (finalCol.g * dist)) + grey * dist;
+		results[k].b = (finalCol.b - (finalCol.b * dist)) + grey * dist;
+		results[k].a = finalCol.a;
 		//return finalCol;
 		//return float4(final.r, final.g, final.b, 1.0f);
-		return result;
+		//return result;
 	}
 	else
 	{
-		return float4(grey, grey, grey, 1.0f);
+		results[k] = float4(grey, grey, grey, 1.0f);
+		//return float4(grey, grey, grey, 1.0f);
 	}
 	
+	}
 	
+	float4 result;
+	
+	for( int k = 0; k < 10; k++ )
+	{
+		result.r += results[k].r;
+		result.g += results[k].g;
+		result.b += results[k].b;
+	}
+	
+	result.r = result.r / 10;
+	result.g = result.g / 10;
+	result.b = result.b / 10;
+	result.a = 1.0f;
+	
+	return result;
 }
 
 float4 LightsPSWithShadows(InputPS input): COLOR
@@ -113,9 +128,11 @@ float4 LightsPSWithShadows(InputPS input): COLOR
 	float			zCom;
 	float grey;
 	
-	xCom = (input.posW.x - gCenterX)*(input.posW.x - gCenterX);
-	yCom = (input.posW.y - gCenterY)*(input.posW.y - gCenterY);
-	zCom = (input.posW.z - gCenterZ)*(input.posW.z - gCenterZ);
+	for(int k = 0; k < 10; k++)
+	{
+	xCom = (input.posW.x - gCenterX[k])*(input.posW.x - gCenterX[k]);
+	yCom = (input.posW.y - gCenterY[k])*(input.posW.y - gCenterY[k]);
+	zCom = (input.posW.z - gCenterZ[k])*(input.posW.z - gCenterZ[k]);
 	
 	
 	float3 Color = {0.0f, 0.0f, 0.0f};
@@ -142,7 +159,7 @@ float4 LightsPSWithShadows(InputPS input): COLOR
 	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
 	
 	//float factor = (xCom + zCom) / (1000 / (xCom + zCom));
-	float dist = (xCom + zCom) / gRadius;
+	float dist = (xCom + zCom) / gRadius[k];
 	
 	float4 result;    
     result.r = (finalCol.r - (finalCol.r * dist)) + grey * dist;
@@ -150,7 +167,7 @@ float4 LightsPSWithShadows(InputPS input): COLOR
     result.b = (finalCol.b - (finalCol.b * dist)) + grey * dist;
     result.a = finalCol.a;
 	
-	if (((xCom + zCom) <= (gRadius)) && (input.posW.y < gMaxY) && (input.posW.y > gMinY))
+	if (((xCom + zCom) <= (gRadius[k])) && (input.posW.y < gMaxY[k]) && (input.posW.y > gMinY[k]))
 	{
 		//return finalCol;
 		//return float4(final.r, final.g, final.b, 1.0f);
@@ -161,7 +178,7 @@ float4 LightsPSWithShadows(InputPS input): COLOR
 		return float4(grey, grey, grey, 1.0f);
 	}
 	
-	
+	}
 }
 
 technique MyTech
@@ -177,9 +194,6 @@ technique MyTech
 		pixelShader = compile ps_3_0 LightsPSWithShadows();
 		//specify render device states associated with the pass
 		FillMode =  Solid;
-		
-
-
 	}	
 
 }
@@ -190,7 +204,6 @@ technique CreateShadowMapTech
 	{
 		vertexShader = compile vs_2_0 CreateShadowMapVS();
 		pixelShader = compile ps_2_0 CreateShadowMapPS();
-	
 	}
 
 }

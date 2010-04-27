@@ -26,8 +26,13 @@ namespace Prototype
 
         BoundingSphere sphere;
         Model ObjModel;
-        private Vector3 Position;
+        public Vector3 Position;
         LifeCycle Current;
+        double GrowSpeed;
+        float InitialY;
+        public float minY, maxY, radius;
+        static int counter = 0;
+        public int plantnum;
 
         public Plant(Model model, Vector3 Pos)
         {
@@ -38,12 +43,19 @@ namespace Prototype
             //sphere.Center.X -= 2;//model is behind collision point
             sphere.Radius = 5;//set radius
             Current = LifeCycle.Collision;
+            GrowSpeed = 0.5f;
+            InitialY = Position.Y;
+            plantnum = counter;
+            counter++;
+            minY =-20;
+            maxY=20;
+
         }
 
         override
         public void Load()
         {
-        
+
         }
         override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
@@ -77,14 +89,22 @@ namespace Prototype
             switch (Current)
             {
                 case LifeCycle.Active:
-                    //call generic function
                     break;
+
                 case LifeCycle.Animate:
-                    if (Position.Y < -5)                    //call animate function
-                        Position.Y += 0.1f;
+                    if (Position.Y < -0.05)                    //call animate function
+                    {
+                        Position.Y += (float)GrowSpeed;
+                        double d = (3 + (Position.Y / InitialY)) * (Math.PI / 2);
+                        GrowSpeed = Math.Cos(d);
+                        radius += 0.5f;
+                    }
                     else
+                    {
                         Current = LifeCycle.Active;         //function sets current to Active after use is spent
+                    }
                     break;
+
                 case LifeCycle.Collision:
                     if (Player.boundingsphere.Intersects(sphere))
                     {
@@ -96,6 +116,7 @@ namespace Prototype
                         }
                     }
                     break;
+
                 default:
                     throw new ArgumentException("Error - " + Current + " is not recognized.");
             }
@@ -106,5 +127,19 @@ namespace Prototype
         {
 
         }
+        public float getX()
+         {
+             return Position.X;
+         }
+
+        public float getY() 
+         { 
+             return Position.Y; 
+         }
+
+        public float getZ() 
+         { 
+             return Position.Z;
+         }
     }
 }
