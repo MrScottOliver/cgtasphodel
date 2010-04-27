@@ -137,6 +137,16 @@
       <Name>Includes</Name>
       <Importer>EffectImporter</Importer>
     </None>
+    <Compile Include="Levelbuild7.fbx">
+      <Name>Levelbuild7</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+    <Compile Include="Levelbuild6.fbx">
+      <Name>Levelbuild6</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <Compile Include="MurshroomPlatformtest2.fbx">
       <Name>MurshroomPlatformtest2</Name>
       <Importer>FbxImporter</Importer>

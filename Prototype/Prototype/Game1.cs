@@ -153,7 +153,7 @@ namespace Prototype
             Model PlantCyl = Content.Load<Model>("Flower1");
             Model Hill1 = Content.Load<Model>("Hill1");
             Model Hill2 = Content.Load<Model>("Hill2");
-            Model Full = Content.Load<Model>("MainLevel1");
+            Model Full = Content.Load<Model>("LevelBuild7");
             Model Mush1 = Content.Load<Model>("MurshroomPlatformtest");
             Model Mush2 = Content.Load<Model>("MurshroomPlatformtest2");
             Model Leaf1 = Content.Load<Model>("leave1");
@@ -451,7 +451,7 @@ namespace Prototype
             ObjControl.Render(View, Proj, GraphicsDevice);
            // PlatHill1.Render(View, Proj, GraphicsDevice);
            // PlatHill2.Render(View, Proj, GraphicsDevice);
-            FullLevel.Render(View, Proj, GraphicsDevice);
+            //FullLevel.Render(View, Proj, GraphicsDevice);
            // MainHill.Render(View, Proj, GraphicsDevice);
            // Mushroom.Render(View, Proj, GraphicsDevice);
            // PlatLeaf3.Render(View, Proj, GraphicsDevice);
@@ -641,13 +641,22 @@ namespace Prototype
         {
             Vector4 CamPosition = new Vector4(POS.X, POS.Y, POS.Z, 0);
             myEffect.Parameters["gCamPosW"].SetValue(CamPosition);
+            List<IObject> ObjectList = ObjectControl.ObjectList;
+            foreach (IObject item in ObjectList)
+            {
+                Type x = item.GetType();
+                if (x.Name == "Plant")
+                {
+                    Plant y = (Plant)item;
+                    myEffect.Parameters["gCenterX"].Elements[y.plantnum].SetValue(y.getX() + 2);
+                    myEffect.Parameters["gCenterY"].Elements[y.plantnum].SetValue(y.getY());
+                    myEffect.Parameters["gCenterZ"].Elements[y.plantnum].SetValue(y.getZ());
+                    myEffect.Parameters["gMinY"].Elements[y.plantnum].SetValue(y.minY);
+                    myEffect.Parameters["gMaxY"].Elements[y.plantnum].SetValue(y.maxY);
+                    myEffect.Parameters["gRadius"].Elements[y.plantnum].SetValue(y.radius);
+                }
+            }
 
-            myEffect.Parameters["gCenterX"].SetValue(Plant.getX() + 2);
-            myEffect.Parameters["gCenterY"].SetValue(Plant.getY());
-            myEffect.Parameters["gCenterZ"].SetValue(Plant.getZ());
-            myEffect.Parameters["gMinY"].SetValue(Plant.minY);
-            myEffect.Parameters["gMaxY"].SetValue(Plant.maxY);
-            myEffect.Parameters["gRadius"].SetValue(Plant.radius);
 
 
             for (int i = 0; i < numlights; i++)

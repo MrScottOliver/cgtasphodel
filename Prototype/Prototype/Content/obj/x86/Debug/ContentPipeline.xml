@@ -71,7 +71,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb</Output>
-      <Time>2010-04-15T16:29:26.3143611+01:00</Time>
+      <Time>2010-04-27T15:55:22.2455642+01:00</Time>
       <Dependency>
         <Key>Includes.inc</Key>
         <Value>2010-04-15T16:29:25.9711567+01:00</Value>
@@ -87,7 +87,7 @@
       <Time>2010-04-15T16:29:24.9415435+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ship2_0.xml</Key>
-        <Value>2010-04-26T13:08:23.0314395+01:00</Value>
+        <Value>2010-04-27T12:40:50.5914509+01:00</Value>
       </Dependency>
       <Request>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
     </Item>
@@ -101,7 +101,7 @@
       <Time>2010-04-15T16:29:23.7247279+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ball_0.xml</Key>
-        <Value>2010-04-26T13:08:24.2794395+01:00</Value>
+        <Value>2010-04-27T12:40:51.2154509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -114,7 +114,7 @@
       <Time>2010-04-15T16:29:24.8791427+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\characterX_0.xml</Key>
-        <Value>2010-04-26T13:08:26.0578395+01:00</Value>
+        <Value>2010-04-27T12:40:53.0094509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -127,7 +127,7 @@
       <Time>2010-04-15T16:29:26.0335575+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\PlantCylinder_0.xml</Key>
-        <Value>2010-04-26T13:08:26.2762395+01:00</Value>
+        <Value>2010-04-27T12:40:53.2278509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -140,7 +140,7 @@
       <Time>2010-04-15T16:29:30.0116085+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\SphereHighPoly_0.xml</Key>
-        <Value>2010-04-26T13:08:28.0858395+01:00</Value>
+        <Value>2010-04-27T12:40:55.0530509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -153,7 +153,7 @@
       <Time>2010-04-15T16:29:32.0396345+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Character_0.xml</Key>
-        <Value>2010-04-26T13:08:35.2306395+01:00</Value>
+        <Value>2010-04-27T12:41:02.4474509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -166,7 +166,7 @@
       <Time>2010-04-15T16:29:29.7776055+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Flower1_0.xml</Key>
-        <Value>2010-04-26T13:08:36.9466395+01:00</Value>
+        <Value>2010-04-27T12:41:04.1322509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -179,7 +179,7 @@
       <Time>2010-04-15T16:29:24.0523321+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Hill1_0.xml</Key>
-        <Value>2010-04-26T13:08:38.2882395+01:00</Value>
+        <Value>2010-04-27T12:41:05.3022509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -192,7 +192,7 @@
       <Time>2010-04-15T16:29:24.1303331+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Hill2_0.xml</Key>
-        <Value>2010-04-26T13:08:39.4738395+01:00</Value>
+        <Value>2010-04-27T12:41:06.4566509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -205,7 +205,7 @@
       <Time>2010-04-15T17:00:00+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Flower2_0.xml</Key>
-        <Value>2010-04-26T13:08:40.7218395+01:00</Value>
+        <Value>2010-04-27T12:41:07.7046509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -218,7 +218,7 @@
       <Time>2010-04-19T14:30:50+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\MurshroomPlatformtest2_0.xml</Key>
-        <Value>2010-04-26T13:08:42.2038395+01:00</Value>
+        <Value>2010-04-27T12:41:09.2022509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -231,7 +231,7 @@
       <Time>2010-04-19T14:29:48+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\MurshroomPlatformtest_0.xml</Key>
-        <Value>2010-04-26T13:08:43.6234395+01:00</Value>
+        <Value>2010-04-27T12:41:10.6062509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -244,7 +244,7 @@
       <Time>2010-04-19T14:31:40+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\MainLevel1_0.xml</Key>
-        <Value>2010-04-26T13:08:45.1678395+01:00</Value>
+        <Value>2010-04-27T12:41:12.1506509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -257,7 +257,7 @@
       <Time>2010-04-15T17:00:56+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\LevelBuild2_0.xml</Key>
-        <Value>2010-04-26T13:08:46.4782395+01:00</Value>
+        <Value>2010-04-27T12:41:13.4610509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -270,7 +270,7 @@
       <Time>2010-04-15T16:47:36+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Mainhill2_0.xml</Key>
-        <Value>2010-04-26T13:08:47.7262395+01:00</Value>
+        <Value>2010-04-27T12:41:14.7090509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -283,7 +283,7 @@
       <Time>2010-04-15T16:48:54+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Murshroom1_0.xml</Key>
-        <Value>2010-04-26T13:08:48.9898395+01:00</Value>
+        <Value>2010-04-27T12:41:15.9882509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -296,7 +296,7 @@
       <Time>2010-04-15T16:27:58+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\LevelBuild3_0.xml</Key>
-        <Value>2010-04-26T13:08:50.8462395+01:00</Value>
+        <Value>2010-04-27T12:41:17.8602509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -309,7 +309,7 @@
       <Time>2010-04-15T16:29:29.4032007+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\New Character_0.xml</Key>
-        <Value>2010-04-26T13:08:59.6446395+01:00</Value>
+        <Value>2010-04-27T12:41:26.5026509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -322,7 +322,7 @@
       <Time>2010-04-15T16:29:29.4968019+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Platform2_0.xml</Key>
-        <Value>2010-04-26T13:09:01.4230395+01:00</Value>
+        <Value>2010-04-27T12:41:28.2810509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -335,7 +335,7 @@
       <Time>2010-04-15T16:29:23.9119303+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\platform1_0.xml</Key>
-        <Value>2010-04-26T13:09:02.5930395+01:00</Value>
+        <Value>2010-04-27T12:41:29.4510509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -348,7 +348,7 @@
       <Time>2010-04-15T16:29:29.6840043+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\leave1_0.xml</Key>
-        <Value>2010-04-26T13:09:03.7318395+01:00</Value>
+        <Value>2010-04-27T12:41:30.5898509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -361,7 +361,7 @@
       <Time>2010-04-15T16:29:25.8307549+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\REcharacter_0.xml</Key>
-        <Value>2010-04-26T13:09:06.6802395+01:00</Value>
+        <Value>2010-04-27T12:41:33.7878509+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -532,6 +532,46 @@
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\REcharacter_0.xml</Output>
       <Time>2010-04-15T16:29:25.8307549+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Levelbuild6.fbx</Source>
+      <Name>Levelbuild6</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild6.xnb</Output>
+      <Time>2010-04-27T14:31:10+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Levelbuild6_0.xml</Key>
+        <Value>2010-04-27T15:10:11.4675744+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Levelbuild6.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Levelbuild6_0.xml</Output>
+      <Time>2010-04-27T14:31:10+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Levelbuild7.fbx</Source>
+      <Name>Levelbuild7</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild7.xnb</Output>
+      <Time>2010-04-27T14:29:04+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Levelbuild7_0.xml</Key>
+        <Value>2010-04-27T15:11:29.252166+01:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Levelbuild7.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Levelbuild7_0.xml</Output>
+      <Time>2010-04-27T14:29:04+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
