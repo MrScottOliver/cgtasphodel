@@ -25,15 +25,13 @@ namespace Prototype
         Effect myEffect;//Jess: custom effect
         KeyboardState keyState;
         Player player = new Player(); //Kieran: create player instance
-        GrowEvent Plant = new GrowEvent(); //Stefen: create plant growth handler
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
         SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
         Lights[] lights;
         ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
-       // Surface  PlatLeaf3, PlatHill1, PlatHill2, Mushroom, MainHill;
-        Surface PlatLeaf1,PlatLeaf2, FullLevel, Mushroom1, Mushroom2;
+        Surface PlatLeaf1, PlatLeaf2, FullLevel1, FullLevel2, Mushroom1, Mushroom2;
         float YAW, PITCH, ROLL;
         Matrix View;
         Matrix Proj;
@@ -104,11 +102,8 @@ namespace Prototype
             nearClip = 1.0f;
             farClip = 1000.0f;
 
-            //Stefen: sets boundingbox and availability
-            Plant.SetEvent(10, 0, -10, 1, true);
-
             Proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), aspectRatio, nearClip, farClip);
-            ObjectManipulator.Initialise(GraphicsDevice);
+           // ObjectManipulator.Initialise(GraphicsDevice);
             Audio.Init();
             base.Initialize();
         }
@@ -119,13 +114,13 @@ namespace Prototype
         /// </summary>
         protected override void LoadContent()
         {
-            AddLevelFront();
-            AddLevelTop();
+           // AddLevelFront();
+            //AddLevelTop();
             ParticleGroup.Init(this.GraphicsDevice, this.Content);
             //adds the collision boxes
             SetupPlane();
             //Stefen:Creates + sets vertex and index buffers
-            ObjectManipulator.UpdateObjects(GraphicsDevice);
+            //ObjectManipulator.UpdateObjects(GraphicsDevice);
             //Jess: load effect file
             myEffect = Content.Load<Effect>("Lighting");
 
@@ -152,15 +147,16 @@ namespace Prototype
             Model OrbModel = Content.Load<Model>("ball");
             Model PlantCyl = Content.Load<Model>("Flower1");
             Model Hill1 = Content.Load<Model>("Hill1");
-            Model Hill2 = Content.Load<Model>("Hill2");
-            Model Full = Content.Load<Model>("LevelBuild7");
+           // Model Hill2 = Content.Load<Model>("Hill2");
+            Model Full1 = Content.Load<Model>("LevelBuild7");
+            Model Full2 = Content.Load<Model>("LevelBuild6");
             Model Mush1 = Content.Load<Model>("MurshroomPlatformtest");
             Model Mush2 = Content.Load<Model>("MurshroomPlatformtest2");
             Model Leaf1 = Content.Load<Model>("leave1");
-            Model Mush= Content.Load<Model>("Murshroom1");
-            Model LevelBuild2 = Content.Load<Model>("LevelBuild2");
-            Model Flower = Content.Load<Model>("Flower2");
-            Model MnHill = Content.Load<Model>("Mainhill2");
+           // Model Mush= Content.Load<Model>("Murshroom1");
+            //Model LevelBuild2 = Content.Load<Model>("LevelBuild2");
+            //Model Flower = Content.Load<Model>("Flower2");
+            // Model MnHill = Content.Load<Model>("Mainhill2");
 
 
 
@@ -187,7 +183,8 @@ namespace Prototype
             PlatHill2 = new Surface(Hill2, new Vector3(0, 0, 0));
             PlatHill2.Scale(0.3f, 0.3f, 0.3f);
             PlatHill2.Rotate(3.0f, 0.0f, 0.0f);*/
-            FullLevel = new Surface(Full, new Vector3(0, 0, 0));
+            FullLevel1 = new Surface(Full1, new Vector3(35.0f, -5.2f, -18.0f));
+            FullLevel2 = new Surface(Full2, new Vector3(35.0f, -5.2f, -18.0f));
             /*
            // FullLevel.Rotate(3.0f, 0.0f, 0.0f);
             Mushroom = new Surface(Mush, new Vector3(0, 0, 0));
@@ -237,8 +234,8 @@ namespace Prototype
            ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(20, 0, -4))
            );
             ObjectControl.ObjectList.Add(
- ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(22, 0, -4))
- );
+            ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(22, 0, -4))
+            );
             ObjectControl.ObjectList.Add(
  ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(24, 0, -4))
  );
@@ -309,36 +306,44 @@ namespace Prototype
             //Kieran: arrow keys move player model (a ship)
             if (keyState.IsKeyDown(Keys.Up))
             {
-                player.AddTranslation(0, 0.3f, 0);
-                //rough audio handler
-                if (jumppressed == false)
-                    Audio.Jump();
-                jumppressed = true;
+                player.Jump();
             }
-            else
-                jumppressed = false;
 
             if (keyState.IsKeyDown(Keys.Down))
             {
-                player.AddTranslation(0, -0.3f, 0);
                 Audio.Slide();
             }
             if (keyState.IsKeyDown(Keys.Left))
             {
-                player.AddTranslation(-0.3f, 0, 0);
-                Audio.Step();
-                //POS.X -= 0.2f;
-                //TARGET.X -= 0.2f;
+                player.moveLeft();
+            }
+            else
+            {
+                player.stopLeft();
             }
             if (keyState.IsKeyDown(Keys.Right))
             {
-                player.AddTranslation(0.3f, 0, 0);
-                Audio.Step();
-                //POS.X += 0.2f;
-                //TARGET.X += 0.2f;
+                player.moveRight();
             }
-            ObjControl.Collision(player);
+            else
+            {
+                player.stopRight();
+            }
+
+            ObjControl.HandleState(player);
             //Stefen: Rotate player model for viewing
+            if (keyState.IsKeyDown(Keys.E))
+            {
+                //player.AddRotation(0.1f,0,0);
+                player.health--;
+            }
+
+            if (keyState.IsKeyDown(Keys.R))
+            {
+                //player.AddRotation(0, 0.1f, 0);
+                player.health++;
+            }
+
             if (keyState.IsKeyDown(Keys.E))
             {
                 player.AddRotation(0.1f,0,0);
@@ -374,16 +379,8 @@ namespace Prototype
                 Audio.SetMusic(Audio.Tracks.title);
             }
             //Kieran: intersection sphere for plant just to get things working! is located underneath the platform
-            BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, 0), 5);
-            //Stefen: if x is pressed and the event is available the event is activated
-            if (keyState.IsKeyDown(Keys.X)&&(Plant.getStatus()==true)&&(player.boundingsphere.Intersects(plantSphere)))
-            {
-                Plant.Activate();
+            BoundingSphere plantSphere = new BoundingSphere(new Vector3(10, 0, 0), 5);//DOGGON
 
-                ObjectManipulator.UpdateObjects(GraphicsDevice);
-                CollisionDetectionBox.AddBox(new Vector3(5, 5, -10), new Vector3(15, 8, 0));
-                
-            }
             if (keyState.IsKeyDown(Keys.PageUp))
 
                 if (keyState.IsKeyDown(Keys.PageDown))
@@ -399,21 +396,6 @@ namespace Prototype
             POS.Y = player.position.Y + 5.0f;
             TARGET.X = player.position.X + 1.0f;
             TARGET.Y = player.position.Y + 3.0f;
-
-            //Stefen: Animate Growth
-            if ((Plant.getActive()==true))
-            {
-                Plant.Animate(15);      //parameter is the desired y position by end of animation
-                if (Plant.getPos().Y > 10)
-                {
-                    PlatLeaf2.Render(View, Proj, GraphicsDevice);
-                }
-                ObjectManipulator.UpdateObjects(GraphicsDevice);
-            }
-            if (Plant.Activated == true)
-            {
-                Plant.Transform();
-            }
             base.Update(gameTime);
         }
 
@@ -426,7 +408,7 @@ namespace Prototype
 
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            GraphicsDevice.VertexDeclaration = ObjectManipulator.vertexFormat;
+           // GraphicsDevice.VertexDeclaration = ObjectManipulator.vertexFormat;
             GraphicsDevice.RenderState.CullMode = CullMode.CullCounterClockwiseFace;
 
             View = QuaternionCamera.GetViewMatrix(ref POS, ref TARGET, ref UP, YAW, PITCH, ROLL);
@@ -439,7 +421,7 @@ namespace Prototype
 
             UpdateEffectParams();
 
-            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant, POS, lights);
+            //ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, POS, lights);
 
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
@@ -451,7 +433,8 @@ namespace Prototype
             ObjControl.Render(View, Proj, GraphicsDevice);
            // PlatHill1.Render(View, Proj, GraphicsDevice);
            // PlatHill2.Render(View, Proj, GraphicsDevice);
-            //FullLevel.Render(View, Proj, GraphicsDevice);
+            //FullLevel1.Render(View, Proj, GraphicsDevice);
+            FullLevel2.Render(View, Proj, GraphicsDevice);
            // MainHill.Render(View, Proj, GraphicsDevice);
            // Mushroom.Render(View, Proj, GraphicsDevice);
            // PlatLeaf3.Render(View, Proj, GraphicsDevice);
@@ -459,10 +442,7 @@ namespace Prototype
             PlatLeaf1.Render(View, Proj, GraphicsDevice);
             Mushroom1.Render(View, Proj, GraphicsDevice);
             Mushroom2.Render(View, Proj, GraphicsDevice);
-            if (Plant.getPos().Y > 10)
-            {
-                PlatLeaf2.Render(View, Proj, GraphicsDevice);
-            }
+            
             base.Draw(gameTime);
 
             ParticleGroup.Draw(World, View, Proj);
@@ -510,71 +490,71 @@ namespace Prototype
             return false;
         }
 
-        private void AddLevelFront()
-        {
-            ObjectManipulator.NewLevelObject(8, 15, PrimitiveType.TriangleList, 5);
+        //private void AddLevelFront()
+        //{
+        //    ObjectManipulator.NewLevelObject(8, 15, PrimitiveType.TriangleList, 5);
 
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f);
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
-            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f);
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f);
-            ObjectManipulator.Current().AddVertexPNT(30.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(-10.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(-5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 0.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(-10.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 1.0f);
+        //    ObjectManipulator.Current().AddVertexPNT(30.0f, -5.0f, 0.0f, 0.0f, 0.0f, -1.0f, 1.0f, 1.0f);
 
-            ObjectManipulator.Current().AddIndex(0, 3, 2);
-            ObjectManipulator.Current().AddIndex(0, 1, 3);
-            ObjectManipulator.Current().AddIndex(1, 4, 3);
-            ObjectManipulator.Current().AddIndex(2, 5, 7);
-            ObjectManipulator.Current().AddIndex(2, 7, 6);
+        //    ObjectManipulator.Current().AddIndex(0, 3, 2);
+        //    ObjectManipulator.Current().AddIndex(0, 1, 3);
+        //    ObjectManipulator.Current().AddIndex(1, 4, 3);
+        //    ObjectManipulator.Current().AddIndex(2, 5, 7);
+        //    ObjectManipulator.Current().AddIndex(2, 7, 6);
 
-            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");//load texture
+        //    ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexgrass");//load texture
 
-            ObjectManipulator.Current().CalculateWorld();
+        //    ObjectManipulator.Current().CalculateWorld();
 
-            ObjectManipulator.Current().basicEffect = false;
-        }
+        //    ObjectManipulator.Current().basicEffect = false;
+        //}
 
-        private void AddLevelTop()
-        {
-            ObjectManipulator.NewLevelObject(12, 18, PrimitiveType.TriangleList, 6);
+        //private void AddLevelTop()
+        //{
+        //    ObjectManipulator.NewLevelObject(12, 18, PrimitiveType.TriangleList, 6);
 
-            Vector3 norm = Vector3.Transform(new Vector3(0, 1, 0), Quaternion.CreateFromYawPitchRoll(0, 0, MathHelper.ToRadians(30)));
+        //    Vector3 norm = Vector3.Transform(new Vector3(0, 1, 0), Quaternion.CreateFromYawPitchRoll(0, 0, MathHelper.ToRadians(30)));
 
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//top
-            ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);//top
+        //    ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//top
+        //    ObjectManipulator.Current().AddVertexPNT(-10.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);//top
 
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);//top
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);//top
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 0.0f);//middle
-            ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, norm.X, norm.Y, norm.Z, 1.0f, 0.0f);//middle
+        //    ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);//top
+        //    ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);//top
+        //    ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 0.0f);//middle
+        //    ObjectManipulator.Current().AddVertexPNT(-5.0f, 5.0f, -10.0f, norm.X, norm.Y, norm.Z, 1.0f, 0.0f);//middle
 
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//bottom
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);//bottom
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 1.0f);//middle
-            ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, norm.X, norm.Y, norm.Z, 1.0f, 1.0f);//middle
+        //    ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f);//bottom
+        //    ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f);//bottom
+        //    ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, 0.0f, norm.X, norm.Y, norm.Z, 0.0f, 1.0f);//middle
+        //    ObjectManipulator.Current().AddVertexPNT(5.0f, 0.0f, -10.0f, norm.X, norm.Y, norm.Z, 1.0f, 1.0f);//middle
 
-            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);//bottom
-            ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);//bottom
-
-
-
-            ObjectManipulator.Current().AddIndex(0, 1, 2);
-            ObjectManipulator.Current().AddIndex(1, 3, 2);
-            ObjectManipulator.Current().AddIndex(4, 5, 9);
-            ObjectManipulator.Current().AddIndex(4, 9, 8);
-            ObjectManipulator.Current().AddIndex(6, 7, 11);
-            ObjectManipulator.Current().AddIndex(6, 11, 10);
-
-            ObjectManipulator.Current().CalculateWorld();
-
-            ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexleaves");
-
-            ObjectManipulator.Current().basicEffect = false;
+        //    ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f);//bottom
+        //    ObjectManipulator.Current().AddVertexPNT(30.0f, 0.0f, -10.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f);//bottom
 
 
-        }
+
+        //    ObjectManipulator.Current().AddIndex(0, 1, 2);
+        //    ObjectManipulator.Current().AddIndex(1, 3, 2);
+        //    ObjectManipulator.Current().AddIndex(4, 5, 9);
+        //    ObjectManipulator.Current().AddIndex(4, 9, 8);
+        //    ObjectManipulator.Current().AddIndex(6, 7, 11);
+        //    ObjectManipulator.Current().AddIndex(6, 11, 10);
+
+        //    ObjectManipulator.Current().CalculateWorld();
+
+        //    ObjectManipulator.Current().tex = Content.Load<Texture2D>("testtexleaves");
+
+        //    ObjectManipulator.Current().basicEffect = false;
+
+
+        //}
 
         List<Vector3> GetOrbPosition()
         {
@@ -629,7 +609,7 @@ namespace Prototype
 
             myShadows.SetUpShadowMap1(myEffect, gDeviceManager, View, Proj);
 
-            ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, Plant, POS, lights);
+            //ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, POS, lights);
             player.DrawPlayerShadow(player, Proj, View);
 
             myShadows.SetUpShadowMap2(myEffect, gDeviceManager);
@@ -654,6 +634,7 @@ namespace Prototype
                     myEffect.Parameters["gMinY"].Elements[y.plantnum].SetValue(y.minY);
                     myEffect.Parameters["gMaxY"].Elements[y.plantnum].SetValue(y.maxY);
                     myEffect.Parameters["gRadius"].Elements[y.plantnum].SetValue(y.radius);
+                    myEffect.Parameters["player"].SetValue(false);
                 }
             }
 
@@ -678,11 +659,20 @@ namespace Prototype
 
         private void SetupPlane()
         {
-            //CollisionDetectionPlane.AddPlane(new Vector3(-10, 5, 0), new Vector3(-10, 5, -10), new Vector3(-5, 5, -10), -10, -5);
-            CollisionDetectionBox.AddBox(new Vector3(-10, 3, -10), new Vector3(-5, 5, 0)); //Top slope
-            //CollisionDetectionBox.AddBox(new Vector3(20, 12, -10), new Vector3(30, 14, 0)); //Platform
-            CollisionDetectionBox.AddBox(new Vector3(5, 0, -10), new Vector3(30, 0, 0)); //Bottom slope
-            CollisionDetectionPlane.AddPlane(new Vector3(-5, 5, 0), new Vector3(5, 0, 0), new Vector3(5, 0, -10), -5, 5); //Middle slope, works but doesn't
+            CollisionDetectionBox.AddBox(new Vector3(-12, 3, -10), new Vector3(-3, 5, 0)); //First platform
+
+            CollisionDetectionBox.AddBox(new Vector3(-1, 8, -10), new Vector3(8, 11, 0)); //Second platform
+
+            CollisionDetectionBox.AddBox(new Vector3(10, 3, -10), new Vector3(18, 5, 0)); //Third platform
+
+            CollisionDetectionBox.AddBox(new Vector3(18, -6, -10), new Vector3(29, -3, 0)); //Bottom of hill 1
+            CollisionDetectionPlane.AddPlane(new Vector3(29, -3, -10), new Vector3(29, -3, 0), new Vector3(35, 1, -10), 29, 35); //Hill 1 slope
+            CollisionDetectionBox.AddBox(new Vector3(35, -2, -10), new Vector3(58, 1, 0)); //Top of hill 1
+
+            CollisionDetectionBox.AddBox(new Vector3(63, -2, -10), new Vector3(65, 1, 0)); //Bottom of hill 2
+            CollisionDetectionPlane.AddPlane(new Vector3(65, 1, -10), new Vector3(65, 1, 0), new Vector3(67, 2, -10), 65, 67); //Hill 2 slope
+            CollisionDetectionPlane.AddPlane(new Vector3(67, 2, -10), new Vector3(67, 2, 0), new Vector3(69, 3, -10), 67, 69); //Hill 2 slope
+            CollisionDetectionPlane.AddPlane(new Vector3(69, 3, -10), new Vector3(69, 3, 0), new Vector3(73, 3, -10), 69, 73); //Hill 2 slope
         }
 
     }

@@ -41,12 +41,6 @@ namespace Prototype
         }
 
         override
-        public void Load()
-        {
-          
-        }
-
-        override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
             Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
@@ -69,7 +63,7 @@ namespace Prototype
             }
         }
         override
-        public void Collision(Player Player)
+        public void HandleState(Player Player)
         {
             switch (Current)
             {
@@ -109,12 +103,6 @@ namespace Prototype
                 default:
                     throw new ArgumentException("Error - " + Current + " is not recognized.");
             }
-        }
-
-        override
-        public void Activate()
-        {
-
         }
     }
 }

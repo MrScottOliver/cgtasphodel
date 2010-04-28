@@ -29,31 +29,55 @@ namespace Prototype
 
         static public void Compare(ref Player playerObject)
         {
-            int result;
-
             foreach (PlaneObject planeX in BObjects)
             {
                 if (playerObject.position.X > planeX.MinX && playerObject.position.X < planeX.MaxX)
                 {
                     playerObject.boundingsphere.Intersects(ref planeX.p, out planeX.result);
-                    //result = planeX.Position();
-                    /* if (result == 1)
-                    {
-                        playerObject.velocity = Vector3.Zero;
-                        playerObject.position += new Vector3(0, 0.001f, 0);
-                    }
-                    if (result == -1)
-                    {
-                        playerObject.velocity.Normalize();
-                        playerObject.velocity *= -1;
-                    }
-                    if (result == 0)
-                    {
-                        playerObject.velocity = Vector3.Zero;
-                    }*/
+
                     if (planeX.result == PlaneIntersectionType.Intersecting)
                     {
-                        playerObject.velocity = Vector3.Zero;
+                        if ((playerObject.top.Intersects(planeX.p) <= 2))
+                        {
+                            if (playerObject.velocity.Y > 0)
+                            {
+                                playerObject.velocity.Y -= playerObject.velocity.Y;
+                                playerObject.AddTranslation(0, (float)(-1 * (2 - playerObject.top.Intersects(planeX.p))), 0);
+                            }
+                        }
+                        if ((playerObject.bottom.Intersects(planeX.p) <= 1))
+                        {
+                            if (playerObject.velocity.Y < 0)
+                            {
+                                playerObject.velocity.Y -= playerObject.velocity.Y;
+                                playerObject.jumpState = false;
+                                playerObject.doublejumpState = false;
+                                playerObject.AddTranslation(0, (float)(1 - playerObject.bottom.Intersects(planeX.p)), 0);
+                            }
+                        }
+                        else
+                        {
+                            if (playerObject.bottom.Intersects(planeX.p) >= 1 && (playerObject.velocity.X != 0) && (playerObject.jumpState == false))
+                            {
+                                playerObject.AddTranslation(0, (float)(-1 * (playerObject.bottom.Intersects(planeX.p) - 1)), 0);
+                            }
+                        }
+                        if ((playerObject.front.Intersects(planeX.p) <= 0.5f))
+                        {
+                            if (playerObject.velocity.X > 0)
+                            {
+                                playerObject.velocity.X -= playerObject.velocity.X;
+                                playerObject.AddTranslation((float)(-1 * (1 - playerObject.front.Intersects(planeX.p))), 0, 0);
+                            }
+                        }
+                        if ((playerObject.back.Intersects(planeX.p) <= 0.5f))
+                        {
+                            if (playerObject.velocity.X < 0)
+                            {
+                                playerObject.velocity.X -= playerObject.velocity.X;
+                                playerObject.AddTranslation((float)(1 - playerObject.back.Intersects(planeX.p)), 0, 0);
+                            }
+                        }
                     }
                 }
             }
@@ -80,21 +104,39 @@ namespace Prototype
             {
                 if (playerObject.boundingsphere.Intersects(box))
                 {
-                    if ((playerObject.top.Intersects(box) != 0))
+                    if ((playerObject.top.Intersects(box) <= 2))
                     {
-                        playerObject.velocity.Y = 0;
+                        if (playerObject.velocity.Y > 0)
+                        {
+                            playerObject.velocity.Y -= playerObject.velocity.Y;
+                            playerObject.AddTranslation(0, (float)(-1 * (2 - playerObject.top.Intersects(box))), 0);
+                        }
                     }
-                    if ((playerObject.bottom.Intersects(box) != 0))
+                    if ((playerObject.bottom.Intersects(box) <= 1))
                     {
-                        playerObject.velocity.Y = 0;
+                        if (playerObject.velocity.Y < 0)
+                        {
+                            playerObject.velocity.Y -= playerObject.velocity.Y;
+                            playerObject.jumpState = false;
+                            playerObject.doublejumpState = false;
+                            playerObject.AddTranslation(0, (float)(1 - playerObject.bottom.Intersects(box)), 0);
+                        }
                     }
-                    if ((playerObject.front.Intersects(box) != 0))
+                    if ((playerObject.front.Intersects(box) <= 0.5f))
                     {
-                        playerObject.velocity.X = 0;
+                        if (playerObject.velocity.X > 0)
+                        {
+                            playerObject.velocity.X -= playerObject.velocity.X;
+                            playerObject.AddTranslation((float)(-1 * (1 - playerObject.front.Intersects(box))), 0, 0);
+                        }
                     }
-                    if ((playerObject.back.Intersects(box) != 0))
+                    if ((playerObject.back.Intersects(box) <= 0.5f))
                     {
-                        playerObject.velocity.X = 0;
+                        if (playerObject.velocity.X < 0)
+                        {
+                            playerObject.velocity.X -= playerObject.velocity.X;
+                            playerObject.AddTranslation((float)(1 - playerObject.back.Intersects(box)), 0, 0);
+                        }
                     }
                 }
             }

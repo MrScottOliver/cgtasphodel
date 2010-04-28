@@ -16,6 +16,9 @@ uniform extern float	gRadius[10];
 uniform extern float gMinY[10];
 uniform extern float gMaxY[10];
 
+uniform extern bool player;
+uniform extern float health;
+
 
 //---------------------------------------------------------------------------------------------------------------------------
 // Pixel shader (input channel):output channel
@@ -127,64 +130,81 @@ float4 LightsPSWithShadows(InputPS input): COLOR
 	float			yCom;
 	float			zCom;
 	float grey;
+	float4 result;
+	int counter = 0;
 	
-	for(int k = 0; k < 10; k++)
-	{
-	xCom = (input.posW.x - gCenterX[k])*(input.posW.x - gCenterX[k]);
-	yCom = (input.posW.y - gCenterY[k])*(input.posW.y - gCenterY[k]);
-	zCom = (input.posW.z - gCenterZ[k])*(input.posW.z - gCenterZ[k]);
-	
+	result.r = 0;
+    result.g = 0;
+    result.b = 0;
+    result.a = 1.0f;
 	
 	float3 Color = {0.0f, 0.0f, 0.0f};
 	float4 texColor = tex2D(TexS, input.tex0);
 	float4 globalamb ={0.5, 0.5, 0.5, 1.0};
 	
-	
 	for (int i = 0; i < (numlights); ++i)
 	{
-	
-			
-	Color += CalculatePointLightWShadow(light[i], input, texColor, globalamb, shadowdiff);
-		
-	
+		Color += CalculatePointLightWShadow(light[i], input, texColor, globalamb, shadowdiff);
 	}
 	
-	float4 finalCol = float4( Color, gDiffuseMtrl.a*texColor.a); 
-	
+	float4 finalCol = float4( Color, gDiffuseMtrl.a*texColor.a);
 	
 	////////////////////////////////////////////////////////////
 	///calculations for colour change						 ///
 	////////////////////////////////////////////////////////////	
 
 	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
+	result.r = 0;
+	result.g = 0;
+	result.b = 0;
+	result.a = finalCol.a;
 	
-	//float factor = (xCom + zCom) / (1000 / (xCom + zCom));
-	float dist = (xCom + zCom) / gRadius[k];
-	
-	float4 result;    
-    result.r = (finalCol.r - (finalCol.r * dist)) + grey * dist;
-    result.g = (finalCol.g - (finalCol.g * dist)) + grey * dist;
-    result.b = (finalCol.b - (finalCol.b * dist)) + grey * dist;
-    result.a = finalCol.a;
-	
-	if (((xCom + zCom) <= (gRadius[k])) && (input.posW.y < gMaxY[k]) && (input.posW.y > gMinY[k]))
+	if(player)
 	{
-		//return finalCol;
-		//return float4(final.r, final.g, final.b, 1.0f);
+		float dist = 1 - ( health / 100 );
+		result.r = ((finalCol.r - (finalCol.r * dist)) + grey * dist);
+		result.g = ((finalCol.g - (finalCol.g * dist)) + grey * dist);
+		result.b = ((finalCol.b - (finalCol.b * dist)) + grey * dist);
+		result.a = finalCol.a;
 		return result;
 	}
 	else
 	{
-		return float4(grey, grey, grey, 1.0f);
+	
+	for(int k = 0; k < 10; k++)
+	{
+		xCom = (input.posW.x - gCenterX[k])*(input.posW.x - gCenterX[k]);
+		yCom = (input.posW.y - gCenterY[k])*(input.posW.y - gCenterY[k]);
+		zCom = (input.posW.z - gCenterZ[k])*(input.posW.z - gCenterZ[k]);
+		
+		float dist = (xCom + zCom) / gRadius[k];
+		
+		if (((xCom + zCom) <= (gRadius[k])) && (input.posW.y < gMaxY[k]) && (input.posW.y > gMinY[k]))
+		{
+			if ( (result.r < ((finalCol.r - (finalCol.r * dist)) + grey * dist)) )
+			result.r = ((finalCol.r - (finalCol.r * dist)) + grey * dist);
+			if ( (result.g < ((finalCol.g - (finalCol.g * dist)) + grey * dist)) )
+			result.g = ((finalCol.g - (finalCol.g * dist)) + grey * dist);
+			if ( (result.b < ((finalCol.b - (finalCol.b * dist)) + grey * dist)) )
+			result.b = ((finalCol.b - (finalCol.b * dist)) + grey * dist);
+			//result.a = finalCol.a;
+			counter++;
+		}
+	}
+		
+	if(counter == 0)
+	{
+		result.r = grey;
+		result.g = grey;
+		result.b = grey;
 	}
 	
+	return result;
 	}
 }
 
 technique MyTech
 {
-
-
 	pass PointLights
 	{ 
 		SpecularEnable = TRUE;
@@ -195,7 +215,6 @@ technique MyTech
 		//specify render device states associated with the pass
 		FillMode =  Solid;
 	}	
-
 }
 
 technique CreateShadowMapTech
