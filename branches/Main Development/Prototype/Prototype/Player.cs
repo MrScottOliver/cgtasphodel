@@ -106,6 +106,8 @@ namespace Prototype
                     //set technique
                     effect.CurrentTechnique = effect.Techniques["MyTech"];
 
+                    effect.Parameters["withlights"].SetValue(true);
+
                     //set matrix params
                     effect.Parameters["gWVP"].SetValue(wvp);
                     effect.Parameters["gWorldView"].SetValue(wv);
@@ -121,6 +123,9 @@ namespace Prototype
 
                     //set texture
                     effect.Parameters["gTex"].SetValue(player.texture);
+                    effect.Parameters["withgrey"].SetValue(true);
+
+                    effect.CommitChanges();
 
 
 
@@ -141,6 +146,7 @@ namespace Prototype
             }
         }
 
+        //creates the shadow map for the player
         public void DrawPlayerShadow(Player player, Matrix Proj, Matrix View)
         {
             foreach (ModelMesh mesh in player.model.Meshes)

@@ -28,7 +28,8 @@ namespace Prototype
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
-        SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
+       // SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
+        SimpleSky TestSky = new SimpleSky();
         Lights[] lights;
         ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
         Surface PlatLeaf1, PlatLeaf2, FullLevel1, FullLevel2, Mushroom1, Mushroom2;
@@ -37,6 +38,13 @@ namespace Prototype
         Matrix Proj;
         Matrix World = Matrix.CreateTranslation(0, 0, 0);
         Shadows myShadows = new Shadows();
+
+        float OrbGlow = 2.3f;//variables for making the orb glow pulsate
+        int pulsate = 1;
+        int orbnum = 0;
+        Vector3[] OrbPositions = new Vector3[20];
+
+        PostProcess Bloom;//bloom post process effect 
 
         PhysicsActor paHill1;
         PhysicsActor paBall;
@@ -60,6 +68,9 @@ namespace Prototype
         {
             gDeviceManager = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            Bloom= new PostProcess(this);
+            Components.Add(Bloom);
         }
 
         /// <summary>
@@ -143,7 +154,7 @@ namespace Prototype
 
 
 
-            SetUpSkySphere();//Jess:set up sky sphere
+            SetUpSky();//Jess:set up sky 
             Model OrbModel = Content.Load<Model>("ball");
             Model PlantCyl = Content.Load<Model>("Flower1");
             Model Hill1 = Content.Load<Model>("Hill1");
@@ -158,7 +169,7 @@ namespace Prototype
             //Model Flower = Content.Load<Model>("Flower2");
             // Model MnHill = Content.Load<Model>("Mainhill2");
 
-
+            RemapModel(OrbModel, myEffect);
 
             //New physics
             physicSystem = new Physics();
@@ -422,13 +433,15 @@ namespace Prototype
             UpdateEffectParams();
 
             //ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, POS, lights);
-
+           
+            //LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
+            TestSky.DrawSky(View, Proj, POS, GraphicsDevice);
+ 
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
-            paHill1.Draw(Proj, View);
-            paBall.Draw(Proj, View);
-
-            LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
+            //paHill1.Draw(Proj, View);
+           // paBall.Draw(Proj, View);
+      
 
             ObjControl.Render(View, Proj, GraphicsDevice);
            // PlatHill1.Render(View, Proj, GraphicsDevice);
@@ -443,10 +456,12 @@ namespace Prototype
             Mushroom1.Render(View, Proj, GraphicsDevice);
             Mushroom2.Render(View, Proj, GraphicsDevice);
             
-            base.Draw(gameTime);
+           
+             ParticleGroup.Draw(World, View, Proj);
 
-            ParticleGroup.Draw(World, View, Proj);
-
+             base.Draw(gameTime);
+  
+            
         }
         /***********************
          * Not my code!
@@ -590,18 +605,35 @@ namespace Prototype
             lights[0].Attenuation = new Vector3(0.0f, 0.00000001f, 0.00000002f);
 
 
-            //Stefen: to test orbs seperate from other lights
+            //attach point lights to each visible orb
             numlights= 1;
+            orbnum = 0;
             foreach (Vector3 coordinate in GetOrbPosition())
             {
                 numlights++;
-                lights[numlights-1] = new Lights();//point light
-                lights[numlights-1].Position = new Vector4(coordinate, 1.0f);
-                
+                orbnum++;
+                lights[numlights - 1] = new Lights();//point light
+                lights[numlights - 1].Position = new Vector4(coordinate, 1.0f);
+
+                OrbPositions[orbnum - 1] = coordinate;
+
             }
 
+            myEffect.Parameters["orbnum"].SetValue(orbnum);
             myEffect.Parameters["numlights"].SetValue(numlights);//set number of lights
 
+        }
+
+
+        private void RemapModel(Model model, Effect effect)
+        {
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    part.Effect = effect;
+                }
+            }
         }
 
         private void CreateShadowMap()
@@ -639,22 +671,55 @@ namespace Prototype
             }
 
 
-
             for (int i = 0; i < numlights; i++)
             {
                 lights[i].UpdateLight(myEffect.Parameters["light"].Elements[i]);
             }
 
+
+            myEffect.Parameters["OrbPos"].SetValue(OrbPositions);
+
+            if (pulsate == 1)
+            {
+                if (OrbGlow > 2.2f)
+                {
+                    OrbGlow -= 0.01f;
+                }
+                else if (OrbGlow <= 2.2f)
+                {
+                    pulsate = 0;
+                }
+            }
+            else if (pulsate == 0)
+            {
+                if (OrbGlow < 2.5f)
+                {
+                    OrbGlow += 0.01f;
+                }
+                else if (OrbGlow >= 2.5f)
+                {
+                    pulsate = 1;
+                }
+            }
+
+            myEffect.Parameters["orbRadius"].SetValue(OrbGlow);
+
         }
 
         //Jess: Set up effects, texture, model for sky sphere
-        private void SetUpSkySphere()
+        private void SetUpSky()
         {
-            LevelSky.SkyModel = Content.Load<Model>("SphereHighPoly");
-            LevelSky.SkyEffect = Content.Load<Effect>("SkySphere");
-            LevelSky.SkyTexture = Content.Load<TextureCube>("skyboxmystic");
+            //LevelSky.SkyModel = Content.Load<Model>("SphereHighPoly");
+            //LevelSky.SkyEffect = Content.Load<Effect>("SkySphere");
+            //LevelSky.SkyTexture = Content.Load<TextureCube>("skyboxmystic");
 
-            LevelSky.SetUpSkyEffect();
+            //LevelSky.SetUpSkyEffect();
+
+
+            TestSky.SkyModel = Content.Load<Model>("quad");
+            TestSky.SkyTexture = Content.Load<Texture2D>("spires_north");
+            TestSky.SetUpSkyEffect(myEffect); 
+
         }
 
         private void SetupPlane()

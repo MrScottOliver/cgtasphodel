@@ -1,5 +1,5 @@
 //-------------------------------------------------------------------------------
-//Shader that includes directional and point lights (vertex shader and other functions in Includes.inc)
+//Shader that includes point lights and shadows (vertex shader and other functions in Includes.inc)
 //------------------------------------------------------------------------------------------------------
 #include "Includes.inc"
 
@@ -18,6 +18,13 @@ uniform extern float gMaxY[10];
 
 uniform extern bool player;
 uniform extern float health;
+
+uniform extern bool withlights;
+uniform extern bool withgrey;
+
+uniform extern float orbRadius;
+uniform extern int orbnum;
+uniform extern float3 OrbPos[20]; 
 
 
 //---------------------------------------------------------------------------------------------------------------------------
@@ -96,36 +103,85 @@ float4 LightsPS(InputPS input): COLOR
 float4 LightsPSWithShadows(InputPS input): COLOR
 {
 
-	///////////////////////////////////////////////////////
-	///calculations for shadow mapping					///
-	///////////////////////////////////////////////////////
-	float4 lightingPos = mul(input.posW, gLightviewproj);
-	
-	float2 shadowtexcoord = 0.5*lightingPos.xy/lightingPos.w + float2(0.5,0.5);
-	
-	shadowtexcoord.y =  1.0f - shadowtexcoord.y;
-	
-	float depth = lightingPos.z / lightingPos.w;
-	
-	float shadowdiff = 0.0f;
-    
-    shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 0.0f), depth);
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 0.0f), depth);
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 0.0f), depth);
-	
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 1.0f), depth);
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 1.0f), depth);
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 1.0f), depth);
-	
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 2.0f), depth);
-    shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 2.0f), depth);
-	shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 2.0f), depth);
-	
-	shadowdiff /= 9.0f;
-   
-	////////////////////////////////////////////////////////
-	
+	float3 Color = {0.0f, 0.0f, 0.0f};
+	float4 texColor = tex2D(TexS, input.tex0);
+	float4 globalamb ={0.5, 0.5, 0.5, 1.0};
+	float4 finalCol = {0.0f, 0.0f, 0.0f,0.0f};
 
+	if(withlights)
+	{
+
+		///////////////////////////////////////////////////////
+		///calculations for shadow mapping					///
+		///////////////////////////////////////////////////////
+		
+		float4 lightingPos = mul(input.posW, gLightviewproj);
+	
+		float2 shadowtexcoord = 0.5*lightingPos.xy/lightingPos.w + float2(0.5,0.5);
+		
+		shadowtexcoord.y =  1.0f - shadowtexcoord.y;
+	
+		float depth = lightingPos.z / lightingPos.w;
+	
+		float shadowdiff = 0.0f;
+    
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 0.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 0.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 0.0f), depth);
+	
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 1.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 1.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 1.0f), depth);
+	
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 2.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 2.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 2.0f), depth);
+	
+		shadowdiff /= 9.0f;
+   
+		////////////////////////////////////////////////////////
+		///Point light calc									////
+		////////////////////////////////////////////////////////
+	
+		for (int i = 0; i < (numlights); ++i)
+		{
+			Color += CalculatePointLightWShadow(light[i], input, texColor, globalamb, shadowdiff);
+		}
+	
+		finalCol = float4( Color, gDiffuseMtrl.a*texColor.a);
+	
+	}
+	else
+	{
+		finalCol = texColor;
+	}
+	
+	//////////////////////////////////////////////////////////////
+	//orbs////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////
+	float4 screenPos = mul(input.posW, gViewProj);
+    screenPos /= screenPos.w;
+    
+    for (int i=0; i<orbnum; i++)
+     {
+         float4 orbscreenPos = mul(float4(OrbPos[i],1),gViewProj);
+         orbscreenPos /= orbscreenPos.w;
+         
+         float dist = distance(screenPos.xy, orbscreenPos.xy);
+         float radius = orbRadius/distance(gCamPosW, OrbPos[i]);
+         if (dist < radius)
+         {
+             finalCol.rgb += (radius-dist)*8.0f;
+
+        }
+    }
+	
+	////////////////////////////////////////////////////////////
+	///calculations for colour change						 ///
+	////////////////////////////////////////////////////////////	
+	
+if(withgrey){	
+	
 	float			xCom;
 	float			yCom;
 	float			zCom;
@@ -137,21 +193,6 @@ float4 LightsPSWithShadows(InputPS input): COLOR
     result.g = 0;
     result.b = 0;
     result.a = 1.0f;
-	
-	float3 Color = {0.0f, 0.0f, 0.0f};
-	float4 texColor = tex2D(TexS, input.tex0);
-	float4 globalamb ={0.5, 0.5, 0.5, 1.0};
-	
-	for (int i = 0; i < (numlights); ++i)
-	{
-		Color += CalculatePointLightWShadow(light[i], input, texColor, globalamb, shadowdiff);
-	}
-	
-	float4 finalCol = float4( Color, gDiffuseMtrl.a*texColor.a);
-	
-	////////////////////////////////////////////////////////////
-	///calculations for colour change						 ///
-	////////////////////////////////////////////////////////////	
 
 	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
 	result.r = 0;
@@ -201,6 +242,15 @@ float4 LightsPSWithShadows(InputPS input): COLOR
 	
 	return result;
 	}
+	
+}
+else //if not with grey effect
+{
+	return finalCol;
+}
+	
+	
+	
 }
 
 technique MyTech
