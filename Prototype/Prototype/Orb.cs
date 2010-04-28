@@ -39,13 +39,35 @@ namespace Prototype
 
             foreach (ModelMesh mesh in ObjModel.Meshes)
             {
-                foreach (BasicEffect effect in mesh.Effects)
+                foreach (Effect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();
-                    //// effect.Parameters[""]
-                    effect.View = view;
-                    effect.Projection = projection;
-                    effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position);
+                    //effect.EnableDefaultLighting();
+                    ////// effect.Parameters[""]
+                    //effect.View = view;
+                    //effect.Projection = projection;
+                    //effect.World = /*gameWorldRotation * */ transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position);
+
+                    Matrix world = transforms[mesh.ParentBone.Index] * Matrix.CreateTranslation(Position);
+                    Matrix wvp = world * view * projection;
+                    Matrix vp = view * projection;
+
+                    Vector4 ambMtrl = new Vector4(1.0f, 1.0f, 0.2f, 1.0f);//Jess: default material vals
+                    Vector4 diffMtrl = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+                    Vector4 specMtrl = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+
+                    //set matrix params
+                    effect.Parameters["gWVP"].SetValue(wvp);
+                    effect.Parameters["gView"].SetValue(view);
+                    effect.Parameters["gProj"].SetValue(projection);
+                    effect.Parameters["gWorld"].SetValue(world);
+                    effect.Parameters["gViewProj"].SetValue(vp);
+                    effect.Parameters["gAmbMtrl"].SetValue(ambMtrl);
+                    effect.Parameters["gDiffuseMtrl"].SetValue(diffMtrl);
+                    effect.Parameters["gSpecMtrl"].SetValue(specMtrl);
+                    effect.Parameters["withgrey"].SetValue(false);
+
+                    effect.CommitChanges();
+
                 }
                 mesh.Draw();
             }

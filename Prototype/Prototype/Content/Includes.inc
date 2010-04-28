@@ -14,8 +14,11 @@ shared float4x4 gWVP;
 shared float4x4 gWorldIT;
 shared float4x4 gWorld;
 shared float4x4 gWorldViewIT;
+shared float4x4 gViewProj;
 shared float4x4 gWorldView;
 shared float4	gCamPosW; 
+shared float4x4 gProj;
+shared float4x4 gView;
 
 shared float4 gDiffuseMtrl;
 shared float4 gAmbMtrl;

@@ -101,6 +101,7 @@
     <Compile Include="OrbParticleSystem.cs" />
     <Compile Include="Physics.cs" />
     <Compile Include="PhysicsActor.cs" />
+    <Compile Include="PostProcess.cs" />
     <Compile Include="Shadows.cs" />
     <Compile Include="LevelSurface.cs" />
     <Compile Include="CollisionDetection.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuaternionCamera.cs" />
+    <Compile Include="SimpleSky.cs" />
     <Compile Include="SkySphere.cs" />
     <Compile Include="TriangleMeshObject.cs" />
   </ItemGroup>
