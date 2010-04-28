@@ -32,11 +32,6 @@ namespace Prototype
         }
 
         override
-        public void Load()
-        {
-      
-        }
-        override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
             Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
@@ -57,7 +52,7 @@ namespace Prototype
 
         }
         override
-        public void Collision(Player Player)
+        public void HandleState(Player Player)
         {
             if (Player.boundingsphere.Intersects(sphere))
             {
@@ -68,12 +63,7 @@ namespace Prototype
                // mcOrbParticleSystem.SetWorldViewProjectionMatrices(World * Matrix.CreateTranslation(this.GetPosition), View, Proj);
             }
         }
-        override
-        public void Activate()
-        {
-            // check collision
-            //Effect of activation
-        }
+
         public void SetPosition(float x, float y, float z)
         {
             Position = new Vector3(x, y, z);

@@ -49,8 +49,8 @@ namespace Prototype
         {
             vertexData = new VertexPositionNormalTexture[3];
             indexData = new short[3];
-            ObjectManipulator.VertexBufferSize += 3;
-            ObjectManipulator.IndexBufferSize += 3;
+            //ObjectManipulator.VertexBufferSize += 3;
+            //ObjectManipulator.IndexBufferSize += 3;
             Instances++;
             basicEffect = true;
             currentVertex = 0;
@@ -65,8 +65,8 @@ namespace Prototype
         {
             vertexData = new VertexPositionNormalTexture[vArraySize];
             indexData = new short[iArraySize];
-            ObjectManipulator.VertexBufferSize += vArraySize;
-            ObjectManipulator.IndexBufferSize += iArraySize;
+          //  ObjectManipulator.VertexBufferSize += vArraySize;
+           // ObjectManipulator.IndexBufferSize += iArraySize;
             Instances++;
             basicEffect = true;
             currentVertex = 0;

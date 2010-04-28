@@ -95,7 +95,7 @@
     <Compile Include="Actor.cs" />
     <Compile Include="Audio.cs" />
     <Compile Include="BoxObject.cs" />
-    <Compile Include="Camera.cs" />
+    <Compile Include="Camera%28Depriated%29.cs" />
     <Compile Include="IPhysicsObject.cs" />
     <Compile Include="Mushroom.cs" />
     <Compile Include="OrbParticleSystem.cs" />
@@ -107,14 +107,14 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Object.cs" />
     <Compile Include="ObjectHandler.cs" />
-    <Compile Include="ObjectManipulator.cs" />
+    <Compile Include="ObjectManipulator%28Depreciated%29.cs" />
     <Compile Include="Orb.cs" />
     <Compile Include="PlaneObject.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Plant.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="PlayerAction.cs" />
+    <Compile Include="PlayerAction%28Depreciated%29.cs" />
     <Compile Include="Lights.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

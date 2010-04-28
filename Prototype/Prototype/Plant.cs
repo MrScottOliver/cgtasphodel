@@ -53,34 +53,32 @@ namespace Prototype
         }
 
         override
-        public void Load()
-        {
-
-        }
-        override
         public void Render(Matrix view, Matrix projection, GraphicsDevice graphics)
         {
-            Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
-            ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
-
-            foreach (ModelMesh mesh in ObjModel.Meshes)
+            if (Current != LifeCycle.Collision)
             {
-                foreach (BasicEffect effect in mesh.Effects)
+                Matrix[] transforms = new Matrix[ObjModel.Bones.Count];
+                ObjModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+                foreach (ModelMesh mesh in ObjModel.Meshes)
                 {
-                    effect.EnableDefaultLighting();
-                    //// effect.Parameters[""]
-                    effect.View = view;
-                    effect.Projection = projection;
-                    Matrix scale;
-                    scale = Matrix.Identity; ;
-                    scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
-                    effect.World = /*gameWorldRotation * */   transforms[mesh.ParentBone.Index]* scale* Matrix.CreateTranslation(Position); /*scale*/
+                    foreach (BasicEffect effect in mesh.Effects)
+                    {
+                        effect.EnableDefaultLighting();
+                        //// effect.Parameters[""]
+                        effect.View = view;
+                        effect.Projection = projection;
+                        Matrix scale;
+                        scale = Matrix.Identity; ;
+                        scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
+                        effect.World = /*gameWorldRotation * */   transforms[mesh.ParentBone.Index] * scale * Matrix.CreateTranslation(Position); /*scale*/
+                    }
+                    mesh.Draw();
                 }
-                mesh.Draw();
             }
         }
         override
-        public void Collision(Player Player)
+        public void HandleState(Player Player)
         {
             //if the boxes collide                // run plant and grow event on different levels, delete event once activated
             //if the object hasnt been activated  // create activation list, animate list and destruction list
@@ -122,11 +120,6 @@ namespace Prototype
             }
         }
 
-        override
-        public void Activate()
-        {
-
-        }
         public float getX()
          {
              return Position.X;

@@ -22,7 +22,10 @@ namespace Prototype
         public Vector3 velocity;
         public Vector3 position;
         public Vector3 gravity;
-        
+        public float health;
+        public bool jumpState;
+        public bool doublejumpState;
+
         public BoundingSphere boundingsphere;
         public Ray top, bottom, front, back;
         public Matrix translation;
@@ -38,23 +41,27 @@ namespace Prototype
 
         public Player()
         {
-        model = null;
-        velocity = Vector3.Zero;
-        position = Vector3.Zero;
-        
-        boundingsphere = new BoundingSphere(position, 1.0f);
-        top = new Ray(position, new Vector3(position.X, position.Y + 1.0f, position.Z));
-        bottom = new Ray(position, new Vector3(position.X, position.Y - 1.0f, position.Z));
-        front = new Ray(position, new Vector3(position.X + 1.0f, position.Y, position.Z));
-        back = new Ray(position, new Vector3(position.X - 1.0f, position.Y + 1.0f, position.Z));
+            model = null;
+            velocity = Vector3.Zero;
+            position = Vector3.Zero;
 
-        scale = Matrix.Identity;
-        translation = Matrix.Identity;
-        rotation = Matrix.Identity;
-        world = Matrix.Identity;
-        gravity = new Vector3(0f, -0.005f, 0f);
+            boundingsphere = new BoundingSphere(position, 1.0f);
+            top = new Ray(position, new Vector3(0, 1, 0));
+            bottom = new Ray(position, new Vector3(0, -1, 0));
+            front = new Ray(position, new Vector3(1, 0, 0));
+            back = new Ray(position, new Vector3(-1, 0, 0));
 
-        OrbCount = 0;
+            scale = Matrix.Identity;
+            translation = Matrix.Identity;
+            rotation = Matrix.Identity;
+            world = Matrix.Identity;
+            gravity = new Vector3(0f, -0.005f, 0f);
+
+            jumpState = false;
+            doublejumpState = false;
+            health = 0;
+
+            OrbCount = 0;
         }
 
         //Kieran: draw player function
@@ -69,7 +76,7 @@ namespace Prototype
                     effect.EnableDefaultLighting();
                     effect.PreferPerPixelLighting = true;
 
-                   // effect.World = player.world;
+                    // effect.World = player.world;
                     effect.World = transforms[mesh.ParentBone.Index] * rotation * scale * translation;
                     effect.Projection = Proj;
                     effect.View = View;
@@ -105,7 +112,8 @@ namespace Prototype
                     effect.Parameters["gWorldViewIT"].SetValue(wvIT);
                     effect.Parameters["gWorld"].SetValue(world);
                     effect.Parameters["gWorldIT"].SetValue(worldIT);
-
+                    effect.Parameters["player"].SetValue(true);
+                    effect.Parameters["health"].SetValue(health);
                     //set material params
                     effect.Parameters["gAmbMtrl"].SetValue(player.ambMtrl);
                     effect.Parameters["gDiffuseMtrl"].SetValue(player.diffMtrl);
@@ -165,6 +173,10 @@ namespace Prototype
         {
             position += new Vector3(x, y, z);
             boundingsphere.Center = position;
+            top.Position = position;
+            bottom.Position = position;
+            front.Position = position;
+            back.Position = position;
             translation = Matrix.CreateTranslation(position);
             CreateWorld();
         }
@@ -182,15 +194,71 @@ namespace Prototype
 
         public void Move()
         {
-                velocity += gravity;
+            velocity += gravity;
         }
 
         public void Update()
         {
-            AddTranslation(velocity.X, velocity.Y, velocity.Z) ;
+            AddTranslation(velocity.X, velocity.Y, velocity.Z);
         }
-        
+
+        public void Jump()
+        {
+            if (!jumpState)
+            {
+                AddTranslation(0, 2.0f, 0);
+                velocity.Y += 0.1f;
+                jumpState = true;
+                Audio.Jump();
+            }
+            else
+            {
+                doubleJump();
+            }
+        }
+
+        public void doubleJump()
+        {
+            if (!doublejumpState)
+            {
+                velocity.Y += 0.25f;
+                Audio.Jump();
+                doublejumpState = true;
+            }
+        }
+
+        public void moveRight()
+        {
+            if (velocity.X < 0.1f)
+            {
+                velocity.X = 0.2f;
+                Audio.Step();
+            }
+        }
+
+        public void moveLeft()
+        {
+            if (velocity.X > -0.1f)
+            {
+                velocity.X = -0.2f;
+                Audio.Step();
+            }
+        }
+
+        public void stopRight()
+        {
+            if (velocity.X > 0.0f)
+            {
+                velocity.X = 0.0f;
+            }
+        }
+
+        public void stopLeft()
+        {
+            if (velocity.X < 0.0f)
+            {
+                velocity.X = 0.0f;
+            }
+        }
     }
-
-
 }
