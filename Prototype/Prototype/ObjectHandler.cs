@@ -24,7 +24,8 @@ namespace Prototype
         {
             Plant,
             Orb,
-            Mushroom
+            Mushroom,
+            Leaf
         }
     interface IObject
     {
@@ -57,6 +58,9 @@ namespace Prototype
 
                 case ObjectType.Mushroom:
                     return new Mushroom(model, Position);
+
+                case ObjectType.Leaf:
+                    return new Leaf(model, Position);
             }
             throw new ArgumentException("Error - " + item + " is not recognized.");
         }

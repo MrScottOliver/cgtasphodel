@@ -23,7 +23,6 @@ namespace Prototype
             Animate,
             Collision
         }
-
         BoundingSphere sphere;
         Model ObjModel;
         public Vector3 Position;
@@ -47,9 +46,8 @@ namespace Prototype
             InitialY = Position.Y;
             plantnum = counter;
             counter++;
-            minY =-20;
-            maxY=20;
-
+            minY = -20;
+            maxY = 20;
         }
 
         override
@@ -70,7 +68,7 @@ namespace Prototype
                         effect.Projection = projection;
                         Matrix scale;
                         scale = Matrix.Identity; ;
-                        scale = Matrix.CreateScale(0.1f, 0.1f, 0.1f);
+                        scale = Matrix.CreateScale(0.3f, 0.1f, 0.1f);
                         effect.World = /*gameWorldRotation * */   transforms[mesh.ParentBone.Index] * scale * Matrix.CreateTranslation(Position); /*scale*/
                     }
                     mesh.Draw();
@@ -100,6 +98,7 @@ namespace Prototype
                     else
                     {
                         Current = LifeCycle.Active;         //function sets current to Active after use is spent
+                        SpawnLeaves();
                     }
                     break;
 
@@ -110,6 +109,7 @@ namespace Prototype
                         if (keyState.IsKeyDown(Keys.X))
                         {
                             Current = LifeCycle.Animate;
+                            Position.Z -= 2;
                             Audio.Growth();
                         }
                     }
@@ -121,18 +121,44 @@ namespace Prototype
         }
 
         public float getX()
-         {
-             return Position.X;
-         }
+        {
+            return Position.X;
+        }
 
-        public float getY() 
-         { 
-             return Position.Y; 
-         }
+        public float getY()
+        {
+            return Position.Y;
+        }
 
-        public float getZ() 
-         { 
-             return Position.Z;
-         }
+        public float getZ()
+        {
+            return Position.Z;
+        }
+        void SpawnLeaves()
+        {
+            bool found = false;
+            foreach (IObject item in ObjectControl.ObjectList)
+            {
+                Type x = item.GetType();
+                if (x.Name == "Plant")
+                {
+                    Plant y = (Plant)item;
+                    if (y.plantnum == plantnum)
+                        found = true;
+                    else
+                        found = false;
+                }
+                else if (found == true)
+                {
+
+                    if (x.Name == "Leaf")
+                    {   
+                        Leaf z = (Leaf)item;
+                        z.Current=Leaf.LifeCycle.Growing;
+                    }
+                }
+            }
+
+        }
     }
 }
