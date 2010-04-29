@@ -432,3 +432,8 @@ I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\GaussianBlur.xnb
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\BloomCombine.xnb
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\bin\x86\Debug\Content\spires_north.xnb
+\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\spires_north.xnb
+\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\BloomExtract.xnb
+\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\GaussianBlur.xnb
+\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\BloomCombine.xnb
+\\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\quad.xnb

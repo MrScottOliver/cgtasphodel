@@ -204,12 +204,6 @@ namespace Prototype
             PlatLeaf3 = new Surface(Flower, new Vector3(0, 0, 0));
             PlatHill2 = new Surface(LevelBuild2, new Vector3(0, 0, 0));
             */
-            PlatLeaf1 = new Surface(Leaf1, new Vector3(25, 14, -3));
-            PlatLeaf1.Scale(0.75f, 0.75f, 0.75f);
-            PlatLeaf1.Rotate(1.0f, 0.0f, 0.0f);
-            PlatLeaf2 = new Surface(Leaf1, new Vector3(10, 8, -3));
-            PlatLeaf2.Scale(0.75f, 0.75f, 0.75f);
-            PlatLeaf2.Rotate(1.0f, 0.0f, 0.0f);
             Mushroom1 = new Surface(Mush1, new Vector3(20, 20, -3));
             Mushroom2 = new Surface(Mush2, new Vector3(50, 20, -3));
            //Stefen: Apply transformations for last object entered
@@ -239,8 +233,14 @@ namespace Prototype
            ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
            );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(10, -20, 0))
-        );
+            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(29, 4, 0))
+            );
+                        ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(32, 9, 0))
+            );
+                        ObjectControl.ObjectList.Add(
+             ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(10, -20, 0))
+            );
             ObjectControl.ObjectList.Add(
            ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(20, 0, -4))
            );
@@ -452,7 +452,6 @@ namespace Prototype
            // Mushroom.Render(View, Proj, GraphicsDevice);
            // PlatLeaf3.Render(View, Proj, GraphicsDevice);
            // PlatHill2.Render(View, Proj, GraphicsDevice);
-            PlatLeaf1.Render(View, Proj, GraphicsDevice);
             Mushroom1.Render(View, Proj, GraphicsDevice);
             Mushroom2.Render(View, Proj, GraphicsDevice);
             

@@ -97,6 +97,7 @@
     <Compile Include="BoxObject.cs" />
     <Compile Include="Camera%28Depriated%29.cs" />
     <Compile Include="IPhysicsObject.cs" />
+    <Compile Include="Leaf.cs" />
     <Compile Include="Mushroom.cs" />
     <Compile Include="OrbParticleSystem.cs" />
     <Compile Include="Physics.cs" />
