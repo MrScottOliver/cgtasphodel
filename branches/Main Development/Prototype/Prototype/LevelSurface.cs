@@ -36,15 +36,53 @@ namespace Prototype
 
             foreach (ModelMesh mesh in ObjModel.Meshes)
             {
-                foreach (BasicEffect effect in mesh.Effects)
+                foreach (Effect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();
-                    //// effect.Parameters[""]
-                    effect.View = view;
-                    effect.Projection = projection;
+                    //effect.EnableDefaultLighting();
+                    ////// effect.Parameters[""]
+                    //effect.View = view;
+                    //effect.Projection = projection;
 
-                    //effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale *rotation  * Matrix.CreateTranslation(Position);  /*scale*/
-                    effect.World = transforms[mesh.ParentBone.Index] * rotation * Matrix.CreateTranslation(Position);
+                    ////effect.World = /*gameWorldRotation * transforms[mesh.ParentBone.Index]**/    scale *rotation  * Matrix.CreateTranslation(Position);  /*scale*/
+                    //effect.World = transforms[mesh.ParentBone.Index] * rotation * Matrix.CreateTranslation(Position);
+
+
+                    Matrix world = transforms[mesh.ParentBone.Index] * rotation * Matrix.CreateTranslation(Position);
+                    Matrix wvp = world * view * projection;
+                    Matrix vp = view * projection;
+
+                   // Matrix wv = world * view;
+
+                   // Matrix wvIT = Matrix.Invert(wv);
+                   // wvIT = Matrix.Transpose(wvIT);
+
+                    Matrix worldIT = Matrix.Invert(world);
+                    worldIT = Matrix.Transpose(worldIT);
+
+                    Vector4 ambMtrl = new Vector4(0.0f, 0.9f, 0.0f, 1.0f);//Jess: default material vals
+                    Vector4 diffMtrl = new Vector4(0.2f, 0.2f, 0.2f, 1.0f);
+                    Vector4 specMtrl = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+
+                    //set matrix params
+                    effect.Parameters["gWVP"].SetValue(wvp);
+                  //  effect.Parameters["gView"].SetValue(view);
+                  //  effect.Parameters["gProj"].SetValue(projection);
+                    effect.Parameters["gWorld"].SetValue(world);
+
+              
+                   // effect.Parameters["gWorldView"].SetValue(wv);
+                    //effect.Parameters["gWorldViewIT"].SetValue(wvIT);
+                    effect.Parameters["gWorldIT"].SetValue(worldIT);
+
+                    effect.Parameters["gViewProj"].SetValue(vp);
+                    effect.Parameters["gAmbMtrl"].SetValue(ambMtrl);
+                    effect.Parameters["gDiffuseMtrl"].SetValue(diffMtrl);
+                    effect.Parameters["gSpecMtrl"].SetValue(specMtrl);
+                    effect.Parameters["withgrey"].SetValue(true);
+                    effect.Parameters["withlights"].SetValue(true);
+                    effect.Parameters["player"].SetValue(false);
+
+
 
                 }
                 mesh.Draw();

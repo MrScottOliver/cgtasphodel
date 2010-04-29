@@ -10,22 +10,17 @@ float3 gAtten123;
 
 };
 
-shared float4x4 gWVP;
-shared float4x4 gWorldIT;
-shared float4x4 gWorld;
-shared float4x4 gWorldViewIT;
-shared float4x4 gViewProj;
-shared float4x4 gWorldView;
-shared float4	gCamPosW; 
-shared float4x4 gProj;
-shared float4x4 gView;
+uniform extern float4x4 gWVP;
+uniform extern float4x4 gWorldIT;
+uniform extern float4x4 gWorld;
+uniform extern float4x4 gViewProj;
+uniform extern float4	gCamPosW; 
 
-shared float4 gDiffuseMtrl;
-shared float4 gAmbMtrl;
-shared float4 gSpecMtrl;	
+uniform extern float4 gDiffuseMtrl;
+uniform extern float4 gAmbMtrl;
+uniform extern float4 gSpecMtrl;	
 
-
-shared texture gTex;//texture
+uniform extern texture gTex;//texture
 
 sampler TexS = sampler_state
 {
@@ -39,8 +34,10 @@ sampler TexS = sampler_state
 };
 
 float DepthBias = 0.001;
-float texelsize = 1.0/17408.0;
-shared texture gShadowMap;
+float texelsize = 1.0/18432.0;
+uniform extern texture gShadowMap;
+uniform extern float4x4 gLightviewproj;
+
 sampler ShadowMapSampler = sampler_state
 {
     Texture = <gShadowMap>;
@@ -81,31 +78,6 @@ struct OutputVS
 
 };
 
-//-------------------------------------------------------------------
-// Vertex shader
-//-------------------------------------------------------------------
-
-OutputVS LightsVS(InputVS input)
-{
-	//Zero out our output
-	OutputVS outVS = (OutputVS)0;
-	
-	//Transform to homogeneous clipspace
-	outVS.posH = mul(float4(input.posH, 1.0f), gWVP);
-	
-	//world position 
-	outVS.posW = mul(float4(input.posH, 1.0f),gWorld);
-	
-	//normals
-	outVS.normal =mul(input.Norm,gWorldIT).xyz;
-	 
-	// Pass on texture coordinates to be interpolated in rasterization.
-	outVS.tex0 = input.tex0;
-	
-	
-	//return output
-	return outVS;
-}
 
 //-------------------------------------------------------------------
 // Input channel (pixel shader)
@@ -193,8 +165,6 @@ float3 CalculatePointLightWShadow(Lighting light, InputPS input, float4 texCol, 
 ///CREATE SHADOW MAP- VERTEX AND PIXEL SHADER
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-uniform extern float4x4 gLightviewproj;
 
 struct CreateShadowMap_VSOut
 {
