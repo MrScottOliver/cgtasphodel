@@ -28,11 +28,11 @@ namespace Prototype
         Vector3 POS;
         Vector3 TARGET;
         Vector3 UP;
-       // SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
-        SimpleSky TestSky = new SimpleSky();
+       //SkySphere LevelSky = new SkySphere(); //Jess: sky sphere
+        SimpleSky Background = new SimpleSky();
         Lights[] lights;
         ObjectControl ObjControl = new ObjectControl();//Stefen: object interface handeler, could be converted to singlton
-        Surface PlatLeaf1, PlatLeaf2, FullLevel1, FullLevel2, Mushroom1, Mushroom2;
+        Surface  FullLevel1, FullLevel2, Mushroom1, Mushroom2;
         float YAW, PITCH, ROLL;
         Matrix View;
         Matrix Proj;
@@ -53,7 +53,7 @@ namespace Prototype
         Physics physicSystem;
 
         //stefen: this bool is rubbish, prevents multiple jump noises
-        bool jumppressed;
+       // bool jumppressed;
 
         int numlights = 0; //number of point lights
 
@@ -151,10 +151,9 @@ namespace Prototype
             //*/
 
 
-
-
-
             SetUpSky();//Jess:set up sky 
+
+
             Model OrbModel = Content.Load<Model>("ball");
             Model PlantCyl = Content.Load<Model>("Flower1");
             Model Hill1 = Content.Load<Model>("Hill1");
@@ -170,6 +169,12 @@ namespace Prototype
             // Model MnHill = Content.Load<Model>("Mainhill2");
 
             RemapModel(OrbModel, myEffect);
+            RemapModel(PlantCyl, myEffect);
+            RemapModel(Full1, myEffect);
+            RemapModel(Full2, myEffect);
+            RemapModel(Mush1, myEffect);
+            RemapModel(Mush2, myEffect);
+            RemapModel(Leaf1, myEffect);
 
             //New physics
             physicSystem = new Physics();
@@ -194,8 +199,8 @@ namespace Prototype
             PlatHill2 = new Surface(Hill2, new Vector3(0, 0, 0));
             PlatHill2.Scale(0.3f, 0.3f, 0.3f);
             PlatHill2.Rotate(3.0f, 0.0f, 0.0f);*/
-            FullLevel1 = new Surface(Full1, new Vector3(35.0f, -5.2f, -18.0f));
-            FullLevel2 = new Surface(Full2, new Vector3(35.0f, -5.2f, -18.0f));
+            FullLevel1 = new Surface(Full1, new Vector3(35.0f, -5.2f, -15.0f));
+            FullLevel2 = new Surface(Full2, new Vector3(35.0f, -5.2f, -15.0f));
             /*
            // FullLevel.Rotate(3.0f, 0.0f, 0.0f);
             Mushroom = new Surface(Mush, new Vector3(0, 0, 0));
@@ -435,8 +440,7 @@ namespace Prototype
             //ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, POS, lights);
            
             //LevelSky.DrawSkySphere(View, Proj, GraphicsDevice);
-            TestSky.DrawSky(View, Proj, POS, GraphicsDevice);
- 
+           
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
             //paHill1.Draw(Proj, View);
@@ -455,10 +459,14 @@ namespace Prototype
             Mushroom1.Render(View, Proj, GraphicsDevice);
             Mushroom2.Render(View, Proj, GraphicsDevice);
             
-           
-             ParticleGroup.Draw(World, View, Proj);
+            Background.DrawSky(View, Proj, POS, GraphicsDevice);
 
-             base.Draw(gameTime);
+
+            ParticleGroup.Draw(World, View, Proj);
+
+             
+ 
+            base.Draw(gameTime);
   
             
         }
@@ -643,6 +651,12 @@ namespace Prototype
             //ObjectManipulator.Draw(GraphicsDevice, stdEffect, myEffect, View, Proj, POS, lights);
             player.DrawPlayerShadow(player, Proj, View);
 
+            ObjControl.Render(View, Proj, GraphicsDevice);
+            FullLevel2.Render(View, Proj, GraphicsDevice);
+           // PlatLeaf1.Render(View, Proj, GraphicsDevice);
+            Mushroom1.Render(View, Proj, GraphicsDevice);
+            Mushroom2.Render(View, Proj, GraphicsDevice);
+
             myShadows.SetUpShadowMap2(myEffect, gDeviceManager);
 
         }
@@ -715,9 +729,9 @@ namespace Prototype
             //LevelSky.SetUpSkyEffect();
 
 
-            TestSky.SkyModel = Content.Load<Model>("quad");
-            TestSky.SkyTexture = Content.Load<Texture2D>("spires_north");
-            TestSky.SetUpSkyEffect(myEffect); 
+            Background.SkyModel = Content.Load<Model>("quad");
+            Background.SkyTexture = Content.Load<Texture2D>("spires_north");
+            Background.SetUpSkyEffect(myEffect); 
 
         }
 

@@ -1,5 +1,5 @@
 //-------------------------------------------------------------------------------
-//Shader that includes point lights and shadows (vertex shader and other functions in Includes.inc)
+//Shader that includes point lights and shadows (helper functions in Includes.inc)
 //------------------------------------------------------------------------------------------------------
 #include "Includes.inc"
 
@@ -26,79 +26,35 @@ uniform extern float orbRadius;
 uniform extern int orbnum;
 uniform extern float3 OrbPos[20]; 
 
+//-------------------------------------------------------------------
+// Vertex shader
+//-------------------------------------------------------------------
+
+OutputVS LightsVS(InputVS input)
+{
+	//Zero out our output
+	OutputVS outVS = (OutputVS)0;
+	
+	//Transform to homogeneous clipspace
+	outVS.posH = mul(float4(input.posH, 1.0f), gWVP);
+	
+	//world position 
+	outVS.posW = mul(float4(input.posH, 1.0f),gWorld);
+	
+	//normals
+	outVS.normal =mul(input.Norm,gWorldIT).xyz;
+	 
+	// Pass on texture coordinates to be interpolated in rasterization.
+	outVS.tex0 = input.tex0;
+	
+	
+	//return output
+	return outVS;
+}
 
 //---------------------------------------------------------------------------------------------------------------------------
 // Pixel shader (input channel):output channel
 //---------------------------------------------------------------------------------------------------------------------------
-float4 LightsPS(InputPS input): COLOR
-{
-	float			xCom;
-	float			yCom;
-	float			zCom;
-	float grey;
-	
-	float4 results[10];
-	
-	for(int k = 0; k < 10; k++)
-	{
-	
-	xCom = (input.posW.x - gCenterX[k])*(input.posW.x - gCenterX[k]);
-	yCom = (input.posW.y - gCenterY[k])*(input.posW.y - gCenterY[k]);
-	zCom = (input.posW.z - gCenterZ[k])*(input.posW.z - gCenterZ[k]);
-	
-	
-	float3 Color = {0.0f, 0.0f, 0.0f};
-	float4 texColor = tex2D(TexS, input.tex0);
-	float4 globalamb ={0.5, 0.5, 0.5, 1.0};
-	
-	
-	for (int i = 0; i < (numlights); ++i)
-	{
-	Color += CalculatePointLight(light[i], input, texColor, globalamb);
-	}
-	
-	float4 finalCol = float4( Color, gDiffuseMtrl.a*texColor.a); 
-	
-
-	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
-	
-	//float factor = (xCom + zCom) / (1000 / (xCom + zCom));
-	float dist = (xCom + zCom) / gRadius[k];    
-	
-	if (((xCom + zCom) <= (gRadius[k])) && (input.posW.y < gMaxY[k]) && (input.posW.y > gMinY[k]))
-	{
-		results[k].r = (finalCol.r - (finalCol.r * dist)) + grey * dist;
-		results[k].g = (finalCol.g - (finalCol.g * dist)) + grey * dist;
-		results[k].b = (finalCol.b - (finalCol.b * dist)) + grey * dist;
-		results[k].a = finalCol.a;
-		//return finalCol;
-		//return float4(final.r, final.g, final.b, 1.0f);
-		//return result;
-	}
-	else
-	{
-		results[k] = float4(grey, grey, grey, 1.0f);
-		//return float4(grey, grey, grey, 1.0f);
-	}
-	
-	}
-	
-	float4 result;
-	
-	for( int k = 0; k < 10; k++ )
-	{
-		result.r += results[k].r;
-		result.g += results[k].g;
-		result.b += results[k].b;
-	}
-	
-	result.r = result.r / 10;
-	result.g = result.g / 10;
-	result.b = result.b / 10;
-	result.a = 1.0f;
-	
-	return result;
-}
 
 float4 LightsPSWithShadows(InputPS input): COLOR
 {

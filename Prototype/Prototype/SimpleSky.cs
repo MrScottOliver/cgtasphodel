@@ -67,11 +67,6 @@ namespace Prototype
             world = scale *translation; 
 
             Matrix wvp = world * view * proj;
-            Matrix wv = world * view;
-
-            Matrix wvIT = Matrix.Invert(wv);
-            wvIT = Matrix.Transpose(wvIT);
-
             Matrix worldIT = Matrix.Invert(world);
             worldIT = Matrix.Transpose(worldIT);
 
@@ -79,16 +74,16 @@ namespace Prototype
             SkyEffect.Parameters["gTex"].SetValue(SkyTexture);
 
             SkyEffect.CurrentTechnique = SkyEffect.Techniques["MyTech"];
-            SkyEffect.Parameters["withlights"].SetValue(false);
+
+            
             //set matrix params
             SkyEffect.Parameters["gWVP"].SetValue(wvp);
-            SkyEffect.Parameters["gWorldView"].SetValue(wv);
-            SkyEffect.Parameters["gWorldViewIT"].SetValue(wvIT);
             SkyEffect.Parameters["gWorld"].SetValue(world);
             SkyEffect.Parameters["gWorldIT"].SetValue(worldIT);
-            //set texture
-            SkyEffect.Parameters["gTex"].SetValue(SkyTexture);
+         
+            SkyEffect.Parameters["gTex"].SetValue(SkyTexture);//set texture
             SkyEffect.Parameters["withgrey"].SetValue(true);
+            SkyEffect.Parameters["withlights"].SetValue(false);
 
             SkyEffect.CommitChanges();
 

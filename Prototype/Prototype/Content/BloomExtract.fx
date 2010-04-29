@@ -3,7 +3,7 @@
 
 sampler TextureSampler : register(s0);
 
-float BloomThreshold = 0.25;
+float BloomThreshold = 0.2;
 
 
 float4 PixelShader(float2 texCoord : TEXCOORD0) : COLOR0

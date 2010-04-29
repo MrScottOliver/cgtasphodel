@@ -57,14 +57,13 @@ namespace Prototype
 
                     //set matrix params
                     effect.Parameters["gWVP"].SetValue(wvp);
-                    effect.Parameters["gView"].SetValue(view);
-                    effect.Parameters["gProj"].SetValue(projection);
                     effect.Parameters["gWorld"].SetValue(world);
                     effect.Parameters["gViewProj"].SetValue(vp);
                     effect.Parameters["gAmbMtrl"].SetValue(ambMtrl);
                     effect.Parameters["gDiffuseMtrl"].SetValue(diffMtrl);
                     effect.Parameters["gSpecMtrl"].SetValue(specMtrl);
                     effect.Parameters["withgrey"].SetValue(false);
+                    effect.Parameters["withlights"].SetValue(true);
 
                     effect.CommitChanges();
 

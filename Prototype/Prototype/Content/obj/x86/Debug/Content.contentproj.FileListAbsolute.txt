@@ -2,3 +2,5 @@
 \\uadfil07\students$\0700958\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+F:\New Folder\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\New Folder\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

@@ -91,13 +91,9 @@ namespace Prototype
             //calculate matrices
             Matrix world = player.world;
             Matrix wvp = world * View * Proj;
-            Matrix wv = world * View;
-
-            Matrix wvIT = Matrix.Invert(wv);
-            wvIT = Matrix.Transpose(wvIT);
-
             Matrix worldIT = Matrix.Invert(world);
             worldIT = Matrix.Transpose(worldIT);
+
 
             foreach (ModelMesh mesh in player.model.Meshes)
             {
@@ -110,8 +106,6 @@ namespace Prototype
 
                     //set matrix params
                     effect.Parameters["gWVP"].SetValue(wvp);
-                    effect.Parameters["gWorldView"].SetValue(wv);
-                    effect.Parameters["gWorldViewIT"].SetValue(wvIT);
                     effect.Parameters["gWorld"].SetValue(world);
                     effect.Parameters["gWorldIT"].SetValue(worldIT);
                     effect.Parameters["player"].SetValue(true);
