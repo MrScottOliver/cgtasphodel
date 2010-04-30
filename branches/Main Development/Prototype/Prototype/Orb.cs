@@ -64,6 +64,7 @@ namespace Prototype
                     effect.Parameters["gSpecMtrl"].SetValue(specMtrl);
                     effect.Parameters["withgrey"].SetValue(false);
                     effect.Parameters["withlights"].SetValue(true);
+                    effect.Parameters["withshadow"].SetValue(false);
 
                     effect.CommitChanges();
 

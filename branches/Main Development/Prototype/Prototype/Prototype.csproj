@@ -107,7 +107,6 @@
     <Compile Include="LevelSurface.cs" />
     <Compile Include="CollisionDetection.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Object%28Depreciated%29.cs" />
     <Compile Include="ObjectHandler.cs" />
     <Compile Include="ObjectManipulator%28Depreciated%29.cs" />
     <Compile Include="Orb.cs" />
@@ -122,7 +121,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuaternionCamera.cs" />
     <Compile Include="SimpleSky.cs" />
-    <Compile Include="SkySphere%28Depreciated%29.cs" />
     <Compile Include="TriangleMeshObject.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -37,6 +37,7 @@ float DepthBias = 0.001;
 float texelsize = 1.0/18432.0;
 uniform extern texture gShadowMap;
 uniform extern float4x4 gLightviewproj;
+uniform extern bool withshadow;
 
 sampler ShadowMapSampler = sampler_state
 {
@@ -177,8 +178,10 @@ struct CreateShadowMap_VSOut
 CreateShadowMap_VSOut CreateShadowMapVS(float4 position: POSITION)
 {
 CreateShadowMap_VSOut Out;
+if(withshadow){
 Out.position = mul(position, mul(gWorld,gLightviewproj));
 Out.Depth = Out.position.z/Out.position.w;
+}
 return Out;
 } 
 

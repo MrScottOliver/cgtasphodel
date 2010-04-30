@@ -118,6 +118,7 @@ namespace Prototype
                     //set texture
                     effect.Parameters["gTex"].SetValue(player.texture);
                     effect.Parameters["withgrey"].SetValue(true);
+                    effect.Parameters["withshadow"].SetValue(true);
 
                     effect.CommitChanges();
 
