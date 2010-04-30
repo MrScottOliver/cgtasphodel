@@ -4,3 +4,5 @@ I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug
 I:\Documents and Settings\User1\Desktop\Asphodel\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 F:\New Folder\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 F:\New Folder\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Piepork\Desktop\grp\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Piepork\Desktop\grp\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml

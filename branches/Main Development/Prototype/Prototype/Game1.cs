@@ -142,7 +142,7 @@ namespace Prototype
             player.RemapModel(player, myEffect);//remap model to use our effect
             
             player.AddRotation((float)Math.PI  / 2, 0.0f, 0.0f);
-            player.ChangeScale(1.0f);
+            player.ChangeScale(0.5f);
             player.AddTranslation(-7f, 30f, 0f);
             /*
             player.position.X = -7f;
@@ -751,6 +751,16 @@ namespace Prototype
             CollisionDetectionPlane.AddPlane(new Vector3(65, 1, -10), new Vector3(65, 1, 0), new Vector3(67, 2, -10), 65, 67); //Hill 2 slope
             CollisionDetectionPlane.AddPlane(new Vector3(67, 2, -10), new Vector3(67, 2, 0), new Vector3(69, 3, -10), 67, 69); //Hill 2 slope
             CollisionDetectionPlane.AddPlane(new Vector3(69, 3, -10), new Vector3(69, 3, 0), new Vector3(73, 3, -10), 69, 73); //Hill 2 slope
+
+            CollisionDetectionBox.AddBox(new Vector3(73, 3, -10), new Vector3(74, 5, 0)); //Start of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(74, 5, -10), new Vector3(74, 5, 0), new Vector3(80, 3, -10), 74, 80); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(80, 3, -10), new Vector3(80, 3, 0), new Vector3(89, 1.5f, -10), 80, 88); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(89, 1.5f, -10), new Vector3(89, 1.5f, 0), new Vector3(91, 1, -10), 89, 91); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(91, 1, -10), new Vector3(91, 1, 0), new Vector3(93, 1, -10), 91, 93); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(93, 1, -10), new Vector3(93, 1, 0), new Vector3(94, 1.5f, -10), 93, 94); //End of tree
+            CollisionDetectionBox.AddBox(new Vector3(94, -2, -10), new Vector3(95, 1.5f, 0)); //End of tree
+
+            CollisionDetectionBox.AddBox(new Vector3(95, -5, -10), new Vector3(103, 0, 0)); //End of tree
         }
 
     }
