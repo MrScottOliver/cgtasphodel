@@ -110,8 +110,8 @@ namespace Prototype
                 case LifeCycle.AnimateDown:
                     if (Scale.Y > 0.01)
                     {
-                        Scale.X += 0.01f;
-                        Scale.Y -= 0.01f;
+                        Scale.X += 0.02f;
+                        Scale.Y -= 0.02f;
                     }
                     else
                         Current = LifeCycle.AnimateUp;
@@ -121,8 +121,8 @@ namespace Prototype
                 case LifeCycle.AnimateUp:
                     if (Scale.X > 0.25)
                     {
-                        Scale.X -= 0.01f;
-                        Scale.Y += 0.01f;
+                        Scale.X -= 0.02f;
+                        Scale.Y += 0.02f;
                     }
                     else
                         Current = LifeCycle.Active;
