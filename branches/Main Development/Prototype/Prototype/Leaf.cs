@@ -102,10 +102,10 @@ namespace Prototype
                 case LifeCycle.Growing:
                     if (Scale.X<0.25)
                     {
-                        Scale.X+=0.001f;
-                        Scale.Y+=0.001f;
-                        Scale.Z+=0.001f;
-                        ZRotate -= 0.007f;
+                        Scale.X+=0.002f;
+                        Scale.Y+=0.002f;
+                        Scale.Z+=0.002f;
+                        ZRotate -= 0.014f;
                     }
                     else
                     {

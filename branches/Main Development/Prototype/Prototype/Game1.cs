@@ -160,8 +160,8 @@ namespace Prototype
            // Model Hill2 = Content.Load<Model>("Hill2");
             Model Full1 = Content.Load<Model>("LevelBuild7");
             Model Full2 = Content.Load<Model>("LevelBuild6");
-            Model Mush1 = Content.Load<Model>("MurshroomPlatformtest");
-            Model Mush2 = Content.Load<Model>("MurshroomPlatformtest2");
+           Model Mush1 = Content.Load<Model>("MurshroomPlatformtest");
+           Model Mush2 = Content.Load<Model>("MurshroomPlatformtest2");
             Model Leaf1 = Content.Load<Model>("leave1");
            // Model Mush= Content.Load<Model>("Murshroom1");
             //Model LevelBuild2 = Content.Load<Model>("LevelBuild2");
@@ -209,57 +209,33 @@ namespace Prototype
             PlatLeaf3 = new Surface(Flower, new Vector3(0, 0, 0));
             PlatHill2 = new Surface(LevelBuild2, new Vector3(0, 0, 0));
             */
-            Mushroom1 = new Surface(Mush1, new Vector3(20, 20, -3));
-            Mushroom2 = new Surface(Mush2, new Vector3(50, 20, -3));
            //Stefen: Apply transformations for last object entered
 
+            
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(0, 0, 0))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(44.5f, 26, 0))
             );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(5, 5, 0))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(99, 26, 0))
             );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(10, 10, 0))
-            );
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(15, 15, 0))
-            );
-            ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(30, -20, 0))
+           ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(44, -20, 0))
            );
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(10, -20, 0))
-            );
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(25, 14, 0))
-            );
-            ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(30, -20, 0))
-           );
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(29, 4, 0))
+            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(43, 4, 0))
             );
                         ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(32, 9, 0))
+            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(46, 9, 0))
+            );
+                        ObjectControl.ObjectList.Add(
+            ObjectFactory.createObject(ObjectType.Leaf, Leaf1, new Vector3(43, 14, 0))
             );
                         ObjectControl.ObjectList.Add(
              ObjectFactory.createObject(ObjectType.Plant, PlantCyl, new Vector3(10, -20, 0))
             );
+            
             ObjectControl.ObjectList.Add(
-           ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(20, 0, -4))
-           );
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(22, 0, -4))
-            );
-            ObjectControl.ObjectList.Add(
- ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(24, 0, -4))
- );
-            ObjectControl.ObjectList.Add(
- ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(26, 0, -4))
- );
-            ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Mushroom, Mush2, new Vector3(10, 10, -4))
+            ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(99, 0, -4))
         );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
@@ -456,8 +432,8 @@ namespace Prototype
            // Mushroom.Render(View, Proj, GraphicsDevice);
            // PlatLeaf3.Render(View, Proj, GraphicsDevice);
            // PlatHill2.Render(View, Proj, GraphicsDevice);
-            Mushroom1.Render(View, Proj, GraphicsDevice);
-            Mushroom2.Render(View, Proj, GraphicsDevice);
+            //Mushroom1.Render(View, Proj, GraphicsDevice);
+            //Mushroom2.Render(View, Proj, GraphicsDevice);
             
             Background.DrawSky(View, Proj, POS, GraphicsDevice);
 
@@ -653,9 +629,7 @@ namespace Prototype
 
             ObjControl.Render(View, Proj, GraphicsDevice);
             FullLevel2.Render(View, Proj, GraphicsDevice);
-           // PlatLeaf1.Render(View, Proj, GraphicsDevice);
-            Mushroom1.Render(View, Proj, GraphicsDevice);
-            Mushroom2.Render(View, Proj, GraphicsDevice);
+
 
             myShadows.SetUpShadowMap2(myEffect, gDeviceManager);
 

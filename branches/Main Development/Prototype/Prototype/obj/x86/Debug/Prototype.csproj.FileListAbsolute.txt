@@ -539,3 +539,28 @@ C:\Users\Piepork\Desktop\grp\Prototype\obj\x86\Debug\ResolveAssemblyReference.ca
 C:\Users\Piepork\Desktop\grp\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Piepork\Desktop\grp\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Piepork\Desktop\grp\Prototype\obj\x86\Debug\Prototype.pdb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\spires_north.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\BloomExtract.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\GaussianBlur.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\BloomCombine.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\characterX.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Flower2.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\quad.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild7.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild6.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest2.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\MainLevel1.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild2.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Mainhill2.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\Murshroom1.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild3.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\DPSF.dll
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\bin\x86\Debug\JigLibX.dll
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
