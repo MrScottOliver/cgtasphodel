@@ -62,6 +62,9 @@ namespace Prototype
         private float nearClip;
         private float farClip;
 
+        private float transformDegree = 1.0f;
+        private bool revealTransform = false;
+
 
 
         public Game1()
@@ -261,6 +264,12 @@ namespace Prototype
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+
+            if (revealTransform && transformDegree > 0.0f)
+            {
+                transformDegree -= 0.001f;
+            }
+
             ParticleGroup.Update(gameTime);
             physicSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             Audio.PlayMusic();
@@ -320,6 +329,11 @@ namespace Prototype
             else
             {
                 player.stopRight();
+            }
+
+            if (keyState.IsKeyDown(Keys.Space))
+            {
+                revealTransform = true;
             }
 
             ObjControl.HandleState(player);
@@ -654,6 +668,8 @@ namespace Prototype
                     myEffect.Parameters["gMaxY"].Elements[y.plantnum].SetValue(y.maxY);
                     myEffect.Parameters["gRadius"].Elements[y.plantnum].SetValue(y.radius);
                     myEffect.Parameters["player"].SetValue(false);
+                    myEffect.Parameters["reveal"].SetValue(revealTransform);
+                    myEffect.Parameters["transformDegree"].SetValue(transformDegree);
                 }
             }
 

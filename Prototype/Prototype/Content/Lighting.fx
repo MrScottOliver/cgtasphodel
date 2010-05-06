@@ -26,6 +26,9 @@ uniform extern float orbRadius;
 uniform extern int orbnum;
 uniform extern float3 OrbPos[20]; 
 
+uniform extern bool reveal;
+uniform extern float transformDegree; 
+
 //-------------------------------------------------------------------
 // Vertex shader
 //-------------------------------------------------------------------
@@ -156,6 +159,13 @@ if(withgrey){
 	result.b = 0;
 	result.a = finalCol.a;
 	
+	if(reveal && ((finalCol.r >= transformDegree || finalCol.g >= transformDegree) || finalCol.b >= transformDegree ))
+	{
+		return finalCol;
+	}
+	else
+	{
+	
 	if(player)
 	{
 		float dist = 1 - ( health / 100 );
@@ -197,6 +207,7 @@ if(withgrey){
 	}
 	
 	return result;
+	}
 	}
 	
 }
