@@ -564,3 +564,54 @@ C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Resol
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.exe
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\spires_north.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\BloomExtract.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\GaussianBlur.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\BloomCombine.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\ball.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\characterX.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Character.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Flower1.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Hill1.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Hill2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Flower2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\quad.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild7.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild6.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\MainLevel1.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Mainhill2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Murshroom1.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild3.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Platform2.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\platform1.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\leave1.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\REcharacter.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Prototype.xgs
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Player_Effects.xwb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Music.xwb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Audio\SFX.xwb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Audio\Sound_Bank.xsb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Prototype.exe
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Prototype.pdb
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\DPSF.dll
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\JigLibX.dll
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\obj\x86\Debug\Prototype.exe
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\obj\x86\Debug\Prototype.pdb
