@@ -104,12 +104,13 @@ namespace Prototype
                         {
                             Player.velocity.Y = 0;
                             Player.velocity.Y += 0.5f;
+                            Player.jumpState = true;
                             Current = LifeCycle.AnimateDown;
                         } 
                     }
                     break;
                 case LifeCycle.AnimateDown:
-                    if (Scale.Y > 0.01)
+                    if (Scale.Y > 0.1)
                     {
                         Scale.X += 0.02f;
                         Scale.Y -= 0.02f;

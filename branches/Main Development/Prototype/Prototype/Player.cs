@@ -208,11 +208,11 @@ namespace Prototype
             if (!jumpState)
             {
                 //AddTranslation(0, 2.0f, 0);
-                velocity.Y = 0.1f;
+                velocity.Y = 0.2f;
                 jumpState = true;
                 Audio.Jump();
             }
-            else
+            else if (velocity.Y<0.1)
             {
                 doubleJump();
             }
@@ -222,7 +222,7 @@ namespace Prototype
         {
             if (!doublejumpState)
             {
-                velocity.Y = 0.3f;
+                velocity.Y = 0.2f;
                 Audio.Jump();
                 doublejumpState = true;
             }

@@ -119,6 +119,7 @@ namespace Prototype
             Proj = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(FOV), aspectRatio, nearClip, farClip);
            // ObjectManipulator.Initialise(GraphicsDevice);
             Audio.Init();
+            Audio.SetMusic(Audio.Tracks.title);
             base.Initialize();
         }
 
