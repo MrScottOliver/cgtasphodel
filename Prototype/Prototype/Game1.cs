@@ -728,28 +728,28 @@ namespace Prototype
 
         private void SetupPlane()
         {
-            CollisionDetectionBox.AddBox(new Vector3(-12, 3, -10), new Vector3(-3, 5, 0)); //First platform
+            CollisionDetectionBox.AddBox(new Vector3(-12, 3, -10), new Vector3(-3, 4.7f, 0)); //First platform
 
-            CollisionDetectionBox.AddBox(new Vector3(-1, 8, -10), new Vector3(8, 11, 0)); //Second platform
+            CollisionDetectionBox.AddBox(new Vector3(-1, 8, -10), new Vector3(8, 10.8f, 0)); //Second platform
 
-            CollisionDetectionBox.AddBox(new Vector3(10, 3, -10), new Vector3(18, 5, 0)); //Third platform
+            CollisionDetectionBox.AddBox(new Vector3(10, 3, -10), new Vector3(18, 4.9f, 0)); //Third platform
 
-            CollisionDetectionBox.AddBox(new Vector3(18, -6, -10), new Vector3(29, -3, 0)); //Bottom of hill 1
-            CollisionDetectionPlane.AddPlane(new Vector3(29, -3, -10), new Vector3(29, -3, 0), new Vector3(35, 1, -10), 29, 35); //Hill 1 slope
-            CollisionDetectionBox.AddBox(new Vector3(35, -2, -10), new Vector3(58, 1, 0)); //Top of hill 1
+            CollisionDetectionBox.AddBox(new Vector3(18, -6, -10), new Vector3(28, -3.2f, 0)); //Bottom of hill 1
+            CollisionDetectionPlane.AddPlane(new Vector3(28, -3, -10), new Vector3(28, -3, 0), new Vector3(35, 0.7f, -10), 28, 35); //Hill 1 slope
+            CollisionDetectionBox.AddBox(new Vector3(35, -2, -10), new Vector3(58, 0.7f, 0)); //Top of hill 1
 
-            CollisionDetectionBox.AddBox(new Vector3(63, -2, -10), new Vector3(65, 1, 0)); //Bottom of hill 2
-            CollisionDetectionPlane.AddPlane(new Vector3(65, 1, -10), new Vector3(65, 1, 0), new Vector3(67, 2, -10), 65, 67); //Hill 2 slope
+            CollisionDetectionBox.AddBox(new Vector3(62.8f, -2, -10), new Vector3(65, 0.7f, 0)); //Bottom of hill 2
+            CollisionDetectionPlane.AddPlane(new Vector3(65, 0.7f, -10), new Vector3(65, 0.7f, 0), new Vector3(67, 1.8f, -10), 65, 67); //Hill 2 slope
             CollisionDetectionPlane.AddPlane(new Vector3(67, 2, -10), new Vector3(67, 2, 0), new Vector3(69, 3, -10), 67, 69); //Hill 2 slope
             CollisionDetectionPlane.AddPlane(new Vector3(69, 3, -10), new Vector3(69, 3, 0), new Vector3(73, 3, -10), 69, 73); //Hill 2 slope
 
-            CollisionDetectionBox.AddBox(new Vector3(73, 3, -10), new Vector3(74, 5, 0)); //Start of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(74, 5, -10), new Vector3(74, 5, 0), new Vector3(80, 3, -10), 74, 80); //Middle of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(80, 3, -10), new Vector3(80, 3, 0), new Vector3(89, 1.5f, -10), 80, 88); //Middle of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(89, 1.5f, -10), new Vector3(89, 1.5f, 0), new Vector3(91, 1, -10), 89, 91); //Middle of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(91, 1, -10), new Vector3(91, 1, 0), new Vector3(93, 1, -10), 91, 93); //Middle of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(93, 1, -10), new Vector3(93, 1, 0), new Vector3(94, 1.5f, -10), 93, 94); //End of tree
-            CollisionDetectionBox.AddBox(new Vector3(94, -2, -10), new Vector3(95, 1.5f, 0)); //End of tree
+            CollisionDetectionBox.AddBox(new Vector3(73, 3, -10), new Vector3(74, 4.5f, 0)); //Start of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(74, 4.5f, -10), new Vector3(74, 4.5f, 0), new Vector3(80, 2.8f, -10), 74, 80); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(80, 2.6f, -10), new Vector3(80, 2.6f, 0), new Vector3(89, 1.1f, -10), 80, 88); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(88, 1.1f, -10), new Vector3(88, 1.1f, 0), new Vector3(91, 0.6f, -10), 88, 91); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(91, 0.6f, -10), new Vector3(91, 0.6f, 0), new Vector3(93, 0.6f, -10), 91, 93); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(93, 0.6f, -10), new Vector3(93, 0.6f, 0), new Vector3(94, 1.1f, -10), 93, 94); //End of tree
+            CollisionDetectionBox.AddBox(new Vector3(93, -2, -10), new Vector3(94.5f, 0.9f, 0)); //End of tree
 
             CollisionDetectionBox.AddBox(new Vector3(95, -5, -10), new Vector3(103, 0, 0)); //End of tree
         }

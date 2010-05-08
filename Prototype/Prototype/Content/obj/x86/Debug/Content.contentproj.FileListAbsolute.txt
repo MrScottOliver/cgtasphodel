@@ -8,3 +8,5 @@ C:\Users\Piepork\Desktop\grp\Prototype\Content\obj\x86\Debug\ResolveAssemblyRefe
 C:\Users\Piepork\Desktop\grp\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Piepork\Desktop\grp\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
