@@ -11,6 +11,10 @@ namespace Prototype
     {
         // The model to draw
         Model model;
+        public Vector4 ambMtrl = new Vector4(1.0f, 1.0f, 1.0f, 1.0f);//Jess: default material vals
+        public Vector4 diffMtrl = new Vector4(0.5f, 0.5f, 0.5f, 1.0f);
+        public Vector4 specMtrl = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+
 
         // I3DComponent values
         public virtual Vector3 Position { get; set; }
@@ -66,6 +70,60 @@ namespace Prototype
                     effect.View = View;
                 }
                 mesh.Draw();
+            }
+        }
+
+        public void Draw2( Matrix Proj, Matrix View)
+        {
+            //calculate matrices
+            Matrix world = Matrix.CreateScale(Scale) *
+                                    Rotation *
+                                    Matrix.CreateTranslation(Position);
+            Matrix wvp = world * View * Proj;
+            Matrix worldIT = Matrix.Invert(world);
+            worldIT = Matrix.Transpose(worldIT);
+
+
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+                foreach (Effect effect in mesh.Effects)
+                {
+                    //set technique
+                    effect.CurrentTechnique = effect.Techniques["MyTech"];
+
+                    effect.Parameters["withlights"].SetValue(true);
+
+                    //set matrix params
+                    effect.Parameters["gWVP"].SetValue(wvp);
+                    effect.Parameters["gWorld"].SetValue(world);
+                    effect.Parameters["gWorldIT"].SetValue(worldIT);
+                   
+                    //set material params
+                    effect.Parameters["gAmbMtrl"].SetValue(ambMtrl);
+                    effect.Parameters["gDiffuseMtrl"].SetValue(diffMtrl);
+                    effect.Parameters["gSpecMtrl"].SetValue(specMtrl);
+
+                    //set texture
+                    effect.Parameters["withgrey"].SetValue(true);
+                    effect.Parameters["withshadow"].SetValue(true);
+
+                    effect.CommitChanges();
+
+
+
+                }
+                mesh.Draw();
+            }
+        }
+
+        public void RemapModel(Actor actor, Effect effect)
+        {
+            foreach (ModelMesh mesh in actor.model.Meshes)
+            {
+                foreach (ModelMeshPart part in mesh.MeshParts)
+                {
+                    part.Effect = effect;
+                }
             }
         }
 

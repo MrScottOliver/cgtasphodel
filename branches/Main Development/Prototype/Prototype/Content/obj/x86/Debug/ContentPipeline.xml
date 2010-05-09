@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\metal.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.6986888+01:00</Time>
     </Item>
     <Item>
       <Source>testtexgrass.jpg</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\testtexgrass.xnb</Output>
-      <Time>2010-05-08T15:15:37.0494144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7646926+01:00</Time>
     </Item>
     <Item>
       <Source>testtexleaves.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\testtexleaves.xnb</Output>
-      <Time>2010-05-08T15:15:36.9714143+01:00</Time>
+      <Time>2010-05-09T22:30:43.6926885+01:00</Time>
     </Item>
     <Item>
       <Source>skyboxmystic.dds</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\skyboxmystic.xnb</Output>
-      <Time>2010-05-08T15:15:37.0650145+01:00</Time>
+      <Time>2010-05-09T22:30:43.7786934+01:00</Time>
     </Item>
     <Item>
       <Source>Star9.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Star9.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.701689+01:00</Time>
     </Item>
     <Item>
       <Source>spires_north.bmp</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\spires_north.xnb</Output>
-      <Time>2010-05-08T15:15:37.0182144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7296906+01:00</Time>
     </Item>
     <Item>
       <Source>Phong_Shader.fx</Source>
@@ -62,7 +62,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Phong_Shader.xnb</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7576922+01:00</Time>
     </Item>
     <Item>
       <Source>SkySphere.fx</Source>
@@ -71,7 +71,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\SkySphere.xnb</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8146954+01:00</Time>
     </Item>
     <Item>
       <Source>Lighting.fx</Source>
@@ -80,10 +80,10 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Lighting.xnb</Output>
-      <Time>2010-05-08T15:15:37.0494144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7686928+01:00</Time>
       <Dependency>
         <Key>Includes.inc</Key>
-        <Value>2010-05-08T15:15:37.0494144+01:00</Value>
+        <Value>2010-05-09T22:30:43.7626925+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -93,7 +93,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\BloomExtract.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.6946886+01:00</Time>
     </Item>
     <Item>
       <Source>GaussianBlur.fx</Source>
@@ -102,7 +102,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\GaussianBlur.xnb</Output>
-      <Time>2010-05-08T15:15:37.1274146+01:00</Time>
+      <Time>2010-05-09T22:30:43.8546977+01:00</Time>
     </Item>
     <Item>
       <Source>BloomCombine.fx</Source>
@@ -111,7 +111,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\BloomCombine.xnb</Output>
-      <Time>2010-05-08T15:15:37.0494144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7676927+01:00</Time>
     </Item>
     <Item>
       <Source>ship2.x</Source>
@@ -120,10 +120,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\ship2.xnb</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7206901+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ship2_0.xml</Key>
-        <Value>2010-05-08T15:18:45.3749433+01:00</Value>
+        <Value>2010-05-09T22:44:04.5764964+01:00</Value>
       </Dependency>
       <Request>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Request>
     </Item>
@@ -134,10 +134,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\ball.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.6966887+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ball_0.xml</Key>
-        <Value>2010-05-08T15:18:45.6401438+01:00</Value>
+        <Value>2010-05-09T22:44:04.8935145+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -147,10 +147,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\characterX.xnb</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7136897+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\characterX_0.xml</Key>
-        <Value>2010-05-08T15:18:46.2797449+01:00</Value>
+        <Value>2010-05-09T22:44:05.5885543+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -160,10 +160,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\PlantCylinder.xnb</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7616924+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\PlantCylinder_0.xml</Key>
-        <Value>2010-05-08T15:18:46.357745+01:00</Value>
+        <Value>2010-05-09T22:44:05.6875599+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -173,10 +173,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\SphereHighPoly.xnb</Output>
-      <Time>2010-05-08T15:15:37.1118145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8306963+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\SphereHighPoly_0.xml</Key>
-        <Value>2010-05-08T15:18:47.6369473+01:00</Value>
+        <Value>2010-05-09T22:44:07.0216362+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -186,10 +186,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Character.xnb</Output>
-      <Time>2010-05-08T15:15:37.1274146+01:00</Time>
+      <Time>2010-05-09T22:30:43.8536977+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Character_0.xml</Key>
-        <Value>2010-05-08T15:18:50.7725527+01:00</Value>
+        <Value>2010-05-09T22:44:10.3628273+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -199,10 +199,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Flower1.xnb</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8196957+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Flower1_0.xml</Key>
-        <Value>2010-05-08T15:18:52.0049549+01:00</Value>
+        <Value>2010-05-09T22:44:11.6128988+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -212,10 +212,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Hill1.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7036891+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Hill1_0.xml</Key>
-        <Value>2010-05-08T15:18:53.0657567+01:00</Value>
+        <Value>2010-05-09T22:44:12.6789598+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -225,10 +225,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Hill2.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7056892+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Hill2_0.xml</Key>
-        <Value>2010-05-08T15:18:54.1109585+01:00</Value>
+        <Value>2010-05-09T22:44:13.7330201+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -238,10 +238,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Flower2.xnb</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8226959+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Flower2_0.xml</Key>
-        <Value>2010-05-08T15:18:55.1873604+01:00</Value>
+        <Value>2010-05-09T22:44:14.8140819+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -251,10 +251,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\quad.xnb</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7526919+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\quad_0.xml</Key>
-        <Value>2010-05-08T15:18:56.2325622+01:00</Value>
+        <Value>2010-05-09T22:44:15.8621419+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -264,10 +264,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild7.xnb</Output>
-      <Time>2010-05-08T15:15:37.0182144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7326907+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Levelbuild7_0.xml</Key>
-        <Value>2010-05-08T15:18:57.4025643+01:00</Value>
+        <Value>2010-05-09T22:44:17.0402093+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -277,10 +277,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Levelbuild6.xnb</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.71969+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Levelbuild6_0.xml</Key>
-        <Value>2010-05-08T15:18:58.6661665+01:00</Value>
+        <Value>2010-05-09T22:44:18.2872806+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -290,10 +290,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest2.xnb</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8266961+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\MurshroomPlatformtest2_0.xml</Key>
-        <Value>2010-05-08T15:18:59.8673686+01:00</Value>
+        <Value>2010-05-09T22:44:19.5043502+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -303,10 +303,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\MurshroomPlatformtest.xnb</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7596923+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\MurshroomPlatformtest_0.xml</Key>
-        <Value>2010-05-08T15:19:01.0373706+01:00</Value>
+        <Value>2010-05-09T22:44:20.6814175+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -316,10 +316,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\MainLevel1.xnb</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7566921+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\MainLevel1_0.xml</Key>
-        <Value>2010-05-08T15:19:02.2541727+01:00</Value>
+        <Value>2010-05-09T22:44:21.913488+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -329,10 +329,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild2.xnb</Output>
-      <Time>2010-05-08T15:15:37.0806145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8086951+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\LevelBuild2_0.xml</Key>
-        <Value>2010-05-08T15:19:03.3617747+01:00</Value>
+        <Value>2010-05-09T22:44:23.0195513+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -342,10 +342,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Mainhill2.xnb</Output>
-      <Time>2010-05-08T15:15:37.0182144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7346909+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Mainhill2_0.xml</Key>
-        <Value>2010-05-08T15:19:04.4225765+01:00</Value>
+        <Value>2010-05-09T22:44:24.0976129+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -355,10 +355,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Murshroom1.xnb</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7156898+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Murshroom1_0.xml</Key>
-        <Value>2010-05-08T15:19:05.4989784+01:00</Value>
+        <Value>2010-05-09T22:44:25.1786748+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -368,10 +368,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\LevelBuild3.xnb</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8136954+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\LevelBuild3_0.xml</Key>
-        <Value>2010-05-08T15:19:06.8405807+01:00</Value>
+        <Value>2010-05-09T22:44:26.5347523+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -381,10 +381,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\New Character.xnb</Output>
-      <Time>2010-05-08T15:15:37.0806145+01:00</Time>
+      <Time>2010-05-09T22:30:43.806695+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\New Character_0.xml</Key>
-        <Value>2010-05-08T15:19:10.5689872+01:00</Value>
+        <Value>2010-05-09T22:44:30.4569767+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -394,10 +394,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\Platform2.xnb</Output>
-      <Time>2010-05-08T15:15:37.0650145+01:00</Time>
+      <Time>2010-05-09T22:30:43.7816935+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Platform2_0.xml</Key>
-        <Value>2010-05-08T15:19:11.8325894+01:00</Value>
+        <Value>2010-05-09T22:44:31.7410501+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -407,10 +407,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\platform1.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7006889+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\platform1_0.xml</Key>
-        <Value>2010-05-08T15:19:12.8933913+01:00</Value>
+        <Value>2010-05-09T22:44:32.7901101+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -420,10 +420,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\leave1.xnb</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8176956+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\leave1_0.xml</Key>
-        <Value>2010-05-08T15:19:13.9385931+01:00</Value>
+        <Value>2010-05-09T22:44:33.8361699+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -433,10 +433,10 @@
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\REcharacter.xnb</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7466915+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\REcharacter_0.xml</Key>
-        <Value>2010-05-08T15:19:15.6389961+01:00</Value>
+        <Value>2010-05-09T22:44:35.568269+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -444,7 +444,7 @@
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ship2_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7206901+01:00</Time>
     </Item>
     <Item>
       <Source>metal.jpg</Source>
@@ -459,175 +459,175 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\Piepork\Desktop\grp\Prototype\Prototype\bin\x86\Debug\Content\metal_0.xnb</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.6986888+01:00</Time>
     </Item>
     <Item>
       <Source>ball.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ball_0.xml</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.6966887+01:00</Time>
     </Item>
     <Item>
       <Source>characterX.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\characterX_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7136897+01:00</Time>
     </Item>
     <Item>
       <Source>PlantCylinder.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\PlantCylinder_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7616924+01:00</Time>
     </Item>
     <Item>
       <Source>SphereHighPoly.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\SphereHighPoly_0.xml</Output>
-      <Time>2010-05-08T15:15:37.1118145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8306963+01:00</Time>
     </Item>
     <Item>
       <Source>Character.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Character_0.xml</Output>
-      <Time>2010-05-08T15:15:37.1274146+01:00</Time>
+      <Time>2010-05-09T22:30:43.8536977+01:00</Time>
     </Item>
     <Item>
       <Source>Flower1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Flower1_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8196957+01:00</Time>
     </Item>
     <Item>
       <Source>Hill1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Hill1_0.xml</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7036891+01:00</Time>
     </Item>
     <Item>
       <Source>Hill2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Hill2_0.xml</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7056892+01:00</Time>
     </Item>
     <Item>
       <Source>Flower2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Flower2_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8226959+01:00</Time>
     </Item>
     <Item>
       <Source>quad.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\quad_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7526919+01:00</Time>
     </Item>
     <Item>
       <Source>Levelbuild7.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Levelbuild7_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0182144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7326907+01:00</Time>
     </Item>
     <Item>
       <Source>Levelbuild6.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Levelbuild6_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.71969+01:00</Time>
     </Item>
     <Item>
       <Source>MurshroomPlatformtest2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\MurshroomPlatformtest2_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8266961+01:00</Time>
     </Item>
     <Item>
       <Source>MurshroomPlatformtest.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\MurshroomPlatformtest_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7596923+01:00</Time>
     </Item>
     <Item>
       <Source>MainLevel1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\MainLevel1_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7566921+01:00</Time>
     </Item>
     <Item>
       <Source>LevelBuild2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\LevelBuild2_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0806145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8086951+01:00</Time>
     </Item>
     <Item>
       <Source>Mainhill2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Mainhill2_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0182144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7346909+01:00</Time>
     </Item>
     <Item>
       <Source>Murshroom1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Murshroom1_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0026143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7156898+01:00</Time>
     </Item>
     <Item>
       <Source>LevelBuild3.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\LevelBuild3_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8136954+01:00</Time>
     </Item>
     <Item>
       <Source>New Character.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\New Character_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0806145+01:00</Time>
+      <Time>2010-05-09T22:30:43.806695+01:00</Time>
     </Item>
     <Item>
       <Source>Platform2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Platform2_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0650145+01:00</Time>
+      <Time>2010-05-09T22:30:43.7816935+01:00</Time>
     </Item>
     <Item>
       <Source>platform1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\platform1_0.xml</Output>
-      <Time>2010-05-08T15:15:36.9870143+01:00</Time>
+      <Time>2010-05-09T22:30:43.7006889+01:00</Time>
     </Item>
     <Item>
       <Source>leave1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\leave1_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0962145+01:00</Time>
+      <Time>2010-05-09T22:30:43.8176956+01:00</Time>
     </Item>
     <Item>
       <Source>REcharacter.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\REcharacter_0.xml</Output>
-      <Time>2010-05-08T15:15:37.0338144+01:00</Time>
+      <Time>2010-05-09T22:30:43.7466915+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

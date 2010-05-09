@@ -46,8 +46,11 @@ namespace Prototype
 
         PostProcess Bloom;//bloom post process effect 
 
-        PhysicsActor paHill1;
-        PhysicsActor paBall;
+        
+        PhysicsActor paBall1;
+        PhysicsActor paBall2;
+        PhysicsActor paBall3;
+        PhysicsActor paBall4;
 
         //New physics stuff
         Physics physicSystem;
@@ -183,16 +186,32 @@ namespace Prototype
             //New physics
             physicSystem = new Physics();
 
-            TriangleMeshObject tmoHill1 = new TriangleMeshObject(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 0.0f, 0.0f));
-            tmoHill1.SetModel("Content/Hill1", Hill1);
 
-            paHill1 = new PhysicsActor(Hill1, tmoHill1);
-            paHill1.PhysicsObject.Immovable = true;
 
-            BoxObject ball = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 20.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
 
-            paBall = new PhysicsActor(OrbModel, ball);
-            paBall.PhysicsObject.Mass = 1000;
+            BoxObject ball1 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 20.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            BoxObject ball2 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 22.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            BoxObject ball3 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 24.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            BoxObject ball4 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 26.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+
+            paBall1 = new PhysicsActor(OrbModel, ball1);
+            paBall1.RemapModel(paBall1, myEffect);
+            paBall1.PhysicsObject.Mass = 1000;
+            paBall1.PhysicsObject.Immovable = true;
+
+            paBall2 = new PhysicsActor(OrbModel, ball2);
+            paBall2.RemapModel(paBall2, myEffect);
+            paBall2.PhysicsObject.Mass = 2000;
+
+            paBall3 = new PhysicsActor(OrbModel, ball3);
+            paBall3.RemapModel(paBall3, myEffect);
+            paBall3.PhysicsObject.Mass = 2000;
+           
+
+            paBall4 = new PhysicsActor(OrbModel, ball4);
+            paBall4.RemapModel(paBall4, myEffect);
+            paBall4.PhysicsObject.Mass = 500;
+
 
 
 
@@ -435,7 +454,10 @@ namespace Prototype
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
             //paHill1.Draw(Proj, View);
-           // paBall.Draw(Proj, View);
+            paBall1.Draw2(Proj, View);
+            paBall2.Draw2(Proj, View);
+            paBall3.Draw2(Proj, View);
+            paBall4.Draw2(Proj, View);
       
 
             ObjControl.Render(View, Proj, GraphicsDevice);
@@ -745,8 +767,8 @@ namespace Prototype
 
             CollisionDetectionBox.AddBox(new Vector3(73, 3, -10), new Vector3(74, 4.5f, 0)); //Start of tree
             CollisionDetectionPlane.AddPlane(new Vector3(74, 4.5f, -10), new Vector3(74, 4.5f, 0), new Vector3(80, 2.8f, -10), 74, 80); //Middle of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(80, 2.6f, -10), new Vector3(80, 2.6f, 0), new Vector3(89, 1.1f, -10), 80, 88); //Middle of tree
-            CollisionDetectionPlane.AddPlane(new Vector3(88, 1.1f, -10), new Vector3(88, 1.1f, 0), new Vector3(91, 0.6f, -10), 88, 91); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(80, 2.6f, -10), new Vector3(80, 2.6f, 0), new Vector3(89, 0.9f, -10), 80, 88); //Middle of tree
+            CollisionDetectionPlane.AddPlane(new Vector3(88, 0.9f, -10), new Vector3(88, 0.9f, 0), new Vector3(91, 0.6f, -10), 88, 91); //Middle of tree
             CollisionDetectionPlane.AddPlane(new Vector3(91, 0.6f, -10), new Vector3(91, 0.6f, 0), new Vector3(93, 0.6f, -10), 91, 93); //Middle of tree
             CollisionDetectionPlane.AddPlane(new Vector3(93, 0.6f, -10), new Vector3(93, 0.6f, 0), new Vector3(94, 1.1f, -10), 93, 94); //End of tree
             CollisionDetectionBox.AddBox(new Vector3(93, -2, -10), new Vector3(94.5f, 0.9f, 0)); //End of tree
