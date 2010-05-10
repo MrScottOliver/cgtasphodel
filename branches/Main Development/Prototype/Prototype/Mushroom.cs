@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using System.Diagnostics;
+using DPSF;
+using DPSF.ParticleSystems;
 
 namespace Prototype
 {
@@ -104,12 +106,15 @@ namespace Prototype
                         {
                             Player.velocity.Y = 0;
                             Player.velocity.Y += 0.5f;
-                            Player.jumpState = true;
                             Current = LifeCycle.AnimateDown;
+                            MushroomParticleGroup.NewParticle(Position);
                         } 
                     }
                     break;
                 case LifeCycle.AnimateDown:
+
+
+
                     if (Scale.Y > 0.1)
                     {
                         Scale.X += 0.02f;
@@ -125,7 +130,7 @@ namespace Prototype
                     {
                         Scale.X -= 0.02f;
                         Scale.Y += 0.02f;
-                    }
+                    } 
                     else
                         Current = LifeCycle.Active;
                     //check time, stretch the shroom to suit

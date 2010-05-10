@@ -45,7 +45,7 @@ namespace Prototype
             velocity = Vector3.Zero;
             position = Vector3.Zero;
 
-            boundingsphere = new BoundingSphere(position, 2.0f);
+            boundingsphere = new BoundingSphere(position, 1.0f);
             top = new Ray(position, new Vector3(0, 1, 0));
             bottom = new Ray(position, new Vector3(0, -1, 0));
             front = new Ray(position, new Vector3(1, 0, 0));
