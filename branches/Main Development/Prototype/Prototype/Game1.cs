@@ -189,10 +189,10 @@ namespace Prototype
 
 
 
-            BoxObject ball1 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 20.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
-            BoxObject ball2 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 22.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
-            BoxObject ball3 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 24.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
-            BoxObject ball4 = new BoxObject(new Vector3(1.0f, 1.0f, 1.0f), new Vector3(5.0f, 26.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            SphereObject ball1 = new SphereObject(2.0f, new Vector3(5.0f, 16.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            SphereObject ball2 = new SphereObject(1.0f, new Vector3(4.0f, 22.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            SphereObject ball3 = new SphereObject(1.0f, new Vector3(5.0f, 24.0f, -3.0f), new Vector3(0.0f, 0.0f, 0.0f));
+            SphereObject ball4 = new SphereObject(1.0f, new Vector3(5.1f, 28.0f, -5.0f), new Vector3(0.0f, 0.0f, 0.0f));
 
             paBall1 = new PhysicsActor(OrbModel, ball1);
             paBall1.RemapModel(paBall1, myEffect);
@@ -291,7 +291,7 @@ namespace Prototype
             }
 
             ParticleGroup.Update(gameTime);
-            physicSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            //physicSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             Audio.PlayMusic();
             player.Move();
             CollisionDetectionBox.Compare(ref player);
@@ -454,10 +454,10 @@ namespace Prototype
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
             //paHill1.Draw(Proj, View);
-            paBall1.Draw2(Proj, View);
+            /*paBall1.Draw2(Proj, View);
             paBall2.Draw2(Proj, View);
             paBall3.Draw2(Proj, View);
-            paBall4.Draw2(Proj, View);
+            paBall4.Draw2(Proj, View);*/
       
 
             ObjControl.Render(View, Proj, GraphicsDevice);

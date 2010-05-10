@@ -10,3 +10,5 @@ C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Deb
 C:\Users\Stezzy\Desktop\Main Development\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
 C:\Users\Piepork\Desktop\grp\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Piepork\Desktop\grp\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
+\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0701230\Desktop\group\Prototype\Prototype\Content\obj\x86\Debug\Audio\Prototype.xml
