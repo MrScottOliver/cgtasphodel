@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:MeshContent">
+    <Name>pPlane1</Name>
+    <Identity>
+      <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\leave1.fbx</SourceFilename>
+      <SourceTool>FbxImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 10.2698317 13.6042652 1.83748674 1</Transform>
+    <Positions>-10.96357 -2.63896585 5.427189 -5.481785 -1.39061952E-15 6.26279354 0 0.5759095 6.26279354 5.481785 -0.1880501 6.26279354 11.1109762 -2.55342913 4.16691971 -15.85124 -4.25145 0.2730465 -5.481785 0.7852342 0 1.1920929E-07 1.11306942 -5.96046448E-07 5.481785 0.4246539 -5.96046448E-07 13.8275967 -2.73213148 -5.96046448E-07 -10.96357 -1.93464172 -5.472909 -5.481785 1.39061952E-15 -6.26279354 0 1.39061952E-15 -6.26279354 5.481785 1.39061952E-15 -6.26279354 11.0378361 -1.87352574 -4.068623</Positions>
+    <Geometry>
+      <Batch>
+        <Material>#Resource1</Material>
+        <Indices>2 1 0 0 3 2 5 4 1 1 2 5 7 6 4 4 5 7 9 8 6 6 7 9 10 2 3 3 11 10 12 5 2 2 10 12 13 7 5 5 12 13 14 9 7 7 13 14</Indices>
+        <Vertices>
+          <PositionIndices>0 1 6 5 2 7 3 8 4 9 11 10 12 13 14</PositionIndices>
+          <Channels>
+            <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.4360694 0.8915939 0.122081146 -0.263395131 0.957768559 0.115335621 -0.244003534 0.96974653 0.007337961 -0.422058165 0.9058123 0.0370266922 0.0246819127 0.9948611 0.09819462 0.0206456911 0.999601841 -0.0192278288 0.258568674 0.9591146 0.11507123 0.234162718 0.972107649 0.0132097816 0.381770939 0.9139761 0.137472 0.3663235 0.929552555 0.04170246 -0.221574143 0.9698944 -0.101043895 -0.404825419 0.9131169 -0.0483103767 0.0163442753 0.9905941 -0.135853276 0.207082227 0.974263549 -0.08903634 0.3473399 0.9361559 -0.05446965</VertexChannel>
+            <VertexChannel Name="TextureCoordinate1" ElementType="Framework:Vector2">0 1 0.25 1 0.25 0.714381635 0 0.714381635 0.5 1 0.5 0.714381635 0.75 1 0.75 0.714381635 1 1 1 0.714381635 0.25 0.42876327 0 0.42876327 0.5 0.42876327 0.75 0.42876327 1 0.42876327</VertexChannel>
+          </Channels>
+        </Vertices>
+      </Batch>
+    </Geometry>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Name>lambert1</Name>
+      <Identity>
+        <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\leave1.fbx</SourceFilename>
+        <SourceTool>FbxImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">0.4 0.4 0.4</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">0 0 0</Data>
+      </OpaqueData>
+    </Resource>
+  </Resources>
+</XnaContent>

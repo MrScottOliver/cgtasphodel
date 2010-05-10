@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GameStateManagementWindows">
+</Property><Property Name="Solution File" Value="F:\GameStateManagementSample\GameStateManagementWindows.sln">
+</Property><Property Name="Date" Value="06, May, 2010">
+</Property><Property Name="Time" Value="15:49">
+</Property></Properties><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagement\GameStateManagementWindows.csproj" Description="Upgraded XNA Game Studio nested content projects to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagement\GameStateManagementWindows.csproj" Description="Upgraded XNA Game Studio project to XNA Framework 3.0.">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagement\GameStateManagementWindows.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GameStateManagementWindows" Source="GameStateManagement\GameStateManagementWindows.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="GameStateManagementWindows.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="GameStateManagementWindows.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagement\GameStateManagementWindows.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagement\GameStateManagementWindows.csproj" Description="Upgraded XNA Framework references to XNA Framework 3.0.">
+</Event></UpgradeLog>
