@@ -1,0 +1,6 @@
+F:\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
+F:\replace\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\replace\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
+F:\replace\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\replace\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
