@@ -45,7 +45,7 @@ namespace Prototype
             velocity = Vector3.Zero;
             position = Vector3.Zero;
 
-            boundingsphere = new BoundingSphere(position, 1.0f);
+            boundingsphere = new BoundingSphere(position, 2.0f);
             top = new Ray(position, new Vector3(0, 1, 0));
             bottom = new Ray(position, new Vector3(0, -1, 0));
             front = new Ray(position, new Vector3(1, 0, 0));
@@ -173,6 +173,8 @@ namespace Prototype
         public void AddTranslation(float x, float y, float z)
         {
             position += new Vector3(x, y, z);
+            if (position.Y< -18)
+                position = new Vector3(-6, 20, 0);
             boundingsphere.Center = position;
             top.Position = position;
             bottom.Position = position;

@@ -463,7 +463,8 @@ namespace Prototype
             ObjControl.Render(View, Proj, GraphicsDevice);
            // PlatHill1.Render(View, Proj, GraphicsDevice);
            // PlatHill2.Render(View, Proj, GraphicsDevice);
-            //FullLevel1.Render(View, Proj, GraphicsDevice);
+            FullLevel1.RePosition(new Vector3(140,-6,0));
+            FullLevel1.Render(View, Proj, GraphicsDevice);
             FullLevel2.Render(View, Proj, GraphicsDevice);
            // MainHill.Render(View, Proj, GraphicsDevice);
            // Mushroom.Render(View, Proj, GraphicsDevice);
