@@ -99,6 +99,7 @@
     <Compile Include="IPhysicsObject.cs" />
     <Compile Include="Leaf.cs" />
     <Compile Include="Mushroom.cs" />
+    <Compile Include="MushroomParticleSystem.cs" />
     <Compile Include="OrbParticleSystem.cs" />
     <Compile Include="Physics.cs" />
     <Compile Include="PhysicsActor.cs" />

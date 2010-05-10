@@ -135,6 +135,7 @@ namespace Prototype
            // AddLevelFront();
             //AddLevelTop();
             ParticleGroup.Init(this.GraphicsDevice, this.Content);
+            MushroomParticleGroup.Init(this.GraphicsDevice, this.Content);
             //adds the collision boxes
             SetupPlane();
             //Stefen:Creates + sets vertex and index buffers
@@ -223,7 +224,7 @@ namespace Prototype
             PlatHill2.Scale(0.3f, 0.3f, 0.3f);
             PlatHill2.Rotate(3.0f, 0.0f, 0.0f);*/
             FullLevel1 = new Surface(Full1, new Vector3(35.0f, -5.2f, -15.0f));
-            FullLevel2 = new Surface(Full2, new Vector3(35.0f, -5.2f, -15.0f));
+            FullLevel2 = new Surface(Full2, new Vector3(36.0f, -5.2f, -15.4f));
             /*
            // FullLevel.Rotate(3.0f, 0.0f, 0.0f);
             Mushroom = new Surface(Mush, new Vector3(0, 0, 0));
@@ -260,6 +261,10 @@ namespace Prototype
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(99, 0, -4))
         );
+
+            ObjectControl.ObjectList.Add(
+    ObjectFactory.createObject(ObjectType.Mushroom, Mush1, new Vector3(190, 3.7f, -4))
+    );
            // ObjectControl.ObjectList..SetPosition(10, 10, 0, 0);
            // ObjControl.Load();
 
@@ -291,6 +296,7 @@ namespace Prototype
             }
 
             ParticleGroup.Update(gameTime);
+            MushroomParticleGroup.Update(gameTime);
             //physicSystem.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             Audio.PlayMusic();
             player.Move();
@@ -477,6 +483,7 @@ namespace Prototype
 
 
             ParticleGroup.Draw(World, View, Proj);
+            MushroomParticleGroup.Draw(World, View, Proj);
 
              
  
@@ -774,7 +781,28 @@ namespace Prototype
             CollisionDetectionPlane.AddPlane(new Vector3(93, 0.6f, -10), new Vector3(93, 0.6f, 0), new Vector3(94, 1.1f, -10), 93, 94); //End of tree
             CollisionDetectionBox.AddBox(new Vector3(93, -2, -10), new Vector3(94.5f, 0.9f, 0)); //End of tree
 
-            CollisionDetectionBox.AddBox(new Vector3(95, -5, -10), new Vector3(103, 0, 0)); //End of tree
+            CollisionDetectionBox.AddBox(new Vector3(95, -5, -10), new Vector3(103, 0, 0)); //Platform after tree
+            CollisionDetectionPlane.AddPlane(new Vector3(103, 0, -10), new Vector3(103, 0, 0), new Vector3(108, 1.1f, -10), 103, 108); //Uphill after tree - start of second level model
+            CollisionDetectionPlane.AddPlane(new Vector3(108, 1.1f, -10), new Vector3(108, 1.1f, 0), new Vector3(111, 0.5f, -10), 108, 111); //Downhill after tree - start of second level model
+            CollisionDetectionPlane.AddPlane(new Vector3(111, 0.5f, -10), new Vector3(111, 0.5f, 0), new Vector3(116, -2.3f, -10), 111, 116); //Downhill after tree - start of second level model
+            CollisionDetectionBox.AddBox(new Vector3(116, -5, -10), new Vector3(124, -2.3f, 0)); //Platform after hill
+
+            CollisionDetectionBox.AddBox(new Vector3(134.5f, -10, -10), new Vector3(134.6f, 0, 0)); //Start of 2nd platform
+            CollisionDetectionPlane.AddPlane(new Vector3(134.6f, 0.0f, -10), new Vector3(134.6f, 0.0f, 0), new Vector3(141, 3.0f, -10), 134.6f, 141); //Uphill 2nd platform
+            CollisionDetectionPlane.AddPlane(new Vector3(141, 3.0f, -10), new Vector3(141, 3.0f, 0), new Vector3(144, 3.5f, -10), 141, 144); //Uphill 2nd platform
+            CollisionDetectionPlane.AddPlane(new Vector3(144, 3.5f, -10), new Vector3(144, 3.5f, 0), new Vector3(150, 2.9f, -10), 144, 150); //Downhill 2nd platform
+            CollisionDetectionBox.AddBox(new Vector3(150, -10, -10), new Vector3(155, 2.9f, 0)); //2nd plat top step
+            CollisionDetectionBox.AddBox(new Vector3(155, -10, -10), new Vector3(160.5f, 1.1f, 0)); //2nd plat middle step
+            CollisionDetectionBox.AddBox(new Vector3(160.5f, -10, -10), new Vector3(166, -0.7f, 0)); //2nd plat lower middle step
+            CollisionDetectionBox.AddBox(new Vector3(166, -10, -10), new Vector3(173, -2.7f, 0)); //2nd plat lowest step
+
+            CollisionDetectionBox.AddBox(new Vector3(181.9f, -10, -10), new Vector3(197.3f, 2.7f, 0)); //3rd plat
+
+            CollisionDetectionBox.AddBox(new Vector3(213.5f, -10, -10), new Vector3(229, 26.3f, 0)); //4th plat
+
+            CollisionDetectionBox.AddBox(new Vector3(236.5f, -10, -10), new Vector3(253.3f, 17.6f, 0)); //5th plat
+
+            CollisionDetectionBox.AddBox(new Vector3(259.3f, -10, -10), new Vector3(276.1f, 10.3f, 0)); //6th plat
         }
 
     }

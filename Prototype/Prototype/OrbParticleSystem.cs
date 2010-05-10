@@ -74,7 +74,7 @@ namespace DPSF.ParticleSystems
                                                 UpdateVertexProperties, "Star9");
 
             // Set the Name of the Particle System
-            Name = "Default Point Sprite Particle System Template";
+            Name = "Orb Particle System";
 
             // Finish loading the Particle System in a separate function call, so if
             // we want to reset the Particle System later we don't need to completely 
@@ -115,8 +115,8 @@ namespace DPSF.ParticleSystems
             InitialProperties.RotationMax = MathHelper.Pi;
             InitialProperties.RotationalVelocityMin = -MathHelper.Pi;
             InitialProperties.RotationalVelocityMax = MathHelper.Pi;
-            InitialProperties.StartSizeMin = 1.0f;
-            InitialProperties.StartSizeMax = 2.0f;
+            InitialProperties.StartSizeMin = 0.10f;
+            InitialProperties.StartSizeMax = 0.20f;
             InitialProperties.EndSizeMin = 3.0f;
             InitialProperties.EndSizeMax = 3.0f;
             InitialProperties.StartColorMin = Color.White;
