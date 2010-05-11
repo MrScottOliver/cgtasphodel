@@ -158,7 +158,6 @@ namespace Prototype
 
         public void RotateAimZ( float angle )
         {
-            //if ( invert ) { angle *= -1; }
             roll += angle;
             qRoll = Quaternion.CreateFromAxisAngle(lookAt, (float)roll);
             qRoll.Normalize();
