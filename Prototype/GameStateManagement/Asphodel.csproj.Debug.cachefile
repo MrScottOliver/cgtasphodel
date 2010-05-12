@@ -42,6 +42,9 @@ Content\models\Platform2.xnb
 Content\models\quad.xnb
 Content\models\REcharacter.xnb
 Content\models\SphereHighPoly.xnb
+Content\models\PlayerMarine.xnb
+Content\Textures\PlayerMarineDiffuse_0.xnb
+Content\Textures\PlayerMarineNormal_0.xnb
 Content\Audio\Prototype.xgs
 Content\Audio\Player_Effects.xwb
 Content\Audio\Music.xwb

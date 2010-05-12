@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
       <Source>background.png</Source>
@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\background.xnb</Output>
-      <Time>2008-10-22T14:21:42+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\background.xnb</Output>
+      <Time>2010-05-12T14:40:40.0400189+01:00</Time>
     </Item>
     <Item>
       <Source>blank.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\blank.xnb</Output>
-      <Time>2008-10-22T14:21:42+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2010-05-12T14:40:40.523622+01:00</Time>
     </Item>
     <Item>
       <Source>gradient.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\gradient.xnb</Output>
-      <Time>2008-10-22T14:21:42+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\gradient.xnb</Output>
+      <Time>2010-05-12T14:40:38.5892096+01:00</Time>
     </Item>
     <Item>
       <Source>models\skyboxmystic.dds</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\skyboxmystic.xnb</Output>
-      <Time>2010-04-30T14:45:00+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\skyboxmystic.xnb</Output>
+      <Time>2010-05-12T14:39:16.907086+01:00</Time>
     </Item>
     <Item>
       <Source>models\Tiny_skin.dds</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Tiny_skin.xnb</Output>
-      <Time>2010-04-30T14:45:00+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Tiny_skin.xnb</Output>
+      <Time>2010-05-12T14:39:15.7370785+01:00</Time>
     </Item>
     <Item>
       <Source>test copy.tga</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\test copy.xnb</Output>
-      <Time>2010-05-06T19:29:56+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\test copy.xnb</Output>
+      <Time>2010-05-12T14:40:38.7140104+01:00</Time>
     </Item>
     <Item>
       <Source>models\metal.jpg</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\metal.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\metal.xnb</Output>
+      <Time>2010-05-12T14:39:15.9086796+01:00</Time>
     </Item>
     <Item>
       <Source>spires_north.bmp</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\spires_north.xnb</Output>
-      <Time>2010-04-30T14:44:56+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\spires_north.xnb</Output>
+      <Time>2010-05-12T14:40:39.6032161+01:00</Time>
     </Item>
     <Item>
       <Source>Star9.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\Star9.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Star9.xnb</Output>
+      <Time>2010-05-12T14:40:38.7764108+01:00</Time>
     </Item>
     <Item>
       <Source>testtexgrass.jpg</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\testtexgrass.xnb</Output>
-      <Time>2010-04-30T14:45:00+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\testtexgrass.xnb</Output>
+      <Time>2010-05-12T14:40:38.4800089+01:00</Time>
     </Item>
     <Item>
       <Source>testtexleaves.jpg</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\testtexleaves.xnb</Output>
-      <Time>2010-04-30T14:44:52+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\testtexleaves.xnb</Output>
+      <Time>2010-05-12T14:40:38.4020084+01:00</Time>
     </Item>
     <Item>
       <Source>GrassArtsmallgg.bmp</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\GrassArtsmallgg.xnb</Output>
-      <Time>2010-05-06T19:37:08+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\GrassArtsmallgg.xnb</Output>
+      <Time>2010-05-12T14:40:40.3052206+01:00</Time>
     </Item>
     <Item>
       <Source>LogoFinal.jpg</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\LogoFinal.xnb</Output>
-      <Time>2010-05-10T12:55:22+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\LogoFinal.xnb</Output>
+      <Time>2010-05-12T14:40:38.9012116+01:00</Time>
     </Item>
     <Item>
       <Source>gamefont.spritefont</Source>
@@ -124,8 +124,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\gamefont.xnb</Output>
-      <Time>2008-10-22T14:21:42+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2010-05-12T14:40:39.6500164+01:00</Time>
     </Item>
     <Item>
       <Source>menufont.spritefont</Source>
@@ -133,8 +133,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\menufont.xnb</Output>
-      <Time>2008-10-22T14:21:42+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2010-05-12T14:40:38.807611+01:00</Time>
     </Item>
     <Item>
       <Source>models\ball.x</Source>
@@ -142,11 +142,11 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\ball.xnb</Output>
-      <Time>2010-04-30T14:44:52+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\ball.xnb</Output>
+      <Time>2010-05-12T14:39:15.8462792+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\ball_0.xml</Key>
-        <Value>2010-05-10T17:02:02+01:00</Value>
+        <Value>2010-05-12T14:49:48.0715319+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -155,11 +155,11 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\characterX.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\characterX.xnb</Output>
+      <Time>2010-05-12T14:39:20.6199098+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\characterX_0.xml</Key>
-        <Value>2010-05-10T17:02:04+01:00</Value>
+        <Value>2010-05-12T14:49:49.9747441+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -168,11 +168,11 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\PlantCylinder.xnb</Output>
-      <Time>2010-04-30T14:45:00+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\PlantCylinder.xnb</Output>
+      <Time>2010-05-12T14:39:24.7227361+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\PlantCylinder_0.xml</Key>
-        <Value>2010-05-10T17:02:04+01:00</Value>
+        <Value>2010-05-12T14:49:50.1931455+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -181,8 +181,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\BloomCombine.xnb</Output>
-      <Time>2010-04-30T14:45:00+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\BloomCombine.xnb</Output>
+      <Time>2010-05-12T14:39:08.6702332+01:00</Time>
     </Item>
     <Item>
       <Source>Effects\BloomExtract.fx</Source>
@@ -190,8 +190,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\BloomExtract.xnb</Output>
-      <Time>2010-05-06T18:48:34+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\BloomExtract.xnb</Output>
+      <Time>2010-05-12T14:39:08.6234329+01:00</Time>
     </Item>
     <Item>
       <Source>Effects\GaussianBlur.fx</Source>
@@ -199,8 +199,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\GaussianBlur.xnb</Output>
-      <Time>2010-04-30T14:45:10+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\GaussianBlur.xnb</Output>
+      <Time>2010-05-12T14:39:08.8418343+01:00</Time>
     </Item>
     <Item>
       <Source>Effects\Lighting.fx</Source>
@@ -208,11 +208,11 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\Lighting.xnb</Output>
-      <Time>2010-05-06T17:30:12+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Effects\Lighting.xnb</Output>
+      <Time>2010-05-12T14:39:08.7638338+01:00</Time>
       <Dependency>
         <Key>Effects\Includes.inc</Key>
-        <Value>2010-05-06T17:30:12+01:00</Value>
+        <Value>2010-05-12T14:39:08.8886346+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -221,8 +221,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\SkySphere.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\SkySphere.xnb</Output>
+      <Time>2010-05-12T14:39:19.8087046+01:00</Time>
     </Item>
     <Item>
       <Source>models\Character.fbx</Source>
@@ -230,11 +230,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Character.xnb</Output>
-      <Time>2010-04-30T14:45:10+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Character.xnb</Output>
+      <Time>2010-05-12T14:39:24.4731345+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Character_0.xml</Key>
-        <Value>2010-05-10T17:02:10+01:00</Value>
+        <Value>2010-05-12T14:49:57.5719928+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -243,11 +243,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Flower1.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Flower1.xnb</Output>
+      <Time>2010-05-12T14:39:21.4155149+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Flower1_0.xml</Key>
-        <Value>2010-05-10T17:02:12+01:00</Value>
+        <Value>2010-05-12T14:49:59.2568036+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -256,11 +256,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Flower2.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Flower2.xnb</Output>
+      <Time>2010-05-12T14:39:21.5403157+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Flower2_0.xml</Key>
-        <Value>2010-05-10T17:02:14+01:00</Value>
+        <Value>2010-05-12T14:50:00.4892115+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -269,11 +269,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Hill1.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Hill1.xnb</Output>
+      <Time>2010-05-12T14:39:19.2627011+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Hill1_0.xml</Key>
-        <Value>2010-05-10T17:02:14+01:00</Value>
+        <Value>2010-05-12T14:50:01.6280188+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -282,11 +282,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Hill2.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Hill2.xnb</Output>
+      <Time>2010-05-12T14:39:19.7775044+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Hill2_0.xml</Key>
-        <Value>2010-05-10T17:02:16+01:00</Value>
+        <Value>2010-05-12T14:50:02.7824262+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -295,11 +295,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\leave1.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\leave1.xnb</Output>
+      <Time>2010-05-12T14:39:20.807111+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\leave1_0.xml</Key>
-        <Value>2010-05-10T17:02:16+01:00</Value>
+        <Value>2010-05-12T14:50:03.9056334+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -308,11 +308,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\LevelBuild2.xnb</Output>
-      <Time>2010-04-30T14:45:04+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\LevelBuild2.xnb</Output>
+      <Time>2010-05-12T14:39:19.3719018+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\LevelBuild2_0.xml</Key>
-        <Value>2010-05-10T17:02:18+01:00</Value>
+        <Value>2010-05-12T14:50:05.1536414+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -321,11 +321,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\LevelBuild3.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\LevelBuild3.xnb</Output>
+      <Time>2010-05-12T14:39:19.6839038+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\LevelBuild3_0.xml</Key>
-        <Value>2010-05-10T17:02:20+01:00</Value>
+        <Value>2010-05-12T14:50:06.9944532+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -334,11 +334,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Levelbuild6.xnb</Output>
-      <Time>2010-05-10T15:53:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Levelbuild6.xnb</Output>
+      <Time>2010-05-12T14:39:21.0255124+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Levelbuild6_0.xml</Key>
-        <Value>2010-05-10T17:02:22+01:00</Value>
+        <Value>2010-05-12T14:50:08.5388631+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -347,11 +347,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Levelbuild7.xnb</Output>
-      <Time>2010-05-10T15:53:08+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Levelbuild7.xnb</Output>
+      <Time>2010-05-12T14:39:21.2439138+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Levelbuild7_0.xml</Key>
-        <Value>2010-05-10T17:02:22+01:00</Value>
+        <Value>2010-05-12T14:50:09.927272+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -360,11 +360,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Mainhill2.xnb</Output>
-      <Time>2010-04-30T14:44:56+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Mainhill2.xnb</Output>
+      <Time>2010-05-12T14:39:21.3375144+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Mainhill2_0.xml</Key>
-        <Value>2010-05-10T17:02:24+01:00</Value>
+        <Value>2010-05-12T14:50:11.1284797+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -373,11 +373,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\MainLevel1.xnb</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\MainLevel1.xnb</Output>
+      <Time>2010-05-12T14:39:24.6603357+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\MainLevel1_0.xml</Key>
-        <Value>2010-05-10T17:02:26+01:00</Value>
+        <Value>2010-05-12T14:50:12.6104892+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -386,11 +386,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Murshroom1.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Murshroom1.xnb</Output>
+      <Time>2010-05-12T14:39:20.7291105+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Murshroom1_0.xml</Key>
-        <Value>2010-05-10T17:02:26+01:00</Value>
+        <Value>2010-05-12T14:50:13.8428971+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -399,11 +399,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\MurshroomPlatformtest.xnb</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\MurshroomPlatformtest.xnb</Output>
+      <Time>2010-05-12T14:39:24.8787371+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\MurshroomPlatformtest_0.xml</Key>
-        <Value>2010-05-10T17:02:28+01:00</Value>
+        <Value>2010-05-12T14:50:15.231306+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -412,11 +412,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\MurshroomPlatformtest2.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\MurshroomPlatformtest2.xnb</Output>
+      <Time>2010-05-12T14:39:21.7275169+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\MurshroomPlatformtest2_0.xml</Key>
-        <Value>2010-05-10T17:02:30+01:00</Value>
+        <Value>2010-05-12T14:50:16.6821153+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -425,11 +425,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\New Character.xnb</Output>
-      <Time>2010-04-30T14:45:04+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\New Character.xnb</Output>
+      <Time>2010-05-12T14:39:19.1691005+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\New Character_0.xml</Key>
-        <Value>2010-05-10T17:02:36+01:00</Value>
+        <Value>2010-05-12T14:50:24.9657684+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -438,11 +438,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\platform1.xnb</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\platform1.xnb</Output>
+      <Time>2010-05-12T14:39:16.9850865+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\platform1_0.xml</Key>
-        <Value>2010-05-10T17:02:38+01:00</Value>
+        <Value>2010-05-12T14:50:26.7129796+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -451,11 +451,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Platform2.xnb</Output>
-      <Time>2010-04-30T14:45:02+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\Platform2.xnb</Output>
+      <Time>2010-05-12T14:39:17.0786871+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\Platform2_0.xml</Key>
-        <Value>2010-05-10T17:02:40+01:00</Value>
+        <Value>2010-05-12T14:50:27.867387+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -464,11 +464,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\quad.xnb</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\quad.xnb</Output>
+      <Time>2010-05-12T14:39:22.6011225+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\quad_0.xml</Key>
-        <Value>2010-05-10T17:02:40+01:00</Value>
+        <Value>2010-05-12T14:50:28.9905942+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -477,11 +477,11 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\REcharacter.xnb</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\REcharacter.xnb</Output>
+      <Time>2010-05-12T14:39:22.4139213+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\REcharacter_0.xml</Key>
-        <Value>2010-05-10T17:02:44+01:00</Value>
+        <Value>2010-05-12T14:50:31.8454125+01:00</Value>
       </Dependency>
     </Item>
     <Item>
@@ -490,192 +490,254 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\models\SphereHighPoly.xnb</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\SphereHighPoly.xnb</Output>
+      <Time>2010-05-12T14:39:22.523122+01:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\models\SphereHighPoly_0.xml</Key>
-        <Value>2010-05-10T17:02:44+01:00</Value>
+        <Value>2010-05-12T14:50:33.5146232+01:00</Value>
       </Dependency>
+    </Item>
+    <Item>
+      <Source>models\PlayerMarine.fbx</Source>
+      <Name>models\PlayerMarine</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+      <Parameters>
+        <Data Key="ModelRotate">0, 90, 0</Data>
+        <Data Key="TexturePath">..\Textures\</Data>
+        <Data Key="GenerateTangentFrame">True</Data>
+        <Data Key="ModelScale">0.1</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\models\PlayerMarine.xnb</Output>
+      <Time>2008-07-01T01:40:52+01:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\models\PlayerMarine_0.xml</Key>
+        <Value>2010-05-12T14:50:41.5018744+01:00</Value>
+      </Dependency>
+      <Request>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Request>
+      <Request>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Request>
     </Item>
     <Item>
       <Source>models\ball.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\ball_0.xml</Output>
-      <Time>2010-04-30T14:44:52+01:00</Time>
+      <Time>2010-05-12T14:39:15.8462792+01:00</Time>
     </Item>
     <Item>
       <Source>models\characterX.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\characterX_0.xml</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Time>2010-05-12T14:39:20.6199098+01:00</Time>
     </Item>
     <Item>
       <Source>models\PlantCylinder.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\PlantCylinder_0.xml</Output>
-      <Time>2010-04-30T14:45:00+01:00</Time>
+      <Time>2010-05-12T14:39:24.7227361+01:00</Time>
     </Item>
     <Item>
       <Source>models\Character.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Character_0.xml</Output>
-      <Time>2010-04-30T14:45:10+01:00</Time>
+      <Time>2010-05-12T14:39:24.4731345+01:00</Time>
     </Item>
     <Item>
       <Source>models\Flower1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Flower1_0.xml</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Time>2010-05-12T14:39:21.4155149+01:00</Time>
     </Item>
     <Item>
       <Source>models\Flower2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Flower2_0.xml</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Time>2010-05-12T14:39:21.5403157+01:00</Time>
     </Item>
     <Item>
       <Source>models\Hill1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Hill1_0.xml</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Time>2010-05-12T14:39:19.2627011+01:00</Time>
     </Item>
     <Item>
       <Source>models\Hill2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Hill2_0.xml</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Time>2010-05-12T14:39:19.7775044+01:00</Time>
     </Item>
     <Item>
       <Source>models\leave1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\leave1_0.xml</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Time>2010-05-12T14:39:20.807111+01:00</Time>
     </Item>
     <Item>
       <Source>models\LevelBuild2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\LevelBuild2_0.xml</Output>
-      <Time>2010-04-30T14:45:04+01:00</Time>
+      <Time>2010-05-12T14:39:19.3719018+01:00</Time>
     </Item>
     <Item>
       <Source>models\LevelBuild3.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\LevelBuild3_0.xml</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Time>2010-05-12T14:39:19.6839038+01:00</Time>
     </Item>
     <Item>
       <Source>models\Levelbuild6.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Levelbuild6_0.xml</Output>
-      <Time>2010-05-10T15:53:06+01:00</Time>
+      <Time>2010-05-12T14:39:21.0255124+01:00</Time>
     </Item>
     <Item>
       <Source>models\Levelbuild7.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Levelbuild7_0.xml</Output>
-      <Time>2010-05-10T15:53:08+01:00</Time>
+      <Time>2010-05-12T14:39:21.2439138+01:00</Time>
     </Item>
     <Item>
       <Source>models\Mainhill2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Mainhill2_0.xml</Output>
-      <Time>2010-04-30T14:44:56+01:00</Time>
+      <Time>2010-05-12T14:39:21.3375144+01:00</Time>
     </Item>
     <Item>
       <Source>models\MainLevel1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\MainLevel1_0.xml</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Time>2010-05-12T14:39:24.6603357+01:00</Time>
     </Item>
     <Item>
       <Source>models\Murshroom1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Murshroom1_0.xml</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Time>2010-05-12T14:39:20.7291105+01:00</Time>
     </Item>
     <Item>
       <Source>models\MurshroomPlatformtest.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\MurshroomPlatformtest_0.xml</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Time>2010-05-12T14:39:24.8787371+01:00</Time>
     </Item>
     <Item>
       <Source>models\MurshroomPlatformtest2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\MurshroomPlatformtest2_0.xml</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Time>2010-05-12T14:39:21.7275169+01:00</Time>
     </Item>
     <Item>
       <Source>models\New Character.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\New Character_0.xml</Output>
-      <Time>2010-04-30T14:45:04+01:00</Time>
+      <Time>2010-05-12T14:39:19.1691005+01:00</Time>
     </Item>
     <Item>
       <Source>models\platform1.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\platform1_0.xml</Output>
-      <Time>2010-04-30T14:44:54+01:00</Time>
+      <Time>2010-05-12T14:39:16.9850865+01:00</Time>
     </Item>
     <Item>
       <Source>models\Platform2.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\Platform2_0.xml</Output>
-      <Time>2010-04-30T14:45:02+01:00</Time>
+      <Time>2010-05-12T14:39:17.0786871+01:00</Time>
     </Item>
     <Item>
       <Source>models\quad.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\quad_0.xml</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Time>2010-05-12T14:39:22.6011225+01:00</Time>
     </Item>
     <Item>
       <Source>models\REcharacter.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\REcharacter_0.xml</Output>
-      <Time>2010-04-30T14:44:58+01:00</Time>
+      <Time>2010-05-12T14:39:22.4139213+01:00</Time>
     </Item>
     <Item>
       <Source>models\SphereHighPoly.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\models\SphereHighPoly_0.xml</Output>
-      <Time>2010-04-30T14:45:06+01:00</Time>
+      <Time>2010-05-12T14:39:22.523122+01:00</Time>
+    </Item>
+    <Item>
+      <Source>models\PlayerMarine.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\models\PlayerMarine_0.xml</Output>
+      <Time>2008-07-01T01:40:52+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\PlayerMarineDiffuse.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Textures\PlayerMarineDiffuse_0.xnb</Output>
+      <Time>2008-07-01T01:41:46+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\PlayerMarineNormal.tga</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\Textures\PlayerMarineNormal_0.xnb</Output>
+      <Time>2008-07-01T01:41:46+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>F:\replace\Prototype\GameStateManagement\Content\</RootDirectory>
-      <LoggerRootDirectory>F:\replace\Prototype\GameStateManagement\</LoggerRootDirectory>
-      <IntermediateDirectory>F:\replace\Prototype\GameStateManagement\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>F:\replace\Prototype\GameStateManagement\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\</RootDirectory>
+      <LoggerRootDirectory>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\</LoggerRootDirectory>
+      <IntermediateDirectory>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
+      <Assembly>
+        <Key>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\XNAnimation\Windows\XNAnimationPipeline.dll</Key>
+        <Value>2010-02-05T14:11:34+00:00</Value>
+      </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.1\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2009-05-28T00:16:14+01:00</Value>
@@ -702,7 +764,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.1.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2009-09-28T15:32:02.9261364+01:00</Value>
+        <Value>2009-09-28T15:35:04.2603438+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

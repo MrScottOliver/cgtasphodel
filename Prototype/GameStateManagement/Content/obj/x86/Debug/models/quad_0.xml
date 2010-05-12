@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Box02</Name>
     <Identity>
-      <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\quad.fbx</SourceFilename>
+      <SourceFilename>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\models\quad.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -26,7 +26,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Mat1Tex0</Name>
       <Identity>
-        <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\quad.fbx</SourceFilename>
+        <SourceFilename>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\models\quad.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
