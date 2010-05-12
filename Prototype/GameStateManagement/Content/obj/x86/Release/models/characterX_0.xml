@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>testingFrame</Name>
     <Identity>
-      <SourceFilename>F:\GameStateManagementSample\GameStateManagement\Content\models\characterX.x</SourceFilename>
+      <SourceFilename>F:\protttoooo\Prototype\GameStateManagement\Content\models\characterX.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -31,7 +31,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>F:\GameStateManagementSample\GameStateManagement\Content\models\characterX.x</SourceFilename>
+        <SourceFilename>F:\protttoooo\Prototype\GameStateManagement\Content\models\characterX.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

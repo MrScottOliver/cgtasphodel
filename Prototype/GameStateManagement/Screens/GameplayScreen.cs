@@ -183,13 +183,13 @@ namespace GameStateManagement
             myEffect = content.Load<Effect>("Effects/Lighting");
 
             //Kieran: set player model
-            player.model = content.Load<Model>("models/characterX");
+            player.model = content.Load<Model>("models/REcharacter");
             player.texture = content.Load<Texture2D>("models/metal");
 
             player.RemapModel(player, myEffect);//remap model to use our effect
 
             player.AddRotation((float)Math.PI / 2, 0.0f, 0.0f);
-            player.ChangeScale(0.5f);
+            player.ChangeScale(0.05f);
             player.AddTranslation(-7f, 30f, 0f);
 
             SetUpSky();//Jess:set up sky 
@@ -198,7 +198,7 @@ namespace GameStateManagement
             activeSkinnedModelIndex = 0;
             activeAnimationClipIndex = 0;
 
-            LoadSkinnedModel();
+            //LoadSkinnedModel();
 
             Model OrbModel = content.Load<Model>("models/ball");
             Model PlantCyl = content.Load<Model>("models/Flower1");
@@ -252,7 +252,7 @@ namespace GameStateManagement
             //Stefen: Apply transformations for last object entered
 
             ObjectControl.ObjectList.Add(
-            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(44.5f, 26, 0))
+            ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(44.5f, 23, 0))
             );
             ObjectControl.ObjectList.Add(
             ObjectFactory.createObject(ObjectType.Orb, OrbModel, new Vector3(99, 26, 0))
@@ -337,8 +337,6 @@ namespace GameStateManagement
                     transformDegree -= 0.001f;
                 }
 
-                
-
 
                 ParticleGroup.Update(gameTime);
                 MushroomParticleGroup.Update(gameTime);
@@ -348,8 +346,6 @@ namespace GameStateManagement
                 CollisionDetectionPlane.Compare(ref player);
                 player.Update();
              
-          
-         
 
                 ObjControl.HandleState(player);
 
@@ -362,7 +358,7 @@ namespace GameStateManagement
                 TARGET.Y = player.position.Y + 3.0f;
 
                 // Update the animation according to the elapsed time //kev
-                animationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
+                //animationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
 
             }
         }
@@ -428,7 +424,9 @@ namespace GameStateManagement
 
             if (keyState.IsKeyDown(Keys.Down))
             {
-                Audio.Slide();
+                //Audio.Slide();
+                LoadingScreen.Load(ScreenManager, false, null,
+                               new CreditScreen());
 
             }
             if (keyState.IsKeyDown(Keys.Left))
@@ -530,7 +528,7 @@ namespace GameStateManagement
 
             CreateShadowMap();
 
-            myEffect.CurrentTechnique = myEffect.Techniques["MyTech"];//Jess: set current tech
+            
 
             SetUpLighting();//Jess: set light parameters
 
@@ -538,6 +536,8 @@ namespace GameStateManagement
 
             //Kieran: call draw player function
             player.DrawPlayer2(player, Proj, View);
+
+            myEffect.CurrentTechnique = myEffect.Techniques["MyTech"];//Jess: set current tech
 
             ObjControl.Render(View, Proj, ScreenManager.GraphicsDevice);
 
@@ -550,39 +550,39 @@ namespace GameStateManagement
             MushroomParticleGroup.Draw(World, View, Proj);
 
             // the animated model is drawn through an internal Model object //kev
-            foreach (ModelMesh modelMesh in skinnedModel.Model.Meshes)
-            {
-                foreach (SkinnedModelBasicEffect effect in modelMesh.Effects)
-                {
+            //foreach (ModelMesh modelMesh in skinnedModel.Model.Meshes)
+            //{
+            //    foreach (SkinnedModelBasicEffect effect in modelMesh.Effects)
+            //    {
 
-                    // Setup world transform
-                    effect.World = absoluteBoneTransforms[modelMesh.ParentBone.Index] *
-                        World;
+            //        // Setup world transform
+            //        effect.World = absoluteBoneTransforms[modelMesh.ParentBone.Index] *
+            //            World;
 
-                    // Setup camera
-                    effect.View = View;
-                    effect.Projection = Proj;
+            //        // Setup camera
+            //        effect.View = View;
+            //        effect.Projection = Proj;
 
-                    // Set the animated bones to the model
-                    effect.Bones = animationController.SkinnedBoneTransforms;
+            //        // Set the animated bones to the model
+            //        effect.Bones = animationController.SkinnedBoneTransforms;
 
-                    // OPTIONAL - Configure material
-                    effect.Material.DiffuseColor = new Vector3(0.8f);
-                    effect.Material.SpecularColor = new Vector3(0.3f);
-                    effect.Material.SpecularPower = 8;
+            //        // OPTIONAL - Configure material
+            //        effect.Material.DiffuseColor = new Vector3(0.8f);
+            //        effect.Material.SpecularColor = new Vector3(0.3f);
+            //        effect.Material.SpecularPower = 8;
 
-                    // OPTIONAL - Configure lights
-                    effect.AmbientLightColor = new Vector3(0.1f);
-                    effect.LightEnabled = true;
-                    effect.EnabledLights = EnabledLights.One;
-                    effect.PointLights[0].Color = Vector3.One;
-                    effect.PointLights[0].Position = new Vector3(100);
+            //        // OPTIONAL - Configure lights
+            //        effect.AmbientLightColor = new Vector3(0.1f);
+            //        effect.LightEnabled = true;
+            //        effect.EnabledLights = EnabledLights.One;
+            //        effect.PointLights[0].Color = Vector3.One;
+            //        effect.PointLights[0].Position = new Vector3(100);
 
-                }
+            //    }
 
-                // Draw a model mesh
-                modelMesh.Draw();
-            }
+            //    // Draw a model mesh
+            //    modelMesh.Draw();
+            //}
 
             BloomEffect.Draw(gameTime);
 
@@ -694,7 +694,6 @@ namespace GameStateManagement
                     myEffect.Parameters["gMinY"].Elements[y.plantnum].SetValue(y.minY);
                     myEffect.Parameters["gMaxY"].Elements[y.plantnum].SetValue(y.maxY);
                     myEffect.Parameters["gRadius"].Elements[y.plantnum].SetValue(y.radius);
-                    myEffect.Parameters["player"].SetValue(false);
                     myEffect.Parameters["reveal"].SetValue(revealTransform);
                     myEffect.Parameters["transformDegree"].SetValue(transformDegree);
                 }

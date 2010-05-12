@@ -15,6 +15,7 @@ namespace GameStateManagement
         ContentManager content;
         Texture2D creditTexture;
         float trans;
+        string credits;
 
         #endregion
 
@@ -44,7 +45,10 @@ namespace GameStateManagement
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-            creditTexture = content.Load<Texture2D>("LogoFinal");
+            creditTexture = content.Load<Texture2D>("credits");
+           
+
+
         }
 
 
@@ -76,7 +80,7 @@ namespace GameStateManagement
 
             trans += 0.01f;
 
-            if (trans >= 2.0)
+            if (trans >= 4.0)
             {
 
                 LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
@@ -94,14 +98,22 @@ namespace GameStateManagement
         public override void Draw(GameTime gameTime)
         {
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
+            SpriteFont font = ScreenManager.Font;
+
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
             Rectangle fullscreen = new Rectangle(0, 0, viewport.Width, viewport.Height);
             byte fade = TransitionAlpha;
 
+            //float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
+
             spriteBatch.Begin(SpriteBlendMode.None);
+
+
             spriteBatch.Draw(creditTexture, fullscreen,
                              new Color(fade, fade, fade));
+
             spriteBatch.End();
+
 
         }
 

@@ -88,27 +88,32 @@ namespace GameStateManagement
         //draws player with our custom lighting effect
         public void DrawPlayer2(Player player, Matrix Proj, Matrix View)
         {
-            //calculate matrices
-            Matrix world = player.world;
-            Matrix wvp = world * View * Proj;
-            Matrix worldIT = Matrix.Invert(world);
-            worldIT = Matrix.Transpose(worldIT);
+            Matrix[] transforms = new Matrix[player.model.Bones.Count];
+            player.model.CopyAbsoluteBoneTransformsTo(transforms);
+
+            
 
 
             foreach (ModelMesh mesh in player.model.Meshes)
             {
+                
+                Matrix world = transforms[mesh.ParentBone.Index] * player.rotation* player.scale*player.translation;
+                //calculate matrices
+                //Matrix world = player.world;
+                Matrix wvp = world * View * Proj;
+                Matrix worldIT = Matrix.Invert(world);
+                worldIT = Matrix.Transpose(worldIT);
+
                 foreach (Effect effect in mesh.Effects)
                 {
                     //set technique
-                    effect.CurrentTechnique = effect.Techniques["MyTech"];
 
-                    effect.Parameters["withlights"].SetValue(true);
+                    effect.CurrentTechnique = effect.Techniques["PlayerTech"];
 
                     //set matrix params
                     effect.Parameters["gWVP"].SetValue(wvp);
                     effect.Parameters["gWorld"].SetValue(world);
                     effect.Parameters["gWorldIT"].SetValue(worldIT);
-                    effect.Parameters["player"].SetValue(true);
                     effect.Parameters["health"].SetValue(health);
                     //set material params
                     effect.Parameters["gAmbMtrl"].SetValue(player.ambMtrl);
@@ -116,13 +121,7 @@ namespace GameStateManagement
                     effect.Parameters["gSpecMtrl"].SetValue(player.specMtrl);
 
                     //set texture
-                    effect.Parameters["gTex"].SetValue(player.texture);
-                    effect.Parameters["withgrey"].SetValue(true);
-                    effect.Parameters["withshadow"].SetValue(true);
-
-                    effect.CommitChanges();
-
-
+                   // effect.Parameters["gTex"].SetValue(player.texture);
 
                 }
                 mesh.Draw();
@@ -151,7 +150,7 @@ namespace GameStateManagement
                     effect.CurrentTechnique = effect.Techniques["CreateShadowMapTech"];
 
                     effect.Parameters["gWorld"].SetValue(player.world);
-                    effect.CommitChanges();
+                    effect.Parameters["withshadow"].SetValue(true);
 
                 }
                 mesh.Draw();
