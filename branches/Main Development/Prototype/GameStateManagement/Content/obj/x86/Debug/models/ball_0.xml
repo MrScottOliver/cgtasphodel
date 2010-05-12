@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootFrame</Name>
     <Identity>
-      <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\ball.x</SourceFilename>
+      <SourceFilename>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\models\ball.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 -1 0 0 0 0 1</Transform>

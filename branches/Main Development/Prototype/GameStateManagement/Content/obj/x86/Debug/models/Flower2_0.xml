@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\Flower2.fbx</SourceFilename>
+      <SourceFilename>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\models\Flower2.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -48,7 +48,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>lambert1</Name>
       <Identity>
-        <SourceFilename>F:\replace\Prototype\GameStateManagement\Content\models\Flower2.fbx</SourceFilename>
+        <SourceFilename>\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\models\Flower2.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>

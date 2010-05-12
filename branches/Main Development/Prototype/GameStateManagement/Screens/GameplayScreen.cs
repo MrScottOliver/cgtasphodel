@@ -23,6 +23,9 @@ using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using DPSF;
 using DPSF.ParticleSystems;
+using XNAnimation;
+using XNAnimation.Controllers;
+using XNAnimation.Effects;
 
 #endregion
 
@@ -55,12 +58,43 @@ namespace GameStateManagement
         Matrix View;
         Matrix Proj;
         Matrix World = Matrix.CreateTranslation(0, 0, 0);
+        Matrix[] absoluteBoneTransforms;
         Shadows myShadows = new Shadows();
 
         float OrbGlow = 2.3f;//variables for making the orb glow pulsate
         int pulsate = 1;
         int orbnum = 0;
         Vector3[] OrbPositions = new Vector3[20];
+
+        // <summary> kev
+        /// Stores the last keyboard state
+        /// </summary>
+        KeyboardState lastKeyboradState;
+
+        /// <summary> kev
+        /// The SkinnedModel class handles skeletal animated models
+        /// </summary>
+        SkinnedModel skinnedModel;
+
+        /// <summary> kev
+        /// Index of the active skinned model being drawed
+        /// </summary>
+        int activeSkinnedModelIndex = 0;
+
+        /// <summary> kev
+        /// The AnimationController class handles the animation playback
+        /// </summary>
+        AnimationController animationController;
+
+        /// <summary> kev
+        /// Index of the active animation being played
+        /// </summary>
+        int activeAnimationClipIndex = 0;
+
+        /// <summary> kev
+        /// If true, enable the keyframe interpolation
+        /// </summary>
+        bool enableInterpolation = false;
 
         PostProcess BloomEffect;//bloom post process effect 
 
@@ -98,6 +132,22 @@ namespace GameStateManagement
 
         }
 
+        private void LoadSkinnedModel() //kev
+        {
+            // Loads an animated model
+            skinnedModel = content.Load<SkinnedModel>("Models/PlayerMarine");
+
+            // Copy the absolute transformation of each node
+            absoluteBoneTransforms = new Matrix[skinnedModel.Model.Bones.Count];
+            skinnedModel.Model.CopyBoneTransformsTo(absoluteBoneTransforms);
+
+            // Creates an animation controller
+            animationController = new AnimationController(skinnedModel.SkeletonBones);
+
+            // Start the first animation stored in the AnimationClips dictionary
+            animationController.StartClip(
+                skinnedModel.AnimationClips.Values[activeAnimationClipIndex]);
+        }
 
         /// <summary>
         /// Load graphics content for the game.
@@ -144,6 +194,11 @@ namespace GameStateManagement
 
             SetUpSky();//Jess:set up sky 
 
+            //kev: load animated model
+            activeSkinnedModelIndex = 0;
+            activeAnimationClipIndex = 0;
+
+            LoadSkinnedModel();
 
             Model OrbModel = content.Load<Model>("models/ball");
             Model PlantCyl = content.Load<Model>("models/Flower1");
@@ -305,6 +360,9 @@ namespace GameStateManagement
                 POS.Y = player.position.Y + 5.0f;
                 TARGET.X = player.position.X + 1.0f;
                 TARGET.Y = player.position.Y + 3.0f;
+
+                // Update the animation according to the elapsed time //kev
+                animationController.Update(gameTime.ElapsedGameTime, Matrix.Identity);
 
             }
         }
@@ -490,6 +548,41 @@ namespace GameStateManagement
 
             ParticleGroup.Draw(World, View, Proj);
             MushroomParticleGroup.Draw(World, View, Proj);
+
+            // the animated model is drawn through an internal Model object //kev
+            foreach (ModelMesh modelMesh in skinnedModel.Model.Meshes)
+            {
+                foreach (SkinnedModelBasicEffect effect in modelMesh.Effects)
+                {
+
+                    // Setup world transform
+                    effect.World = absoluteBoneTransforms[modelMesh.ParentBone.Index] *
+                        World;
+
+                    // Setup camera
+                    effect.View = View;
+                    effect.Projection = Proj;
+
+                    // Set the animated bones to the model
+                    effect.Bones = animationController.SkinnedBoneTransforms;
+
+                    // OPTIONAL - Configure material
+                    effect.Material.DiffuseColor = new Vector3(0.8f);
+                    effect.Material.SpecularColor = new Vector3(0.3f);
+                    effect.Material.SpecularPower = 8;
+
+                    // OPTIONAL - Configure lights
+                    effect.AmbientLightColor = new Vector3(0.1f);
+                    effect.LightEnabled = true;
+                    effect.EnabledLights = EnabledLights.One;
+                    effect.PointLights[0].Color = Vector3.One;
+                    effect.PointLights[0].Position = new Vector3(100);
+
+                }
+
+                // Draw a model mesh
+                modelMesh.Draw();
+            }
 
             BloomEffect.Draw(gameTime);
 

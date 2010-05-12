@@ -4,3 +4,5 @@ F:\replace\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\R
 F:\replace\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
 F:\replace\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 F:\replace\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
+\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+\\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml

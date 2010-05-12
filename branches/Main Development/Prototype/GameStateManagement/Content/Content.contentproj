@@ -47,6 +47,10 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.TextureImporter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
+    <Reference Include="XNAnimationPipeline, Version=0.7.0.0, Culture=neutral, PublicKeyToken=0c21691816f8c6d0, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>XNAnimation\Windows\XNAnimationPipeline.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio\Prototype.xap">
@@ -218,6 +222,15 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </None>
+    <Compile Include="models\PlayerMarine.fbx">
+      <Name>PlayerMarine</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
+      <ProcessorParameters_GenerateTangentFrame>True</ProcessorParameters_GenerateTangentFrame>
+      <ProcessorParameters_TexturePath>..\Textures\</ProcessorParameters_TexturePath>
+      <ProcessorParameters_ModelScale>0.1</ProcessorParameters_ModelScale>
+      <ProcessorParameters_ModelRotate>0, 90, 0</ProcessorParameters_ModelRotate>
+    </Compile>
     <Compile Include="test copy.tga">
       <Name>test copy</Name>
       <Importer>TextureImporter</Importer>
