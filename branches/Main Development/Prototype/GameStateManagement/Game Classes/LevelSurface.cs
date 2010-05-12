@@ -80,7 +80,6 @@ namespace GameStateManagement
                     effect.Parameters["gSpecMtrl"].SetValue(specMtrl);
                     effect.Parameters["withgrey"].SetValue(true);
                     effect.Parameters["withlights"].SetValue(true);
-                    effect.Parameters["player"].SetValue(false);
                     effect.Parameters["withshadow"].SetValue(true);
 
 

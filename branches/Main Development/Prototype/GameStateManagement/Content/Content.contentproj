@@ -135,11 +135,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="Effects\Lighting.fx">
-      <Name>Lighting</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-    </Compile>
     <Compile Include="models\Mainhill2.fbx">
       <Name>Mainhill2</Name>
       <Importer>FbxImporter</Importer>
@@ -195,51 +190,20 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="models\skyboxmystic.dds">
-      <Name>skyboxmystic</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="models\SkySphere.fx">
-      <Name>SkySphere</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-    </Compile>
     <Compile Include="models\SphereHighPoly.fbx">
       <Name>SphereHighPoly</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="models\Tiny_skin.dds">
-      <Name>Tiny_skin</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Effects\Includes.inc">
-      <Name>Includes</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-    </None>
-    <Compile Include="models\PlayerMarine.fbx">
-      <Name>PlayerMarine</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>SkinnedModelProcessor</Processor>
-      <ProcessorParameters_GenerateTangentFrame>True</ProcessorParameters_GenerateTangentFrame>
-      <ProcessorParameters_TexturePath>..\Textures\</ProcessorParameters_TexturePath>
-      <ProcessorParameters_ModelScale>0.1</ProcessorParameters_ModelScale>
-      <ProcessorParameters_ModelRotate>0, 90, 0</ProcessorParameters_ModelRotate>
-    </Compile>
-    <Compile Include="test copy.tga">
-      <Name>test copy</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="models\metal.jpg">
-      <Name>metal</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+    <Compile Include="models\ship2.x">
+      <Name>ship2</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <ProcessorParameters_CustomEffect>Lighting.fx</ProcessorParameters_CustomEffect>
+      <ProcessorParameters_TextureParameterName>gTex</ProcessorParameters_TextureParameterName>
+      <ProcessorParameters_TextureFormat>Color</ProcessorParameters_TextureFormat>
     </Compile>
     <Compile Include="spires_north.bmp">
       <Name>spires_north</Name>
@@ -275,6 +239,33 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="models\metal.jpg">
+      <Name>metal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="credits.jpg">
+      <Name>credits</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Effects\Lighting.fx">
+      <Name>Lighting</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Effects\Includes.inc">
+      <Name>Includes</Name>
+      <Processor>EffectProcessor</Processor>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

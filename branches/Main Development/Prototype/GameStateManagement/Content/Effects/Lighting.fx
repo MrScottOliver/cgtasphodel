@@ -16,7 +16,6 @@ uniform extern float	gRadius[10];
 uniform extern float gMinY[10];
 uniform extern float gMaxY[10];
 
-uniform extern bool player;
 uniform extern float health;
 
 uniform extern bool withlights;
@@ -166,18 +165,6 @@ if(withgrey){
 	else
 	{
 	
-	if(player)
-	{
-		float dist = 1 - ( health / 100 );
-		result.r = ((finalCol.r - (finalCol.r * dist)) + grey * dist);
-		result.g = ((finalCol.g - (finalCol.g * dist)) + grey * dist);
-		result.b = ((finalCol.b - (finalCol.b * dist)) + grey * dist);
-		result.a = finalCol.a;
-		return result;
-	}
-	else
-	{
-	
 	for(int k = 0; k < 10; k++)
 	{
 		xCom = (input.posW.x - gCenterX[k])*(input.posW.x - gCenterX[k]);
@@ -197,7 +184,6 @@ if(withgrey){
 			//result.a = finalCol.a;
 			counter++;
 		}
-	}
 		
 	if(counter == 0)
 	{
@@ -220,6 +206,89 @@ else //if not with grey effect
 	
 }
 
+float4 LightsPSPlayer(InputPS input): COLOR
+{
+
+	float3 Color = {0.0f, 0.0f, 0.0f};
+	float4 texColor = tex2D(TexS, input.tex0);
+	float4 globalamb ={0.5, 0.5, 0.5, 1.0};
+	float4 finalCol = {0.0f, 0.0f, 0.0f,0.0f};
+
+
+		///////////////////////////////////////////////////////
+		///calculations for shadow mapping					///
+		///////////////////////////////////////////////////////
+		
+		float4 lightingPos = mul(input.posW, gLightviewproj);
+	
+		float2 shadowtexcoord = 0.5*lightingPos.xy/lightingPos.w + float2(0.5,0.5);
+		
+		shadowtexcoord.y =  1.0f - shadowtexcoord.y;
+	
+		float depth = lightingPos.z / lightingPos.w;
+	
+		float shadowdiff = 0.0f;
+    
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 0.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 0.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 0.0f), depth);
+	
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 1.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 1.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 1.0f), depth);
+	
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(0.0f, 2.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(1.0f, 2.0f), depth);
+		shadowdiff += ShadowMapLookup(ShadowMapSampler, shadowtexcoord, float2(2.0f, 2.0f), depth);
+	
+		shadowdiff /= 9.0f;
+   
+		////////////////////////////////////////////////////////
+		///Point light calc									////
+		////////////////////////////////////////////////////////
+	
+		for (int i = 0; i < (numlights); ++i)
+		{
+			Color += CalculatePointLightWShadow(light[i], input, texColor, globalamb, shadowdiff);
+		}
+	
+		finalCol = float4( Color, gDiffuseMtrl.a*texColor.a);
+	
+	
+	////////////////////////////////////////////////////////////
+	///calculations for colour change						 ///
+	////////////////////////////////////////////////////////////	
+		
+	float			xCom;
+	float			yCom;
+	float			zCom;
+	float grey;
+	float4 result;
+	int counter = 0;
+	
+	result.r = 0;
+    result.g = 0;
+    result.b = 0;
+    result.a = 1.0f;
+
+	grey = (float3)dot(float3(finalCol.r,finalCol.g,finalCol.b), float3(0.212671f, 0.715160f, 0.072169f));
+	result.r = 0;
+	result.g = 0;
+	result.b = 0;
+	result.a = finalCol.a;
+	
+	float dist = 1 - ( health / 100 );
+	result.r = ((finalCol.r - (finalCol.r * dist)) + grey * dist);
+	result.g = ((finalCol.g - (finalCol.g * dist)) + grey * dist);
+	result.b = ((finalCol.b - (finalCol.b * dist)) + grey * dist);
+	result.a = finalCol.a;
+	return result;
+	
+	
+}
+
+
+
 technique MyTech
 {
 	pass PointLights
@@ -232,6 +301,21 @@ technique MyTech
 		//specify render device states associated with the pass
 		FillMode =  Solid;
 	}	
+}
+
+technique PlayerTech
+{
+	pass Player
+	{
+		SpecularEnable = TRUE;
+		AlphaBlendEnable = TRUE;
+		
+		vertexShader = compile vs_3_0 LightsVS();
+		pixelShader = compile ps_3_0 LightsPSPlayer();
+		//specify render device states associated with the pass
+		FillMode =  Solid;
+
+	}
 }
 
 technique CreateShadowMapTech

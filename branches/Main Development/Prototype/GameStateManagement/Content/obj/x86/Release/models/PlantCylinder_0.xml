@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootFrame</Name>
     <Identity>
-      <SourceFilename>F:\GameStateManagementSample\GameStateManagement\Content\models\PlantCylinder.x</SourceFilename>
+      <SourceFilename>F:\protttoooo\Prototype\GameStateManagement\Content\models\PlantCylinder.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 -1 0 0 0 0 1</Transform>
