@@ -8,3 +8,7 @@ F:\replace\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.x
 \\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
 F:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 F:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
+J:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+J:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
+G:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml

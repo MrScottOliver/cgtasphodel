@@ -75,16 +75,6 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>
-    <Compile Include="models\Character.fbx">
-      <Name>Character</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-    <Compile Include="models\characterX.x">
-      <Name>characterX</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
     <Compile Include="models\Flower1.fbx">
       <Name>Flower1</Name>
       <Importer>FbxImporter</Importer>
@@ -212,16 +202,6 @@
     </Compile>
     <Compile Include="Star9.png">
       <Name>Star9</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="testtexgrass.jpg">
-      <Name>testtexgrass</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="testtexleaves.jpg">
-      <Name>testtexleaves</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

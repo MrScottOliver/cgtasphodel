@@ -26,8 +26,8 @@ namespace GameStateManagement
         /// </summary>
         public IntroScreen()
         {
-            TransitionOnTime = TimeSpan.FromSeconds(1.0);
-            TransitionOffTime = TimeSpan.FromSeconds(1.0);
+            TransitionOnTime = TimeSpan.FromSeconds(0.5);
+            TransitionOffTime = TimeSpan.FromSeconds(0.5);
             trans = 0.0f;
         }
 
@@ -45,6 +45,7 @@ namespace GameStateManagement
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             introTexture = content.Load<Texture2D>("LogoFinal");
+            
         }
 
 
@@ -72,6 +73,8 @@ namespace GameStateManagement
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
+            
+
             base.Update(gameTime, otherScreenHasFocus, false);
 
             trans += 0.01f;
