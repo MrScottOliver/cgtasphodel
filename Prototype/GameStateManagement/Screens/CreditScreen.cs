@@ -15,7 +15,6 @@ namespace GameStateManagement
         ContentManager content;
         Texture2D creditTexture;
         float trans;
-        string credits;
 
         #endregion
 
@@ -80,7 +79,7 @@ namespace GameStateManagement
 
             trans += 0.01f;
 
-            if (trans >= 4.0)
+            if (trans >= 3.0)
             {
 
                 LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),

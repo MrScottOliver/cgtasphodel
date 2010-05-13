@@ -56,6 +56,9 @@ namespace GameStateManagement
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
             backgroundTexture = content.Load<Texture2D>("GrassArtSmallgg");
+            Audio.Init();
+
+            Audio.SetMusic(Audio.Tracks.title);
         }
 
 
@@ -83,6 +86,7 @@ namespace GameStateManagement
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
+            Audio.PlayMusic();
             base.Update(gameTime, otherScreenHasFocus, false);
         }
 

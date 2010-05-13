@@ -51,10 +51,8 @@ namespace GameStateManagement
             Components.Add(screenManager);
             Components.Add(new PostProcess(this) { Visible = false });
 
-            // Activate the first screens.
+            // Activate the first screen
             screenManager.AddScreen(new IntroScreen(), null);
-           // screenManager.AddScreen(new BackgroundScreen(), null);
-           // screenManager.AddScreen(new MainMenuScreen(), null);
 
         }
 

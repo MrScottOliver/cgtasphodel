@@ -115,6 +115,8 @@ namespace GameStateManagement
 
         //New physics stuff
         Physics physicSystem;
+
+       
         //////////////////////////
 
         #endregion
@@ -159,7 +161,7 @@ namespace GameStateManagement
 
             gameFont = content.Load<SpriteFont>("gamefont");
 
-            POS = new Vector3(0.0f, 10.0f, 15.0f);
+            POS = new Vector3(0.0f, 10.0f, 20.0f);
             TARGET = new Vector3(0.0f, 5.0f, 1.0f);
             UP = Vector3.Up;
 
@@ -286,6 +288,7 @@ namespace GameStateManagement
 
             BloomEffect = FindComponent<PostProcess>();
 
+            Audio.SetMusic(Audio.Tracks.piano);
 
             // once the load has finished, we use ResetElapsedTime to tell the game's
             // timing mechanism that we have just finished a very long frame, and that
