@@ -161,7 +161,7 @@ namespace GameStateManagement
 
             gameFont = content.Load<SpriteFont>("gamefont");
 
-            POS = new Vector3(0.0f, 10.0f, 20.0f);
+            POS = new Vector3(0.0f, 10.0f, 25.0f);
             TARGET = new Vector3(0.0f, 5.0f, 1.0f);
             UP = Vector3.Up;
 
@@ -398,26 +398,6 @@ namespace GameStateManagement
                 keyState = Keyboard.GetState();
             // Allows the game to exit
 #if !XBOX
-            if (keyState.IsKeyDown(Keys.W))
-            {
-                POS.Z -= 1.0f;
-                TARGET.Z -= 1.0f;
-            }
-            if (keyState.IsKeyDown(Keys.S))
-            {
-                POS.Z += 1.0f;
-                TARGET.Z += 1.0f;
-            }
-            if (keyState.IsKeyDown(Keys.A))
-            {
-                POS.X -= 1.0f;
-                TARGET.X -= 1.0f;
-            }
-            if (keyState.IsKeyDown(Keys.D))
-            {
-                POS.X += 1.0f;
-                TARGET.X += 1.0f;
-            }
 
             //Kieran: arrow keys move player model
             if (keyState.IsKeyDown(Keys.Up))
@@ -425,7 +405,7 @@ namespace GameStateManagement
                 player.Jump();
             }
 
-            if (keyState.IsKeyDown(Keys.Down))
+            if (keyState.IsKeyDown(Keys.Enter))
             {
                 //Audio.Slide();
                 LoadingScreen.Load(ScreenManager, false, null,
@@ -452,6 +432,7 @@ namespace GameStateManagement
             if (keyState.IsKeyDown(Keys.Space))
             {
                 revealTransform = true;
+                Audio.SetMusic(Audio.Tracks.acoustic);
             }
 
             
@@ -468,40 +449,6 @@ namespace GameStateManagement
                 player.health++;
             }
 
-            if (keyState.IsKeyDown(Keys.E))
-            {
-                player.AddRotation(0.1f,0,0);
-            }
-
-            if (keyState.IsKeyDown(Keys.R))
-            {
-                player.AddRotation(0, 0.1f, 0);
-            }
-            if (keyState.IsKeyDown(Keys.T))
-            {
-                player.AddRotation(0, 0, 0.1f);
-            }
-            //Stefen:Controls for switching background music
-            if (keyState.IsKeyDown(Keys.G))
-            {
-                Audio.SetMusic(Audio.Tracks.mute);
-            }
-            if (keyState.IsKeyDown(Keys.H))
-            {
-                Audio.SetMusic(Audio.Tracks.acoustic);
-            }
-            if (keyState.IsKeyDown(Keys.J))
-            {
-                Audio.SetMusic(Audio.Tracks.dark);
-            }
-            if (keyState.IsKeyDown(Keys.K))
-            {
-                Audio.SetMusic(Audio.Tracks.piano);
-            }
-            if (keyState.IsKeyDown(Keys.L))
-            {
-                Audio.SetMusic(Audio.Tracks.title);
-            }
            
 #endif
 
