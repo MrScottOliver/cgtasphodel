@@ -178,7 +178,6 @@ F:\replace\Prototype\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
 \\uadfil07\students$\0701230\Desktop\gtrp\Prototype\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
 F:\protttoooo\Prototype\GameStateManagement\obj\x86\Debug\GameStateManagement.exe
 F:\protttoooo\Prototype\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
-F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\background.xnb
 F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\blank.xnb
 F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\gradient.xnb
 F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\spires_north.xnb
@@ -336,3 +335,10 @@ G:\protttoooo\Prototype\GameStateManagement\obj\x86\Debug\ResolveAssemblyReferen
 G:\protttoooo\Prototype\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 G:\protttoooo\Prototype\GameStateManagement\obj\x86\Debug\GameStateManagement.exe
 G:\protttoooo\Prototype\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild3.xnb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild2.fbm\bigTree1_0.xnb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild2.fbm\bigbush3_0.xnb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild2.fbm\Mushroom1final_0.xnb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild2.fbm\nonflower1_0.xnb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild2.fbm\FenceWood_0.xnb
+F:\protttoooo\Prototype\GameStateManagement\bin\x86\Debug\Content\models\worldbuild2.fbm\smallbush1_0.xnb
