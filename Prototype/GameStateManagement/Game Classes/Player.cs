@@ -234,8 +234,10 @@ namespace GameStateManagement
             if (velocity.X < 0.1f)
             {
                 velocity.X = 0.2f;
-                Audio.Step();
+                
             }
+            if (velocity.Y ==0)
+                Audio.Step();
         }
 
         public void moveLeft()
@@ -243,8 +245,10 @@ namespace GameStateManagement
             if (velocity.X > -0.1f)
             {
                 velocity.X = -0.2f;
-                Audio.Step();
+                
             }
+            if (velocity.Y ==0)
+                Audio.Step();
         }
 
         public void stopRight()

@@ -1,4 +1,3 @@
-Content\background.xnb
 Content\blank.xnb
 Content\gradient.xnb
 Content\spires_north.xnb
@@ -37,6 +36,13 @@ Content\models\quad.xnb
 Content\models\REcharacter.xnb
 Content\models\SphereHighPoly.xnb
 Content\models\metal_0.xnb
+Content\models\worldbuild3.xnb
+Content\models\worldbuild2.fbm\bigTree1_0.xnb
+Content\models\worldbuild2.fbm\bigbush3_0.xnb
+Content\models\worldbuild2.fbm\Mushroom1final_0.xnb
+Content\models\worldbuild2.fbm\nonflower1_0.xnb
+Content\models\worldbuild2.fbm\FenceWood_0.xnb
+Content\models\worldbuild2.fbm\smallbush1_0.xnb
 Content\Audio\Prototype.xgs
 Content\Audio\Player_Effects.xwb
 Content\Audio\Music.xwb
