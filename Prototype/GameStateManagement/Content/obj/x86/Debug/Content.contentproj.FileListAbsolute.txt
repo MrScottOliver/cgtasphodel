@@ -12,3 +12,5 @@ G:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssembl
 G:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
 F:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 F:\protttoooo\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml
+C:\Users\Stezzy\Desktop\Main Development\Prototype\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Stezzy\Desktop\Main Development\Prototype\GameStateManagement\Content\obj\x86\Debug\Audio\Prototype.xml

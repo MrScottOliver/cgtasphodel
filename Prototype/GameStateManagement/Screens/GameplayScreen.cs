@@ -151,7 +151,7 @@ namespace GameStateManagement
             Model PlantCyl = content.Load<Model>("models/Flower1");
             Model Full1 = content.Load<Model>("models/LevelBuild7");
             Model Full2 = content.Load<Model>("models/LevelBuild6");
-            Model Mush1 = content.Load<Model>("models/MurshroomPlatformtest");
+            Model Mush1 = content.Load<Model>("models/Mushroomtest");
             Model Mush2 = content.Load<Model>("models/MurshroomPlatformtest2");
             Model Leaf1 = content.Load<Model>("models/leave1");
   
