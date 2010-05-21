@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>group</Name>
     <Identity>
-      <SourceFilename>F:\protttoooo\Prototype\GameStateManagement\Content\models\Hill2.fbx</SourceFilename>
+      <SourceFilename>C:\Users\Stezzy\Desktop\Main Development\Prototype\GameStateManagement\Content\models\Hill2.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -32,7 +32,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>lambert1</Name>
       <Identity>
-        <SourceFilename>F:\protttoooo\Prototype\GameStateManagement\Content\models\Hill2.fbx</SourceFilename>
+        <SourceFilename>C:\Users\Stezzy\Desktop\Main Development\Prototype\GameStateManagement\Content\models\Hill2.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
